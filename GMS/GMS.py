@@ -2,9 +2,16 @@ import cv2
 import numpy as np
 
 class GMS:
-    def __init__(self,img1path,img2path,kptnumber=10000):
+
+
+    def __init__(self,img1path,img2path,kptnumber=10000,resizeflag=True,width = 640,height = 480):
+
         self.img1=cv2.imread(img1path)
         self.img2=cv2.imread(img2path)
+        if resizeflag:
+            ddsize = (width, height)
+            self.img1=cv2.resize(self.img1,ddsize)
+            self.img2 = cv2.resize(self.img2, ddsize)
         # 最大特征点数,需要修改，5000太大。
         self.orb = cv2.ORB_create(kptnumber)
         self.kp1, self.des1 = self.orb.detectAndCompute(self.img1, None)
