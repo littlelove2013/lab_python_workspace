@@ -141,7 +141,7 @@ class GMS:
         return self.gridmatches
     def getGmsMatchesImg(self):
         gmsmatches = self.getGmsMatches()
-        return cv2.drawMatches(self.img1, self.kp1, self.img2, self.kp2, gmsmatches, None)
+        return cv2.drawMatches(self.img1, self.kp1, self.img2, self.kp2, gmsmatches,None)
     def show(self):
         cv2.drawKeypoints(image=self.img1,keypoints=self.kp1,outImage=self.img1)
         cv2.drawKeypoints(image=self.img2, keypoints=self.kp2,outImage=self.img2)
