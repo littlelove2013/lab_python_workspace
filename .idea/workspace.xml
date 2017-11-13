@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26ac5d66-a343-4619-bd8d-f04266680f53" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/python_workspace.iml" afterPath="$PROJECT_DIR$/.idea/python_workspace.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DQN/Qlearning/Qlearning.py" afterPath="$PROJECT_DIR$/DQN/Qlearning/Qlearning.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GMS/main.py" afterPath="$PROJECT_DIR$/GMS/main.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -610,7 +606,14 @@
       <option name="project" value="LOCAL" />
       <updated>1510388731786</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="update lab changes">
+      <created>1510557030122</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1510557030122</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -674,7 +677,8 @@
     <MESSAGE value="add DQN code" />
     <MESSAGE value="add general lecture code" />
     <MESSAGE value="add GMS model" />
-    <option name="LAST_COMMIT_MESSAGE" value="add GMS model" />
+    <MESSAGE value="update lab changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="update lab changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
