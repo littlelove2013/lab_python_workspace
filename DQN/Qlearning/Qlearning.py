@@ -27,7 +27,7 @@ def Qlearning():
         print('\neposide %d\n'%(i),'path:%d'%(state0),end='')
         step=0
         #随机选择的概率逐步下降
-        randrate=baserand+(1-i/eposide)*(1-baserand)
+        randrate=baserand+(1-(i+1)/(eposide))*(1-baserand)
         while(state0!=5):
             rate=np.random.rand()
             max_action=0
@@ -42,9 +42,9 @@ def Qlearning():
             Q[state0,max_action]=R[state0,max_action]+lamda*max(Q[max_action])
             #state0指向max_action转向的state,此处就是max_action
             state0=max_action
-            print(' ---> %d'%(state0),end='')
+            print(' ---> %d:rate(%.4f)'%(state0,rate),end='')
             step+=1
-        print('\nrun step:%d, Q value:%d, found rate:%f'%(step,Q.sum(),randrate),'\nQ=\n',Q)
+        print('\nrun step:%d, Q value:%d, found rate:%f'%(step,Q.sum(),randrate))
 
 
 def main():
