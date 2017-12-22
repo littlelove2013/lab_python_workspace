@@ -104,6 +104,7 @@ class vgg16:
         with tf.name_scope('conv3_2') as scope:
             kernel = tf.Variable(tf.truncated_normal([3, 3, 256, 256], dtype=tf.float32,
                                                      stddev=1e-1), name='weights')
+
             conv = tf.nn.conv2d(self.conv3_1, kernel, [1, 1, 1, 1], padding='SAME')
             biases = tf.Variable(tf.constant(0.0, shape=[256], dtype=tf.float32),
                                  trainable=True, name='biases')
@@ -257,7 +258,7 @@ x_images = tf.placeholder(tf.float32, [None, 224, 224, 3])
 y_ = tf.placeholder(tf.float32, shape=[None, out])
 def cnnnet(session):
     learnrate = 1e-4
-    vgg = vgg16(x_images, 'vgg16_weights.npz', session)
+    vgg = vgg16(x_images, '../../../include_data/vgg_npz/vgg16_weights.npz', session)
 
     with tf.name_scope('softmax_layer') as scope:
         # 直接在这里取最后一层全连接，使用softmax，自己定义loss函数，进行训练
@@ -275,27 +276,32 @@ def cnnnet(session):
         train_step = tf.train.AdamOptimizer(learnrate).minimize(cross_entropy)  # 调用优化器优化
         correct_prediction = tf.equal(tf.argmax(y_conv, 1), tf.argmax(y_, 1))
         accuracy = tf.reduce_mean(tf.cast(correct_prediction, "float"))
-    return train_step,accuracy
+    return train_step,accuracy,cross_entropy,y_conv,vgg.fc2
 
 
 if __name__ == '__main__':
     sess = tf.Session()
-    for i in range(4):
-        data = dogbreed.getdata(0)
+    train_step,acc,loss,y_conv,fc2=cnnnet(sess)
+    sess.run(tf.global_variables_initializer()) # 变量初始化
+    #禁止向其中添加节点
+    sess.graph.finalize()
+    lens=10
+    for i in range(lens):
+        data = dogbreed.getdata(i,batchsize=20)
         imgs=data['images']
         labels=data['labels']
-        train_step,acc=cnnnet(sess)
+        #train_step,acc=cnnnet(sess)
         sess.run(train_step,feed_dict={x_images: imgs, y_: labels})
         testshow=1
         if (i + 1) % testshow == 0:
             # keep_prob表示神经元按概率失活，=1则表示跳过该步骤
             # train_accuracy = accuracy.eval(feed_dict={x: batch[0], y_: batch[1], keep_prob: 1.0})
-            a = sess.run(acc,feed_dict={imgs: imgs, y_: labels})
-            print('acc:', a)
+            a,l,y,fc = sess.run([acc,loss,y_conv,fc2],feed_dict={x_images: imgs, y_: labels})
+            print('acc:', a,'loss:',l,'y_conv:',y,'fc2:',fc)
             # continue
 
     # print("test accuracy %g" % accuracy.eval(feed_dict={x: mnist.test.images[0:500], y_: mnist.test.labels[0:500], keep_prob: 1.0}))
-    print("test accuracy %g" % acc.eval(feed_dict={imgs: imgs, y_: labels}))
+    print("test accuracy %g" % sess.run(acc,feed_dict={x_images: imgs, y_: labels}))
     # img1 = imread('laska.png', mode='RGB')
     # img1 = imresize(img1, (224, 224))
     #prob = sess.run(vgg.probs, feed_dict={vgg.imgs: imgs})[0]
