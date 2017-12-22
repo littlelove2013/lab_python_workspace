@@ -1,5 +1,6 @@
 import cv2
 import GMS
+q
 
 def main():
     # 获得视频的格式
@@ -18,8 +19,16 @@ def main():
 
         cv2.imshow('src Video', frame1)  # 显示
         cv2.imshow('src2 Video', frame2)  # 显示
+<<<<<<< HEAD
+        time_start = time.time()  # time.time()为1970.1.1到当前时间的毫秒数
         gms = GMS.GMS(frame1, frame2)
         gmsmatchimg = gms.getGmsMatchesImg()
+        time_end = time.time()  # time.time()为1970.1.1到当前时间的毫秒数
+        print(time_end-time_start,'s')
+=======
+        gms = GMS.GMS(frame1, frame2)
+        gmsmatchimg = gms.getGmsMatchesImg()
+>>>>>>> b4f1d6be65a76c79ed8ecf08ec35ea4428d9e97e
         cv2.imshow('gms Video', gmsmatchimg)  # 显示
         cv2.waitKey(100)  # 延迟
         # videoWriter.write(frame)  # 写视频帧

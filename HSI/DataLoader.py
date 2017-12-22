@@ -28,6 +28,10 @@ CLSS_MAT_KEY = 'ClsPos'
 CLSS_SUM_KEY = 'ClsSum'
 base_data_array = None
 ground_truth_array = None
+<<<<<<< HEAD
+path_prefix = '../../HSI_DATA/'
+=======
+>>>>>>> b4f1d6be65a76c79ed8ecf08ec35ea4428d9e97e
 
 Dataset = collections.namedtuple('Dataset', ['data', 'target','pos'])
 # Datasets = collections.namedtuple('Datasets', ['train', 'validation', 'test'])
@@ -306,12 +310,20 @@ def load_spectMat(name="KSC",fake_flag=False,file_path=None,fill_flag=1):
 def generateDatasetMat(name="KSC", train_ratio=0.8, split_strategy=1):
     print("function generateDatasetMat")
     data_name = name.upper()
+<<<<<<< HEAD
+    data_path = path_prefix+data_name+"/"
+=======
     data_path = "../DATA/"+data_name+"/"
+>>>>>>> b4f1d6be65a76c79ed8ecf08ec35ea4428d9e97e
     file_name = data_path+"preparedDataset_"+str(split_strategy)+".mat"
     if(not os.path.exists(data_path)):
         print("不存在您要载入的数据集路径")
         return -1
 
+<<<<<<< HEAD
+    #获取数据和真值图
+=======
+>>>>>>> b4f1d6be65a76c79ed8ecf08ec35ea4428d9e97e
     base_data_array = load_baseDataArray(data_name)
     ground_truth_array = load_groundTruthData(data_name)
     max_height= len(ground_truth_array)
@@ -418,7 +430,11 @@ def generateDatasetMat(name="KSC", train_ratio=0.8, split_strategy=1):
 def load_shuffledData(name="KSC"):
     print("function load_shuffledClass")
     data_name = name.upper()
+<<<<<<< HEAD
+    data_path = path_prefix+data_name+"/"
+=======
     data_path = "../DATA/"+data_name+"/"
+>>>>>>> b4f1d6be65a76c79ed8ecf08ec35ea4428d9e97e
     if(not os.path.exists(data_path)):
         print("不存在您要载入的数据集路径")
         return -1
@@ -443,7 +459,11 @@ def load_shuffledData(name="KSC"):
 def load_baseDataArray(name="KSC"):
     print("function load_baseDataArray")
     data_name = name.upper()
+<<<<<<< HEAD
+    data_path = path_prefix + data_name + "/"
+=======
     data_path = "../DATA/" + data_name + "/"
+>>>>>>> b4f1d6be65a76c79ed8ecf08ec35ea4428d9e97e
     if (not os.path.exists(data_path)):
         print("不存在您要载入的数据集路径")
         return -1
@@ -463,7 +483,11 @@ def load_baseDataArray(name="KSC"):
 def load_groundTruthData(name="KSC"):
     print("function load_groundTruthData")
     data_name = name.upper()
+<<<<<<< HEAD
+    data_path = path_prefix+data_name+"/"
+=======
     data_path = "../DATA/"+data_name+"/"
+>>>>>>> b4f1d6be65a76c79ed8ecf08ec35ea4428d9e97e
     if(not os.path.exists(data_path)):
         print("不存在您要载入的数据集路径")
         return -1
@@ -482,7 +506,11 @@ def load_groundTruthData(name="KSC"):
 def load_classIndexList(name="KSC"):
     # print("function load_classIndexList")
     data_name = name.upper()
+<<<<<<< HEAD
+    data_path = path_prefix+data_name+"/"
+=======
     data_path = "../DATA/"+data_name+"/"
+>>>>>>> b4f1d6be65a76c79ed8ecf08ec35ea4428d9e97e
     if(not os.path.exists(data_path)):
         print("不存在您要载入的数据集路径")
         return -1

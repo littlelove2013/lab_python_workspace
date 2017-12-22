@@ -52,12 +52,23 @@ def loadData(data_set_name, strategy):
     #['ClsID', all the other contents], so the code should not just use following index to fetch useable data.
     print('正在载入原始频谱数据...')
     DataSetMat = sio.loadmat(data_set_path + '/' + data_set_name + 'Data.mat')
+<<<<<<< HEAD
+    #记录所有关键字
     key_data_name = DataSetMat.keys()
     data_key = ''
+    #找到第一个不是默认属性得关键字
+=======
+    key_data_name = DataSetMat.keys()
+    data_key = ''
+>>>>>>> b4f1d6be65a76c79ed8ecf08ec35ea4428d9e97e
     for temp_key in key_data_name:
         if temp_key != '__version__' and temp_key != '__header__' and temp_key != '__globals__':
             data_key = temp_key
             break
+<<<<<<< HEAD
+    #获取该属性下得值
+=======
+>>>>>>> b4f1d6be65a76c79ed8ecf08ec35ea4428d9e97e
     DataSet = DataSetMat[data_key]
     print("正在载入原始标签数据……")
     LabelsMat = sio.loadmat(data_set_path + '/' + data_set_name + 'Gt.mat')
@@ -67,6 +78,10 @@ def loadData(data_set_name, strategy):
         if temp_key != '__version__' and temp_key != '__header__' and temp_key != '__globals__':
             label_key = temp_key
             break
+<<<<<<< HEAD
+    # 获取该属性下得值
+=======
+>>>>>>> b4f1d6be65a76c79ed8ecf08ec35ea4428d9e97e
     Labels = LabelsMat[label_key]
     #原始数据载入完毕
     print("所有原始数据载入完毕！")
@@ -220,7 +235,12 @@ def loadData(data_set_name, strategy):
                 DataList[label - 1].append(data)
                 # the position string includes following informations:
                 # row | line | class number.
+<<<<<<< HEAD
+                position.append(label - 1)
+                PositionList[label - 1].append(position)
+=======
                 PositionList[label - 1].append(position.append(label - 1))
+>>>>>>> b4f1d6be65a76c79ed8ecf08ec35ea4428d9e97e
 
     print("原始数据分类处理完毕")
 
@@ -343,11 +363,20 @@ def prepareMatList(list, positions):
     #PositionMark_C = 0
     #print positions.shape
     #TODO: put these following two fors into one for.
+<<<<<<< HEAD
+    #sub_list为每一类别数据集合
+    for sub_list in list:
+        #sub_list_data为具体一个类别中的所有数据列表
+        for sub_list_data in sub_list:
+            print( 'number of samples in number ' + str(classCount) + ' class ' + str(len(sub_list_data)))
+            #to_be_assemblied_data：每一行数据
+=======
     for sub_list in list:
 
         for sub_list_data in sub_list:
 
             print( 'number of samples in number ' + str(classCount) + ' class ' + str(len(sub_list_data)))
+>>>>>>> b4f1d6be65a76c79ed8ecf08ec35ea4428d9e97e
             for to_be_assemblied_data in sub_list_data:
 
                 Data.append(to_be_assemblied_data) 
@@ -388,6 +417,12 @@ def writeToMAT(trainList, testList,trainPositions, testPositions, datasetName, t
     sio.savemat(realPath + '.mat',{'DataTr':DataTr, 'CIdTr':CIdTr, 'PositionsTr':PositionsTr,  'DataTe':DataTe, 'CIdTe':CIdTe, 'PositionsTe':PositionsTe})
     return realPath, neighbors
 
+<<<<<<< HEAD
+#
+#@list:data
+#@positionList:
+=======
+>>>>>>> b4f1d6be65a76c79ed8ecf08ec35ea4428d9e97e
 def assembleData(list,positionList, datasetName, neighbors, learning_ratio, dataset_format):
     ratio = 0
     if(learning_ratio == 0):
@@ -411,6 +446,10 @@ def assembleData(list,positionList, datasetName, neighbors, learning_ratio, data
     testList = []
     trainPositions = []
     testPositions = []
+<<<<<<< HEAD
+    #数据类别长度，每个list[label]保存当前类别得数据
+=======
+>>>>>>> b4f1d6be65a76c79ed8ecf08ec35ea4428d9e97e
     for mark in range(len(list)):
         trainList.append([])
         testList.append([])
@@ -422,6 +461,10 @@ def assembleData(list,positionList, datasetName, neighbors, learning_ratio, data
     #for sub_list in list:
     positionMark = 0
     print( '#########################ratioing############################')
+<<<<<<< HEAD
+    #datalist是每个类别内的数据集合
+=======
+>>>>>>> b4f1d6be65a76c79ed8ecf08ec35ea4428d9e97e
     for dataList in list:
          positionNow = positionList[positionMark]
         #trainingNumer = ceil((len(dataList) * float(ratio) / 100.0)

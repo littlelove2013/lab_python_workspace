@@ -19,7 +19,7 @@ class GMS:
         self.TreshFactor=6
         # 最大特征点数
         self.orb = cv2.ORB_create(self.kptnumber)
-        self.orb.setFastThreshold(0)
+        # self.orb.setFastThreshold(0)
         self.kp1, self.des1 = self.orb.detectAndCompute(self.img1, None)
         self.kp2, self.des2 = self.orb.detectAndCompute(self.img2, None)
         # 提取并计算特征点
@@ -138,7 +138,9 @@ class GMS:
         for i in range(len(self.matches)):
             if(self.gridmatchesindex[i]==1):
                 self.gridmatches.append(self.matches[i])
-        return self.gridmatches
+                #记录新的kpt并返回
+        return self.gridmatches,self.kp1,self.kp2
+
     def getGmsMatchesImg(self):
         gmsmatches = self.getGmsMatches()
         return cv2.drawMatches(self.img1, self.kp1, self.img2, self.kp2, gmsmatches,None)
@@ -146,25 +148,78 @@ class GMS:
         cv2.drawKeypoints(image=self.img1,keypoints=self.kp1,outImage=self.img1)
         cv2.drawKeypoints(image=self.img2, keypoints=self.kp2,outImage=self.img2)
         matchimg=cv2.drawMatches(self.img1,self.kp1,self.img2,self.kp2,self.matches,None)
-        gmsmatches=self.getGmsMatches()
-        gmsmatchimg=cv2.drawMatches(self.img1,self.kp1,self.img2,self.kp2,gmsmatches,None)
+        gmsmatches,kp1,kp2=self.getGmsMatches()
+        gmsmatchimg=cv2.drawMatches(self.img1,kp1,self.img2,kp2,gmsmatches,None)
         cv2.imshow('img1', self.img1)
         cv2.imshow('img2', self.img2)
         cv2.imshow('matchimg', matchimg)
         cv2.imshow('gmsmatchimg', gmsmatchimg)
         cv2.waitKey()
 
+def getTransformPoint(oripoint,tran):
+    oriP=np.array([[oripoint[0]],[oripoint[1]],[1]])
+    targetP=tran.dot(oriP)
+    return np.array([targetP[0]/targetP[2],targetP[1]/targetP[2]])
 
 def main():
     print(__name__)
-    img1path='./images/000.png'
-    img2path = './images/020.png'
+    root='./images/'
+    # img1path='./images/000.png'
+    # img2path = './images/020.png'
+    img1path=root+'img1.jpg'
+    img2path = root+'img2.jpg'
     # img1path='./images/img.jpg'
     # img2path = './images/img2.jpg'
     img1=cv2.imread(img1path)
     img2=cv2.imread(img2path)
+    ddsize=(640,480)
+    img1 = cv2.resize(img1, ddsize)
+    img2 = cv2.resize(img2, ddsize)
     gms=GMS(img1,img2)
     gms.show()
+    gridmatch,kp1,kp2=gms.getGmsMatches()
+    #做变换矩阵
+    #1、把match点保存到两个字符矩阵
+    point1=[]
+    point2=[]
+    for match in gridmatch:
+        point1.append(kp1[match.queryIdx].pt)
+        point2.append(kp2[match.trainIdx].pt)
+    #2、求得变换矩阵
+    homo=cv2.findHomography(np.float32(point2),np.float32(point1),cv2.RANSAC)
+    # pts1=np.float32(point1)
+    # pts2=np.float32(point2)
+    # tran = cv2.getPerspectiveTransform(pts1[0:4], pts2[0:4])
+    tran=np.array(homo[0])
+    adjustMat=np.array([[1,0,img1.shape[1]],[0,1,0],[0,0,1]])
+    adjustHomo = adjustMat.dot(tran)
+    oripoint=point1[0]
+    targetpoint=getTransformPoint(oripoint,adjustHomo)
+    basepoint = point2[0]
+    print('homo:\n',tran)
+    #图像配准
+    img2transfom=cv2.warpPerspective(img2,tran,(2*img1.shape[1],img1.shape[0]))
+    #cv2.imshow('转换后图像',img2transfom)
+    tmpimg = img2transfom[:,0:img1.shape[1]]
+    index=np.where(tmpimg>0)
+    #将img1拷贝到img2transfom上去：
+    catimg=img2transfom.copy()
+    catimg[:,0:img1.shape[1],:]=img1.copy()
+    cv2.imshow('catimage',catimg)
+    cv2.imwrite('catimg.jpg',catimg)
+    #优化拼接地方的亮度不平衡
+    left = np.min(index[1])#取得最左边界
+    for i in range(len(index[1])):
+        alpha=(img1.shape[1]-index[1][i])/(img1.shape[1]-left)
+        r=index[0][i]
+        c=index[1][i]
+        chanel=index[2][i]
+        catimg[r,c,chanel]=img1[r,c,chanel]*alpha+img2transfom[r,c,chanel]*(1-alpha)
+    cv2.imshow('catimage',catimg)
+    cv2.imwrite('smoothborder.jpg',catimg)
+    cv2.waitKey(0)
+
+
 
 if __name__ == '__main__':
     main()
