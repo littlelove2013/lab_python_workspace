@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="26ac5d66-a343-4619-bd8d-f04266680f53" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/general/dogbreed/CNN.py" afterPath="$PROJECT_DIR$/general/dogbreed/CNN.py" />
       <change beforePath="$PROJECT_DIR$/general/dogbreed/VGG.py" afterPath="$PROJECT_DIR$/general/dogbreed/VGG.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -63,8 +62,8 @@
       <file leaf-file-name="GMSwithMatrix.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GMS/GMSwithMatrix.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="53" column="44" lean-forward="true" selection-start-line="53" selection-start-column="44" selection-end-line="53" selection-end-column="44" />
+            <state relative-caret-position="247">
+              <caret line="147" column="41" lean-forward="true" selection-start-line="147" selection-start-column="41" selection-end-line="147" selection-end-column="41" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
                 <element signature="e#304#433#0" expanded="false" />
@@ -124,11 +123,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CNN.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CNN.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/general/dogbreed/CNN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="538">
-              <caret line="102" column="0" lean-forward="true" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+            <state relative-caret-position="139">
+              <caret line="90" column="31" lean-forward="true" selection-start-line="90" selection-start-column="31" selection-end-line="90" selection-end-column="31" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -136,11 +135,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VGG.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="VGG.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/general/dogbreed/VGG.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="299" column="46" lean-forward="true" selection-start-line="299" selection-start-column="46" selection-end-line="299" selection-end-column="46" />
+            <state relative-caret-position="231">
+              <caret line="280" column="0" lean-forward="true" selection-start-line="280" selection-start-column="0" selection-end-line="280" selection-end-column="0" />
               <folding>
                 <element signature="e#824#847#0" expanded="true" />
                 <element signature="e#1295#10884#0" expanded="false" />
@@ -149,6 +148,7 @@
                 <element signature="e#12270#12745#0" expanded="false" />
                 <element signature="e#12802#13013#0" expanded="false" />
                 <element signature="e#12920#13013#0" expanded="false" />
+                <element signature="e#13374#14273#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -266,13 +266,6 @@
               <item name="lab_python_workspace" type="462c0819:PsiDirectoryNode" />
               <item name="general" type="462c0819:PsiDirectoryNode" />
               <item name="dogbreed" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lab_python_workspace" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lab_python_workspace" type="462c0819:PsiDirectoryNode" />
-              <item name="general" type="462c0819:PsiDirectoryNode" />
-              <item name="dogbreed" type="462c0819:PsiDirectoryNode" />
-              <item name="dataset" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="lab_python_workspace" type="b2602c69:ProjectViewProjectNode" />
@@ -539,7 +532,14 @@
       <option name="project" value="LOCAL" />
       <updated>1514021098591</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="update CNN for dogbreed data format">
+      <created>1514023113575</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1514023113575</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -651,11 +651,6 @@
           <url>file://$PROJECT_DIR$/DQN/DRL-FlappiBird/game/flappy_bird_utils.py</url>
           <line>41</line>
           <option name="timeStamp" value="40" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/GMS/GMSwithMatrix.py</url>
-          <line>142</line>
-          <option name="timeStamp" value="47" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -1065,29 +1060,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GMS/GMS.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="177" column="22" lean-forward="true" selection-start-line="177" selection-start-column="22" selection-end-line="177" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GMS/GMSwithMatrix.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="53" column="44" lean-forward="true" selection-start-line="53" selection-start-column="44" selection-end-line="53" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-            <element signature="e#304#433#0" expanded="false" />
-            <element signature="e#2069#2341#0" expanded="false" />
-            <element signature="e#6973#13105#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/general/dogbreed/CNN_softmax.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -1124,10 +1096,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/general/dogbreed/CNN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="90" column="31" lean-forward="true" selection-start-line="90" selection-start-column="31" selection-end-line="90" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GMS/GMS.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="177" column="22" lean-forward="true" selection-start-line="177" selection-start-column="22" selection-end-line="177" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GMS/GMSwithMatrix.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="147" column="41" lean-forward="true" selection-start-line="147" selection-start-column="41" selection-end-line="147" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#304#433#0" expanded="false" />
+            <element signature="e#2069#2341#0" expanded="false" />
+            <element signature="e#6973#13105#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/general/dogbreed/VGG.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="299" column="46" lean-forward="true" selection-start-line="299" selection-start-column="46" selection-end-line="299" selection-end-column="46" />
+        <state relative-caret-position="231">
+          <caret line="280" column="0" lean-forward="true" selection-start-line="280" selection-start-column="0" selection-end-line="280" selection-end-column="0" />
           <folding>
             <element signature="e#824#847#0" expanded="true" />
             <element signature="e#1295#10884#0" expanded="false" />
@@ -1136,16 +1141,7 @@
             <element signature="e#12270#12745#0" expanded="false" />
             <element signature="e#12802#13013#0" expanded="false" />
             <element signature="e#12920#13013#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/general/dogbreed/CNN.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="538">
-          <caret line="102" column="0" lean-forward="true" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
+            <element signature="e#13374#14273#0" expanded="false" />
           </folding>
         </state>
       </provider>

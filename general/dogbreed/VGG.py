@@ -275,13 +275,14 @@ def cnnnet(session):
         train_step = tf.train.AdamOptimizer(learnrate).minimize(cross_entropy)  # 调用优化器优化
         correct_prediction = tf.equal(tf.argmax(y_conv, 1), tf.argmax(y_, 1))
         accuracy = tf.reduce_mean(tf.cast(correct_prediction, "float"))
+    sess.run(tf.global_variables_initializer())  # 变量初始化
     return train_step,accuracy,cross_entropy,y_conv,vgg.fc2
 
 
 if __name__ == '__main__':
     sess = tf.Session()
     train_step,acc,loss,y_conv,fc2=cnnnet(sess)
-    sess.run(tf.global_variables_initializer()) # 变量初始化
+    # sess.run(tf.global_variables_initializer()) # 变量初始化
     #禁止向其中添加节点
     sess.graph.finalize()
     lens=dogbreed.lens
