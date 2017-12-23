@@ -6,6 +6,10 @@ import numpy as np #科学计算
 import scipy.io as sio
 from scipy.misc import imread, imresize
 
+root='../../../include_data/dogbreed/'
+batchsize=20
+lens=6001
+
 #从给定的csv文件里读出图片并resize，返回更新图片及其标签
 def read_img_to_mat(csvpath,imgpath,size=(224,224),savefile=True,savepath='./dataset/',batchsize=100):
     #载入数据
@@ -15,9 +19,9 @@ def read_img_to_mat(csvpath,imgpath,size=(224,224),savefile=True,savepath='./dat
     bread_name.sort()
     one_hot_len=len(bread_name)
 
-    # lens=len(labels_pd)
+    lens=len(labels_pd)
     #取十张看看
-    lens=200
+    # lens=200
     ktime=math.floor((lens-1)/batchsize)+1
     showtime=50
     #保存img及其labels
@@ -69,14 +73,14 @@ def read_img_to_mat(csvpath,imgpath,size=(224,224),savefile=True,savepath='./dat
 
     return lens,batchsize,ktime
 
-def getdata(batchnumber,savepath='./dataset/',batchsize=100,size=(224,224)):
-    #imgpath = '../../../include_data/train/'
-    imgpath='I:/学习/研一/机器视觉/课程设计-狗类别判定/train/train/'
+def getdata(batchnumber,savepath=root+'./dataset/',batchsize=100,size=(224,224)):
+    imgpath = '../../../include_data/train/'
+    # imgpath='I:/学习/研一/机器视觉/课程设计-狗类别判定/train/train/'
     csvpath = 'labels.csv'
     matfilename = 'dogbreed_' + str(batchnumber) + '_' + str(batchsize) + '.mat'
     realpath = savepath + matfilename
     if (os.path.isfile(realpath)==False):
-        lens, batchsize, ktime = read_img_to_mat(csvpath, imgpath,batchsize=batchsize,size=size)
+        lens, batchsize, ktime = read_img_to_mat(csvpath, imgpath,savepath=savepath,batchsize=batchsize,size=size)
         if batchnumber>ktime:
             print('the batch number called is out of index!')
             return None

@@ -170,6 +170,14 @@ def predata(file_path='./dataset/train.csv',savefile=True,savename='',savepath='
     #
     return data_test,label_test,data_train,label_train,passengerIdlist
 
+def savepredictcsv(passengerIdlist,predictedl,savename='test'):
+    result = pd.DataFrame(
+        {'PassengerId': passengerIdlist, 'Survived': predictedl.astype(np.int32)})
+    filesavename = './dataset/pre_'+savename+'.csv'
+    result.to_csv(filesavename, index=False)
+    print(result)
+    print("save csv file to %s" % filesavename)
+
 #回归树预测
 def RFC(file_path='./dataset/train.csv',savefile=True,savepath='./data',ratio=0):
     te, te_l, tr, tr_l = predata(file_path,savefile,savepath,ratio,predataflag=0)
@@ -214,12 +222,7 @@ def SVM(file_path='./dataset/train.csv',savefile=True,savepath='./data',ratio=0,
     svc.fit(tr, tr_l)
     predictedl = svc.predict(te)
     #保存结果
-    result = pd.DataFrame(
-        {'PassengerId': passengerIdlist, 'Survived': predictedl.astype(np.int32)})
-    filesavename='./dataset/pretest.csv'
-    result.to_csv(filesavename, index=False)
-    print(result)
-    print("save csv file to %s"%filesavename)
+    savepredictcsv(passengerIdlist,predictedl,'test')
     # res = te_l == predictedl
     # count = res[res == True].shape[0]
     # acc = count / len(res)
