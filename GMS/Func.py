@@ -1,7 +1,7 @@
 import numpy as np
 import scipy.signal as ss
 import math
-import matplotlib.pyplot as py
+# import matplotlib.pyplot as py
 
 def conv2withstride(m,filter,stride=(1,1),start=None,gridnum=20):
     tmp=ss.convolve2d(m,filter,'same',boundary='wrap')
