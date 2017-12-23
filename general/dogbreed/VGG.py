@@ -10,7 +10,7 @@
 # -*- coding:utf-8 -*-
 import tensorflow as tf
 import numpy as np
-from scipy.misc import imread, imresize
+from scipy.misc import imread, imresize,imshow
 from imagenet_classes import class_names
 import dogbreed
 
@@ -297,6 +297,8 @@ if __name__ == '__main__':
             # keep_prob表示神经元按概率失活，=1则表示跳过该步骤
             # train_accuracy = accuracy.eval(feed_dict={x: batch[0], y_: batch[1], keep_prob: 1.0})
             a,l,y,fc = sess.run([acc,loss,y_conv,fc2],feed_dict={x_images: imgs, y_: labels})
+            showfc=np.reshape(fc[0],2**6,2**6)
+            imshow(showfc)
             print('acc:', a,'loss:',l,'y_conv:',y,'fc2:',fc)
             # continue
 

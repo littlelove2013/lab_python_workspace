@@ -6,7 +6,7 @@ import scipy.io as sio
 import dogbreed
 learnrate=1e-4
 input=(224,224,3)
-fcin=25
+fcin=56
 
 def weight_variable(shape):
     initial = tf.truncated_normal(shape, stddev=0.1)  # 截断正态分布，此函数原型为尺寸、均值、标准差
