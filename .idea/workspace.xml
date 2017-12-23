@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26ac5d66-a343-4619-bd8d-f04266680f53" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/python_workspace.iml" afterPath="$PROJECT_DIR$/.idea/python_workspace.iml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/GMS/Func.py" afterPath="$PROJECT_DIR$/GMS/Func.py" />
-      <change beforePath="$PROJECT_DIR$/GMS/GMSwithMatrix.py" afterPath="$PROJECT_DIR$/GMS/GMSwithMatrix.py" />
-      <change beforePath="$PROJECT_DIR$/GMS/main.py" afterPath="$PROJECT_DIR$/GMS/main.py" />
+      <change beforePath="$PROJECT_DIR$/general/Titanic/data/Titanic_data_0_predataflag0.mat" afterPath="$PROJECT_DIR$/general/Titanic/data/Titanic_data_0_predataflag0.mat" />
+      <change beforePath="$PROJECT_DIR$/general/Titanic/data/Titanic_data_0_predataflag1.mat" afterPath="$PROJECT_DIR$/general/Titanic/data/Titanic_data_0_predataflag1.mat" />
+      <change beforePath="$PROJECT_DIR$/general/Titanic/dataset/.ipynb_checkpoints/数据预分析-checkpoint.ipynb" afterPath="$PROJECT_DIR$/general/Titanic/dataset/.ipynb_checkpoints/数据预分析-checkpoint.ipynb" />
+      <change beforePath="$PROJECT_DIR$/general/Titanic/dataset/数据预分析.ipynb" afterPath="$PROJECT_DIR$/general/Titanic/dataset/数据预分析.ipynb" />
+      <change beforePath="$PROJECT_DIR$/general/Titanic/predata.py" afterPath="$PROJECT_DIR$/general/Titanic/predata.py" />
       <change beforePath="$PROJECT_DIR$/general/dogbreed/VGG.py" afterPath="$PROJECT_DIR$/general/dogbreed/VGG.py" />
       <change beforePath="$PROJECT_DIR$/general/dogbreed/dataset/dogbreed_0_100.mat" afterPath="" />
       <change beforePath="$PROJECT_DIR$/general/dogbreed/dataset/dogbreed_0_20.mat" afterPath="" />
@@ -21,7 +21,6 @@
       <change beforePath="$PROJECT_DIR$/general/dogbreed/dataset/dogbreed_7_20.mat" afterPath="" />
       <change beforePath="$PROJECT_DIR$/general/dogbreed/dataset/dogbreed_8_20.mat" afterPath="" />
       <change beforePath="$PROJECT_DIR$/general/dogbreed/dataset/dogbreed_9_20.mat" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/general/dogbreed/dogbreed.py" afterPath="$PROJECT_DIR$/general/dogbreed/dogbreed.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -47,6 +46,7 @@
     <SUITE FILE_PATH="coverage/lab_python_workspace$Func.coverage" NAME="Func Coverage Results" MODIFIED="1513942904706" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$DataUtil.coverage" NAME="DataUtil Coverage Results" MODIFIED="1510482200802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/HSI" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$flappy_bird_utils.coverage" NAME="flappy_bird_utils Coverage Results" MODIFIED="1510311589521" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DQN/DRL-FlappiBird/game" />
+    <SUITE FILE_PATH="coverage/lab_python_workspace$predata.coverage" NAME="predata Coverage Results" MODIFIED="1514003878232" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/Titanic" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
@@ -84,16 +84,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GMSwithMatrix.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GMSwithMatrix.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GMS/GMSwithMatrix.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="70" column="100" lean-forward="true" selection-start-line="70" selection-start-column="100" selection-end-line="70" selection-end-column="100" />
+            <state relative-caret-position="201">
+              <caret line="78" column="13" lean-forward="true" selection-start-line="78" selection-start-column="13" selection-end-line="78" selection-end-column="13" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
                 <element signature="e#304#433#0" expanded="false" />
                 <element signature="e#2069#2341#0" expanded="false" />
                 <element signature="e#6973#13105#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="predata.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/general/Titanic/predata.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="217" column="37" lean-forward="false" selection-start-line="217" selection-start-column="37" selection-end-line="217" selection-end-column="37" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+                <element signature="e#471#529#0" expanded="false" />
+                <element signature="e#566#933#0" expanded="false" />
+                <element signature="e#979#1578#0" expanded="false" />
+                <element signature="e#4541#5405#0" expanded="false" />
+                <element signature="e#5459#7054#0" expanded="false" />
+                <element signature="e#7612#8109#0" expanded="false" />
+                <element signature="e#7838#8109#1" expanded="false" />
+                <element signature="e#8203#8716#0" expanded="false" />
+                <element signature="e#8804#8981#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -130,12 +151,14 @@
       <file leaf-file-name="VGG.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/general/dogbreed/VGG.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1501">
-              <caret line="287" column="11" lean-forward="false" selection-start-line="287" selection-start-column="11" selection-end-line="287" selection-end-column="11" />
+            <state relative-caret-position="85">
+              <caret line="260" column="85" lean-forward="false" selection-start-line="260" selection-start-column="85" selection-end-line="260" selection-end-column="85" />
               <folding>
                 <element signature="e#1288#10877#0" expanded="false" />
+                <element signature="e#10912#12738#0" expanded="false" />
                 <element signature="e#10974#11609#0" expanded="false" />
                 <element signature="e#12263#12738#0" expanded="false" />
+                <element signature="e#12795#13006#0" expanded="false" />
                 <element signature="e#12913#13006#0" expanded="false" />
               </folding>
             </state>
@@ -199,10 +222,11 @@
         <option value="$PROJECT_DIR$/HSI/DataUtil.py" />
         <option value="$PROJECT_DIR$/DQN/Qlearning/Qlearning.py" />
         <option value="$PROJECT_DIR$/general/dogbreed/dogbreed.py" />
-        <option value="$PROJECT_DIR$/general/dogbreed/VGG.py" />
         <option value="$PROJECT_DIR$/GMS/main.py" />
         <option value="$PROJECT_DIR$/GMS/Func.py" />
         <option value="$PROJECT_DIR$/GMS/GMSwithMatrix.py" />
+        <option value="$PROJECT_DIR$/general/dogbreed/VGG.py" />
+        <option value="$PROJECT_DIR$/general/Titanic/predata.py" />
       </list>
     </option>
   </component>
@@ -243,13 +267,33 @@
             <path>
               <item name="lab_python_workspace" type="b2602c69:ProjectViewProjectNode" />
               <item name="lab_python_workspace" type="462c0819:PsiDirectoryNode" />
-              <item name="GMS" type="462c0819:PsiDirectoryNode" />
+              <item name="general" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="lab_python_workspace" type="b2602c69:ProjectViewProjectNode" />
               <item name="lab_python_workspace" type="462c0819:PsiDirectoryNode" />
-              <item name="GMS" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="general" type="462c0819:PsiDirectoryNode" />
+              <item name="dogbreed" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lab_python_workspace" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lab_python_workspace" type="462c0819:PsiDirectoryNode" />
+              <item name="general" type="462c0819:PsiDirectoryNode" />
+              <item name="Titanic" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lab_python_workspace" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lab_python_workspace" type="462c0819:PsiDirectoryNode" />
+              <item name="general" type="462c0819:PsiDirectoryNode" />
+              <item name="Titanic" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lab_python_workspace" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lab_python_workspace" type="462c0819:PsiDirectoryNode" />
+              <item name="general" type="462c0819:PsiDirectoryNode" />
+              <item name="Titanic" type="462c0819:PsiDirectoryNode" />
+              <item name="dataset" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -287,7 +331,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.GMSwithMatrix">
+  <component name="RunManager" selected="Python.predata">
     <configuration name="Func" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -364,39 +408,39 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="predata" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/GMS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/general/Titanic" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="python_workspace" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GMS/main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/general/Titanic/predata.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.main" />
-      <item index="1" class="java.lang.String" itemvalue="Python.dogbreed" />
-      <item index="2" class="java.lang.String" itemvalue="Python.VGG" />
-      <item index="3" class="java.lang.String" itemvalue="Python.Func" />
-      <item index="4" class="java.lang.String" itemvalue="Python.GMSwithMatrix" />
+      <item index="0" class="java.lang.String" itemvalue="Python.dogbreed" />
+      <item index="1" class="java.lang.String" itemvalue="Python.VGG" />
+      <item index="2" class="java.lang.String" itemvalue="Python.Func" />
+      <item index="3" class="java.lang.String" itemvalue="Python.GMSwithMatrix" />
+      <item index="4" class="java.lang.String" itemvalue="Python.predata" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.GMSwithMatrix" />
-        <item index="1" class="java.lang.String" itemvalue="Python.Func" />
-        <item index="2" class="java.lang.String" itemvalue="Python.VGG" />
-        <item index="3" class="java.lang.String" itemvalue="Python.dogbreed" />
-        <item index="4" class="java.lang.String" itemvalue="Python.main" />
+        <item index="0" class="java.lang.String" itemvalue="Python.predata" />
+        <item index="1" class="java.lang.String" itemvalue="Python.GMSwithMatrix" />
+        <item index="2" class="java.lang.String" itemvalue="Python.Func" />
+        <item index="3" class="java.lang.String" itemvalue="Python.VGG" />
+        <item index="4" class="java.lang.String" itemvalue="Python.dogbreed" />
       </list>
     </recent_temporary>
   </component>
@@ -442,7 +486,14 @@
       <option name="project" value="LOCAL" />
       <updated>1510557030122</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="update GMS with convolve">
+      <created>1513995604129</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1513995604129</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -453,7 +504,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2016632" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24307692" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3846154" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39692307" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18202417" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -509,7 +560,8 @@
     <MESSAGE value="add general lecture code" />
     <MESSAGE value="add GMS model" />
     <MESSAGE value="update lab changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="update lab changes" />
+    <MESSAGE value="update GMS with convolve" />
+    <option name="LAST_COMMIT_MESSAGE" value="update GMS with convolve" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -567,24 +619,16 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/general/dogbreed/CNN_softmax.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/general/dogbreed/VGG.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1501">
           <caret line="287" column="11" lean-forward="false" selection-start-line="287" selection-start-column="11" selection-end-line="287" selection-end-column="11" />
           <folding>
             <element signature="e#1288#10877#0" expanded="false" />
+            <element signature="e#10912#12738#0" expanded="false" />
             <element signature="e#10974#11609#0" expanded="false" />
             <element signature="e#12263#12738#0" expanded="false" />
+            <element signature="e#12795#13006#0" expanded="false" />
             <element signature="e#12913#13006#0" expanded="false" />
           </folding>
         </state>
@@ -967,19 +1011,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/general/dogbreed/VGG.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1501">
-          <caret line="287" column="11" lean-forward="false" selection-start-line="287" selection-start-column="11" selection-end-line="287" selection-end-column="11" />
-          <folding>
-            <element signature="e#1288#10877#0" expanded="false" />
-            <element signature="e#10974#11609#0" expanded="false" />
-            <element signature="e#12263#12738#0" expanded="false" />
-            <element signature="e#12913#13006#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GMS/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
@@ -1023,13 +1054,47 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/GMS/GMSwithMatrix.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="70" column="100" lean-forward="true" selection-start-line="70" selection-start-column="100" selection-end-line="70" selection-end-column="100" />
+        <state relative-caret-position="201">
+          <caret line="78" column="13" lean-forward="true" selection-start-line="78" selection-start-column="13" selection-end-line="78" selection-end-column="13" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
             <element signature="e#304#433#0" expanded="false" />
             <element signature="e#2069#2341#0" expanded="false" />
             <element signature="e#6973#13105#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/general/dogbreed/VGG.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="260" column="85" lean-forward="false" selection-start-line="260" selection-start-column="85" selection-end-line="260" selection-end-column="85" />
+          <folding>
+            <element signature="e#1288#10877#0" expanded="false" />
+            <element signature="e#10912#12738#0" expanded="false" />
+            <element signature="e#10974#11609#0" expanded="false" />
+            <element signature="e#12263#12738#0" expanded="false" />
+            <element signature="e#12795#13006#0" expanded="false" />
+            <element signature="e#12913#13006#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/general/Titanic/predata.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="217" column="37" lean-forward="false" selection-start-line="217" selection-start-column="37" selection-end-line="217" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#471#529#0" expanded="false" />
+            <element signature="e#566#933#0" expanded="false" />
+            <element signature="e#979#1578#0" expanded="false" />
+            <element signature="e#4541#5405#0" expanded="false" />
+            <element signature="e#5459#7054#0" expanded="false" />
+            <element signature="e#7612#8109#0" expanded="false" />
+            <element signature="e#7838#8109#1" expanded="false" />
+            <element signature="e#8203#8716#0" expanded="false" />
+            <element signature="e#8804#8981#0" expanded="false" />
           </folding>
         </state>
       </provider>

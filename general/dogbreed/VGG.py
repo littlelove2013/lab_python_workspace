@@ -259,7 +259,6 @@ y_ = tf.placeholder(tf.float32, shape=[None, out])
 def cnnnet(session):
     learnrate = 1e-4
     vgg = vgg16(x_images, '../../../include_data/vgg_npz/vgg16_weights.npz', session)
-
     with tf.name_scope('softmax_layer') as scope:
         # 直接在这里取最后一层全连接，使用softmax，自己定义loss函数，进行训练
         sw = tf.Variable(tf.truncated_normal([4096, out],

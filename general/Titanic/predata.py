@@ -53,10 +53,11 @@ def set_missing_ages(data,featurelist):
 #ratio为取测试样本的比例
 #ratio=0则表示只取训练集，带标签
 #ratio=1则表示只取测试集，不带标签
-def predata(file_path='./dataset/train.csv',savefile=True,savepath='./data',ratio=0.2,predataflag=1):
+def predata(file_path='./dataset/train.csv',savefile=True,savename='',savepath='./data',ratio=0.2,predataflag=1):
     #读取
     # 载入数据,如果存在保存的数据，则直接载入保存数据
-    if savefile and os.path.exists(savepath + '/'+  'Titanic_data' + "_" + str(ratio)+'.mat') == True:
+    filesavename=savepath + '/'+ savename+ '_Titanic_data' + "_" + str(ratio)+'.mat'
+    if savefile and os.path.exists(filesavename) == True:
         #直接载入数据
         print('从已保存数据载入...')
         DataSetMat = sio.loadmat(savepath + '/'+  'Titanic_data' + "_" + str(ratio)+"_predataflag"+str(predataflag)+'.mat')
@@ -91,6 +92,13 @@ def predata(file_path='./dataset/train.csv',savefile=True,savepath='./data',rati
     data_pre.loc[(data_pre.Parch != 0), 'Parch'] = 1
     data_pre.loc[(data_pre.SibSp != 0), 'SibSp'] = 1
     # 对实数变量，缩放到0-1
+    #fare是票价，如果缺失，则用其所在Pclass的类别的Fare的均值填充
+    # 对缺失的Fare，用Pclass对应的mean补上
+    Fare_mean = [data_pre[data_pre.Pclass == 1]['Fare'].mean(), data_pre[data_pre.Pclass == 2]['Fare'].mean(),
+                 data_pre[data_pre.Pclass == 3]['Fare'].mean()]
+    Fare_mean = np.array(Fare_mean)
+    data_pre.loc[pd.isnull(data_pre.Fare), 'Fare'] = Fare_mean[data_pre[pd.isnull(data_pre.Fare)]['Pclass'].as_matrix() - 1]
+
     scaler = preprocessing.StandardScaler()
     fare_scale_param = scaler.fit(data_pre['Fare'])
     data_pre['Fare_scaled'] = scaler.fit_transform(data_pre['Fare'], fare_scale_param)
@@ -151,20 +159,20 @@ def predata(file_path='./dataset/train.csv',savefile=True,savepath='./data',rati
             label_test = []
             data_train = []
             label_train = []
-
+    passengerIdlist=data_pre['PassengerId'].as_matrix()
     if(savefile):
         if not os.path.exists(savepath):
             os.makedirs(savepath)
-        realPath = savepath + '/'+  'Titanic_data' + "_" + str(ratio)+"_predataflag"+str(predataflag)
-        filedict={'Te':data_test,'Te_l':label_test,'Tr':data_train,'Tr_l':label_train}
-        sio.savemat(realPath + '.mat',filedict)
-        print('数据已保存到%s'%(realPath))
+            # filesavename
+        filedict={'Te':data_test,'Te_l':label_test,'Tr':data_train,'Tr_l':label_train,'PassengerId':passengerIdlist}
+        sio.savemat(filesavename + '.mat',filedict)
+        print('数据已保存到%s'%(filesavename))
     #
-    return data_test,label_test,data_train,label_train
+    return data_test,label_test,data_train,label_train,passengerIdlist
 
 #回归树预测
 def RFC(file_path='./dataset/train.csv',savefile=True,savepath='./data',ratio=0):
-    te, te_l, tr, tr_l = predata(file_path,savefile,savepath,ratio)
+    te, te_l, tr, tr_l = predata(file_path,savefile,savepath,ratio,predataflag=0)
     rfr = RandomForestClassifier(random_state=0, n_estimators=2000, n_jobs=-1)
     print(cross_validation.cross_val_score(rfr, tr, tr_l, cv=5))
     '''
@@ -196,9 +204,28 @@ def KNN(file_path='./dataset/train.csv',savefile=True,savepath='./data',ratio=0)
     print(cross_validation.cross_val_score(knn, tr, tr_l, cv=5))
 
 def SVM(file_path='./dataset/train.csv',savefile=True,savepath='./data',ratio=0,predataflag=0):
-    te, te_l, tr, tr_l = predata(file_path, savefile, savepath, ratio,predataflag)
+    _, _, tr, tr_l,_ = predata(file_path, savefile,savename='train', savepath=savepath, ratio=0,predataflag=predataflag)
+    #取训练集
+    test_path='./dataset/test.csv'
+    te,_,_,_,passengerIdlist=predata(test_path, savefile,savename='test',savepath=savepath,ratio=1,predataflag=predataflag)
     svc = svm.SVC(C=1.0, kernel = 'rbf', degree = 3)
-    print(cross_validation.cross_val_score(svc, tr, tr_l, cv=5))
+    #print(cross_validation.cross_val_score(svc, tr, tr_l, cv=5))
+
+    svc.fit(tr, tr_l)
+    predictedl = svc.predict(te)
+    #保存结果
+    result = pd.DataFrame(
+        {'PassengerId': passengerIdlist, 'Survived': predictedl.astype(np.int32)})
+    filesavename='./dataset/pretest.csv'
+    result.to_csv(filesavename, index=False)
+    print(result)
+    print("save csv file to %s"%filesavename)
+    # res = te_l == predictedl
+    # count = res[res == True].shape[0]
+    # acc = count / len(res)
+    # print(te_l == predictedl, 'RandomForestClassifier is acc:%.4f,count:%d,total:%d' % (acc, count, len(res)))
 
 if __name__ == '__main__':
     SVM()
+    # test_path = './dataset/test.csv'
+    # te, _, _, _ = predata(test_path, savefile=True, savename='test', savepath='./data/', ratio=1, predataflag=0)
