@@ -138,8 +138,8 @@
       <file leaf-file-name="VGG.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/general/dogbreed/VGG.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="280" column="0" lean-forward="true" selection-start-line="280" selection-start-column="0" selection-end-line="280" selection-end-column="0" />
+            <state relative-caret-position="117">
+              <caret line="295" column="18" lean-forward="true" selection-start-line="295" selection-start-column="18" selection-end-line="295" selection-end-column="18" />
               <folding>
                 <element signature="e#824#847#0" expanded="true" />
                 <element signature="e#1295#10884#0" expanded="false" />
@@ -539,7 +539,14 @@
       <option name="project" value="LOCAL" />
       <updated>1514023113575</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="update VGG for network para">
+      <created>1514026308715</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1514026308715</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -612,7 +619,8 @@
     <MESSAGE value="update GMS plotshow:server con not show image" />
     <MESSAGE value="update VGG data format" />
     <MESSAGE value="update CNN for dogbreed data format" />
-    <option name="LAST_COMMIT_MESSAGE" value="update CNN for dogbreed data format" />
+    <MESSAGE value="update VGG for network para" />
+    <option name="LAST_COMMIT_MESSAGE" value="update VGG for network para" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1131,8 +1139,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/general/dogbreed/VGG.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="280" column="0" lean-forward="true" selection-start-line="280" selection-start-column="0" selection-end-line="280" selection-end-column="0" />
+        <state relative-caret-position="117">
+          <caret line="295" column="18" lean-forward="true" selection-start-line="295" selection-start-column="18" selection-end-line="295" selection-end-column="18" />
           <folding>
             <element signature="e#824#847#0" expanded="true" />
             <element signature="e#1295#10884#0" expanded="false" />

@@ -298,9 +298,9 @@ if __name__ == '__main__':
             # keep_prob表示神经元按概率失活，=1则表示跳过该步骤
             # train_accuracy = accuracy.eval(feed_dict={x: batch[0], y_: batch[1], keep_prob: 1.0})
             a,l,y,fc = sess.run([acc,loss,y_conv,fc2],feed_dict={x_images: imgs, y_: labels})
-            showfc=np.reshape(fc[0],2**6,2**6)
-            imshow(showfc)
-            print('acc:', a,'loss:',l,'y_conv:',y,'fc2:',fc)
+            # showfc=np.reshape(fc[0],2**6,2**6)
+            # imshow(showfc)
+            print('acc:', a,'i:',i,'loss:',l,'\ny_conv:',y,'fc2:',fc)
             # continue
 
     # print("test accuracy %g" % accuracy.eval(feed_dict={x: mnist.test.images[0:500], y_: mnist.test.labels[0:500], keep_prob: 1.0}))
