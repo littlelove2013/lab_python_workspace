@@ -233,7 +233,7 @@ class vgg16:
                                  trainable=True, name='biases')
             fc2l = tf.nn.bias_add(tf.matmul(self.fc1, fc2w), fc2b)
             # self.fc2 = tf.nn.relu(fc2l)
-            self.fc2 = tf.nn.sigmoid(fc2l)
+            self.fc2 = tf.nn.relu(fc2l)
             self.parameters += [fc2w, fc2b]
 
         # fc3

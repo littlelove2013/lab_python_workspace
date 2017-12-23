@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26ac5d66-a343-4619-bd8d-f04266680f53" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/general/dogbreed/VGG_bate1.py" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/general/dogbreed/VGG_bate1.py" afterPath="$PROJECT_DIR$/general/dogbreed/VGG_bate1.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -144,12 +144,11 @@
       <file leaf-file-name="VGG_bate1.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/general/dogbreed/VGG_bate1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="103">
-              <caret line="270" column="36" lean-forward="true" selection-start-line="270" selection-start-column="36" selection-end-line="270" selection-end-column="36" />
+            <state relative-caret-position="160">
+              <caret line="272" column="36" lean-forward="true" selection-start-line="272" selection-start-column="36" selection-end-line="272" selection-end-column="36" />
               <folding>
                 <element signature="e#1295#10884#0" expanded="false" />
-                <element signature="e#10919#12790#0" expanded="false" />
-                <element signature="e#12847#13058#0" expanded="false" />
+                <element signature="e#12844#13055#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -219,6 +218,7 @@
         <option value="$PROJECT_DIR$/general/dogbreed/CNN.py" />
         <option value="$PROJECT_DIR$/general/dogbreed/dogbreed.py" />
         <option value="$PROJECT_DIR$/general/dogbreed/VGG.py" />
+        <option value="$PROJECT_DIR$/general/dogbreed/VGG_bate1.py" />
       </list>
     </option>
   </component>
@@ -568,7 +568,14 @@
       <option name="project" value="LOCAL" />
       <updated>1514029139509</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="update VGG_bate1">
+      <created>1514030650283</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1514030650283</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -643,7 +650,8 @@
     <MESSAGE value="update CNN for dogbreed data format" />
     <MESSAGE value="update VGG for network para" />
     <MESSAGE value="update dogbreed and VGG for normlized data" />
-    <option name="LAST_COMMIT_MESSAGE" value="update dogbreed and VGG for normlized data" />
+    <MESSAGE value="update VGG_bate1" />
+    <option name="LAST_COMMIT_MESSAGE" value="update VGG_bate1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1165,12 +1173,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/general/dogbreed/VGG_bate1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="270" column="36" lean-forward="true" selection-start-line="270" selection-start-column="36" selection-end-line="270" selection-end-column="36" />
+        <state relative-caret-position="160">
+          <caret line="272" column="36" lean-forward="true" selection-start-line="272" selection-start-column="36" selection-end-line="272" selection-end-column="36" />
           <folding>
             <element signature="e#1295#10884#0" expanded="false" />
-            <element signature="e#10919#12790#0" expanded="false" />
-            <element signature="e#12847#13058#0" expanded="false" />
+            <element signature="e#12844#13055#0" expanded="false" />
           </folding>
         </state>
       </provider>
