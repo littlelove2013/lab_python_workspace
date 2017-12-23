@@ -30,7 +30,7 @@ def index2value(index,shape):
 
 #imagesc
 def imagesc(matrix,title=None,savefile=True,savepath='./dataset/',ShowDebug=True):
-    if ShowDebug:
+    if 0:
         r,c=matrix.shape
         py.imshow(matrix,extent=[0,r,0,c])
         if title!=None:
