@@ -272,8 +272,7 @@ def cnnnet(session):
         # softmax多分类器
         y_conv = tf.nn.softmax(fc3l)
         # 防止在0log(0)出现Nan
-        cross_entropy = tf.reduce_mean(
-                -tf.reduce_sum(y_ * tf.log(tf.clip_by_value(y_conv, 1e-10, 1.0)), reduction_indices=[1]))  # 定义交叉熵为loss函数
+        cross_entropy = -tf.reduce_sum(y_ * tf.log(tf.clip_by_value(y_conv, 1e-10, 1.0)))  # 定义交叉熵为loss函数
         train_step = tf.train.AdamOptimizer(learnrate).minimize(cross_entropy)  # 调用优化器优化
         correct_prediction = tf.equal(tf.argmax(y_conv, 1), tf.argmax(y_, 1))
         accuracy = tf.reduce_mean(tf.cast(correct_prediction, "float"))
