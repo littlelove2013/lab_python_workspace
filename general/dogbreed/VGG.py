@@ -29,7 +29,7 @@ class vgg16:
         # zero-mean input
         with tf.name_scope('preprocess') as scope:
             mean = tf.constant([123.68, 116.779, 103.939], dtype=tf.float32, shape=[1, 1, 1, 3], name='img_mean')
-            images = self.imgs#-mean
+            images = self.imgs-mean
 
         # conv1_1
         with tf.name_scope('conv1_1') as scope:
@@ -232,7 +232,8 @@ class vgg16:
             fc2b = tf.Variable(tf.constant(1.0, shape=[4096], dtype=tf.float32),
                                  trainable=True, name='biases')
             fc2l = tf.nn.bias_add(tf.matmul(self.fc1, fc2w), fc2b)
-            self.fc2 = tf.nn.relu(fc2l)
+            # self.fc2 = tf.nn.relu(fc2l)
+            self.fc2 = tf.nn.sigmoid(fc2l)
             self.parameters += [fc2w, fc2b]
 
         # fc3

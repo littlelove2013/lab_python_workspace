@@ -139,16 +139,16 @@
       <file leaf-file-name="VGG.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/general/dogbreed/VGG.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="79">
-              <caret line="25" column="25" lean-forward="true" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+            <state relative-caret-position="98">
+              <caret line="260" column="20" lean-forward="true" selection-start-line="260" selection-start-column="20" selection-end-line="260" selection-end-column="20" />
               <folding>
                 <element signature="e#824#847#0" expanded="true" />
-                <element signature="e#10920#12746#0" expanded="false" />
-                <element signature="e#10982#11617#0" expanded="false" />
-                <element signature="e#12271#12746#0" expanded="false" />
-                <element signature="e#12803#13014#0" expanded="false" />
-                <element signature="e#12921#13014#0" expanded="false" />
-                <element signature="e#13375#14274#0" expanded="false" />
+                <element signature="e#1295#10884#0" expanded="false" />
+                <element signature="e#10981#11616#0" expanded="false" />
+                <element signature="e#12315#12790#0" expanded="false" />
+                <element signature="e#12847#13058#0" expanded="false" />
+                <element signature="e#12965#13058#0" expanded="false" />
+                <element signature="e#13419#14318#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -157,11 +157,11 @@
       <file leaf-file-name="dogbreed.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/general/dogbreed/dogbreed.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="53" column="41" lean-forward="false" selection-start-line="53" selection-start-column="41" selection-end-line="53" selection-end-column="41" />
+            <state relative-caret-position="-133">
+              <caret line="55" column="37" lean-forward="true" selection-start-line="55" selection-start-column="37" selection-end-line="55" selection-end-column="37" />
               <folding>
                 <element signature="e#24#35#0" expanded="true" />
-                <element signature="e#2634#3215#0" expanded="false" />
+                <element signature="e#2642#3223#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -552,7 +552,14 @@
       <option name="project" value="LOCAL" />
       <updated>1514026593592</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="update dogbreed and VGG for normlized data">
+      <created>1514027633878</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1514027633878</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -626,7 +633,8 @@
     <MESSAGE value="update VGG data format" />
     <MESSAGE value="update CNN for dogbreed data format" />
     <MESSAGE value="update VGG for network para" />
-    <option name="LAST_COMMIT_MESSAGE" value="update VGG for network para" />
+    <MESSAGE value="update dogbreed and VGG for normlized data" />
+    <option name="LAST_COMMIT_MESSAGE" value="update dogbreed and VGG for normlized data" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -685,7 +693,7 @@
           <caret line="84" column="0" lean-forward="false" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
           <folding>
             <element signature="e#24#35#0" expanded="true" />
-            <element signature="e#2634#3215#0" expanded="false" />
+            <element signature="e#2642#3223#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1132,27 +1140,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/general/dogbreed/dogbreed.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="53" column="41" lean-forward="false" selection-start-line="53" selection-start-column="41" selection-end-line="53" selection-end-column="41" />
+        <state relative-caret-position="-133">
+          <caret line="55" column="37" lean-forward="true" selection-start-line="55" selection-start-column="37" selection-end-line="55" selection-end-column="37" />
           <folding>
             <element signature="e#24#35#0" expanded="true" />
-            <element signature="e#2634#3215#0" expanded="false" />
+            <element signature="e#2642#3223#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/general/dogbreed/VGG.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="25" column="25" lean-forward="true" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+        <state relative-caret-position="98">
+          <caret line="260" column="20" lean-forward="true" selection-start-line="260" selection-start-column="20" selection-end-line="260" selection-end-column="20" />
           <folding>
             <element signature="e#824#847#0" expanded="true" />
-            <element signature="e#10920#12746#0" expanded="false" />
-            <element signature="e#10982#11617#0" expanded="false" />
-            <element signature="e#12271#12746#0" expanded="false" />
-            <element signature="e#12803#13014#0" expanded="false" />
-            <element signature="e#12921#13014#0" expanded="false" />
-            <element signature="e#13375#14274#0" expanded="false" />
+            <element signature="e#1295#10884#0" expanded="false" />
+            <element signature="e#10981#11616#0" expanded="false" />
+            <element signature="e#12315#12790#0" expanded="false" />
+            <element signature="e#12847#13058#0" expanded="false" />
+            <element signature="e#12965#13058#0" expanded="false" />
+            <element signature="e#13419#14318#0" expanded="false" />
           </folding>
         </state>
       </provider>

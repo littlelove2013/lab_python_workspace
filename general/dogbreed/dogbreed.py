@@ -49,11 +49,11 @@ def read_img_to_mat(csvpath,imgpath,size=(224,224),savefile=True,savepath='./dat
             file_path=imgpath+idx+'.jpg'
             img=imread(file_path, mode='RGB')#获取0,1之间的数
             img=imresize(img,size)
-            img=np.asarray(img, np.float32)
+            # img=np.asarray(img, np.float32)
             #对img做0均值单位方差
-            mu = np.array([img[:, :, 0].mean(), img[:, :, 1].mean(), img[:, :, 2].mean()])
-            stds = np.array([img[:, :, 0].std(), img[:, :, 1].std(), img[:, :, 2].std()])
-            img = (img - mu) / stds
+            # mu = np.array([img[:, :, 0].mean(), img[:, :, 1].mean(), img[:, :, 2].mean()])
+            # stds = np.array([img[:, :, 0].std(), img[:, :, 1].std(), img[:, :, 2].std()])
+            # img = (img - mu) / stds
             # if i % showtime == 0:
             #     print("img mean:(%.4f,%.4f,%.4f) and std:(%.4f,%.4f,%.4f)"
             #           % (img[:, :, 0].mean(), img[:, :, 1].mean(), img[:, :, 2].mean(), img[:, :, 0].std(),
