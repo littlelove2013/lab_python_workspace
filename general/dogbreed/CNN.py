@@ -3,8 +3,9 @@ import numpy as np
 import scipy.io as sio
 #import input_data
 #mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
+import dogbreed
 learnrate=1e-4
-input=(100,100,3)
+input=(224,224,3)
 fcin=25
 
 def weight_variable(shape):
@@ -79,13 +80,13 @@ sess = tf.InteractiveSession()
 #sess.run(tf.initialize_all_variables())
 sess.run(tf.global_variables_initializer())
 
-dataroot='./dataset/'
-lens=10
-batchsize=50
+dataroot=dogbreed.root
+lens=dogbreed.lens
+batchsize=dogbreed.batchsize
 testshow=1
-for i in range(4):
+for i in range(lens):
     print('trainning step %d(in %d) with batchsize=%d'%((i+1),lens,batchsize))
-    dogbreed=sio.loadmat(dataroot+'dogbreed_'+str(i)+'_'+str(batchsize)+'.mat')
+    dogbreed=dogbreed.getdata(i,batchsize=batchsize)
     images=dogbreed['images']
     labels = dogbreed['labels']
     # batch = mnist.train.next_batch(50)
@@ -97,7 +98,7 @@ for i in range(4):
         y_convsee,loss,train_accuracy,bf = sess.run([y_conv,cross_entropy,accuracy,b_fc1],feed_dict={x_image: images, y_: labels, keep_prob: 1.0})
         print("step %d, training accuracy：" % ((i+1)), train_accuracy)
         print("step %d, loss:%.4f,\nbfc1:" % ((i + 1),loss), bf)
-        print('y_conv:',y_convsee)
+        # print('y_conv:',y_convsee)
         # continue
 
 
