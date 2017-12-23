@@ -43,9 +43,9 @@ def read_img_to_mat(csvpath,imgpath,size=(224,224),savefile=True,savepath='./dat
             one_hot=np.zeros([one_hot_len])
             one_hot[id_label]=1
             file_path=imgpath+idx+'.jpg'
-            img=imread(file_path)#获取0,1之间的数
+            img=imread(file_path, mode='RGB')#获取0,1之间的数
             img=imresize(img,size)
-            img=np.asarray(img, np.float32)
+            # img=np.asarray(img, np.float32)
             #对img做0均值单位方差
             # mu = np.array([img[:, :, 0].mean(), img[:, :, 1].mean(), img[:, :, 2].mean()])
             # stds = np.array([img[:, :, 0].std(), img[:, :, 1].std(), img[:, :, 2].std()])
@@ -57,7 +57,7 @@ def read_img_to_mat(csvpath,imgpath,size=(224,224),savefile=True,savepath='./dat
 
             images.append(img)
             labels.append(one_hot)
-        images=np.asarray(images,np.float32)
+        images=np.asarray(images)
         #对images的三通道做0均值单位方差归一化
 
         labels=np.asarray(labels,np.int32)
@@ -70,7 +70,8 @@ def read_img_to_mat(csvpath,imgpath,size=(224,224),savefile=True,savepath='./dat
     return lens,batchsize,ktime
 
 def getdata(batchnumber,savepath='./dataset/',batchsize=100,size=(224,224)):
-    imgpath = '../../../include_data/train/'
+    #imgpath = '../../../include_data/train/'
+    imgpath='I:/学习/研一/机器视觉/课程设计-狗类别判定/train/train/'
     csvpath = 'labels.csv'
     matfilename = 'dogbreed_' + str(batchnumber) + '_' + str(batchsize) + '.mat'
     realpath = savepath + matfilename
@@ -84,7 +85,7 @@ def getdata(batchnumber,savepath='./dataset/',batchsize=100,size=(224,224)):
 
     #return train
 def main():
-    batchsize=20
+    batchsize=10
     file0=getdata(0,batchsize=batchsize)
     imgs = file0['images']
     labels = file0['labels']

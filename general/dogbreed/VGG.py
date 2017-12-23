@@ -285,9 +285,9 @@ if __name__ == '__main__':
     sess.run(tf.global_variables_initializer()) # 变量初始化
     #禁止向其中添加节点
     sess.graph.finalize()
-    lens=10
+    lens=20
     for i in range(lens):
-        data = dogbreed.getdata(i,batchsize=20)
+        data = dogbreed.getdata(i,batchsize=10)
         imgs=data['images']
         labels=data['labels']
         #train_step,acc=cnnnet(sess)
