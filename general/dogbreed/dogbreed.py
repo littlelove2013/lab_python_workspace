@@ -7,8 +7,8 @@ import scipy.io as sio
 from scipy.misc import imread, imresize
 
 root='../../../include_data/dogbreed/'
-batchsize=20
-lens=6001
+batchsize=50
+lens=int(12000/batchsize)
 
 #从给定的csv文件里读出图片并resize，返回更新图片及其标签
 def read_img_to_mat(csvpath,imgpath,size=(224,224),savefile=True,savepath='./dataset/',batchsize=100):
