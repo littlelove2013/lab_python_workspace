@@ -13,6 +13,7 @@ import numpy as np
 from scipy.misc import imread, imresize,imshow
 from imagenet_classes import class_names
 import dogbreed
+import os
 
 class vgg16:
     def __init__(self, imgs, weights=None, sess=None):
@@ -230,7 +231,7 @@ class vgg16:
                                                          dtype=tf.float32,
                                                          stddev=1e-1), name='weights',trainable=False)
             fc2b = tf.Variable(tf.constant(1.0, shape=[4096], dtype=tf.float32),
-                                 trainable=False, name='biases')
+                                 trainable=True, name='biases')#可训练第2层
             fc2l = tf.nn.bias_add(tf.matmul(self.fc1, fc2w), fc2b)
             # self.fc2 = tf.nn.relu(fc2l)
             self.fc2 = tf.nn.relu(fc2l)
@@ -254,12 +255,13 @@ class vgg16:
             sess.run(self.parameters[i].assign(weights[k]))
 
 out=120
-x_images = tf.placeholder(tf.float32, [None, 224, 224, 3])
+#存name。模型可取出
+x_images = tf.placeholder(tf.float32, [None, 224, 224, 3],name='input_x')
 # y_ = tf.placeholder(tf.float32, [None, 224, 224, 3])
-y_ = tf.placeholder(tf.float32, shape=[None, out])
+y_ = tf.placeholder(tf.float32, shape=[None, out],name='input_y')
 def cnnnet(session):
     learnrate = 1e-4
-    vgg = vgg16(x_images, '../../../include_data/vgg_npz/vgg16_weights.npz', session)
+    vgg = vgg16(x_images)
     with tf.name_scope('softmax_layer') as scope:
         # 直接在这里取最后一层全连接，使用softmax，自己定义loss函数，进行训练
         sw = tf.Variable(tf.truncated_normal([4096, out],
@@ -276,20 +278,39 @@ def cnnnet(session):
         train_step = tf.train.AdamOptimizer(learnrate).minimize(cross_entropy)  # 调用优化器优化
         correct_prediction = tf.equal(tf.argmax(y_conv, 1), tf.argmax(y_, 1))
         accuracy = tf.reduce_mean(tf.cast(correct_prediction, "float"))
-    sess.run(tf.global_variables_initializer())  # 变量初始化
-    vgg.load_weights('../../../include_data/vgg_npz/vgg16_weights.npz', sess)
-    return train_step,accuracy,cross_entropy,y_conv,vgg.fc2
+        #保存参数到集合，方便模型取出
+        tf.add_to_collection('pred_network', y_conv)
+        tf.add_to_collection('accuracy', accuracy)
+        tf.add_to_collection('loss', cross_entropy)
+    # sess.run(tf.global_variables_initializer())  # 变量初始化
+    # vgg.load_weights('../../../include_data/vgg_npz/vgg16_weights.npz', sess)
+    return train_step,accuracy,cross_entropy,y_conv,vgg
 
 
 if __name__ == '__main__':
+    root = dogbreed.root
+    # 模型保存加载工具
+    saver = tf.train.Saver()
+    # 判断模型保存路径是否存在，不存在就创建
+    savefilepath=root+'modelsave/'
+    if not os.path.exists(savefilepath):
+        os.mkdir(savefilepath)
+        # 初始化
     sess = tf.Session()
-    train_step,acc,loss,y_conv,fc2=cnnnet(sess)
+    train_step,acc,loss,y_conv,vgg=cnnnet(sess)
+    if os.path.exists(savefilepath+'/checkpoint'):  # 判断模型是否存在
+        saver.restore(sess, tf.train.latest_checkpoint(savefilepath))  # 存在就从模型中恢复变量
+    else:
+        init = tf.global_variables_initializer()  # 不存在就初始化变量
+        sess.run(init)
+        #载入VGG的权重参数，进行训练
+        vgg.load_weights('../../../include_data/vgg_npz/vgg16_weights.npz', sess)
     # sess.run(tf.global_variables_initializer()) # 变量初始化
-    #禁止向其中添加节点
-    sess.graph.finalize()
+
     lens=dogbreed.lens
     batchsize=dogbreed.batchsize
     trainnum=10
+    saveparatime = 200#做200次训练就保存一次参数
     for iter in range(trainnum):
         #每次初始化一个batch序列
         batchlist=np.arange(0,lens)
@@ -299,20 +320,17 @@ if __name__ == '__main__':
             data = dogbreed.getdata(batchlist[i],batchsize=batchsize)
             imgs=data['images']
             labels=data['labels']
-            #train_step,acc=cnnnet(sess)
-            sess.run(train_step,feed_dict={x_images: imgs, y_: labels})
-            testshow=1
-            if (i + 1) % testshow == 0:
-                # keep_prob表示神经元按概率失活，=1则表示跳过该步骤
-                # train_accuracy = accuracy.eval(feed_dict={x: batch[0], y_: batch[1], keep_prob: 1.0})
-                a,l,y,fc = sess.run([acc,loss,y_conv,fc2],feed_dict={x_images: imgs, y_: labels})
-                # showfc=np.reshape(fc[0],2**6,2**6)
-                # imshow(showfc)
+            if (iter*lens+ i + 1) % saveparatime == 0:
+                a,l,y,fc = sess.run([acc,loss,y_conv,vgg.fc2],feed_dict={x_images: imgs, y_: labels})
                 print('acc:', a,'i:',i,'loss:',l)#,'\ny_conv:',y,'fc2:',fc)
-                # continue
+                #保存模型和参数
+                save_path = saver.save(sess, savefilepath+"dogbreed.model", global_step=(i + 1))
+            #训练
+            sess.run(train_step, feed_dict={x_images: imgs, y_: labels})
+
 
     # print("test accuracy %g" % accuracy.eval(feed_dict={x: mnist.test.images[0:500], y_: mnist.test.labels[0:500], keep_prob: 1.0}))
-    print("test accuracy %g" % sess.run(acc,feed_dict={x_images: imgs, y_: labels}))
+    # print("test accuracy %g" % sess.run(acc,feed_dict={x_images: imgs, y_: labels}))
     # img1 = imread('laska.png', mode='RGB')
     # img1 = imresize(img1, (224, 224))
     #prob = sess.run(vgg.probs, feed_dict={vgg.imgs: imgs})[0]
