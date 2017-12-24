@@ -259,7 +259,7 @@ out=120
 x_images = tf.placeholder(tf.float32, [None, 224, 224, 3],name='input_x')
 # y_ = tf.placeholder(tf.float32, [None, 224, 224, 3])
 y_ = tf.placeholder(tf.float32, shape=[None, out],name='input_y')
-def cnnnet(session):
+def cnnnet():
     learnrate = 1e-4
     vgg = vgg16(x_images)
     with tf.name_scope('softmax_layer') as scope:
@@ -288,6 +288,8 @@ def cnnnet(session):
 
 
 if __name__ == '__main__':
+    #载入网络结构
+    train_step,acc,loss,y_conv,vgg=cnnnet()
     root = dogbreed.root
     # 模型保存加载工具
     saver = tf.train.Saver()
@@ -297,7 +299,6 @@ if __name__ == '__main__':
         os.mkdir(savefilepath)
         # 初始化
     sess = tf.Session()
-    train_step,acc,loss,y_conv,vgg=cnnnet(sess)
     if os.path.exists(savefilepath+'/checkpoint'):  # 判断模型是否存在
         saver.restore(sess, tf.train.latest_checkpoint(savefilepath))  # 存在就从模型中恢复变量
     else:

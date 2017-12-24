@@ -94,8 +94,8 @@
       <file leaf-file-name="VGG_beta3.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/general/dogbreed/VGG_beta3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="320" column="31" lean-forward="true" selection-start-line="320" selection-start-column="31" selection-end-line="320" selection-end-column="31" />
+            <state relative-caret-position="193">
+              <caret line="293" column="14" lean-forward="true" selection-start-line="293" selection-start-column="14" selection-end-line="293" selection-end-column="14" />
               <folding>
                 <element signature="e#824#847#0" expanded="true" />
                 <element signature="e#999#13343#0" expanded="false" />
@@ -103,8 +103,8 @@
                 <element signature="e#1305#11115#0" expanded="false" />
                 <element signature="e#11212#11864#0" expanded="false" />
                 <element signature="e#12583#13075#0" expanded="false" />
-                <element signature="e#13586#14961#0" expanded="false" />
-                <element signature="e#15170#15206#0" expanded="false" />
+                <element signature="e#13579#14954#0" expanded="false" />
+                <element signature="e#15219#15255#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -604,7 +604,14 @@
       <option name="project" value="LOCAL" />
       <updated>1514080924454</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="update VGG_bate3 with saver model and weights">
+      <created>1514081013417</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1514081013417</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1237,8 +1244,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/general/dogbreed/VGG_beta3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="320" column="31" lean-forward="true" selection-start-line="320" selection-start-column="31" selection-end-line="320" selection-end-column="31" />
+        <state relative-caret-position="193">
+          <caret line="293" column="14" lean-forward="true" selection-start-line="293" selection-start-column="14" selection-end-line="293" selection-end-column="14" />
           <folding>
             <element signature="e#824#847#0" expanded="true" />
             <element signature="e#999#13343#0" expanded="false" />
@@ -1246,8 +1253,8 @@
             <element signature="e#1305#11115#0" expanded="false" />
             <element signature="e#11212#11864#0" expanded="false" />
             <element signature="e#12583#13075#0" expanded="false" />
-            <element signature="e#13586#14961#0" expanded="false" />
-            <element signature="e#15170#15206#0" expanded="false" />
+            <element signature="e#13579#14954#0" expanded="false" />
+            <element signature="e#15219#15255#0" expanded="false" />
           </folding>
         </state>
       </provider>
