@@ -29,7 +29,7 @@ def save2vsc(Idlist,dogbreedlist,labels,savepath='./dataset/',savename='test'):
     # print(result)
     print("save csv file to %s" % filesavename)
 #获取所有test文件的name列表和id列表
-def gettestname(testpath):
+def gettestname(testpath=test):
     #获取testid
     testid = listdir(test, 'jpg')
     # print(testid)
@@ -50,7 +50,6 @@ def gettestname(testpath):
     # labels=labels/summ.reshape(summ.size,1)
     # save2vsc(Idlist,dogbreedlist,labels)
     return Idlist,dogbreedlist
-
 
 
 if __name__ == '__main__':
