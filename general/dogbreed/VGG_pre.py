@@ -4,7 +4,7 @@ from scipy.misc import imread, imresize,imshow
 # from imagenet_classes import class_names
 import dogbreed
 import os
-import savelabeltocsv as sl
+import savelabeltocvs as sl
 
 #载入VGG模型并预测test
 def VGG_pre():
