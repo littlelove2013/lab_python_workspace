@@ -6,6 +6,7 @@ import scipy.io as sio
 import pandas as pd #数据分析
 
 root="../../../include_data/"
+# root='I:\学习\研一\机器视觉\课程设计-狗类别判定/test/'
 test=root+'test/'
 
 #获取文件id列表
