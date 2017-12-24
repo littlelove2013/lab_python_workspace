@@ -300,8 +300,11 @@ if __name__ == '__main__':
         # 初始化
     sess = tf.Session()
     if os.path.exists(savefilepath+'/checkpoint'):  # 判断模型是否存在
+        print('restore weigthes from checkpoint!')
         saver.restore(sess, tf.train.latest_checkpoint(savefilepath))  # 存在就从模型中恢复变量
+        print('restore successful!')
     else:
+        print('init weigthes!')
         init = tf.global_variables_initializer()  # 不存在就初始化变量
         sess.run(init)
         #载入VGG的权重参数，进行训练
@@ -311,7 +314,7 @@ if __name__ == '__main__':
     lens=dogbreed.lens
     batchsize=dogbreed.batchsize
     trainnum=10
-    saveparatime = 50#做50次训练就保存一次参数
+    saveparatime = 2#做50次训练就保存一次参数
     for iter in range(trainnum):
         #每次初始化一个batch序列
         batchlist=np.arange(0,lens)
