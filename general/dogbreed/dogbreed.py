@@ -74,7 +74,7 @@ def read_img_to_mat(csvpath,imgpath,size=(224,224),savefile=True,savepath='./dat
 
     return lens,batchsize,ktime
 
-def getdata(batchnumber,savepath=root+'./dataset/',batchsize=100,size=(224,224)):
+def getdata(batchnumber,savepath=root+'dataset/',batchsize=100,size=(224,224)):
     imgpath = '../../../include_data/train/'
     # imgpath='I:/学习/研一/机器视觉/课程设计-狗类别判定/train/train/'
     csvpath = 'labels.csv'
@@ -124,7 +124,7 @@ def read_testimg_to_mat(imgpath,size=(224,224),savefile=True,savepath='./testdat
 
     return lens, batchsize, ktime
 
-def gettest(batchnumber,savepath=root+'./testdataset/',batchsize=100,size=(224,224)):
+def gettest(batchnumber,savepath=root+'testdataset/',batchsize=100,size=(224,224)):
     imgpath = '../../../include_data/test/'
     # imgpath='I:/学习/研一/机器视觉/课程设计-狗类别判定/train/train/'
     # 获取测试图片名
@@ -141,7 +141,6 @@ def gettest(batchnumber,savepath=root+'./testdataset/',batchsize=100,size=(224,2
 
     #return train
 def main():
-    batchsize=10
     file0=getdata(0,batchsize=batchsize)
     imgs = file0['images']
     labels = file0['labels']
