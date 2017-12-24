@@ -9,7 +9,8 @@ import savelabeltocvs as sl
 
 root='../../../include_data/dogbreed/'
 batchsize=50
-lens=int(10222/batchsize)
+lens=math.ceil(10222/batchsize)
+testlens=math.ceil(10357/batchsize)
 
 #从给定的csv文件里读出图片并resize，返回更新图片及其标签
 def read_img_to_mat(csvpath,imgpath,size=(224,224),savefile=True,savepath='./dataset/',batchsize=100):
