@@ -5,7 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/general/dogbreed/VGG_beta3.py" afterPath="$PROJECT_DIR$/general/dogbreed/VGG_beta3.py" />
       <change beforePath="$PROJECT_DIR$/general/dogbreed/dogbreed.py" afterPath="$PROJECT_DIR$/general/dogbreed/dogbreed.py" />
-      <change beforePath="$PROJECT_DIR$/tensorflow/CNN_test.py" afterPath="$PROJECT_DIR$/tensorflow/CNN_test.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -34,8 +33,8 @@
     <SUITE FILE_PATH="coverage/lab_python_workspace$testCNNfrommodel.coverage" NAME="testCNNfrommodel Coverage Results" MODIFIED="1514078724509" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tensorflow" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$VGG.coverage" NAME="VGG Coverage Results" MODIFIED="1513939759432" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/dogbreed" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$Func.coverage" NAME="Func Coverage Results" MODIFIED="1514012316775" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
-    <SUITE FILE_PATH="coverage/lab_python_workspace$CNN_test.coverage" NAME="CNN_test Coverage Results" MODIFIED="1514086486926" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tensorflow" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$VGG_beta3.coverage" NAME="VGG_beta3 Coverage Results" MODIFIED="1514088761216" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/dogbreed" />
+    <SUITE FILE_PATH="coverage/lab_python_workspace$CNN_test.coverage" NAME="CNN_test Coverage Results" MODIFIED="1514089269082" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tensorflow" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$DataUtil.coverage" NAME="DataUtil Coverage Results" MODIFIED="1510482200802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/HSI" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$flappy_bird_utils.coverage" NAME="flappy_bird_utils Coverage Results" MODIFIED="1510311589521" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DQN/DRL-FlappiBird/game" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$predata.coverage" NAME="predata Coverage Results" MODIFIED="1514003878232" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/Titanic" />
@@ -97,8 +96,8 @@
       <file leaf-file-name="VGG_beta3.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/general/dogbreed/VGG_beta3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="302" column="50" lean-forward="true" selection-start-line="302" selection-start-column="50" selection-end-line="302" selection-end-column="50" />
+            <state relative-caret-position="114">
+              <caret line="298" column="30" lean-forward="true" selection-start-line="298" selection-start-column="30" selection-end-line="298" selection-end-column="30" />
               <folding>
                 <element signature="e#824#847#0" expanded="true" />
                 <element signature="e#999#13342#0" expanded="false" />
@@ -109,7 +108,6 @@
                 <element signature="e#12582#13074#0" expanded="false" />
                 <element signature="e#13131#13342#0" expanded="false" />
                 <element signature="e#13578#14953#0" expanded="false" />
-                <element signature="e#15218#15254#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -130,8 +128,8 @@
       <file leaf-file-name="CNN_test.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tensorflow/CNN_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="77" column="44" lean-forward="false" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="44" />
+            <state relative-caret-position="111">
+              <caret line="73" column="55" lean-forward="true" selection-start-line="73" selection-start-column="55" selection-end-line="73" selection-end-column="55" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
                 <element signature="e#167#273#0" expanded="false" />
@@ -159,8 +157,8 @@
       <file leaf-file-name="dogbreed.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/general/dogbreed/dogbreed.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="74" column="0" lean-forward="true" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+            <state relative-caret-position="133">
+              <caret line="79" column="80" lean-forward="true" selection-start-line="79" selection-start-column="80" selection-end-line="79" selection-end-column="80" />
               <folding>
                 <element signature="e#24#35#0" expanded="true" />
               </folding>
@@ -306,7 +304,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.VGG_beta3">
+  <component name="RunManager" selected="Python.CNN_test">
     <configuration name="CNN_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -411,8 +409,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.VGG_beta3" />
-        <item index="1" class="java.lang.String" itemvalue="Python.CNN_test" />
+        <item index="0" class="java.lang.String" itemvalue="Python.CNN_test" />
+        <item index="1" class="java.lang.String" itemvalue="Python.VGG_beta3" />
         <item index="2" class="java.lang.String" itemvalue="Python.testCNNfrommodel" />
         <item index="3" class="java.lang.String" itemvalue="Python.testsavetfmodel" />
         <item index="4" class="java.lang.String" itemvalue="Python.minist_CNN2" />
@@ -657,7 +655,14 @@
       <option name="project" value="LOCAL" />
       <updated>1514083837478</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="update VGG_bate3 with saver model and weights">
+      <created>1514088835812</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1514088835812</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1259,10 +1264,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/general/dogbreed/dogbreed.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="79" column="80" lean-forward="true" selection-start-line="79" selection-start-column="80" selection-end-line="79" selection-end-column="80" />
+          <folding>
+            <element signature="e#24#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tensorflow/CNN_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="77" column="44" lean-forward="false" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="44" />
+        <state relative-caret-position="111">
+          <caret line="73" column="55" lean-forward="true" selection-start-line="73" selection-start-column="55" selection-end-line="73" selection-end-column="55" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
             <element signature="e#167#273#0" expanded="false" />
@@ -1274,20 +1289,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/general/dogbreed/dogbreed.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="74" column="0" lean-forward="true" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
-          <folding>
-            <element signature="e#24#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/general/dogbreed/VGG_beta3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="302" column="50" lean-forward="true" selection-start-line="302" selection-start-column="50" selection-end-line="302" selection-end-column="50" />
+        <state relative-caret-position="114">
+          <caret line="298" column="30" lean-forward="true" selection-start-line="298" selection-start-column="30" selection-end-line="298" selection-end-column="30" />
           <folding>
             <element signature="e#824#847#0" expanded="true" />
             <element signature="e#999#13342#0" expanded="false" />
@@ -1298,7 +1303,6 @@
             <element signature="e#12582#13074#0" expanded="false" />
             <element signature="e#13131#13342#0" expanded="false" />
             <element signature="e#13578#14953#0" expanded="false" />
-            <element signature="e#15218#15254#0" expanded="false" />
           </folding>
         </state>
       </provider>

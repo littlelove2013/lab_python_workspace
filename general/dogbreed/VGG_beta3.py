@@ -300,7 +300,7 @@ if __name__ == '__main__':
         # 初始化
     sess = tf.Session()
     if os.path.exists(savefilepath+'/checkpoint'):  # 判断模型是否存在
-        print('restore weigthes from checkpoint!')
+        print('restore weigthes from checkpoint in %s!'%(savefilepath))
         saver.restore(sess, tf.train.latest_checkpoint(savefilepath))  # 存在就从模型中恢复变量
         print('restore successful!')
     else:
