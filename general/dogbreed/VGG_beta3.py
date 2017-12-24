@@ -328,8 +328,8 @@ if __name__ == '__main__':
                 save_path = saver.save(sess, savefilepath+"dogbreed.model")
             #训练
             sess.run(train_step, feed_dict={x_images: imgs, y_: labels})
-
-
+        #最后训练完再保存一次
+        save_path = saver.save(sess, savefilepath + "dogbreed.model")
     # print("test accuracy %g" % accuracy.eval(feed_dict={x: mnist.test.images[0:500], y_: mnist.test.labels[0:500], keep_prob: 1.0}))
     # print("test accuracy %g" % sess.run(acc,feed_dict={x_images: imgs, y_: labels}))
     # img1 = imread('laska.png', mode='RGB')
