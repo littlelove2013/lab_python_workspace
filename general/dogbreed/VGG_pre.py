@@ -18,7 +18,7 @@ def VGG_pre():
         print('error:',savefilepath," not exist!")
         return None
     print('prediction!...')
-    score=0
+    score=None
     with tf.Session() as sess:
         print('重构模型')
         saver = tf.train.import_meta_graph(savefilepath+'dogbreed.model.meta')
@@ -38,7 +38,7 @@ def VGG_pre():
             feed = {input_x: images}
             y_conv=sess.run(y,feed_dict=feed)
             #将所有结果连在一起
-            if score!=0:
+            if score!=None:
                 score=np.concatenate((score,y_conv))
             else:
                 score=y_conv
