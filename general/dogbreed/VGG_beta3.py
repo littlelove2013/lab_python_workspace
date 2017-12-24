@@ -311,7 +311,7 @@ if __name__ == '__main__':
     lens=dogbreed.lens
     batchsize=dogbreed.batchsize
     trainnum=10
-    saveparatime = 200#做200次训练就保存一次参数
+    saveparatime = 50#做50次训练就保存一次参数
     for iter in range(trainnum):
         #每次初始化一个batch序列
         batchlist=np.arange(0,lens)
@@ -324,8 +324,8 @@ if __name__ == '__main__':
             if (iter*lens+ i + 1) % saveparatime == 0:
                 a,l,y,fc = sess.run([acc,loss,y_conv,vgg.fc2],feed_dict={x_images: imgs, y_: labels})
                 print('acc:', a,'\titer:',(iter*lens+ i + 1),'\tloss:',l)#,'\ny_conv:',y,'fc2:',fc)
-                #保存模型和参数
-                save_path = saver.save(sess, savefilepath+"dogbreed.model", global_step=(i + 1))
+                #保存模型和参数，不带步长，带步长的模型有点大
+                save_path = saver.save(sess, savefilepath+"dogbreed.model")
             #训练
             sess.run(train_step, feed_dict={x_images: imgs, y_: labels})
 
