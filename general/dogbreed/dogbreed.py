@@ -5,6 +5,7 @@ import pandas as pd #数据分析
 import numpy as np #科学计算
 import scipy.io as sio
 from scipy.misc import imread, imresize
+import savelabeltocvs as sl
 
 root='../../../include_data/dogbreed/'
 batchsize=50
@@ -87,12 +88,64 @@ def getdata(batchnumber,savepath=root+'./dataset/',batchsize=100,size=(224,224))
     file = sio.loadmat(realpath)
     return file
 
+def read_testimg_to_mat(imgpath,size=(224,224),savefile=True,savepath='./testdataset/',batchsize=100):
+    Idlist, _ = sl.gettestname(sl.test)
+    lens = len(Idlist)
+    # 取十张看看
+    # lens=200
+    ktime = math.floor((lens - 1) / batchsize) + 1
+    showtime = 50
+    # 保存img及其labels
+    for k in range(ktime):
+        start = k * batchsize
+        end = (k + 1) * batchsize
+        if end > lens:
+            end = lens
+        matfilename = 'dogbreed_test_' + str(k) + '_' + str(batchsize) + '.mat'
+        realpath = savepath + matfilename
+        images = []
+        # labels = []
+        if (os.path.isfile(realpath)):
+            print('there has a saved mat file : %s' % (realpath))
+            # file = sio.loadmat(realpath)
+            # return file
+            continue
+        for i in np.arange(start, end):
+            file_path = Idlist[i]+ '.jpg'
+            img = imread(file_path, mode='RGB')  # 获取0,1之间的数
+            img = imresize(img, size)
+            images.append(img)
+        images = np.asarray(images)
+        test = {'images': images}
+        if not os.path.exists(savepath):
+            os.makedirs(savepath)
+        sio.savemat(realpath, test)
+        print('save file to %s' % (realpath))
+
+    return lens, batchsize, ktime
+
+def gettest(batchnumber,savepath=root+'./testdataset/',batchsize=100,size=(224,224)):
+    imgpath = '../../../include_data/test/'
+    # imgpath='I:/学习/研一/机器视觉/课程设计-狗类别判定/train/train/'
+    # 获取测试图片名
+    #
+    matfilename = 'dogbreed_test_' + str(batchnumber) + '_' + str(batchsize) + '.mat'
+    realpath = savepath + matfilename
+    if (os.path.isfile(realpath) == False):
+        lens, batchsize, ktime = read_testimg_to_mat(imgpath, savepath=savepath, batchsize=batchsize, size=size)
+        if batchnumber > ktime:
+            print('the batch number called is out of index!')
+            return None
+    file = sio.loadmat(realpath)
+    return file
+
     #return train
 def main():
     batchsize=10
     file0=getdata(0,batchsize=batchsize)
     imgs = file0['images']
     labels = file0['labels']
+    test1 = gettest(0, batchsize=batchsize)
     print('main')
 
 if __name__ == '__main__':

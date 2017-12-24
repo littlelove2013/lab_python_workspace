@@ -42,17 +42,18 @@ def gettestname(testpath):
     bread_name.sort()
     Idlist=testid
     dogbreedlist=bread_name
-    r=lens
-    c=len(dogbreedlist)
-    labels=np.random.rand(r,c)
-    summ=labels.sum(1)
-    labels=labels/summ.reshape(summ.size,1)
-    save2vsc(Idlist,dogbreedlist,labels)
+    # r=lens
+    # c=len(dogbreedlist)
+    # labels=np.random.rand(r,c)
+    # summ=labels.sum(1)
+    # labels=labels/summ.reshape(summ.size,1)
+    # save2vsc(Idlist,dogbreedlist,labels)
+    return Idlist,dogbreedlist
 
 
 
 if __name__ == '__main__':
     #假设label值已知
     print("hello")
-    gettestname(test)
+    Idlist,dogbreedlist=gettestname(test)
 
