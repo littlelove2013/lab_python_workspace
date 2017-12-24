@@ -322,7 +322,7 @@ if __name__ == '__main__':
             labels=data['labels']
             if (iter*lens+ i + 1) % saveparatime == 0:
                 a,l,y,fc = sess.run([acc,loss,y_conv,vgg.fc2],feed_dict={x_images: imgs, y_: labels})
-                print('acc:', a,'i:',i,'loss:',l)#,'\ny_conv:',y,'fc2:',fc)
+                print('acc:', a,'\titer:',(iter*lens+ i + 1),'\tloss:',l)#,'\ny_conv:',y,'fc2:',fc)
                 #保存模型和参数
                 save_path = saver.save(sess, savefilepath+"dogbreed.model", global_step=(i + 1))
             #训练

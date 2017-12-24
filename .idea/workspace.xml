@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26ac5d66-a343-4619-bd8d-f04266680f53" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/tensorflow/CNN_test.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/tensorflow/input_data.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/tensorflow/testCNNfrommodel.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/tensorflow/testsavetfmodel.py" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/general/dogbreed/VGG_beta3.py" afterPath="$PROJECT_DIR$/general/dogbreed/VGG_beta3.py" />
-      <change beforePath="$PROJECT_DIR$/tensorflow/MNIST-data/t10k-images-idx3-ubyte.gz" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/tensorflow/MNIST-data/t10k-labels-idx1-ubyte.gz" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/tensorflow/MNIST-data/train-images-idx3-ubyte.gz" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/tensorflow/MNIST-data/train-labels-idx1-ubyte.gz" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/tensorflow/minist_CNN2.py" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -103,8 +94,8 @@
       <file leaf-file-name="VGG_beta3.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/general/dogbreed/VGG_beta3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="333" column="44" lean-forward="false" selection-start-line="333" selection-start-column="38" selection-end-line="333" selection-end-column="44" />
+            <state relative-caret-position="212">
+              <caret line="320" column="31" lean-forward="true" selection-start-line="320" selection-start-column="31" selection-end-line="320" selection-end-column="31" />
               <folding>
                 <element signature="e#824#847#0" expanded="true" />
                 <element signature="e#999#13343#0" expanded="false" />
@@ -606,7 +597,14 @@
       <option name="project" value="LOCAL" />
       <updated>1514036514540</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="update VGG_bate3 with saver model and weights">
+      <created>1514080924454</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1514080924454</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -708,7 +706,8 @@
     <MESSAGE value="update VGG_bate2" />
     <MESSAGE value="update VGG_bate3" />
     <MESSAGE value="update VGG_bate3 with trainnum" />
-    <option name="LAST_COMMIT_MESSAGE" value="update VGG_bate3 with trainnum" />
+    <MESSAGE value="update VGG_bate3 with saver model and weights" />
+    <option name="LAST_COMMIT_MESSAGE" value="update VGG_bate3 with saver model and weights" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1238,8 +1237,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/general/dogbreed/VGG_beta3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="333" column="44" lean-forward="false" selection-start-line="333" selection-start-column="38" selection-end-line="333" selection-end-column="44" />
+        <state relative-caret-position="212">
+          <caret line="320" column="31" lean-forward="true" selection-start-line="320" selection-start-column="31" selection-end-line="320" selection-end-column="31" />
           <folding>
             <element signature="e#824#847#0" expanded="true" />
             <element signature="e#999#13343#0" expanded="false" />
