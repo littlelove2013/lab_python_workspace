@@ -31,6 +31,7 @@ def VGG_pre():
         input_x = graph.get_operation_by_name('input_x').outputs[0]
         # input_y = graph.get_operation_by_name('input_y').outputs[0]
         # keep_prob = graph.get_operation_by_name('keep_prob').outputs[0]
+        showtime=50#50次就显示一次
         for i in range(lens):
             batch=dogbreed.gettest(i,batchsize=batchsize)
             images=batch['images']
@@ -42,6 +43,8 @@ def VGG_pre():
                 score=np.concatenate((score,y_conv))
             else:
                 score=y_conv
+            if (i+1)%showtime==0:
+                print('doing %d batch prediction!'%(i+1))
     print('prediction have done!')
     Idlist, dogbreedlist = sl.gettestname()
     print('保存到csv')

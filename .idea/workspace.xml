@@ -4,6 +4,8 @@
     <list default="true" id="26ac5d66-a343-4619-bd8d-f04266680f53" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/general/dogbreed/VGG_pre.py" afterPath="$PROJECT_DIR$/general/dogbreed/VGG_pre.py" />
+      <change beforePath="$PROJECT_DIR$/general/dogbreed/dataset/pre_pretestimage.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/general/dogbreed/savelabeltocvs.py" afterPath="$PROJECT_DIR$/general/dogbreed/savelabeltocvs.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -54,11 +56,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VGG_pre.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="VGG_pre.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/general/dogbreed/VGG_pre.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="39" column="22" lean-forward="true" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
+            <state relative-caret-position="285">
+              <caret line="36" column="34" lean-forward="true" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -80,7 +82,7 @@
         <entry file="file://$PROJECT_DIR$/general/dogbreed/VGG_beta3.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="381">
-              <caret line="324" column="31" lean-forward="true" selection-start-line="324" selection-start-column="31" selection-end-line="324" selection-end-column="31" />
+              <caret line="324" column="31" lean-forward="false" selection-start-line="324" selection-start-column="31" selection-end-line="324" selection-end-column="31" />
               <folding>
                 <element signature="e#824#847#0" expanded="true" />
                 <element signature="e#999#13342#0" expanded="false" />
@@ -96,15 +98,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="savelabeltocvs.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="savelabeltocvs.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/general/dogbreed/savelabeltocvs.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-86">
-              <caret line="9" column="17" lean-forward="true" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+            <state relative-caret-position="146">
+              <caret line="22" column="3" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="22" selection-end-column="3" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
                 <element signature="e#262#473#0" expanded="false" />
-                <element signature="e#559#856#0" expanded="false" />
+                <element signature="e#908#1449#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -154,7 +156,7 @@
         <entry file="file://$PROJECT_DIR$/tensorflow/testCNNfrommodel.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
-              <caret line="17" column="53" lean-forward="true" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
+              <caret line="17" column="53" lean-forward="false" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -166,7 +168,7 @@
         <entry file="file://$PROJECT_DIR$/general/dogbreed/dogbreed.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
-              <caret line="93" column="22" lean-forward="true" selection-start-line="93" selection-start-column="22" selection-end-line="93" selection-end-column="22" />
+              <caret line="93" column="22" lean-forward="false" selection-start-line="93" selection-start-column="22" selection-end-line="93" selection-end-column="22" />
               <folding>
                 <element signature="e#24#35#0" expanded="true" />
                 <element signature="e#451#2624#0" expanded="false" />
@@ -180,7 +182,7 @@
         <entry file="file://$PROJECT_DIR$/general/dogbreed/imagenet_classes.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="190">
-              <caret line="10" column="35" lean-forward="true" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+              <caret line="10" column="35" lean-forward="false" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -234,9 +236,9 @@
         <option value="$PROJECT_DIR$/tensorflow/testCNNfrommodel.py" />
         <option value="$PROJECT_DIR$/tensorflow/CNN_test.py" />
         <option value="$PROJECT_DIR$/general/dogbreed/VGG_beta3.py" />
-        <option value="$PROJECT_DIR$/general/dogbreed/savelabeltocvs.py" />
         <option value="$PROJECT_DIR$/general/dogbreed/dogbreed.py" />
         <option value="$PROJECT_DIR$/general/dogbreed/VGG_pre.py" />
+        <option value="$PROJECT_DIR$/general/dogbreed/savelabeltocvs.py" />
       </list>
     </option>
   </component>
@@ -289,6 +291,13 @@
             <path>
               <item name="lab_python_workspace" type="b2602c69:ProjectViewProjectNode" />
               <item name="lab_python_workspace" type="462c0819:PsiDirectoryNode" />
+              <item name="general" type="462c0819:PsiDirectoryNode" />
+              <item name="dogbreed" type="462c0819:PsiDirectoryNode" />
+              <item name="dataset" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lab_python_workspace" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lab_python_workspace" type="462c0819:PsiDirectoryNode" />
               <item name="tensorflow" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -314,6 +323,122 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\python_workspace\lab_python_workspace\GMS" />
     </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/general/dogbreed/__pycache__/dogbreed.cpython-35.pyc</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/GMS/__pycache__/Func.cpython-35.pyc</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/general/dogbreed/__pycache__/savelabeltocvs.cpython-35.pyc</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/general/dogbreed/dataset/pre_pretestimage.csv</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/general/dogbreed/delete_dogsets.sh</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/general/dogbreed/delete_weightes.sh</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/general/dogbreed/runVGG.sh</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -741,7 +866,14 @@
       <option name="project" value="LOCAL" />
       <updated>1514116299363</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="update VGG_pre">
+      <created>1514116394407</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1514116394407</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -751,8 +883,8 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26615384" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2016632" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3846154" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20153846" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3846154" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18655589" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -1277,7 +1409,7 @@
     <entry file="file://$PROJECT_DIR$/general/dogbreed/imagenet_classes.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
-          <caret line="10" column="35" lean-forward="true" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+          <caret line="10" column="35" lean-forward="false" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
           <folding />
         </state>
       </provider>
@@ -1293,7 +1425,7 @@
     <entry file="file://$PROJECT_DIR$/general/dogbreed/VGG_beta3.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="381">
-          <caret line="324" column="31" lean-forward="true" selection-start-line="324" selection-start-column="31" selection-end-line="324" selection-end-column="31" />
+          <caret line="324" column="31" lean-forward="false" selection-start-line="324" selection-start-column="31" selection-end-line="324" selection-end-column="31" />
           <folding>
             <element signature="e#824#847#0" expanded="true" />
             <element signature="e#999#13342#0" expanded="false" />
@@ -1311,21 +1443,9 @@
     <entry file="file://$PROJECT_DIR$/tensorflow/testCNNfrommodel.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
-          <caret line="17" column="53" lean-forward="true" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
+          <caret line="17" column="53" lean-forward="false" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/general/dogbreed/savelabeltocvs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-86">
-          <caret line="9" column="17" lean-forward="true" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#262#473#0" expanded="false" />
-            <element signature="e#559#856#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1333,7 +1453,7 @@
     <entry file="file://$PROJECT_DIR$/general/dogbreed/dogbreed.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
-          <caret line="93" column="22" lean-forward="true" selection-start-line="93" selection-start-column="22" selection-end-line="93" selection-end-column="22" />
+          <caret line="93" column="22" lean-forward="false" selection-start-line="93" selection-start-column="22" selection-end-line="93" selection-end-column="22" />
           <folding>
             <element signature="e#24#35#0" expanded="true" />
             <element signature="e#451#2624#0" expanded="false" />
@@ -1344,10 +1464,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/general/dogbreed/VGG_pre.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="39" column="22" lean-forward="true" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
+        <state relative-caret-position="285">
+          <caret line="36" column="34" lean-forward="true" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/general/dogbreed/savelabeltocvs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="22" column="3" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="22" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#262#473#0" expanded="false" />
+            <element signature="e#908#1449#0" expanded="false" />
           </folding>
         </state>
       </provider>

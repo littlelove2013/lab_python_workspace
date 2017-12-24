@@ -21,7 +21,7 @@ def listdir(path, extension='jpg'):
     return filename
 
 def save2vsc(Idlist,dogbreedlist,labels,savepath='./dataset/',savename='test'):
-    result = pd.DataFrame({'PassengerId': Idlist})
+    result = pd.DataFrame({'id': Idlist})
     for i in range(len(dogbreedlist)):
         result[dogbreedlist[i]]=labels[:,i]
     filesavename = savepath+'pre_' + savename + '.csv'
