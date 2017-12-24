@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26ac5d66-a343-4619-bd8d-f04266680f53" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/general/dogbreed/savelabeltocvs.py" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/general/dogbreed/VGG_beta3.py" afterPath="$PROJECT_DIR$/general/dogbreed/VGG_beta3.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -95,13 +93,14 @@
       <file leaf-file-name="VGG_beta3.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/general/dogbreed/VGG_beta3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="107">
-              <caret line="213" column="24" lean-forward="true" selection-start-line="213" selection-start-column="24" selection-end-line="213" selection-end-column="24" />
+            <state relative-caret-position="396">
+              <caret line="257" column="12" lean-forward="true" selection-start-line="257" selection-start-column="12" selection-end-line="257" selection-end-column="12" />
               <folding>
                 <element signature="e#824#847#0" expanded="true" />
                 <element signature="e#1058#1269#0" expanded="false" />
                 <element signature="e#1305#11115#0" expanded="false" />
                 <element signature="e#11212#11864#0" expanded="false" />
+                <element signature="e#11936#12510#0" expanded="false" />
                 <element signature="e#12582#13074#0" expanded="false" />
                 <element signature="e#13578#14953#0" expanded="false" />
                 <element signature="e#15218#15254#0" expanded="false" />
@@ -638,7 +637,14 @@
       <option name="project" value="LOCAL" />
       <updated>1514081837055</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="update VGG_bate3 with saver model and weights">
+      <created>1514083667654</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1514083667654</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1268,13 +1274,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/general/dogbreed/VGG_beta3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="213" column="24" lean-forward="true" selection-start-line="213" selection-start-column="24" selection-end-line="213" selection-end-column="24" />
+        <state relative-caret-position="396">
+          <caret line="257" column="12" lean-forward="true" selection-start-line="257" selection-start-column="12" selection-end-line="257" selection-end-column="12" />
           <folding>
             <element signature="e#824#847#0" expanded="true" />
             <element signature="e#1058#1269#0" expanded="false" />
             <element signature="e#1305#11115#0" expanded="false" />
             <element signature="e#11212#11864#0" expanded="false" />
+            <element signature="e#11936#12510#0" expanded="false" />
             <element signature="e#12582#13074#0" expanded="false" />
             <element signature="e#13578#14953#0" expanded="false" />
             <element signature="e#15218#15254#0" expanded="false" />
