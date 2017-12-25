@@ -217,7 +217,7 @@ def SVM(file_path='./dataset/train.csv',savefile=True,savepath='./data',ratio=0,
     test_path='./dataset/test.csv'
     te,_,_,_,passengerIdlist=predata(test_path, savefile,savename='test',savepath=savepath,ratio=1,predataflag=predataflag)
     svc = svm.SVC(C=1.0, kernel = 'rbf', degree = 3)
-    #print(cross_validation.cross_val_score(svc, tr, tr_l, cv=5))
+    print(cross_validation.cross_val_score(svc, tr, tr_l, cv=5))
 
     svc.fit(tr, tr_l)
     predictedl = svc.predict(te)
