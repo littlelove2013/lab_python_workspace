@@ -26,6 +26,11 @@ class GMSwithMatrix:
         # 提取并计算特征点
         self.bf = cv2.BFMatcher(cv2.NORM_HAMMING)
         self.matches = self.bf.match(self.des1, trainDescriptors=self.des2)
+        #显示
+        # rawmatchimg = cv2.drawMatches(self.img1, self.kp1, self.img2, self.kp2, self.matches, None)
+        # cv2.imshow('rawmatchimg', rawmatchimg)
+        # cv2.waitKey()
+
         self.gridmatchesindex=np.zeros([len(self.matches)])
 
         self.initgrid()#初始化网格
@@ -49,12 +54,17 @@ class GMSwithMatrix:
         rightsize=self.img2.shape[:2]
         #用于卷积计算阈值
         self.leftimg=np.zeros(leftsize)
-        #用于卷积计算打分
+        #用于计算是否为正确匹配
+        # 假设初始时全部为假匹配
+        self.TrueMatches= np.zeros(leftsize)
+
+        #用于卷积计算打分,并获取匹配点
         self.leftmatchr = np.zeros(leftsize)
         self.leftmatchc = np.zeros(leftsize)
 
         # rightimg=np.zeros(rightsize)
         self.leftimg[kp1list]=1
+        self.TrueMatches[kp1list]=1
         #只保存匹配图片的匹配点坐标[r,c]
         self.leftmatchr[kp1list]=kp2r
         self.leftmatchc[kp1list]=kp2c
@@ -94,7 +104,8 @@ class GMSwithMatrix:
                 #取索引并展平
                 tmpleftmatchr=np.array(tmpleftmatchr[tmpleftmatchr!=0],np.int32)
                 tmpleftmatchc=np.array(tmpleftmatchc[tmpleftmatchc!=0],np.int32)
-                if tmpleftmatchr.size>10:
+                if tmpleftmatchr.size<10:
+                    continue#点数小于阈值则不计算，默认为不匹配
                     showdebug=True
                 #将展平的横纵坐标撒在图像上
                 rightbestimg[(tmpleftmatchr,tmpleftmatchc)]=1
@@ -142,14 +153,44 @@ class GMSwithMatrix:
                 neiborgird = ss.convolve2d(right9neiborgrid, neiborfilter, 'same', boundary='wrap')
                 Func.imagesc(neiborgird, 'neiborgird',ShowDebug=showdebug)
                 self.socre[i,j]=neiborgird[rightbestgridindex]
-                #计算得分是否超过阈值，超过则accept矩阵取1
+                #计算得分是否超过阈值，超过则accept矩阵取1,该网格内所有点为匹配点为匹配点
+                #则可以用img保存所有的匹配点对，对所有特征点，若匹配则为1，然后去找对应的匹配坐标，若不匹配则为0
+                if self.socre[i,j]>self[i,j]:#则匹配度量加上匹配值，最后最匹配的点，其匹配值应该最大，取出其对应匹配的r,c坐标即可
+                    self.TrueMatches+=self.leftimg[bestareastart[0]:bestareaend[0], bestareastart[1]:bestareaend[1]]
         self.accept=self.socre>self.thre
         # 显示accept
         Func.imagesc(self.thre, 'accept')
+        Func.imagesc(self.TrueMatches, 'TrueMatches')
+    # 同样返回Match对象，用于其他用途
+    def getTrueMatch(self,thre=1):
+        Truelistindex=self.TrueMatches>=thre
+        #获取img1的特征点列表
+        leftkeypointarr=np.where(self.TrueMatches>=thre)
+        #因为x,y对应的是[c,r]，所以需要反过来
+        self.leftkeypoint = [cv2.KeyPoint(y, x,1) for (x, y) in zip(leftkeypointarr[0], leftkeypointarr[1])]
+        #获取对应的img2的坐标
+        rightkeypointarr=[self.leftmatchc[Truelistindex],self.leftmatchr[Truelistindex]]
+        self.rightkeypoint=[cv2.KeyPoint(x, y,1) for (x, y) in zip(rightkeypointarr[0], rightkeypointarr[1])]
+        #生成match
+        lens=len(self.leftkeypoint)
+        self.truematch=[cv2.DMatch(x,y,1) for (x,y) in zip(np.arange(0,lens),np.arange(0,lens))]
+        #获取
+        return self.leftkeypoint,self.rightkeypoint,self.truematch
+    #画出TrueMatch的点
+    def drawTrueMatch(self):
+        self.getTrueMatch()
+        gmsmatchimg=cv2.drawMatches(self.img1,self.leftkeypoint,self.img2,self.rightkeypoint,self.truematch,None)
+        return gmsmatchimg
+
     #统计
     def run(self,type=0):
         if type==0:
-            self.computescoreandthre()
+            self.computescoreandthre()#计算出TrueMatcher
+            # self.TrueMatches[np.arange(1,100,2),np.arange(1,100,2)]=1
+            # return self.getTrueMatch()
+            ssds=self.drawTrueMatch()
+            cv2.imshow('ssds', ssds)
+            cv2.waitKey()
 
 
 class GMS:
