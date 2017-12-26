@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26ac5d66-a343-4619-bd8d-f04266680f53" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/python_workspace.iml" afterPath="$PROJECT_DIR$/.idea/python_workspace.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GMS/Func.py" afterPath="$PROJECT_DIR$/GMS/Func.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GMS/GMSwithMatrix.py" afterPath="$PROJECT_DIR$/GMS/GMSwithMatrix.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,7 +15,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/lab_workspace$GMS.coverage" NAME="GMS Coverage Results" MODIFIED="1510556863035" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
-    <SUITE FILE_PATH="coverage/lab_workspace$GMSwithMatrix.coverage" NAME="GMSwithMatrix Coverage Results" MODIFIED="1514276349113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
+    <SUITE FILE_PATH="coverage/lab_workspace$GMSwithMatrix.coverage" NAME="GMSwithMatrix Coverage Results" MODIFIED="1514279599078" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$main.coverage" NAME="main Coverage Results" MODIFIED="1510395797524" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$FlappyBirdDQN.coverage" NAME="FlappyBirdDQN Coverage Results" MODIFIED="1510313233256" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DQN/DRL-FlappiBird" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$Qlearning.coverage" NAME="Qlearning Coverage Results" MODIFIED="1510462597687" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DQN/Qlearning" />
@@ -134,16 +133,16 @@
       <file leaf-file-name="GMSwithMatrix.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GMS/GMSwithMatrix.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="179" column="28" lean-forward="true" selection-start-line="179" selection-start-column="28" selection-end-line="179" selection-end-column="28" />
+            <state relative-caret-position="150">
+              <caret line="23" column="72" lean-forward="true" selection-start-line="23" selection-start-column="72" selection-end-line="23" selection-end-column="72" />
               <folding>
+                <element signature="e#0#10#0" expanded="true" />
                 <element signature="e#304#433#0" expanded="false" />
-                <element signature="e#3258#7418#0" expanded="false" />
-                <element signature="e#8907#15039#0" expanded="false" />
-                <element signature="e#11955#12748#0" expanded="false" />
-                <element signature="e#12783#13980#0" expanded="false" />
-                <element signature="e#14019#14286#0" expanded="false" />
-                <element signature="e#14328#14451#0" expanded="false" />
+                <element signature="e#8978#15110#0" expanded="false" />
+                <element signature="e#12026#12819#0" expanded="false" />
+                <element signature="e#12854#14051#0" expanded="false" />
+                <element signature="e#14090#14357#0" expanded="false" />
+                <element signature="e#14399#14522#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -152,8 +151,8 @@
       <file leaf-file-name="Func.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GMS/Func.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="16" column="29" lean-forward="false" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+            <state relative-caret-position="266">
+              <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -233,7 +232,6 @@
         <option value="$PROJECT_DIR$/HSI/DataUtil.py" />
         <option value="$PROJECT_DIR$/DQN/Qlearning/Qlearning.py" />
         <option value="$PROJECT_DIR$/GMS/main.py" />
-        <option value="$PROJECT_DIR$/GMS/Func.py" />
         <option value="$PROJECT_DIR$/general/dogbreed/CNN.py" />
         <option value="$PROJECT_DIR$/general/dogbreed/VGG.py" />
         <option value="$PROJECT_DIR$/general/dogbreed/VGG_bate1.py" />
@@ -247,6 +245,7 @@
         <option value="$PROJECT_DIR$/general/dogbreed/savelabeltocvs.py" />
         <option value="$PROJECT_DIR$/general/Titanic/predata.py" />
         <option value="$PROJECT_DIR$/tensorflow/CNN_test.py" />
+        <option value="$PROJECT_DIR$/GMS/Func.py" />
         <option value="$PROJECT_DIR$/GMS/GMSwithMatrix.py" />
       </list>
     </option>
@@ -748,7 +747,14 @@
       <option name="project" value="LOCAL" />
       <updated>1514116394407</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="update GMS for image show with match points">
+      <created>1514276448257</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1514276448257</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -853,7 +859,8 @@
     <MESSAGE value="update VGG_bate3 with saver model and weights" />
     <MESSAGE value="update gettestdata as mat" />
     <MESSAGE value="update VGG_pre" />
-    <option name="LAST_COMMIT_MESSAGE" value="update VGG_pre" />
+    <MESSAGE value="update GMS for image show with match points" />
+    <option name="LAST_COMMIT_MESSAGE" value="update GMS for image show with match points" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -911,7 +918,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="57" />
+      <option name="time" value="59" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1324,24 +1331,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/GMS/Func.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="16" column="29" lean-forward="false" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+        <state relative-caret-position="266">
+          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GMS/GMSwithMatrix.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="179" column="28" lean-forward="true" selection-start-line="179" selection-start-column="28" selection-end-line="179" selection-end-column="28" />
+        <state relative-caret-position="150">
+          <caret line="23" column="72" lean-forward="true" selection-start-line="23" selection-start-column="72" selection-end-line="23" selection-end-column="72" />
           <folding>
+            <element signature="e#0#10#0" expanded="true" />
             <element signature="e#304#433#0" expanded="false" />
-            <element signature="e#3258#7418#0" expanded="false" />
-            <element signature="e#8907#15039#0" expanded="false" />
-            <element signature="e#11955#12748#0" expanded="false" />
-            <element signature="e#12783#13980#0" expanded="false" />
-            <element signature="e#14019#14286#0" expanded="false" />
-            <element signature="e#14328#14451#0" expanded="false" />
+            <element signature="e#8978#15110#0" expanded="false" />
+            <element signature="e#12026#12819#0" expanded="false" />
+            <element signature="e#12854#14051#0" expanded="false" />
+            <element signature="e#14090#14357#0" expanded="false" />
+            <element signature="e#14399#14522#0" expanded="false" />
           </folding>
         </state>
       </provider>

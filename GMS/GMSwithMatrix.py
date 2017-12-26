@@ -17,7 +17,7 @@ class GMSwithMatrix:
         self.init()
     
     def init(self):
-        self.TreshFactor=6
+        self.TreshFactor=6*3
         # 最大特征点数
         self.orb = cv2.ORB_create(self.kptnumber)
         # self.orb.setFastThreshold(0)
@@ -27,8 +27,8 @@ class GMSwithMatrix:
         self.bf = cv2.BFMatcher(cv2.NORM_HAMMING)
         self.matches = self.bf.match(self.des1, trainDescriptors=self.des2)
         #显示
-        # rawmatchimg = cv2.drawMatches(self.img1, self.kp1, self.img2, self.kp2, self.matches, None)
-        # cv2.imshow('rawmatchimg', rawmatchimg)
+        rawmatchimg = cv2.drawMatches(self.img1, self.kp1, self.img2, self.kp2, self.matches, None)
+        cv2.imshow('rawmatchimg', rawmatchimg)
         # cv2.waitKey()
 
         self.gridmatchesindex=np.zeros([len(self.matches)])
@@ -64,7 +64,7 @@ class GMSwithMatrix:
 
         # rightimg=np.zeros(rightsize)
         self.leftimg[kp1list]=1
-        self.TrueMatches[kp1list]=1
+        # self.TrueMatches[kp1list]=1
         #只保存匹配图片的匹配点坐标[r,c]
         self.leftmatchr[kp1list]=kp2r
         self.leftmatchc[kp1list]=kp2c
@@ -155,8 +155,8 @@ class GMSwithMatrix:
                 self.socre[i,j]=neiborgird[rightbestgridindex]
                 #计算得分是否超过阈值，超过则accept矩阵取1,该网格内所有点为匹配点为匹配点
                 #则可以用img保存所有的匹配点对，对所有特征点，若匹配则为1，然后去找对应的匹配坐标，若不匹配则为0
-                if self.socre[i,j]>self[i,j]:#则匹配度量加上匹配值，最后最匹配的点，其匹配值应该最大，取出其对应匹配的r,c坐标即可
-                    self.TrueMatches+=self.leftimg[bestareastart[0]:bestareaend[0], bestareastart[1]:bestareaend[1]]
+                if self.socre[i,j]>self.thre[i,j]:#则匹配度量加上匹配值，最后最匹配的点，其匹配值应该最大，取出其对应匹配的r,c坐标即可
+                    self.TrueMatches[bestareastart[0]:bestareaend[0], bestareastart[1]:bestareaend[1]]+=self.leftimg[bestareastart[0]:bestareaend[0], bestareastart[1]:bestareaend[1]]
         self.accept=self.socre>self.thre
         # 显示accept
         Func.imagesc(self.thre, 'accept')
