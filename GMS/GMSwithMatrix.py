@@ -3,6 +3,7 @@ import time
 import numpy as np
 import scipy.signal as ss
 import Func
+import math
 
 eps=1e-4
 class GMSwithMatrix:
@@ -17,7 +18,7 @@ class GMSwithMatrix:
         self.init()
     
     def init(self):
-        self.TreshFactor=6*3
+        self.TreshFactor=6*2**0.5
         # 最大特征点数
         self.orb = cv2.ORB_create(self.kptnumber)
         # self.orb.setFastThreshold(0)
@@ -99,11 +100,11 @@ class GMSwithMatrix:
                 # 建一个rightbetgrid,用于统计最匹配网格
                 rightbestimg = np.zeros(self.img2.shape[:2])
                 #行列号
-                tmpleftmatchr = self.leftmatchr[bestareastart[0]:bestareaend[0], bestareastart[1]:bestareaend[1]]
-                tmpleftmatchc=self.leftmatchc[bestareastart[0]:bestareaend[0],bestareastart[1]:bestareaend[1]]
+                tmpleftmatchrgrid = self.leftmatchr[bestareastart[0]:bestareaend[0], bestareastart[1]:bestareaend[1]]
+                tmpleftmatchcgrid=self.leftmatchc[bestareastart[0]:bestareaend[0],bestareastart[1]:bestareaend[1]]
                 #取索引并展平
-                tmpleftmatchr=np.array(tmpleftmatchr[tmpleftmatchr!=0],np.int32)
-                tmpleftmatchc=np.array(tmpleftmatchc[tmpleftmatchc!=0],np.int32)
+                tmpleftmatchr=np.array(tmpleftmatchrgrid[tmpleftmatchrgrid!=0],np.int32)
+                tmpleftmatchc=np.array(tmpleftmatchcgrid[tmpleftmatchcgrid!=0],np.int32)
                 if tmpleftmatchr.size<10:
                     continue#点数小于阈值则不计算，默认为不匹配
                     showdebug=True
@@ -156,7 +157,15 @@ class GMSwithMatrix:
                 #计算得分是否超过阈值，超过则accept矩阵取1,该网格内所有点为匹配点为匹配点
                 #则可以用img保存所有的匹配点对，对所有特征点，若匹配则为1，然后去找对应的匹配坐标，若不匹配则为0
                 if self.socre[i,j]>self.thre[i,j]:#则匹配度量加上匹配值，最后最匹配的点，其匹配值应该最大，取出其对应匹配的r,c坐标即可
-                    self.TrueMatches[bestareastart[0]:bestareaend[0], bestareastart[1]:bestareaend[1]]+=self.leftimg[bestareastart[0]:bestareaend[0], bestareastart[1]:bestareaend[1]]
+                    #必须只保留匹配点位于最佳匹配格的的匹配点
+                    k=rightbestgridindex[0]
+                    m=rightbestgridindex[1]
+                    bestrangestart=(k*self.rightgridsize[0],m*self.rightgridsize[1])
+                    bestrangeend = ((k+1) * self.rightgridsize[0], (m+1) * self.rightgridsize[1])
+                    tmp=self.leftimg[bestareastart[0]:bestareaend[0], bestareastart[1]:bestareaend[1]].copy()
+                    index=(tmpleftmatchrgrid<bestrangestart[0])|(tmpleftmatchcgrid<bestrangestart[1])|(tmpleftmatchrgrid>bestrangeend[0])|(tmpleftmatchcgrid>bestrangeend[1])
+                    tmp[index]=0
+                    self.TrueMatches[bestareastart[0]:bestareaend[0], bestareastart[1]:bestareaend[1]]+=tmp
         self.accept=self.socre>self.thre
         # 显示accept
         Func.imagesc(self.thre, 'accept')
@@ -253,7 +262,7 @@ class GMS:
         self.validGrid=0
         for i in range(self.rows1**2):
             if self.listgrid1[i]<=0:
-                continue;
+                continue
             a=self.listgrid2[i]
             match_max=a.max()
             max_index=np.where(self.listgrid2[i] == match_max)[0]
@@ -317,6 +326,7 @@ class GMS:
         for i in range(len(self.matches)):
             match=self.matches[i]
             id1,id2=self.getRegion(match,type)
+            #只有处于两个最匹配的网格才保留
             if self.bestmatch[id1]==id2:
                 self.gridmatchesindex[i]=1
 
@@ -324,6 +334,7 @@ class GMS:
         for i in range(4):
             self.run(i+1)
         for i in range(len(self.matches)):
+            
             if(self.gridmatchesindex[i]==1):
                 self.gridmatches.append(self.matches[i])
                 #记录新的kpt并返回

@@ -4,6 +4,7 @@ from pandas import Series,DataFrame
 import sklearn.preprocessing as preprocessing
 import scipy.io as sio
 import os
+import re
 
 from sklearn.ensemble import RandomForestRegressor,RandomForestClassifier
 from sklearn import linear_model
@@ -27,6 +28,43 @@ def getAgeData(data):
     data_noAge = data[pd.isnull(data.Age)]
     data_noAge.drop(['Age'], axis=1, inplace=True)
     return data_hasAge,data_noAge
+#称呼栏只保留Miss等称谓
+def setName(data):
+#     print(data)
+    name=[]
+    Mr='^.* Mr\. .*$'
+    Miss='^.* Miss\. .*$'
+    Mrs='^.* Mrs\. .*$'
+    Master='^.* Master\. .*$'
+    lens = len(data)
+    print(lens)
+    Name_num=data.copy()
+    for i in range(lens):
+        if re.match(Mr,data[i]):
+            name.append('Mr')
+            data.loc[i]='Mr'
+            Name_num.loc[i]=0
+        elif re.match(Miss,data[i]):
+            name.append('Miss')
+            data.loc[i]='Miss'
+            Name_num.loc[i]=1
+        elif re.match(Mrs,data[i]):
+            name.append('Mrs')
+            data.loc[i]='Mrs'
+            Name_num.loc[i]=2
+        elif re.match(Master,data[i]):
+            name.append('Master')
+            data.loc[i]='Master'
+            Name_num.loc[i]=3
+        else:
+            name.append('Norm')
+            data.loc[i]='Norm'
+            Name_num.loc[i]=4
+#     print(len(name),name)
+    #转换类型
+    Name_num=changeDtype(Name_num)
+#     print(data.values)
+    return data,Name_num
 
 def set_missing_ages(data,featurelist):
     df=data.copy()
@@ -56,7 +94,7 @@ def set_missing_ages(data,featurelist):
 def predata(file_path='./dataset/train.csv',savefile=True,savename='',savepath='./data',ratio=0.2,predataflag=1):
     #读取
     # 载入数据,如果存在保存的数据，则直接载入保存数据
-    filesavename=savepath + '/'+ savename+ '_Titanic_data' + "_" + str(ratio)+'.mat'
+    filesavename=savepath + '/'+ str(savename)+ '_Titanic_data' + "_" + str(ratio)+'.mat'
     if savefile and os.path.exists(filesavename) == True:
         #直接载入数据
         print('从已保存数据载入...')
@@ -74,7 +112,10 @@ def predata(file_path='./dataset/train.csv',savefile=True,savename='',savepath='
     print('总样本集为%d行，取测试集比例%f，取%d个测试集，%d个训练集'%(data_len,ratio,test_number,train_number))
     data_pre = data_train.copy()
     # 预处理数据，离散的映射到类别空间，连续的映射到[0,1]
-    data_pre.drop(['Name', 'Ticket'], axis=1, inplace=True)
+    # data_pre.drop(['Name', 'Ticket'], axis=1, inplace=True)
+    data_pre.drop(['Ticket'], axis=1, inplace=True)
+    # 匹配Name并离散化为变量，Name_num
+    data_pre['NameExtens'], data_pre['Name_num'] = setName(data_pre['Name'].copy())
     # 离散值映射
     data_pre.loc[(data_pre.Sex == 'male'), 'Sex'] = 0
     data_pre.loc[(data_pre.Sex == 'female'), 'Sex'] = 1
@@ -102,9 +143,17 @@ def predata(file_path='./dataset/train.csv',savefile=True,savename='',savepath='
     scaler = preprocessing.StandardScaler()
     fare_scale_param = scaler.fit(data_pre['Fare'])
     data_pre['Fare_scaled'] = scaler.fit_transform(data_pre['Fare'], fare_scale_param)
-    #预测缺失的age值
-    featurelist=['Pclass','Sex','SibSp','Fare_scaled','Parch','Cabin','Embarked']
-    data_pre=set_missing_ages(data_pre,featurelist)
+    #预测缺失的age值,使用称呼的平均值来代替
+    has_Age = data_pre[pd.notnull(data_pre.Age)]
+    # 求称呼对应的年龄均值
+    Age_mean = [has_Age[has_Age.Name_num == 0]['Age'].mean(), has_Age[has_Age.Name_num == 1]['Age'].mean(),
+                has_Age[has_Age.Name_num == 2]['Age'].mean(), has_Age[has_Age.Name_num == 3]['Age'].mean(),
+                has_Age[has_Age.Name_num == 4]['Age'].mean()]
+    Age_mean = np.array(Age_mean)
+    data_pre.loc[pd.isnull(data_pre.Age), 'Age'] = Age_mean[data_pre[pd.isnull(data_pre.Age)]['Name_num'].as_matrix()]
+
+    # featurelist=['Pclass','Sex','SibSp','Fare_scaled','Parch','Cabin','Embarked']
+    # data_pre=set_missing_ages(data_pre,featurelist)
     #并归一化
     fare_scale_param = scaler.fit(data_pre['Age'])
     data_pre['Age_scaled'] = scaler.fit_transform(data_pre['Age'], fare_scale_param)
@@ -112,7 +161,7 @@ def predata(file_path='./dataset/train.csv',savefile=True,savename='',savepath='
     if(predataflag==0):#该种预处理方式是直接将类别标号，将离散数据归一化
         #分别获取其特征和标签矩阵
         if ratio!=1:
-            featurelist2 = ['Survived','Pclass', 'Sex', 'SibSp', 'Fare_scaled','Age_scaled', 'Parch', 'Cabin', 'Embarked']
+            featurelist2 = ['Survived','Pclass', 'Sex', 'SibSp', 'Fare_scaled','Age_scaled', 'Parch', 'Cabin', 'Embarked','Name_num']#添加name的标签
             data=data_pre[featurelist2].as_matrix()
             # 分出测试集和训练集
             data_test = np.array(data[:test_number,1:])
@@ -122,7 +171,7 @@ def predata(file_path='./dataset/train.csv',savefile=True,savename='',savepath='
         elif ratio==1:
             #只取测试集，不带标签
             featurelist2 = ['Pclass', 'Sex', 'SibSp', 'Fare_scaled', 'Age_scaled', 'Parch', 'Cabin',
-                            'Embarked']
+                            'Embarked','Name_num']
             data = data_pre[featurelist2].as_matrix()
             # 分出测试集和训练集
             data_test = np.array(data[:test_number,:])
@@ -137,16 +186,18 @@ def predata(file_path='./dataset/train.csv',savefile=True,savename='',savepath='
         dummies_SibSp = pd.get_dummies(data_pre['SibSp'], prefix='SibSp')
         dummies_Pclass = pd.get_dummies(data_pre['Pclass'], prefix='Pclass')
         dummies_Sex = pd.get_dummies(data_pre['Sex'], prefix='Sex')
+        #添加name的标签
+        dummies_Name_num = pd.get_dummies(data_pre['Name_num'], prefix='Name_num')
         #链接
-        df = pd.concat([data_pre, dummies_Cabin, dummies_Embarked, dummies_Parch, dummies_SibSp, dummies_Sex, dummies_Pclass],axis=1)
+        df = pd.concat([data_pre, dummies_Cabin, dummies_Embarked, dummies_Parch, dummies_SibSp, dummies_Sex, dummies_Pclass,dummies_Name_num],axis=1)
         #去除源类别
-        df.drop(['Pclass', 'Sex','SibSp','Parch', 'Cabin', 'Embarked'], axis=1, inplace=True)
+        df.drop(['Pclass', 'Sex','SibSp','Parch', 'Cabin', 'Embarked','NameExtens','Name_num'], axis=1, inplace=True)
         #featurelist2 = ['Survivdfed', 'Pclass', 'Sex', 'SibSp', 'Fare_scaled', 'Age_scaled', 'Parch', 'Cabin', 'Embarked']
         # 分出测试集和训练集
         if ratio != 1:
             # 获取需要的类别
             data = df.filter(
-                regex='Survived|Age_.*|SibSp|Parch_.*|Fare_.*|Cabin_.*|Embarked_.*|Sex_.*|Pclass_.*').as_matrix()
+                regex='Survived|Age_.*|SibSp|Parch_.*|Fare_.*|Cabin_.*|Embarked_.*|Sex_.*|Pclass_.*|Name_num_.*').as_matrix()
             data_test = np.array(data[:test_number, 1:])
             label_test = np.array(data[:test_number, 0])
             data_train = np.array(data[test_number:, 1:])
@@ -154,7 +205,7 @@ def predata(file_path='./dataset/train.csv',savefile=True,savename='',savepath='
         elif ratio == 1:
             # 获取需要的类别
             data = df.filter(
-                regex='Age_.*|SibSp|Parch_.*|Fare_.*|Cabin_.*|Embarked_.*|Sex_.*|Pclass_.*').as_matrix()
+                regex='Age_.*|SibSp|Parch_.*|Fare_.*|Cabin_.*|Embarked_.*|Sex_.*|Pclass_.*|Name_num_.*').as_matrix()
             data_test = np.array(data[:test_number, :])
             label_test = []
             data_train = []
@@ -180,9 +231,10 @@ def savepredictcsv(passengerIdlist,predictedl,savename='test'):
 
 #回归树预测
 def RFC(file_path='./dataset/train.csv',savefile=True,savepath='./data',ratio=0):
-    te, te_l, tr, tr_l = predata(file_path,savefile,savepath,ratio,predataflag=0)
+    te, te_l, tr, tr_l,_ = predata(file_path,savepath=savepath,savefile=savefile,ratio=ratio,predataflag=0)
     rfr = RandomForestClassifier(random_state=0, n_estimators=2000, n_jobs=-1)
-    print(cross_validation.cross_val_score(rfr, tr, tr_l, cv=5))
+    cross=cross_validation.cross_val_score(rfr, tr, tr_l, cv=5)
+    print(cross, "mean=%.4f" % (cross.mean()))
     '''
     rfr.fit(tr, tr_l)
     predictedl = rfr.predict(te)
@@ -193,9 +245,10 @@ def RFC(file_path='./dataset/train.csv',savefile=True,savepath='./data',ratio=0)
     '''
 #逻辑回归预测
 def LR(file_path='./dataset/train.csv',savefile=True,savepath='./data',ratio=0):
-    te, te_l, tr, tr_l = predata(file_path, savefile, savepath, ratio)
+    te, te_l, tr, tr_l, _ = predata(file_path, savepath=savepath, savefile=savefile, ratio=ratio, predataflag=0)
     clf = linear_model.LogisticRegression(C=1.0, penalty='l1', tol=1e-6)
-    print(cross_validation.cross_val_score(clf, tr, tr_l, cv=5))
+    cross = cross_validation.cross_val_score(clf, tr, tr_l, cv=5)
+    print(cross, "mean=%.4f" % (cross.mean()))
     '''
     clf.fit(tr, tr_l)
     predictedl = clf.predict(te)
@@ -207,9 +260,10 @@ def LR(file_path='./dataset/train.csv',savefile=True,savepath='./data',ratio=0):
     '''
 
 def KNN(file_path='./dataset/train.csv',savefile=True,savepath='./data',ratio=0):
-    te, te_l, tr, tr_l = predata(file_path, savefile, savepath, ratio)
+    te, te_l, tr, tr_l, _ = predata(file_path, savepath=savepath, savefile=savefile, ratio=ratio, predataflag=0)
     knn = KNeighborsClassifier(n_neighbors=5)
-    print(cross_validation.cross_val_score(knn, tr, tr_l, cv=5))
+    cross=cross_validation.cross_val_score(knn, tr, tr_l, cv=5)
+    print(cross, "mean=%.4f" % (cross.mean()))
 
 def SVM(file_path='./dataset/train.csv',savefile=True,savepath='./data',ratio=0,predataflag=0):
     _, _, tr, tr_l,_ = predata(file_path, savefile,savename='train', savepath=savepath, ratio=0,predataflag=predataflag)
@@ -217,7 +271,8 @@ def SVM(file_path='./dataset/train.csv',savefile=True,savepath='./data',ratio=0,
     test_path='./dataset/test.csv'
     te,_,_,_,passengerIdlist=predata(test_path, savefile,savename='test',savepath=savepath,ratio=1,predataflag=predataflag)
     svc = svm.SVC(C=1.0, kernel = 'rbf', degree = 3)
-    print(cross_validation.cross_val_score(svc, tr, tr_l, cv=5))
+    cross=cross_validation.cross_val_score(svc, tr, tr_l, cv=5)
+    print(cross,"mean=%.4f"%(cross.mean()))
 
     svc.fit(tr, tr_l)
     predictedl = svc.predict(te)
@@ -229,6 +284,9 @@ def SVM(file_path='./dataset/train.csv',savefile=True,savepath='./data',ratio=0,
     # print(te_l == predictedl, 'RandomForestClassifier is acc:%.4f,count:%d,total:%d' % (acc, count, len(res)))
 
 if __name__ == '__main__':
+    RFC()
+    LR()
+    KNN()
     SVM()
     # test_path = './dataset/test.csv'
     # te, _, _, _ = predata(test_path, savefile=True, savename='test', savepath='./data/', ratio=1, predataflag=0)
