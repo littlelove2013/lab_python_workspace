@@ -29,6 +29,10 @@ def VGG_pre():
         # accuracy = tf.get_collection('accuracy')[0]
         graph = tf.get_default_graph()
         input_x = graph.get_operation_by_name('input_x').outputs[0]
+        keep_prob = graph.get_operation_by_name('keep_prob').outputs[0]
+        #没用到batch_size
+        # batch_size = graph.get_operation_by_name('batch_size').outputs[0]
+
         # input_y = graph.get_operation_by_name('input_y').outputs[0]
         # keep_prob = graph.get_operation_by_name('keep_prob').outputs[0]
         showtime=50#50次就显示一次
@@ -36,7 +40,7 @@ def VGG_pre():
             batch=dogbreed.gettest(i,batchsize=batchsize)
             images=batch['images']
             # 使用y进行预测
-            feed = {input_x: images}
+            feed = {input_x: images,keep_prob:1.0}
             y_conv=sess.run(y,feed_dict=feed)
             #将所有结果连在一起
             if score.size!=0:
