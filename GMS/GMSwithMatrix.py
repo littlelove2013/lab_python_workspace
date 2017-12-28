@@ -18,10 +18,10 @@ class GMSwithMatrix:
         self.init()
     
     def init(self):
-        self.TreshFactor=6*2**0.5
+        self.TreshFactor=9
         # 最大特征点数
         self.orb = cv2.ORB_create(self.kptnumber)
-        # self.orb.setFastThreshold(0)
+        self.orb.setFastThreshold(0)
         self.kp1, self.des1 = self.orb.detectAndCompute(self.img1, None)
         self.kp2, self.des2 = self.orb.detectAndCompute(self.img2, None)
         # 提取并计算特征点
@@ -359,10 +359,10 @@ class GMS:
 def main():
     print(__name__)
     root='./images/'
-    img1path='./images/000.png'
-    img2path = './images/020.png'
-    # img1path=root+'img1.jpg'
-    # img2path = root+'img2.jpg'
+    # img1path='./images/000.png'
+    # img2path = './images/020.png'
+    img1path=root+'img1.jpg'
+    img2path = root+'img2.jpg'
     # img1path='./images/img.jpg'
     # img2path = './images/img2.jpg'
     img1=cv2.imread(img1path)

@@ -89,7 +89,7 @@ sess = tf.InteractiveSession()
 saver = tf.train.Saver()
 
 
-    #记录日志
+#记录日志
 with tf.name_scope('log') as scope:
     #首先再源码中加入需要跟踪的变量：
     tf.summary.scalar("cost_function", cross_entropy)#损失函数值

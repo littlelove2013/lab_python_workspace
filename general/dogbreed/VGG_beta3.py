@@ -14,6 +14,7 @@ from scipy.misc import imread, imresize,imshow
 from imagenet_classes import class_names
 import dogbreed
 import os
+import Func
 
 class vgg16:
     def __init__(self, imgs, weights=None, sess=None):
@@ -217,9 +218,9 @@ class vgg16:
             shape = int(np.prod(self.pool5.get_shape()[1:]))
             fc1w = tf.Variable(tf.truncated_normal([shape, 4096],
                                                          dtype=tf.float32,
-                                                         stddev=1e-1), name='weights',trainable=False)
+                                                         stddev=1e-1), name='weights',trainable=True)
             fc1b = tf.Variable(tf.constant(1.0, shape=[4096], dtype=tf.float32),
-                                 trainable=False, name='biases')
+                                 trainable=True, name='biases')
             pool5_flat = tf.reshape(self.pool5, [-1, shape])
             fc1l = tf.nn.bias_add(tf.matmul(pool5_flat, fc1w), fc1b)
             self.fc1 = tf.nn.relu(fc1l)
@@ -254,13 +255,17 @@ class vgg16:
             print(i, k, np.shape(weights[k]))
             sess.run(self.parameters[i].assign(weights[k]))
 
-out=120
-#存name。模型可取出
-x_images = tf.placeholder(tf.float32, [None, 224, 224, 3],name='input_x')
-# y_ = tf.placeholder(tf.float32, [None, 224, 224, 3])
-y_ = tf.placeholder(tf.float32, shape=[None, out],name='input_y')
 def cnnnet():
     learnrate = 1e-4
+    out = 120
+    # 存name。模型可取出
+    x_images = tf.placeholder(tf.float32, [None, 224, 224, 3], name='input_x')
+    # y_ = tf.placeholder(tf.float32, [None, 224, 224, 3])
+    y_ = tf.placeholder(tf.float32, shape=[None, out], name='input_y')
+    #drop out
+    keep_prob = tf.placeholder(tf.float32, name='keep_prob')
+    #batchsize
+    batch_size = tf.placeholder(tf.float32, name='batch_size')
     vgg = vgg16(x_images)
     with tf.name_scope('softmax_layer') as scope:
         # 直接在这里取最后一层全连接，使用softmax，自己定义loss函数，进行训练
@@ -269,12 +274,14 @@ def cnnnet():
                                                stddev=1e-1), name='weights')
         sb = tf.Variable(tf.constant(1.0, shape=[out], dtype=tf.float32),
                            trainable=True, name='biases')
-        fc3l = tf.nn.bias_add(tf.matmul(vgg.fc2, sw), sb)
+        fc2_drop=tf.nn.dropout(vgg.fc2, keep_prob)
+        fc3l = tf.nn.bias_add(tf.matmul(fc2_drop, sw), sb)
         # parameters += [fc3w, fc3b]
         # softmax多分类器
         y_conv = tf.nn.softmax(fc3l)
         # 防止在0log(0)出现Nan
-        cross_entropy = -tf.reduce_sum(y_ * tf.log(tf.clip_by_value(y_conv, 1e-10, 1.0)))  # 定义交叉熵为loss函数
+
+        cross_entropy = -(tf.reduce_sum(y_ * tf.log(tf.clip_by_value(y_conv, 1e-10, 1.0)))/batch_size)  # 定义交叉熵为loss函数,应该每次除以batch的深度，因为batch可能会不一样多
         train_step = tf.train.AdamOptimizer(learnrate).minimize(cross_entropy)  # 调用优化器优化
         correct_prediction = tf.equal(tf.argmax(y_conv, 1), tf.argmax(y_, 1))
         accuracy = tf.reduce_mean(tf.cast(correct_prediction, "float"))
@@ -284,12 +291,25 @@ def cnnnet():
         tf.add_to_collection('loss', cross_entropy)
     # sess.run(tf.global_variables_initializer())  # 变量初始化
     # vgg.load_weights('../../../include_data/vgg_npz/vgg16_weights.npz', sess)
-    return train_step,accuracy,cross_entropy,y_conv,vgg
+
+    # 记录日志
+    with tf.name_scope('log') as scope:
+        #vgg.fc1
+        Func.variable_summaries(vgg.fc1,'vgg_fc1')
+        #vgg.fc2
+        Func.variable_summaries(vgg.fc2, 'vgg_fc2')
+        # 首先再源码中加入需要跟踪的变量：
+        tf.summary.scalar("loss", cross_entropy)  # 损失函数值
+        tf.summary.scalar("accuracy", accuracy)  # 损失函数值
+        # )然后定义执行操作：
+        merged_summary_op = tf.summary.merge_all()
+        # 再session中定义保存路径：
+    return train_step,accuracy,cross_entropy,y_conv,vgg,x_images,y_,keep_prob,batch_size,merged_summary_op
 
 
 if __name__ == '__main__':
     #载入网络结构
-    train_step,acc,loss,y_conv,vgg=cnnnet()
+    train_step,acc,loss,y_conv,vgg,x_images,y_,keep_prob,batch_size,merged_summary_op=cnnnet()
     root = dogbreed.root
     # 模型保存加载工具
     saver = tf.train.Saver()
@@ -299,6 +319,8 @@ if __name__ == '__main__':
         os.mkdir(savefilepath)
         # 初始化
     sess = tf.Session()
+    # 日志写入工具
+    summary_writer = tf.summary.FileWriter('log', sess.graph)
     if os.path.exists(savefilepath+'/checkpoint'):  # 判断模型是否存在
         print('restore weigthes from checkpoint in %s!'%(savefilepath))
         saver.restore(sess, tf.train.latest_checkpoint(savefilepath))  # 存在就从模型中恢复变量
@@ -323,14 +345,18 @@ if __name__ == '__main__':
             #取shuffle的下标
             data = dogbreed.getdata(batchlist[i],batchsize=batchsize)
             imgs=data['images']
+            deepth=imgs.shape[0]
             labels=data['labels']
             if (iter*lens+ i + 1) % saveparatime == 0:
-                a,l,y,fc = sess.run([acc,loss,y_conv,vgg.fc2],feed_dict={x_images: imgs, y_: labels})
+                feed = {x_images: imgs, y_: labels, keep_prob: 1, batch_size: deepth}
+                a,l,y,fc = sess.run([acc,loss,y_conv,vgg.fc2],feed_dict=feed)
                 print('acc:', a,'\titer:',(iter*lens+ i + 1),'\tloss:',l)#,'\ny_conv:',y,'fc2:',fc)
                 #保存模型和参数，不带步长，带步长的模型有点大
                 save_path = saver.save(sess, savefilepath+"dogbreed.model")
             #训练
-            sess.run(train_step, feed_dict={x_images: imgs, y_: labels})
+            feed = {x_images: imgs, y_: labels, keep_prob: 0.5,batch_size:deepth}
+            _,summary_str=sess.run([train_step,merged_summary_op], feed_dict=feed)
+            summary_writer.add_summary(summary_str, i)
         #最后训练完再保存一次
         save_path = saver.save(sess, savefilepath + "dogbreed.model")
     # print("test accuracy %g" % accuracy.eval(feed_dict={x: mnist.test.images[0:500], y_: mnist.test.labels[0:500], keep_prob: 1.0}))
@@ -342,3 +368,4 @@ if __name__ == '__main__':
     # print(preds)
     # for p in preds:
     #     print(class_names[p], prob[p])
+    #更新：1、添加日志文件 2、添加dropout防止过拟合 3、fc2层变为可训练
