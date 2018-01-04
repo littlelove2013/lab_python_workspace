@@ -347,6 +347,7 @@ if __name__ == '__main__':
             imgs=data['images']
             #对输入数据做添加噪声和随机旋转切换
             imgs=dogbreed.addgaussandrot90(imgs)
+
             deepth=imgs.shape[0]
             labels=data['labels']
             if (iter*lens+ i + 1) % saveparatime == 0:
@@ -358,7 +359,7 @@ if __name__ == '__main__':
             #训练
             feed = {x_images: imgs, y_: labels, keep_prob: 0.5,batch_size:deepth}
             _,summary_str=sess.run([train_step,merged_summary_op], feed_dict=feed)
-            summary_writer.add_summary(summary_str, i)
+            summary_writer.add_summary(summary_str, iter*lens+ i)
         #最后训练完再保存一次
         save_path = saver.save(sess, savefilepath + "dogbreed.model")
     # print("test accuracy %g" % accuracy.eval(feed_dict={x: mnist.test.images[0:500], y_: mnist.test.labels[0:500], keep_prob: 1.0}))
