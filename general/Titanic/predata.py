@@ -9,6 +9,7 @@ import re
 from sklearn.ensemble import RandomForestRegressor,RandomForestClassifier
 from sklearn import linear_model
 from sklearn.neighbors import KNeighborsClassifier
+from sklearn.ensemble import AdaBoostClassifier
 #导入Scikit learn库中的KNN算法
 from sklearn import svm
 #从sklearn库中导入svm
@@ -98,12 +99,16 @@ def predata(file_path='./dataset/train.csv',savefile=True,savename='',savepath='
     if savefile and os.path.exists(filesavename) == True:
         #直接载入数据
         print('从已保存数据载入...')
-        DataSetMat = sio.loadmat(savepath + '/'+  'Titanic_data' + "_" + str(ratio)+"_predataflag"+str(predataflag)+'.mat')
+        DataSetMat = sio.loadmat(filesavename)
         if(ratio==0):
-            return np.array([]),np.array([]),np.array(DataSetMat['Tr']),np.array(DataSetMat['Tr_l'])[0]
-        return np.array(DataSetMat['Te']),np.array(DataSetMat['Te_l'])[0],np.array(DataSetMat['Tr']),np.array(DataSetMat['Tr_l'])[0]
+            return np.array([]),np.array([]),np.array(DataSetMat['Tr']),np.array(DataSetMat['Tr_l'])[0],np.array(DataSetMat['PassengerId'])[0]
+        if(ratio==1):
+            return  np.array(DataSetMat['Te']),np.array([]), np.array([]), np.array([]),np.array(DataSetMat['PassengerId'])[0]
+        # elif(ratio==1):
+        #     return np.array([]), np.array([]), np.array(DataSetMat['Te']), np.array(DataSetMat['Te_l'])[0]
+        return np.array(DataSetMat['Te']),np.array(DataSetMat['Te_l'])[0],np.array(DataSetMat['Tr']),np.array(DataSetMat['Tr_l'])[0],np.array(DataSetMat['PassengerId'])[0]
     else:
-        print("the dataset you selected dos'nt exist!!! working on data preprocess!")
+        print("the dataset (%s) you selected dos'nt exist!!! working on data preprocess!"%(filesavename))
     #否则，预处理数据
     data_train = pd.read_csv(file_path)
     data_len=len(data_train)
@@ -124,8 +129,9 @@ def predata(file_path='./dataset/train.csv',savefile=True,savename='',savepath='
     data_pre.loc[(data_pre.Cabin.notnull()), 'Cabin'] = 1
     data_pre.loc[(data_pre.Cabin.isnull()), 'Cabin'] = 0
     data_pre.Cabin = changeDtype(data_pre.Cabin)
-
-    data_pre.loc[(data_pre.Embarked.isnull()), 'Embarked'] = 0
+    #train有Embarked缺失，而test没有，所以不能把缺失当作一类，而要补全
+    #因为缺失的均为获救的，而C的获救概率最高，所以丢失的用C的值补全
+    data_pre.loc[(data_pre.Embarked.isnull()), 'Embarked'] = 3
     data_pre.loc[(data_pre.Embarked == 'Q'), 'Embarked'] = 1
     data_pre.loc[(data_pre.Embarked == 'S'), 'Embarked'] = 2
     data_pre.loc[(data_pre.Embarked == 'C'), 'Embarked'] = 3
@@ -170,8 +176,7 @@ def predata(file_path='./dataset/train.csv',savefile=True,savename='',savepath='
             label_train = np.array(data[test_number:, 0])
         elif ratio==1:
             #只取测试集，不带标签
-            featurelist2 = ['Pclass', 'Sex', 'SibSp', 'Fare_scaled', 'Age_scaled', 'Parch', 'Cabin',
-                            'Embarked','Name_num']
+            featurelist2 =              ['Pclass', 'Sex', 'SibSp', 'Fare_scaled', 'Age_scaled', 'Parch', 'Cabin','Embarked','Name_num']
             data = data_pre[featurelist2].as_matrix()
             # 分出测试集和训练集
             data_test = np.array(data[:test_number,:])
@@ -216,7 +221,7 @@ def predata(file_path='./dataset/train.csv',savefile=True,savename='',savepath='
             os.makedirs(savepath)
             # filesavename
         filedict={'Te':data_test,'Te_l':label_test,'Tr':data_train,'Tr_l':label_train,'PassengerId':passengerIdlist}
-        sio.savemat(filesavename + '.mat',filedict)
+        sio.savemat(filesavename,filedict)
         print('数据已保存到%s'%(filesavename))
     #
     return data_test,label_test,data_train,label_train,passengerIdlist
@@ -230,11 +235,21 @@ def savepredictcsv(passengerIdlist,predictedl,savename='test'):
     print("save csv file to %s" % filesavename)
 
 #回归树预测
-def RFC(file_path='./dataset/train.csv',savefile=True,savepath='./data',ratio=0):
-    te, te_l, tr, tr_l,_ = predata(file_path,savepath=savepath,savefile=savefile,ratio=ratio,predataflag=0)
-    rfr = RandomForestClassifier(random_state=0, n_estimators=2000, n_jobs=-1)
+def RFC(file_path='./dataset/train.csv',savefile=True,savepath='./data',ratio=0,predataflag=1):
+    # te, te_l, tr, tr_l,_ = predata(file_path,savepath=savepath,savefile=savefile,ratio=ratio,predataflag=predataflag)
+    _, _, tr, tr_l, _ = predata(file_path, savefile, savename='train', savepath=savepath, ratio=0,
+                                predataflag=predataflag)
+    rfr = RandomForestClassifier(random_state=0, n_estimators=200, n_jobs=-1)
     cross=cross_validation.cross_val_score(rfr, tr, tr_l, cv=5)
     print(cross, "mean=%.4f" % (cross.mean()))
+
+    # 取训练集
+    test_path = './dataset/test.csv'
+    te, _, _, _, passengerIdlist = predata(test_path, savefile, savename='test', savepath=savepath, ratio=1,
+                                           predataflag=predataflag)
+    rfr.fit(tr, tr_l)
+    predictedl = rfr.predict(te)
+    return passengerIdlist,predictedl
     '''
     rfr.fit(tr, tr_l)
     predictedl = rfr.predict(te)
@@ -244,11 +259,21 @@ def RFC(file_path='./dataset/train.csv',savefile=True,savepath='./data',ratio=0)
     print(te_l == predictedl, 'RandomForestClassifier is acc:%.4f,count:%d,total:%d' % (acc, count, len(res)))
     '''
 #逻辑回归预测
-def LR(file_path='./dataset/train.csv',savefile=True,savepath='./data',ratio=0):
-    te, te_l, tr, tr_l, _ = predata(file_path, savepath=savepath, savefile=savefile, ratio=ratio, predataflag=0)
+def LR(file_path='./dataset/train.csv',savefile=True,savepath='./data',ratio=0,predataflag=1):
+    # te, te_l, tr, tr_l, _ = predata(file_path, savepath=savepath, savefile=savefile, ratio=ratio, predataflag=predataflag)
+    _, _, tr, tr_l, _ = predata(file_path, savefile, savename='train', savepath=savepath, ratio=0,
+                                predataflag=predataflag)
     clf = linear_model.LogisticRegression(C=1.0, penalty='l1', tol=1e-6)
     cross = cross_validation.cross_val_score(clf, tr, tr_l, cv=5)
     print(cross, "mean=%.4f" % (cross.mean()))
+
+    # 取训练集
+    test_path = './dataset/test.csv'
+    te, _, _, _, passengerIdlist = predata(test_path, savefile, savename='test', savepath=savepath, ratio=1,
+                                           predataflag=predataflag)
+    clf.fit(tr, tr_l)
+    predictedl = clf.predict(te)
+    return passengerIdlist,predictedl
     '''
     clf.fit(tr, tr_l)
     predictedl = clf.predict(te)
@@ -259,34 +284,84 @@ def LR(file_path='./dataset/train.csv',savefile=True,savepath='./data',ratio=0):
     print(te_l == predictedl, 'LogisticRegression is acc:%.4f,count:%d,total:%d' % (acc, count, len(res)))
     '''
 
-def KNN(file_path='./dataset/train.csv',savefile=True,savepath='./data',ratio=0):
-    te, te_l, tr, tr_l, _ = predata(file_path, savepath=savepath, savefile=savefile, ratio=ratio, predataflag=0)
+def KNN(file_path='./dataset/train.csv',savefile=True,savepath='./data',ratio=0,predataflag=1):
+    # te, te_l, tr, tr_l, _ = predata(file_path, savepath=savepath, savefile=savefile, ratio=ratio, predataflag=predataflag)
+    _, _, tr, tr_l, _ = predata(file_path, savefile, savename='train', savepath=savepath, ratio=0,
+                                predataflag=predataflag)
     knn = KNeighborsClassifier(n_neighbors=5)
+
     cross=cross_validation.cross_val_score(knn, tr, tr_l, cv=5)
     print(cross, "mean=%.4f" % (cross.mean()))
 
-def SVM(file_path='./dataset/train.csv',savefile=True,savepath='./data',ratio=0,predataflag=0):
+    # 取训练集
+    test_path = './dataset/test.csv'
+    te, _, _, _, passengerIdlist = predata(test_path, savefile, savename='test', savepath=savepath, ratio=1,
+                                           predataflag=predataflag)
+    knn.fit(tr, tr_l)
+    predictedl = knn.predict(te)
+    return passengerIdlist,predictedl
+
+def SVM(file_path='./dataset/train.csv',savefile=True,savepath='./data',ratio=0,predataflag=1):
     _, _, tr, tr_l,_ = predata(file_path, savefile,savename='train', savepath=savepath, ratio=0,predataflag=predataflag)
+    #对tr用稀疏矩阵编码：
+    # w=np.load('weights1.npy')
+    # trsparse=tr.dot(w)
     #取训练集
     test_path='./dataset/test.csv'
     te,_,_,_,passengerIdlist=predata(test_path, savefile,savename='test',savepath=savepath,ratio=1,predataflag=predataflag)
+    # 对tr用稀疏矩阵编码：
+    # tesparse=te.dot(w)
     svc = svm.SVC(C=1.0, kernel = 'rbf', degree = 3)
     cross=cross_validation.cross_val_score(svc, tr, tr_l, cv=5)
     print(cross,"mean=%.4f"%(cross.mean()))
 
     svc.fit(tr, tr_l)
     predictedl = svc.predict(te)
+    return passengerIdlist,predictedl
     #保存结果
-    savepredictcsv(passengerIdlist,predictedl,'test')
+    # savepredictcsv(passengerIdlist,predictedl,'test')
     # res = te_l == predictedl
     # count = res[res == True].shape[0]
     # acc = count / len(res)
     # print(te_l == predictedl, 'RandomForestClassifier is acc:%.4f,count:%d,total:%d' % (acc, count, len(res)))
+#回归树预测
+def AdaBoost(file_path='./dataset/train.csv',savefile=True,savepath='./data',ratio=0,predataflag=1):
+    # te, te_l, tr, tr_l,_ = predata(file_path,savepath=savepath,savefile=savefile,ratio=ratio,predataflag=predataflag)
+    _, _, tr, tr_l, _ = predata(file_path, savefile, savename='train', savepath=savepath, ratio=0,
+                                predataflag=predataflag)
+    clf = AdaBoostClassifier(n_estimators=500)  # 迭代100次
+    cross=cross_validation.cross_val_score(clf, tr, tr_l, cv=5)
+    print(cross, "mean=%.4f" % (cross.mean()))
+
+    # 取训练集
+    test_path = './dataset/test.csv'
+    te, _, _, _, passengerIdlist = predata(test_path, savefile, savename='test', savepath=savepath, ratio=1,
+                                           predataflag=predataflag)
+    clf.fit(tr, tr_l)
+    predictedl = clf.predict(te)
+    return passengerIdlist,predictedl
+    '''
+    rfr.fit(tr, tr_l)
+    predictedl = rfr.predict(te)
+    res = te_l == predictedl
+    count = res[res == True].shape[0]
+    acc = count / len(res)
+    print(te_l == predictedl, 'RandomForestClassifier is acc:%.4f,count:%d,total:%d' % (acc, count, len(res)))
+    '''
 
 if __name__ == '__main__':
-    RFC()
-    LR()
-    KNN()
-    SVM()
+    _,p1=RFC()
+    _,p2=LR()
+    _,p3=KNN()
+    _,p4=SVM()
+    passengerIdlist,p5=AdaBoost()
+    num=5
+    p=np.array([p1,p2,p3,p4,p5]).sum(0)
+    p[p>num/2]=1
+    p[p<=num/2]=0
+    # 保存结果
+    savepredictcsv(passengerIdlist,p5,'test')
+
+
     # test_path = './dataset/test.csv'
     # te, _, _, _ = predata(test_path, savefile=True, savename='test', savepath='./data/', ratio=1, predataflag=0)
