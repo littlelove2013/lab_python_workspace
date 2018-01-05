@@ -147,11 +147,11 @@ def gettest(batchnumber,savepath=root+'testdataset/',batchsize=100,size=(224,224
 def addgaussandrot90(data,debug=False):
     #添加噪声
     [n,h,w,c]=data.shape
-    # g=np.random.randn(n,h,w,c)
-    # k=16
-    # data=data+k*g
-    # data[data>255]=255
-    # data[data<0]=0
+    g=np.random.randn(n,h,w,c)
+    k=16
+    data=data+k*g
+    data[data>255]=255
+    data[data<0]=0
     #随机数，选择是否旋转90度,向左1还是向右-1,或者不旋转
     randnum=np.random.randint(0,3,3)
     #90度旋转
@@ -165,7 +165,7 @@ def addgaussandrot90(data,debug=False):
     #做随机循环移位
     roller=[0,1,2]#表示选择的维度，0为不操作
     shiftnum=0
-    if randnum[2]!=0:
+    if False:#randnum[2]!=0:
         axis=roller[randnum[2]]
         wid=data.shape[axis]
         shiftnum=np.random.randint(int(wid/8),7*int(wid/8))
