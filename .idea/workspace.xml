@@ -3,7 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="26ac5d66-a343-4619-bd8d-f04266680f53" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/general/dogbreed/dogbreed.py" afterPath="$PROJECT_DIR$/general/dogbreed/dogbreed.py" />
+      <change beforePath="$PROJECT_DIR$/general/Titanic/.ipynb_checkpoints/restest-checkpoint.ipynb" afterPath="$PROJECT_DIR$/general/Titanic/.ipynb_checkpoints/restest-checkpoint.ipynb" />
+      <change beforePath="$PROJECT_DIR$/general/Titanic/data/test_Titanic_data_1.mat" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/general/Titanic/data/train_Titanic_data_0.mat" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/general/Titanic/dataset/pre_test.csv" afterPath="$PROJECT_DIR$/general/Titanic/dataset/pre_test.csv" />
+      <change beforePath="$PROJECT_DIR$/general/Titanic/predata.py" afterPath="$PROJECT_DIR$/general/Titanic/predata.py" />
+      <change beforePath="$PROJECT_DIR$/general/Titanic/restest.ipynb" afterPath="$PROJECT_DIR$/general/Titanic/restest.ipynb" />
+      <change beforePath="$PROJECT_DIR$/general/Titanic/sparseautoencoder.py" afterPath="$PROJECT_DIR$/general/Titanic/sparseautoencoder.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,14 +33,14 @@
     <SUITE FILE_PATH="coverage/lab_python_workspace$VGG.coverage" NAME="VGG Coverage Results" MODIFIED="1513939759432" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/dogbreed" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$Func.coverage" NAME="Func Coverage Results" MODIFIED="1514012316775" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$VGG_beta3.coverage" NAME="VGG_beta3 Coverage Results" MODIFIED="1515055682709" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/dogbreed" />
-    <SUITE FILE_PATH="coverage/lab_python_workspace$predata.coverage" NAME="predata Coverage Results" MODIFIED="1515071636685" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/Titanic" />
+    <SUITE FILE_PATH="coverage/lab_python_workspace$predata.coverage" NAME="predata Coverage Results" MODIFIED="1515141052016" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/Titanic" />
     <SUITE FILE_PATH="coverage/lab_workspace$GMS.coverage" NAME="GMS Coverage Results" MODIFIED="1510556863035" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$FlappyBirdDQN.coverage" NAME="FlappyBirdDQN Coverage Results" MODIFIED="1510313233256" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DQN/DRL-FlappiBird" />
     <SUITE FILE_PATH="coverage/lab_workspace$savelabeltocvs.coverage" NAME="savelabeltocvs Coverage Results" MODIFIED="1514103822939" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/dogbreed" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$testsavetfmodel.coverage" NAME="testsavetfmodel Coverage Results" MODIFIED="1514076715713" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tensorflow" />
     <SUITE FILE_PATH="coverage/lab_workspace$GMSwithMatrix.coverage" NAME="GMSwithMatrix Coverage Results" MODIFIED="1514279599078" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
     <SUITE FILE_PATH="coverage/lab_workspace$FlappyBirdDQN.coverage" NAME="FlappyBirdDQN Coverage Results" MODIFIED="1510556665965" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DQN/DRL-FlappiBird" />
-    <SUITE FILE_PATH="coverage/lab_python_workspace$sparseautoencoder.coverage" NAME="sparseautoencoder Coverage Results" MODIFIED="1515068041702" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/Titanic" />
+    <SUITE FILE_PATH="coverage/lab_python_workspace$sparseautoencoder.coverage" NAME="sparseautoencoder Coverage Results" MODIFIED="1515150417848" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/Titanic" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$dogbreed.coverage" NAME="dogbreed Coverage Results" MODIFIED="1515115436097" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/dogbreed" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$maze.coverage" NAME="maze Coverage Results" MODIFIED="1510474876714" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DQN/Qlearning" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$CNN_test.coverage" NAME="CNN_test Coverage Results" MODIFIED="1514199246577" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tensorflow" />
@@ -46,8 +52,8 @@
       <file leaf-file-name="VGG_pre.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/general/dogbreed/VGG_pre.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="29" column="38" lean-forward="false" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
+            <state relative-caret-position="101">
+              <caret line="11" column="26" lean-forward="false" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -58,17 +64,16 @@
       <file leaf-file-name="VGG_beta3.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/general/dogbreed/VGG_beta3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1064">
-              <caret line="342" column="36" lean-forward="false" selection-start-line="342" selection-start-column="36" selection-end-line="342" selection-end-column="36" />
+            <state relative-caret-position="217">
+              <caret line="276" column="8" lean-forward="false" selection-start-line="276" selection-start-column="8" selection-end-line="276" selection-end-column="50" />
               <folding>
                 <element signature="e#824#847#0" expanded="true" />
                 <element signature="e#1011#13352#0" expanded="false" />
                 <element signature="e#1070#1281#0" expanded="false" />
                 <element signature="e#1317#11127#0" expanded="false" />
-                <element signature="e#11162#13084#0" expanded="false" />
                 <element signature="e#12592#13084#0" expanded="false" />
                 <element signature="e#13141#13352#0" expanded="false" />
-                <element signature="e#13372#15718#0" expanded="false" />
+                <element signature="e#16869#18034#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -77,62 +82,38 @@
       <file leaf-file-name="predata.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/general/Titanic/predata.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="355" column="14" lean-forward="false" selection-start-line="355" selection-start-column="14" selection-end-line="355" selection-end-column="14" />
+            <state relative-caret-position="206">
+              <caret line="406" column="32" lean-forward="false" selection-start-line="406" selection-start-column="32" selection-end-line="406" selection-end-column="32" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
                 <element signature="e#529#587#0" expanded="false" />
                 <element signature="e#624#991#0" expanded="false" />
                 <element signature="e#1026#1990#0" expanded="false" />
-                <element signature="e#1254#1867#0" expanded="false" />
-                <element signature="e#1291#1367#0" expanded="false" />
-                <element signature="e#1417#1497#0" expanded="false" />
-                <element signature="e#1546#1624#0" expanded="false" />
-                <element signature="e#1676#1760#0" expanded="false" />
                 <element signature="e#1787#1867#0" expanded="false" />
                 <element signature="e#1868#1895#0" expanded="false" />
-                <element signature="e#2036#2635#0" expanded="false" />
-                <element signature="e#2637#2652#0" expanded="false" />
-                <element signature="e#2814#2817#0" expanded="false" />
-                <element signature="e#3411#3428#0" expanded="false" />
-                <element signature="e#4110#4140#0" expanded="false" />
-                <element signature="e#4704#4746#0" expanded="false" />
-                <element signature="e#5196#5210#0" expanded="false" />
-                <element signature="e#5302#5460#0" expanded="false" />
-                <element signature="e#5914#6176#0" expanded="false" />
-                <element signature="e#6335#6414#0" expanded="false" />
-                <element signature="e#6673#7553#0" expanded="false" />
-                <element signature="e#6720#7152#0" expanded="false" />
-                <element signature="e#7188#7553#0" expanded="false" />
-                <element signature="e#7607#9369#0" expanded="false" />
-                <element signature="e#8468#8583#0" expanded="false" />
-                <element signature="e#8639#9034#0" expanded="false" />
-                <element signature="e#9072#9369#0" expanded="false" />
-                <element signature="e#9497#9545#0" expanded="false" />
-                <element signature="e#9893#10161#0" expanded="false" />
-                <element signature="e#10270#11325#0" expanded="false" />
-                <element signature="e#11054#11325#1" expanded="false" />
-                <element signature="e#11433#12523#0" expanded="false" />
-                <element signature="e#12219#12523#1" expanded="false" />
-                <element signature="e#12625#13378#0" expanded="false" />
-                <element signature="e#15292#15563#1" expanded="false" />
-                <element signature="e#15833#15867#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sparseautoencoder.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/general/Titanic/sparseautoencoder.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="32" column="12" lean-forward="false" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
-              <folding>
-                <element signature="e#428#521#0" expanded="false" />
-                <element signature="e#524#541#0" expanded="false" />
-                <element signature="e#674#825#0" expanded="false" />
-                <element signature="e#1524#2209#0" expanded="false" />
-                <element signature="e#3022#3057#0" expanded="false" />
+                <element signature="e#2044#3240#0" expanded="false" />
+                <element signature="e#3285#3884#0" expanded="false" />
+                <element signature="e#3886#3901#0" expanded="false" />
+                <element signature="e#4063#4066#0" expanded="false" />
+                <element signature="e#4701#4718#0" expanded="false" />
+                <element signature="e#5400#5430#0" expanded="false" />
+                <element signature="e#6187#6229#0" expanded="false" />
+                <element signature="e#6679#6693#0" expanded="false" />
+                <element signature="e#6785#6943#0" expanded="false" />
+                <element signature="e#7526#7788#0" expanded="false" />
+                <element signature="e#8009#8088#0" expanded="false" />
+                <element signature="e#10098#12017#0" expanded="false" />
+                <element signature="e#11066#11181#0" expanded="false" />
+                <element signature="e#12145#12193#0" expanded="false" />
+                <element signature="e#12541#12809#0" expanded="false" />
+                <element signature="e#12919#13974#0" expanded="false" />
+                <element signature="e#13703#13974#1" expanded="false" />
+                <element signature="e#14082#15172#0" expanded="false" />
+                <element signature="e#14868#15172#1" expanded="false" />
+                <element signature="e#15274#16027#0" expanded="false" />
+                <element signature="e#16129#17065#0" expanded="false" />
+                <element signature="e#17942#18213#1" expanded="false" />
+                <element signature="e#18513#18547#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -141,77 +122,41 @@
       <file leaf-file-name="CNN_test.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tensorflow/CNN_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1843">
-              <caret line="120" column="4" lean-forward="false" selection-start-line="120" selection-start-column="4" selection-end-line="120" selection-end-column="46" />
+            <state relative-caret-position="241">
+              <caret line="117" column="8" lean-forward="false" selection-start-line="117" selection-start-column="8" selection-end-line="117" selection-end-column="56" />
               <folding>
-                <element signature="e#0#23#0" expanded="true" />
                 <element signature="e#167#273#0" expanded="false" />
                 <element signature="e#306#377#0" expanded="false" />
                 <element signature="e#402#502#0" expanded="false" />
                 <element signature="e#530#633#0" expanded="false" />
                 <element signature="e#994#1477#0" expanded="false" />
-                <element signature="e#4189#4588#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Func.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/general/dogbreed/Func.py">
+      <file leaf-file-name="sparseautoencoder.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/general/Titanic/sparseautoencoder.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="1" column="34" lean-forward="false" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Func.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GMS/Func.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="testCNNfrommodel.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tensorflow/testCNNfrommodel.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="17" column="53" lean-forward="false" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
+            <state relative-caret-position="141">
+              <caret line="59" column="65" lean-forward="true" selection-start-line="59" selection-start-column="65" selection-end-line="59" selection-end-column="65" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
+                <element signature="e#1183#1200#0" expanded="false" />
+                <element signature="e#1333#1484#0" expanded="false" />
+                <element signature="e#2901#3586#0" expanded="false" />
+                <element signature="e#4715#4750#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GMS.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GMS/GMS.py">
+      <file leaf-file-name="codecs.py" pinned="false" current-in-tab="false">
+        <entry file="file://H:/Vision/Anconda/Lib/codecs.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3990">
-              <caret line="218" column="4" lean-forward="false" selection-start-line="218" selection-start-column="4" selection-end-line="218" selection-end-column="42" />
-              <folding>
-                <element signature="e#8026#8236#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dogbreed.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/general/dogbreed/dogbreed.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="13" column="35" lean-forward="true" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
-              <folding>
-                <element signature="e#24#35#0" expanded="true" />
-                <element signature="e#485#2658#0" expanded="false" />
-                <element signature="e#2744#3306#0" expanded="false" />
-                <element signature="e#3415#4567#0" expanded="false" />
-                <element signature="e#4657#5235#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="331">
+              <caret line="308" column="0" lean-forward="false" selection-start-line="308" selection-start-column="0" selection-end-line="308" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -238,6 +183,7 @@
       <find>summary</find>
       <find>merged_summary_op</find>
       <find>filesavename</find>
+      <find>batchsize</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -269,9 +215,9 @@
         <option value="$PROJECT_DIR$/tensorflow/CNN_test.py" />
         <option value="$PROJECT_DIR$/general/dogbreed/VGG_pre.py" />
         <option value="$PROJECT_DIR$/general/dogbreed/VGG_beta3.py" />
-        <option value="$PROJECT_DIR$/general/Titanic/sparseautoencoder.py" />
-        <option value="$PROJECT_DIR$/general/Titanic/predata.py" />
         <option value="$PROJECT_DIR$/general/dogbreed/dogbreed.py" />
+        <option value="$PROJECT_DIR$/general/Titanic/predata.py" />
+        <option value="$PROJECT_DIR$/general/Titanic/sparseautoencoder.py" />
       </list>
     </option>
   </component>
@@ -281,9 +227,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="11" />
-    <option name="y" value="-26" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-55" />
+    <option name="y" value="46" />
     <option name="width" value="1382" />
     <option name="height" value="784" />
   </component>
@@ -318,20 +264,18 @@
               <item name="lab_python_workspace" type="b2602c69:ProjectViewProjectNode" />
               <item name="lab_python_workspace" type="462c0819:PsiDirectoryNode" />
               <item name="general" type="462c0819:PsiDirectoryNode" />
-              <item name="dogbreed" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lab_python_workspace" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lab_python_workspace" type="462c0819:PsiDirectoryNode" />
-              <item name="general" type="462c0819:PsiDirectoryNode" />
               <item name="Titanic" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="lab_python_workspace" type="b2602c69:ProjectViewProjectNode" />
               <item name="lab_python_workspace" type="462c0819:PsiDirectoryNode" />
               <item name="general" type="462c0819:PsiDirectoryNode" />
-              <item name="Titanic" type="462c0819:PsiDirectoryNode" />
-              <item name="dataset" type="462c0819:PsiDirectoryNode" />
+              <item name="webbigdata" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lab_python_workspace" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lab_python_workspace" type="462c0819:PsiDirectoryNode" />
+              <item name="tensorflow" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -370,7 +314,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.dogbreed">
+  <component name="RunManager" selected="Python.sparseautoencoder">
     <configuration name="GMSwithMatrix" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -475,9 +419,9 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.dogbreed" />
+        <item index="0" class="java.lang.String" itemvalue="Python.sparseautoencoder" />
         <item index="1" class="java.lang.String" itemvalue="Python.predata" />
-        <item index="2" class="java.lang.String" itemvalue="Python.sparseautoencoder" />
+        <item index="2" class="java.lang.String" itemvalue="Python.dogbreed" />
         <item index="3" class="java.lang.String" itemvalue="Python.VGG_beta3" />
         <item index="4" class="java.lang.String" itemvalue="Python.GMSwithMatrix" />
       </list>
@@ -496,13 +440,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1510310557136</updated>
-    </task>
-    <task id="LOCAL-00006" summary="update GMS with convolve">
-      <created>1514005367619</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1514005367619</updated>
     </task>
     <task id="LOCAL-00007" summary="update VGG for dog class">
       <created>1514011714871</created>
@@ -840,7 +777,14 @@
       <option name="project" value="LOCAL" />
       <updated>1515115343326</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="update VGG:&#10;    update img change:add noise with k=16 and remove roll shift">
+      <created>1515115446874</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1515115446874</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TodoView">
@@ -853,7 +797,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <frame x="-55" y="46" width="1382" height="784" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32923076" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -861,12 +805,12 @@
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12537764" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="0" y="0" width="295" height="584" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20153846" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2846154" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3276923" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3276923" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20543806" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45619336" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20770393" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39076924" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1003,8 +947,23 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/general/Titanic/predata.py</url>
-          <line>360</line>
-          <option name="timeStamp" value="69" />
+          <line>379</line>
+          <option name="timeStamp" value="74" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/general/Titanic/predata.py</url>
+          <line>271</line>
+          <option name="timeStamp" value="75" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/general/Titanic/sparseautoencoder.py</url>
+          <line>128</line>
+          <option name="timeStamp" value="78" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/general/Titanic/sparseautoencoder.py</url>
+          <line>10</line>
+          <option name="timeStamp" value="81" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -1014,25 +973,11 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="70" />
+      <option name="time" value="83" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/DQN/Qlearning/randmaze.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HSI/DataLoader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="32" column="25" lean-forward="false" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DQN/Qlearning/maze.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1881">
@@ -1291,13 +1236,6 @@
       </provider>
     </entry>
     <entry file="file://H:/Vision/Anconda/Lib/site-packages/tensorboard/util.py" />
-    <entry file="file://H:/Vision/Anconda/Lib/codecs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5852">
-          <caret line="308" column="0" lean-forward="false" selection-start-line="308" selection-start-column="0" selection-end-line="308" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GMS/GMSwithMatrix.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
@@ -1309,22 +1247,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="23" column="41" lean-forward="false" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tensorflow/CNN_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1843">
-          <caret line="120" column="4" lean-forward="false" selection-start-line="120" selection-start-column="4" selection-end-line="120" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-            <element signature="e#167#273#0" expanded="false" />
-            <element signature="e#306#377#0" expanded="false" />
-            <element signature="e#402#502#0" expanded="false" />
-            <element signature="e#530#633#0" expanded="false" />
-            <element signature="e#994#1477#0" expanded="false" />
-            <element signature="e#4189#4588#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1349,7 +1271,7 @@
         <state relative-caret-position="285">
           <caret line="17" column="53" lean-forward="false" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
           <folding>
-            <element signature="e#0#23#0" expanded="true" />
+            <element signature="e#0#23#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1365,103 +1287,131 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/general/dogbreed/dataset/pre_pretestimage.csv" />
+    <entry file="file://$PROJECT_DIR$/general/dogbreed/dogbreed.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="12" lean-forward="true" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+          <folding>
+            <element signature="e#24#35#0" expanded="false" />
+            <element signature="e#485#2658#0" expanded="false" />
+            <element signature="e#2744#3306#0" expanded="false" />
+            <element signature="e#3415#4567#0" expanded="false" />
+            <element signature="e#4657#5235#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/general/dogbreed/VGG_pre.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="29" column="38" lean-forward="false" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
+        <state relative-caret-position="101">
+          <caret line="11" column="26" lean-forward="false" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/general/dogbreed/VGG_beta3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1064">
-          <caret line="342" column="36" lean-forward="false" selection-start-line="342" selection-start-column="36" selection-end-line="342" selection-end-column="36" />
-          <folding>
-            <element signature="e#824#847#0" expanded="true" />
-            <element signature="e#1011#13352#0" expanded="false" />
-            <element signature="e#1070#1281#0" expanded="false" />
-            <element signature="e#1317#11127#0" expanded="false" />
-            <element signature="e#11162#13084#0" expanded="false" />
-            <element signature="e#12592#13084#0" expanded="false" />
-            <element signature="e#13141#13352#0" expanded="false" />
-            <element signature="e#13372#15718#0" expanded="false" />
-          </folding>
+    <entry file="file://$PROJECT_DIR$/general/Titanic/Untitled-Copy1.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/general/Titanic/sparseautoencoder.py">
+    <entry file="file://$PROJECT_DIR$/tensorflow/CNN_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="32" column="12" lean-forward="false" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
+        <state relative-caret-position="241">
+          <caret line="117" column="8" lean-forward="false" selection-start-line="117" selection-start-column="8" selection-end-line="117" selection-end-column="56" />
           <folding>
-            <element signature="e#428#521#0" expanded="false" />
-            <element signature="e#524#541#0" expanded="false" />
-            <element signature="e#674#825#0" expanded="false" />
-            <element signature="e#1524#2209#0" expanded="false" />
-            <element signature="e#3022#3057#0" expanded="false" />
+            <element signature="e#167#273#0" expanded="false" />
+            <element signature="e#306#377#0" expanded="false" />
+            <element signature="e#402#502#0" expanded="false" />
+            <element signature="e#530#633#0" expanded="false" />
+            <element signature="e#994#1477#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/general/Titanic/predata.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="355" column="14" lean-forward="false" selection-start-line="355" selection-start-column="14" selection-end-line="355" selection-end-column="14" />
+        <state relative-caret-position="206">
+          <caret line="406" column="32" lean-forward="false" selection-start-line="406" selection-start-column="32" selection-end-line="406" selection-end-column="32" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
             <element signature="e#529#587#0" expanded="false" />
             <element signature="e#624#991#0" expanded="false" />
             <element signature="e#1026#1990#0" expanded="false" />
-            <element signature="e#1254#1867#0" expanded="false" />
-            <element signature="e#1291#1367#0" expanded="false" />
-            <element signature="e#1417#1497#0" expanded="false" />
-            <element signature="e#1546#1624#0" expanded="false" />
-            <element signature="e#1676#1760#0" expanded="false" />
             <element signature="e#1787#1867#0" expanded="false" />
             <element signature="e#1868#1895#0" expanded="false" />
-            <element signature="e#2036#2635#0" expanded="false" />
-            <element signature="e#2637#2652#0" expanded="false" />
-            <element signature="e#2814#2817#0" expanded="false" />
-            <element signature="e#3411#3428#0" expanded="false" />
-            <element signature="e#4110#4140#0" expanded="false" />
-            <element signature="e#4704#4746#0" expanded="false" />
-            <element signature="e#5196#5210#0" expanded="false" />
-            <element signature="e#5302#5460#0" expanded="false" />
-            <element signature="e#5914#6176#0" expanded="false" />
-            <element signature="e#6335#6414#0" expanded="false" />
-            <element signature="e#6673#7553#0" expanded="false" />
-            <element signature="e#6720#7152#0" expanded="false" />
-            <element signature="e#7188#7553#0" expanded="false" />
-            <element signature="e#7607#9369#0" expanded="false" />
-            <element signature="e#8468#8583#0" expanded="false" />
-            <element signature="e#8639#9034#0" expanded="false" />
-            <element signature="e#9072#9369#0" expanded="false" />
-            <element signature="e#9497#9545#0" expanded="false" />
-            <element signature="e#9893#10161#0" expanded="false" />
-            <element signature="e#10270#11325#0" expanded="false" />
-            <element signature="e#11054#11325#1" expanded="false" />
-            <element signature="e#11433#12523#0" expanded="false" />
-            <element signature="e#12219#12523#1" expanded="false" />
-            <element signature="e#12625#13378#0" expanded="false" />
-            <element signature="e#15292#15563#1" expanded="false" />
-            <element signature="e#15833#15867#0" expanded="false" />
+            <element signature="e#2044#3240#0" expanded="false" />
+            <element signature="e#3285#3884#0" expanded="false" />
+            <element signature="e#3886#3901#0" expanded="false" />
+            <element signature="e#4063#4066#0" expanded="false" />
+            <element signature="e#4701#4718#0" expanded="false" />
+            <element signature="e#5400#5430#0" expanded="false" />
+            <element signature="e#6187#6229#0" expanded="false" />
+            <element signature="e#6679#6693#0" expanded="false" />
+            <element signature="e#6785#6943#0" expanded="false" />
+            <element signature="e#7526#7788#0" expanded="false" />
+            <element signature="e#8009#8088#0" expanded="false" />
+            <element signature="e#10098#12017#0" expanded="false" />
+            <element signature="e#11066#11181#0" expanded="false" />
+            <element signature="e#12145#12193#0" expanded="false" />
+            <element signature="e#12541#12809#0" expanded="false" />
+            <element signature="e#12919#13974#0" expanded="false" />
+            <element signature="e#13703#13974#1" expanded="false" />
+            <element signature="e#14082#15172#0" expanded="false" />
+            <element signature="e#14868#15172#1" expanded="false" />
+            <element signature="e#15274#16027#0" expanded="false" />
+            <element signature="e#16129#17065#0" expanded="false" />
+            <element signature="e#17942#18213#1" expanded="false" />
+            <element signature="e#18513#18547#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/general/dogbreed/dogbreed.py">
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="35" lean-forward="true" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
+        <state relative-caret-position="228">
+          <caret line="12" column="32" lean-forward="true" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://H:/Vision/Anconda/Lib/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="308" column="0" lean-forward="false" selection-start-line="308" selection-start-column="0" selection-end-line="308" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/general/dogbreed/VGG_beta3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="276" column="8" lean-forward="false" selection-start-line="276" selection-start-column="8" selection-end-line="276" selection-end-column="50" />
           <folding>
-            <element signature="e#24#35#0" expanded="true" />
-            <element signature="e#485#2658#0" expanded="false" />
-            <element signature="e#2744#3306#0" expanded="false" />
-            <element signature="e#3415#4567#0" expanded="false" />
-            <element signature="e#4657#5235#0" expanded="false" />
+            <element signature="e#824#847#0" expanded="true" />
+            <element signature="e#1011#13352#0" expanded="false" />
+            <element signature="e#1070#1281#0" expanded="false" />
+            <element signature="e#1317#11127#0" expanded="false" />
+            <element signature="e#12592#13084#0" expanded="false" />
+            <element signature="e#13141#13352#0" expanded="false" />
+            <element signature="e#16869#18034#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/general/Titanic/sparseautoencoder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="59" column="65" lean-forward="true" selection-start-line="59" selection-start-column="65" selection-end-line="59" selection-end-column="65" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+            <element signature="e#1183#1200#0" expanded="false" />
+            <element signature="e#1333#1484#0" expanded="false" />
+            <element signature="e#2901#3586#0" expanded="false" />
+            <element signature="e#4715#4750#0" expanded="false" />
           </folding>
         </state>
       </provider>
