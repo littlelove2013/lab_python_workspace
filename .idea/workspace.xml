@@ -203,14 +203,14 @@
       <file leaf-file-name="dogbreed.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/general/dogbreed/dogbreed.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="156" column="10" lean-forward="true" selection-start-line="156" selection-start-column="10" selection-end-line="156" selection-end-column="10" />
+            <state relative-caret-position="127">
+              <caret line="187" column="30" lean-forward="true" selection-start-line="187" selection-start-column="30" selection-end-line="187" selection-end-column="30" />
               <folding>
                 <element signature="e#24#35#0" expanded="true" />
-                <element signature="e#483#2656#0" expanded="false" />
-                <element signature="e#2742#3304#0" expanded="false" />
-                <element signature="e#3413#4565#0" expanded="false" />
-                <element signature="e#4655#5233#0" expanded="false" />
+                <element signature="e#485#2658#0" expanded="false" />
+                <element signature="e#2744#3306#0" expanded="false" />
+                <element signature="e#3415#4567#0" expanded="false" />
+                <element signature="e#4657#5235#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -496,13 +496,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1510310557136</updated>
-    </task>
-    <task id="LOCAL-00002" summary="add general lecture code">
-      <created>1510311401348</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1510311401348</updated>
     </task>
     <task id="LOCAL-00003" summary="add GMS model">
       <created>1510388731786</created>
@@ -840,7 +833,14 @@
       <option name="project" value="LOCAL" />
       <updated>1515071840259</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="update VGG:&#10;    update img change">
+      <created>1515112174451</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1515112174451</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TodoView">
@@ -960,7 +960,8 @@
     <MESSAGE value="update VGG with srcdata:&#10;1、add guaiss filter with mu=0 sigma=1,k=16&#10;2、rand to rot90&#10;3、rand to fliper&#10;4、rand to roll shift within(1/4,3/4)width" />
     <MESSAGE value="update VGG:&#10;1、add guaiss filter with mu=0 sigma=1,k=16&#10;2、rand to rot90&#10;3、rand to fliper&#10;4、rand to roll shift within(1/4,3/4)width&#10;5、update summary iter index" />
     <MESSAGE value="update Titanic" />
-    <option name="LAST_COMMIT_MESSAGE" value="update Titanic" />
+    <MESSAGE value="update VGG:&#10;    update img change" />
+    <option name="LAST_COMMIT_MESSAGE" value="update VGG:&#10;    update img change" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1453,14 +1454,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/general/dogbreed/dogbreed.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="156" column="10" lean-forward="true" selection-start-line="156" selection-start-column="10" selection-end-line="156" selection-end-column="10" />
+        <state relative-caret-position="127">
+          <caret line="187" column="30" lean-forward="true" selection-start-line="187" selection-start-column="30" selection-end-line="187" selection-end-column="30" />
           <folding>
             <element signature="e#24#35#0" expanded="true" />
-            <element signature="e#483#2656#0" expanded="false" />
-            <element signature="e#2742#3304#0" expanded="false" />
-            <element signature="e#3413#4565#0" expanded="false" />
-            <element signature="e#4655#5233#0" expanded="false" />
+            <element signature="e#485#2658#0" expanded="false" />
+            <element signature="e#2744#3306#0" expanded="false" />
+            <element signature="e#3415#4567#0" expanded="false" />
+            <element signature="e#4657#5235#0" expanded="false" />
           </folding>
         </state>
       </provider>
