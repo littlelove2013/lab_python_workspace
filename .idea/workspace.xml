@@ -1,15 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="26ac5d66-a343-4619-bd8d-f04266680f53" name="Default" comment="">
+    <list default="true" id="26ac5d66-a343-4619-bd8d-f04266680f53" name="Default" comment="update Titanic:&#10; use sparse auto encoder and softmax to trian">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/general/Titanic/.ipynb_checkpoints/restest-checkpoint.ipynb" afterPath="$PROJECT_DIR$/general/Titanic/.ipynb_checkpoints/restest-checkpoint.ipynb" />
-      <change beforePath="$PROJECT_DIR$/general/Titanic/data/test_Titanic_data_1.mat" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/general/Titanic/data/train_Titanic_data_0.mat" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/general/Titanic/dataset/pre_test.csv" afterPath="$PROJECT_DIR$/general/Titanic/dataset/pre_test.csv" />
-      <change beforePath="$PROJECT_DIR$/general/Titanic/predata.py" afterPath="$PROJECT_DIR$/general/Titanic/predata.py" />
-      <change beforePath="$PROJECT_DIR$/general/Titanic/restest.ipynb" afterPath="$PROJECT_DIR$/general/Titanic/restest.ipynb" />
-      <change beforePath="$PROJECT_DIR$/general/Titanic/sparseautoencoder.py" afterPath="$PROJECT_DIR$/general/Titanic/sparseautoencoder.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -227,9 +220,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-55" />
-    <option name="y" value="46" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-29" />
+    <option name="y" value="2" />
     <option name="width" value="1382" />
     <option name="height" value="784" />
   </component>
@@ -440,13 +433,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1510310557136</updated>
-    </task>
-    <task id="LOCAL-00007" summary="update VGG for dog class">
-      <created>1514011714871</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1514011714871</updated>
     </task>
     <task id="LOCAL-00008" summary="update GMS plotshow">
       <created>1514012355919</created>
@@ -784,7 +770,14 @@
       <option name="project" value="LOCAL" />
       <updated>1515115446874</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="update Titanic:&#10; use sparse auto encoder and softmax to trian">
+      <created>1515150865143</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1515150865143</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TodoView">
@@ -797,8 +790,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-55" y="46" width="1382" height="784" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32923076" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -807,7 +799,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2846154" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3276923" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20543806" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20543806" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20770393" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -880,7 +872,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add general lecture code" />
     <MESSAGE value="add GMS model" />
     <MESSAGE value="update lab changes" />
     <MESSAGE value="update GMS with convolve" />
@@ -905,7 +896,8 @@
     <MESSAGE value="update Titanic" />
     <MESSAGE value="update VGG:&#10;    update img change" />
     <MESSAGE value="update VGG:&#10;    update img change:add noise with k=16 and remove roll shift" />
-    <option name="LAST_COMMIT_MESSAGE" value="update VGG:&#10;    update img change:add noise with k=16 and remove roll shift" />
+    <MESSAGE value="update Titanic:&#10; use sparse auto encoder and softmax to trian" />
+    <option name="LAST_COMMIT_MESSAGE" value="update Titanic:&#10; use sparse auto encoder and softmax to trian" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
