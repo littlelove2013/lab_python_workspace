@@ -6,7 +6,7 @@ import numpy as np #科学计算
 import scipy.io as sio
 from scipy.misc import imread, imresize
 import savelabeltocvs as sl
-# import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 
 root='../../../include_data/dogbreed/'
 batchsize=50
@@ -144,14 +144,14 @@ def gettest(batchnumber,savepath=root+'testdataset/',batchsize=100,size=(224,224
     #return train
 
 #data为4维的数据，(n,h,w,c):n:数量，c:通道
-def addgaussandrot90(data,debug=False):
+def addgaussandrot90(data,debug=True):
     #添加噪声
     [n,h,w,c]=data.shape
-    g=np.random.randn(n,h,w,c)
-    k=16
-    data=data+k*g
-    data[data>255]=255
-    data[data<0]=0
+    # g=np.random.randn(n,h,w,c)
+    # k=16
+    # data=data+k*g
+    # data[data>255]=255
+    # data[data<0]=0
     #随机数，选择是否旋转90度,向左1还是向右-1,或者不旋转
     randnum=np.random.randint(0,3,3)
     #90度旋转
@@ -168,14 +168,14 @@ def addgaussandrot90(data,debug=False):
     if randnum[2]!=0:
         axis=roller[randnum[2]]
         wid=data.shape[axis]
-        shiftnum=np.random.randint(int(wid/4),3*int(wid/4))
+        shiftnum=np.random.randint(int(wid/8),7*int(wid/8))
         data=np.roll(data,shift=shiftnum,axis=axis)
     if debug:#显示第一张图片查看是否正确转换
         print('(rot,fliper,roller)=((k=%d),(axis=%d),(axis=%d,shift=%d))'%(rot[randnum[0]],fliper[randnum[1]],roller[randnum[2]],shiftnum))
         imgindex=np.random.randint(0,n)
         img=data[imgindex].astype(np.uint8)
-        # plt.imshow(img)
-        # plt.show()
+        plt.imshow(img)
+        plt.show()
     return data
 
 
