@@ -6,7 +6,7 @@ import numpy as np #科学计算
 import scipy.io as sio
 from scipy.misc import imread, imresize
 import savelabeltocvs as sl
-# import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 
 root='../../../include_data/dogbreed/'
 batchsize=50
@@ -152,6 +152,7 @@ def addgaussandrot90(data,debug=False):
     data=data+k*g
     data[data>255]=255
     data[data<0]=0
+    '''
     #随机数，选择是否旋转90度,向左1还是向右-1,或者不旋转
     randnum=np.random.randint(0,3,3)
     #90度旋转
@@ -165,17 +166,18 @@ def addgaussandrot90(data,debug=False):
     #做随机循环移位
     roller=[0,1,2]#表示选择的维度，0为不操作
     shiftnum=0
-    if False:#randnum[2]!=0:
+    if randnum[2]!=0:
         axis=roller[randnum[2]]
         wid=data.shape[axis]
         shiftnum=np.random.randint(int(wid/8),7*int(wid/8))
         data=np.roll(data,shift=shiftnum,axis=axis)
+    '''
     if debug:#显示第一张图片查看是否正确转换
-        print('(rot,fliper,roller)=((k=%d),(axis=%d),(axis=%d,shift=%d))'%(rot[randnum[0]],fliper[randnum[1]],roller[randnum[2]],shiftnum))
+        # print('(rot,fliper,roller)=((k=%d),(axis=%d),(axis=%d,shift=%d))'%(rot[randnum[0]],fliper[randnum[1]],roller[randnum[2]],shiftnum))
         imgindex=np.random.randint(0,n)
         img=data[imgindex].astype(np.uint8)
-        # plt.imshow(img)
-        # plt.show()
+        plt.imshow(img)
+        plt.show()
     return data
 
 
