@@ -6,7 +6,7 @@ import numpy as np #科学计算
 import scipy.io as sio
 from scipy.misc import imread, imresize
 import savelabeltocvs as sl
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 
 root='../../../include_data/dogbreed/'
 batchsize=50
