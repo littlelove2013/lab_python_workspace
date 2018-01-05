@@ -158,8 +158,8 @@
       <file leaf-file-name="dogbreed.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/general/dogbreed/dogbreed.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="176" column="69" lean-forward="true" selection-start-line="176" selection-start-column="69" selection-end-line="176" selection-end-column="69" />
+            <state relative-caret-position="285">
+              <caret line="169" column="21" lean-forward="true" selection-start-line="169" selection-start-column="21" selection-end-line="169" selection-end-column="21" />
               <folding>
                 <element signature="e#485#2658#0" expanded="false" />
                 <element signature="e#2744#3306#0" expanded="false" />
@@ -449,13 +449,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1510310557136</updated>
-    </task>
-    <task id="LOCAL-00009" summary="update GMS plotshow:server con not show image">
-      <created>1514012494663</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1514012494663</updated>
     </task>
     <task id="LOCAL-00010" summary="update VGG data format">
       <created>1514016039779</created>
@@ -793,7 +786,14 @@
       <option name="project" value="LOCAL" />
       <updated>1515153252147</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="update VGG:&#10;随机翻转和90度旋转">
+      <created>1515153374997</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1515153374997</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TodoView">
@@ -889,7 +889,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add GMS model" />
     <MESSAGE value="update lab changes" />
     <MESSAGE value="update GMS with convolve" />
     <MESSAGE value="update VGG for dog class" />
@@ -914,7 +913,8 @@
     <MESSAGE value="update VGG:&#10;    update img change" />
     <MESSAGE value="update VGG:&#10;    update img change:add noise with k=16 and remove roll shift" />
     <MESSAGE value="update Titanic:&#10; use sparse auto encoder and softmax to trian" />
-    <option name="LAST_COMMIT_MESSAGE" value="update Titanic:&#10; use sparse auto encoder and softmax to trian" />
+    <MESSAGE value="update VGG:&#10;随机翻转和90度旋转" />
+    <option name="LAST_COMMIT_MESSAGE" value="update VGG:&#10;随机翻转和90度旋转" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1413,8 +1413,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/general/dogbreed/dogbreed.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="176" column="69" lean-forward="true" selection-start-line="176" selection-start-column="69" selection-end-line="176" selection-end-column="69" />
+        <state relative-caret-position="285">
+          <caret line="169" column="21" lean-forward="true" selection-start-line="169" selection-start-column="21" selection-end-line="169" selection-end-column="21" />
           <folding>
             <element signature="e#485#2658#0" expanded="false" />
             <element signature="e#2744#3306#0" expanded="false" />

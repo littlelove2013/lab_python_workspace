@@ -163,7 +163,7 @@ def addgaussandrot90(data,debug=False):
     fliper=[0,1,2]
     if randnum[1]!=0:
         data=np.flip(data,axis=fliper[randnum[1]])
-    '''
+
     #做随机循环移位
     roller=[0,1,2]#表示选择的维度，0为不操作
     shiftnum=0
@@ -172,7 +172,7 @@ def addgaussandrot90(data,debug=False):
         wid=data.shape[axis]
         shiftnum=np.random.randint(int(wid/8),7*int(wid/8))
         data=np.roll(data,shift=shiftnum,axis=axis)
-    '''
+
     if debug:#显示第一张图片查看是否正确转换
         # print('(rot,fliper,roller)=((k=%d),(axis=%d),(axis=%d,shift=%d))'%(rot[randnum[0]],fliper[randnum[1]],roller[randnum[2]],shiftnum))
         imgindex=np.random.randint(0,n)
