@@ -170,7 +170,7 @@ def addgaussandrot90(data,debug=False):
     if randnum[2]!=0:
         axis=roller[randnum[2]]
         wid=data.shape[axis]
-        shiftnum=np.random.randint(int(wid/8),7*int(wid/8))
+        shiftnum=np.random.randint(-int(wid/4),int(wid/4)+1)
         data=np.roll(data,shift=shiftnum,axis=axis)
 
     if debug:#显示第一张图片查看是否正确转换

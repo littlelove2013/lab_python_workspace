@@ -335,7 +335,7 @@ if __name__ == '__main__':
 
     lens=dogbreed.lens
     batchsize=dogbreed.batchsize
-    trainnum=10
+    trainnum=20
     saveparatime = 50#做50次训练就保存一次参数
     for iter in range(trainnum):
         #每次初始化一个batch序列
