@@ -49,20 +49,23 @@ def xvaier_init(input_size, output_size):
     high = -low
     return tf.random_uniform((input_size, output_size), low, high, dtype=tf.float32)
 
+def KL(p,pjj):
+    pj = tf.clip_by_value(pjj, 1e-10, 1 - 1e-10)#截断操作,
+    return tf.reduce_sum(p * tf.log(p / pj) + (1 - p) * tf.log((1 - p) / (1 - pj)))
 # 计算代价函数，代价函数由三部分组成，均方差项，权重衰减项，以及稀疏因子项
 def computecost(w, b, x, w1, b1,keep_prob):
-    p = 0.9
-    beta = 3
-    lamda = 2
+    #逐步减小学习率和增大稀疏惩罚
+    p = input_nodes/(hidden_size*4)
+    beta = 8
+    lamda = 8
     out=2
-    learnrate=1e-4
+    learnrate=1e-5
     y_ = tf.placeholder(tf.float32, shape=[None, out], name='input_y')
     hidden_output = tf.nn.relu(tf.nn.bias_add(tf.matmul(x, w),b))
     fc2_drop = tf.nn.dropout(hidden_output, keep_prob)
     pjj = tf.reduce_mean(hidden_output, 0)
-    pj=tf.clip_by_value(pjj, 1e-10,1-1e-10)
-    sparse_cost = tf.reduce_sum(p * tf.log(p / pj) + (1 - p) * tf.log((1 - p) / (1 - pj)))
-    fcl2 = tf.nn.bias_add(tf.matmul(hidden_output, w1),b1)
+    sparse_cost = KL(p,pjj)
+    fcl2 = tf.nn.bias_add(tf.matmul(fc2_drop, w1),b1)
     # softmax多分类器
     y_conv = tf.nn.softmax(fcl2)
     regular = lamda * (tf.reduce_sum(w * w) + tf.reduce_sum(w1 * w1)) / 2
@@ -116,25 +119,29 @@ def main():
 
     # 创建saver
     saver = tf.train.Saver()
+    istrian=True
     # 然后再session执行的时候，保存：
     if os.path.exists('save/model.model.meta'):  # 判断模型是否存在
         print('restore weightes form model!')
         saver.restore(sess, tf.train.latest_checkpoint('save'))  # 存在就从模型中恢复变量
+        # istrian = False
     else:
         # sess.run(tf.global_variables_initializer())
         print('init weightes!')
         #若不存在，则训练数据
         sess.run(tf.global_variables_initializer())
+        istrian = True
+    if istrian:
         for i in range(50000):
             train_x, train_l = sampleImage()
             if i % 1000 == 0:
                 #             print(hidden_output_)
                 #             print(output_)
-                cost_c,y_c,acc,sparse,reg=sess.run([cost,y_conv,accuracy,sparse_cost,regular], feed_dict={x: train_x, y_: train_l,keep_prob:0.5})
+                cost_c,y_c,acc,sparse,reg=sess.run([cost,y_conv,accuracy,sparse_cost,regular], feed_dict={x: train_x, y_: train_l,keep_prob:1.0})
                 print('time (%d)'%(int(i/1000)),cost_c,' accuracy is %.4f sparse is %.4f regular is %.4f'%(acc,sparse,reg))
                 #保存参数
                 save_path = saver.save(sess, "save/model.model")
-            sess.run(train_step, feed_dict={x: train_x, y_: train_l})
+            sess.run(train_step, feed_dict={x: train_x, y_: train_l,keep_prob:0.5})
     # np.save("weights1.npy", w_)
     # show_image(w_)
     #测试数据

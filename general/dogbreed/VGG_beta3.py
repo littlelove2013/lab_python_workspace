@@ -346,7 +346,7 @@ if __name__ == '__main__':
             data = dogbreed.getdata(batchlist[i],batchsize=batchsize)
             imgs=data['images']
             #对输入数据做添加噪声和随机旋转切换
-            imgs=dogbreed.addgaussandrot90(imgs)
+            # imgs=dogbreed.addgaussandrot90(imgs)
 
             deepth=imgs.shape[0]
             labels=data['labels']
