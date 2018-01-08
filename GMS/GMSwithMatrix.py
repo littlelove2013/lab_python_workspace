@@ -75,6 +75,18 @@ class GMSwithMatrix:
         #计算划分后网格的高和宽
         self.leftgridsize=(int(self.img1.shape[0]/self.lgn),int(self.img1.shape[1]/self.lgn))#[r,c]
         self.rightgridsize=(int(self.img2.shape[0]/self.rgn),int(self.img2.shape[1]/self.rgn))#[r,c]
+    #根据给定gridid，返回在原图的上下限
+    def getblock(self,gridid,gridsize):
+        k,m=gridid
+        start = (k * gridsize[0], m * gridsize[1])
+        end = ((k + 1) * gridsize[0], (m + 1) *gridsize[1])
+        return start,end
+    #获取位于（leftgridid,rightid）一对网格内的左右特征点对，并返回
+    def kindexingridpair(self,leftgridid,rightid):
+        leftkpoints=[(0,0),(1,1)]
+        rightkpoints=[(5,5),(7,7)]
+        #获取左图坐标对应块
+        return leftkpoints,rightkpoints
     #计算阈值和得分
     def computescoreandthre(self):
         #计算阈值
@@ -97,6 +109,7 @@ class GMSwithMatrix:
                 #对于img1中的每个网格区域和9邻域，计算其匹配的右img2的值
                 bestareastart=(i*self.leftgridsize[0],j*self.leftgridsize[1])
                 bestareaend = ((i+1) * self.leftgridsize[0], (j+1) * self.leftgridsize[1])
+                leftkpoints=self.leftimg[bestareastart[0]:bestareaend[0], bestareastart[1]:bestareaend[1]]
                 # 建一个rightbetgrid,用于统计最匹配网格
                 rightbestimg = np.zeros(self.img2.shape[:2])
                 #行列号
@@ -158,11 +171,12 @@ class GMSwithMatrix:
                 #则可以用img保存所有的匹配点对，对所有特征点，若匹配则为1，然后去找对应的匹配坐标，若不匹配则为0
                 if self.socre[i,j]>self.thre[i,j]:#则匹配度量加上匹配值，最后最匹配的点，其匹配值应该最大，取出其对应匹配的r,c坐标即可
                     #必须只保留匹配点位于最佳匹配格的的匹配点
-                    k=rightbestgridindex[0]
-                    m=rightbestgridindex[1]
+                    k,m=rightbestgridindex
+                    # m=rightbestgridindex[1]
                     bestrangestart=(k*self.rightgridsize[0],m*self.rightgridsize[1])
                     bestrangeend = ((k+1) * self.rightgridsize[0], (m+1) * self.rightgridsize[1])
-                    tmp=self.leftimg[bestareastart[0]:bestareaend[0], bestareastart[1]:bestareaend[1]].copy()
+                    # tmp=self.leftimg[bestareastart[0]:bestareaend[0], bestareastart[1]:bestareaend[1]].copy()
+                    tmp=leftkpoints.copy()
                     index=(tmpleftmatchrgrid<bestrangestart[0])|(tmpleftmatchcgrid<bestrangestart[1])|(tmpleftmatchrgrid>bestrangeend[0])|(tmpleftmatchcgrid>bestrangeend[1])
                     tmp[index]=0
                     self.TrueMatches[bestareastart[0]:bestareaend[0], bestareastart[1]:bestareaend[1]]+=tmp
