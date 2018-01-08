@@ -18,7 +18,7 @@ class GMSwithMatrix:
         self.init()
     
     def init(self):
-        self.TreshFactor=9
+        self.TreshFactor=6
         # 最大特征点数
         self.orb = cv2.ORB_create(self.kptnumber)
         self.orb.setFastThreshold(0)
@@ -83,10 +83,21 @@ class GMSwithMatrix:
         return start,end
     #获取位于（leftgridid,rightid）一对网格内的左右特征点对，并返回
     def kindexingridpair(self,leftgridid,rightid):
-        leftkpoints=[(0,0),(1,1)]
-        rightkpoints=[(5,5),(7,7)]
         #获取左图坐标对应块
-        return leftkpoints,rightkpoints
+        lstart,lend=self.getblock(leftgridid,self.leftgridsize)
+        rstart, rend = self.getblock(rightid, self.rightgridsize)
+        #获取左图的块
+        # leftblock=self.leftimg[lstart[0]:lend[0], lstart[1]:lend[1]]
+        leftblock=np.zeros(shape=self.leftgridsize)
+        # 行列号
+        tmpleftmatchrgrid = self.leftmatchr[lstart[0]:lend[0], lstart[1]:lend[1]]
+        tmpleftmatchcgrid = self.leftmatchc[lstart[0]:lend[0], lstart[1]:lend[1]]
+
+        index = (tmpleftmatchrgrid >= rstart[0]) & (tmpleftmatchcgrid >= rstart[1]) & (
+                tmpleftmatchrgrid <= rend[0]) & (tmpleftmatchcgrid <= rend[1])
+        leftblock[index]=1
+        rightkpoints=np.array(tmpleftmatchrgrid[index].reshape(-1),tmpleftmatchcgrid[index].reshape(-1))
+        return leftblock,rightkpoints
     #计算阈值和得分
     def computescoreandthre(self):
         #计算阈值

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="26ac5d66-a343-4619-bd8d-f04266680f53" name="Default" comment="update VGG:&#10;提交作业最终版">
+    <list default="true" id="26ac5d66-a343-4619-bd8d-f04266680f53" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/GMS/GMSwithMatrix.py" afterPath="$PROJECT_DIR$/GMS/GMSwithMatrix.py" />
     </list>
@@ -24,7 +24,7 @@
     <SUITE FILE_PATH="coverage/lab_python_workspace$graph.coverage" NAME="graph Coverage Results" MODIFIED="1515237446171" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/webbigdata/pagerank" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$GMS.coverage" NAME="GMS Coverage Results" MODIFIED="1514012737496" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$main.coverage" NAME="main Coverage Results" MODIFIED="1515315488539" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/dogbreed" />
-    <SUITE FILE_PATH="coverage/lab_python_workspace$GMSwithMatrix.coverage" NAME="GMSwithMatrix Coverage Results" MODIFIED="1514293453896" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
+    <SUITE FILE_PATH="coverage/lab_python_workspace$GMSwithMatrix.coverage" NAME="GMSwithMatrix Coverage Results" MODIFIED="1515416278508" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$testCNNfrommodel.coverage" NAME="testCNNfrommodel Coverage Results" MODIFIED="1514078724509" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tensorflow" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$VGG.coverage" NAME="VGG Coverage Results" MODIFIED="1513939759432" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/dogbreed" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$Func.coverage" NAME="Func Coverage Results" MODIFIED="1514012316775" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
@@ -119,8 +119,8 @@
       <file leaf-file-name="GMSwithMatrix.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GMS/GMSwithMatrix.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-422">
-              <caret line="101" column="13" lean-forward="true" selection-start-line="101" selection-start-column="13" selection-end-line="101" selection-end-column="13" />
+            <state relative-caret-position="228">
+              <caret line="95" column="87" lean-forward="true" selection-start-line="95" selection-start-column="87" selection-end-line="95" selection-end-column="87" />
               <folding />
             </state>
           </provider>
@@ -337,21 +337,21 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.main">
-    <configuration name="Stacking" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.GMSwithMatrix">
+    <configuration name="GMSwithMatrix" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/general/Titanic" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/GMS" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="python_workspace" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/general/Titanic/Stacking.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GMS/GMSwithMatrix.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -434,19 +434,19 @@
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.Stacking" />
-      <item index="1" class="java.lang.String" itemvalue="Python.main (1)" />
-      <item index="2" class="java.lang.String" itemvalue="Python.VGG_pre" />
-      <item index="3" class="java.lang.String" itemvalue="Python.VGG_beta3" />
-      <item index="4" class="java.lang.String" itemvalue="Python.main" />
+      <item index="0" class="java.lang.String" itemvalue="Python.main (1)" />
+      <item index="1" class="java.lang.String" itemvalue="Python.VGG_pre" />
+      <item index="2" class="java.lang.String" itemvalue="Python.VGG_beta3" />
+      <item index="3" class="java.lang.String" itemvalue="Python.main" />
+      <item index="4" class="java.lang.String" itemvalue="Python.GMSwithMatrix" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.main" />
-        <item index="1" class="java.lang.String" itemvalue="Python.VGG_beta3" />
-        <item index="2" class="java.lang.String" itemvalue="Python.VGG_pre" />
-        <item index="3" class="java.lang.String" itemvalue="Python.main (1)" />
-        <item index="4" class="java.lang.String" itemvalue="Python.Stacking" />
+        <item index="0" class="java.lang.String" itemvalue="Python.GMSwithMatrix" />
+        <item index="1" class="java.lang.String" itemvalue="Python.main" />
+        <item index="2" class="java.lang.String" itemvalue="Python.VGG_beta3" />
+        <item index="3" class="java.lang.String" itemvalue="Python.VGG_pre" />
+        <item index="4" class="java.lang.String" itemvalue="Python.main (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -463,13 +463,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1510310557136</updated>
-    </task>
-    <task id="LOCAL-00014" summary="update CNN for dogbreed data format">
-      <created>1514023113575</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1514023113575</updated>
     </task>
     <task id="LOCAL-00015" summary="update VGG for network para">
       <created>1514026308715</created>
@@ -807,7 +800,14 @@
       <option name="project" value="LOCAL" />
       <updated>1515318143664</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="GMSmatrix:&#10;修改一个bug，该bug导致在最后取最匹配点的时候，范围取错">
+      <created>1515415669514</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1515415669515</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TodoView">
@@ -904,7 +904,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update GMS plotshow:server con not show image" />
     <MESSAGE value="update VGG data format" />
     <MESSAGE value="update CNN for dogbreed data format" />
     <MESSAGE value="update VGG for network para" />
@@ -929,7 +928,8 @@
     <MESSAGE value="update VGG:&#10;添加随机翻转+随机90度旋转+随机循环移位+增加训练次数" />
     <MESSAGE value="update VGG:&#10;删除 随机翻转+随机90度旋转+随机循环移位&#10;增加 训练趟数为20" />
     <MESSAGE value="update VGG:&#10;提交作业最终版" />
-    <option name="LAST_COMMIT_MESSAGE" value="update VGG:&#10;提交作业最终版" />
+    <MESSAGE value="GMSmatrix:&#10;修改一个bug，该bug导致在最后取最匹配点的时候，范围取错" />
+    <option name="LAST_COMMIT_MESSAGE" value="GMSmatrix:&#10;修改一个bug，该bug导致在最后取最匹配点的时候，范围取错" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1407,8 +1407,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/GMS/GMSwithMatrix.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-422">
-          <caret line="101" column="13" lean-forward="true" selection-start-line="101" selection-start-column="13" selection-end-line="101" selection-end-column="13" />
+        <state relative-caret-position="228">
+          <caret line="95" column="87" lean-forward="true" selection-start-line="95" selection-start-column="87" selection-end-line="95" selection-end-column="87" />
           <folding />
         </state>
       </provider>
