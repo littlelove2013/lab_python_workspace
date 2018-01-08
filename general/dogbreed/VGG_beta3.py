@@ -11,7 +11,6 @@
 import tensorflow as tf
 import numpy as np
 from scipy.misc import imread, imresize,imshow
-from imagenet_classes import class_names
 import dogbreed
 import os
 import Func
@@ -306,69 +305,71 @@ def cnnnet():
         # 再session中定义保存路径：
     return train_step,accuracy,cross_entropy,y_conv,vgg,x_images,y_,keep_prob,batch_size,merged_summary_op
 
-
-if __name__ == '__main__':
-    #载入网络结构
-    train_step,acc,loss,y_conv,vgg,x_images,y_,keep_prob,batch_size,merged_summary_op=cnnnet()
+def train():
+    # 载入网络结构
+    train_step, acc, loss, y_conv, vgg, x_images, y_, keep_prob, batch_size, merged_summary_op = cnnnet()
     root = dogbreed.root
     # 模型保存加载工具
     saver = tf.train.Saver()
     # 判断模型保存路径是否存在，不存在就创建
-    savefilepath=root+'modelsave/'
+    savefilepath = root + 'modelsave/'
     if not os.path.exists(savefilepath):
         os.mkdir(savefilepath)
         # 初始化
     sess = tf.Session()
     # 日志写入工具
     summary_writer = tf.summary.FileWriter('log', sess.graph)
-    if os.path.exists(savefilepath+'/checkpoint'):  # 判断模型是否存在
-        print('restore weigthes from checkpoint in %s!'%(savefilepath))
+    if os.path.exists(savefilepath + '/checkpoint'):  # 判断模型是否存在
+        print('restore weigthes from checkpoint in %s!' % (savefilepath))
         saver.restore(sess, tf.train.latest_checkpoint(savefilepath))  # 存在就从模型中恢复变量
         print('restore successful!')
     else:
         print('init weigthes!')
         init = tf.global_variables_initializer()  # 不存在就初始化变量
         sess.run(init)
-        #载入VGG的权重参数，进行训练
+        # 载入VGG的权重参数，进行训练
         vgg.load_weights('../../../include_data/vgg_npz/vgg16_weights.npz', sess)
     # sess.run(tf.global_variables_initializer()) # 变量初始化
 
-    lens=dogbreed.lens
-    batchsize=dogbreed.batchsize
-    trainnum=20
-    saveparatime = 50#做50次训练就保存一次参数
+    lens = dogbreed.lens
+    batchsize = dogbreed.batchsize
+    trainnum = 20
+    saveparatime = 50  # 做50次训练就保存一次参数
     for iter in range(trainnum):
-        #每次初始化一个batch序列
-        batchlist=np.arange(0,lens)
+        # 每次初始化一个batch序列
+        batchlist = np.arange(0, lens)
         np.random.shuffle(batchlist)
         for i in range(lens):
-            #取shuffle的下标
-            data = dogbreed.getdata(batchlist[i],batchsize=batchsize)
-            imgs=data['images']
-            #对输入数据做添加噪声和随机旋转切换
+            # 取shuffle的下标
+            data = dogbreed.getdata(batchlist[i], batchsize=batchsize)
+            imgs = data['images']
+            # 对输入数据做添加噪声和随机旋转切换
             # imgs=dogbreed.addgaussandrot90(imgs)
 
-            deepth=imgs.shape[0]
-            labels=data['labels']
-            if (iter*lens+ i + 1) % saveparatime == 0:
+            deepth = imgs.shape[0]
+            labels = data['labels']
+            if (iter * lens + i + 1) % saveparatime == 0:
                 feed = {x_images: imgs, y_: labels, keep_prob: 1, batch_size: deepth}
-                a,l,y,fc = sess.run([acc,loss,y_conv,vgg.fc2],feed_dict=feed)
-                print('acc:', a,'\titer:',(iter*lens+ i + 1),'\tloss:',l)#,'\ny_conv:',y,'fc2:',fc)
-                #保存模型和参数，不带步长，带步长的模型有点大
-                save_path = saver.save(sess, savefilepath+"dogbreed.model")
-            #训练
-            feed = {x_images: imgs, y_: labels, keep_prob: 0.5,batch_size:deepth}
-            _,summary_str=sess.run([train_step,merged_summary_op], feed_dict=feed)
-            summary_writer.add_summary(summary_str, iter*lens+ i)
-        #最后训练完再保存一次
+                a, l, y, fc = sess.run([acc, loss, y_conv, vgg.fc2], feed_dict=feed)
+                print('acc:', a, '\titer:', (iter * lens + i + 1), '\tloss:', l)  # ,'\ny_conv:',y,'fc2:',fc)
+                # 保存模型和参数，不带步长，带步长的模型有点大
+                save_path = saver.save(sess, savefilepath + "dogbreed.model")
+            # 训练
+            feed = {x_images: imgs, y_: labels, keep_prob: 0.5, batch_size: deepth}
+            _, summary_str = sess.run([train_step, merged_summary_op], feed_dict=feed)
+            summary_writer.add_summary(summary_str, iter * lens + i)
+        # 最后训练完再保存一次
         save_path = saver.save(sess, savefilepath + "dogbreed.model")
     # print("test accuracy %g" % accuracy.eval(feed_dict={x: mnist.test.images[0:500], y_: mnist.test.labels[0:500], keep_prob: 1.0}))
     # print("test accuracy %g" % sess.run(acc,feed_dict={x_images: imgs, y_: labels}))
     # img1 = imread('laska.png', mode='RGB')
     # img1 = imresize(img1, (224, 224))
-    #prob = sess.run(vgg.probs, feed_dict={vgg.imgs: imgs})[0]
+    # prob = sess.run(vgg.probs, feed_dict={vgg.imgs: imgs})[0]
     # preds = (np.argsort(prob)[::-1])[0:5]
     # print(preds)
     # for p in preds:
     #     print(class_names[p], prob[p])
-    #更新：1、添加日志文件 2、添加dropout防止过拟合 3、fc2层变为可训练
+    # 更新：1、添加日志文件 2、添加dropout防止过拟合 3、fc2层变为可训练
+
+if __name__ == '__main__':
+    train()
