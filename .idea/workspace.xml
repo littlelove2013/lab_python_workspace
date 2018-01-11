@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="26ac5d66-a343-4619-bd8d-f04266680f53" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/GMS/Func.py" afterPath="$PROJECT_DIR$/GMS/Func.py" />
       <change beforePath="$PROJECT_DIR$/GMS/GMSwithMatrix.py" afterPath="$PROJECT_DIR$/GMS/GMSwithMatrix.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,6 +43,7 @@
     <SUITE FILE_PATH="coverage/lab_python_workspace$test.coverage" NAME="test Coverage Results" MODIFIED="1515242867038" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/webbigdata/pagerank" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1515309973005" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/Titanic" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$CNN_test.coverage" NAME="CNN_test Coverage Results" MODIFIED="1514199246577" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tensorflow" />
+    <SUITE FILE_PATH="coverage/lab_python_workspace$Nosetests_for_Func_test.coverage" NAME="Nosetests for Func.test Coverage Results" MODIFIED="1515677187417" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$DataUtil.coverage" NAME="DataUtil Coverage Results" MODIFIED="1510482200802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/HSI" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$flappy_bird_utils.coverage" NAME="flappy_bird_utils Coverage Results" MODIFIED="1510311589521" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DQN/DRL-FlappiBird/game" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$VGG_pre.coverage" NAME="VGG_pre Coverage Results" MODIFIED="1515313170834" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/dogbreed" />
@@ -51,7 +53,7 @@
       <file leaf-file-name="VGG_pre.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/general/dogbreed/VGG_pre.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
+            <state relative-caret-position="0">
               <caret line="58" column="11" lean-forward="false" selection-start-line="58" selection-start-column="4" selection-end-line="58" selection-end-column="11" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
@@ -109,39 +111,32 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/general/webbigdata/pagerank/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
+            <state relative-caret-position="646">
               <caret line="35" column="21" lean-forward="false" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GMSwithMatrix.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GMSwithMatrix.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GMS/GMSwithMatrix.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="95" column="87" lean-forward="true" selection-start-line="95" selection-start-column="87" selection-end-line="95" selection-end-column="87" />
+            <state relative-caret-position="186">
+              <caret line="147" column="0" lean-forward="true" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="readme.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/general/dogbreed/readme.txt">
+      <file leaf-file-name="Func.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/GMS/Func.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="10" column="14" lean-forward="false" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="delete_weightes.sh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/general/dogbreed/delete_weightes.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="224">
+              <caret line="77" column="50" lean-forward="true" selection-start-line="77" selection-start-column="50" selection-end-line="77" selection-end-column="50" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+                <element signature="e#2692#2955#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -157,26 +152,6 @@
                 <element signature="e#3415#4567#0" expanded="false" />
                 <element signature="e#4657#5235#0" expanded="false" />
                 <element signature="e#5313#6310#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/general/Titanic/main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="798">
-              <caret line="146" column="43" lean-forward="false" selection-start-line="146" selection-start-column="43" selection-end-line="146" selection-end-column="43" />
-              <folding>
-                <element signature="e#0#21#0" expanded="true" />
-                <element signature="e#487#1542#0" expanded="false" />
-                <element signature="e#1271#1542#1" expanded="false" />
-                <element signature="e#1650#2740#0" expanded="false" />
-                <element signature="e#2436#2740#1" expanded="false" />
-                <element signature="e#2842#3595#0" expanded="false" />
-                <element signature="e#3697#4633#0" expanded="false" />
-                <element signature="e#4747#5781#0" expanded="false" />
-                <element signature="e#5510#5781#1" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -236,7 +211,6 @@
         <option value="$PROJECT_DIR$/tensorflow/testsavetfmodel.py" />
         <option value="$PROJECT_DIR$/tensorflow/testCNNfrommodel.py" />
         <option value="$PROJECT_DIR$/general/dogbreed/savelabeltocvs.py" />
-        <option value="$PROJECT_DIR$/GMS/Func.py" />
         <option value="$PROJECT_DIR$/general/dogbreed/Func.py" />
         <option value="$PROJECT_DIR$/tensorflow/CNN_test.py" />
         <option value="$PROJECT_DIR$/general/dogbreed/VGG_pre.py" />
@@ -253,6 +227,7 @@
         <option value="$PROJECT_DIR$/general/dogbreed/readme.txt" />
         <option value="$PROJECT_DIR$/general/dogbreed/main.py" />
         <option value="$PROJECT_DIR$/GMS/GMSwithMatrix.py" />
+        <option value="$PROJECT_DIR$/GMS/Func.py" />
       </list>
     </option>
   </component>
@@ -263,8 +238,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-29" />
-    <option name="y" value="2" />
+    <option name="x" value="15" />
+    <option name="y" value="-17" />
     <option name="width" value="1382" />
     <option name="height" value="784" />
   </component>
@@ -284,6 +259,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -299,13 +275,25 @@
             <path>
               <item name="lab_python_workspace" type="b2602c69:ProjectViewProjectNode" />
               <item name="lab_python_workspace" type="462c0819:PsiDirectoryNode" />
+              <item name="general" type="462c0819:PsiDirectoryNode" />
+              <item name="webbigdata" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lab_python_workspace" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lab_python_workspace" type="462c0819:PsiDirectoryNode" />
+              <item name="general" type="462c0819:PsiDirectoryNode" />
+              <item name="webbigdata" type="462c0819:PsiDirectoryNode" />
+              <item name="pagerank" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lab_python_workspace" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lab_python_workspace" type="462c0819:PsiDirectoryNode" />
               <item name="GMS" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -337,7 +325,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.GMSwithMatrix">
+  <component name="RunManager" selected="Python tests.Nosetests for Func.test">
     <configuration name="GMSwithMatrix" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -395,25 +383,6 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/general/Titanic" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="python_workspace" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/general/Titanic/main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -433,20 +402,36 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="Nosetests for Func.test" type="tests" factoryName="Nosetests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/GMS" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="python_workspace" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="_new_regexPattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;Func.test&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+    </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.main (1)" />
-      <item index="1" class="java.lang.String" itemvalue="Python.VGG_pre" />
-      <item index="2" class="java.lang.String" itemvalue="Python.VGG_beta3" />
-      <item index="3" class="java.lang.String" itemvalue="Python.main" />
-      <item index="4" class="java.lang.String" itemvalue="Python.GMSwithMatrix" />
+      <item index="0" class="java.lang.String" itemvalue="Python.VGG_pre" />
+      <item index="1" class="java.lang.String" itemvalue="Python.VGG_beta3" />
+      <item index="2" class="java.lang.String" itemvalue="Python.main" />
+      <item index="3" class="java.lang.String" itemvalue="Python.GMSwithMatrix" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Nosetests for Func.test" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.GMSwithMatrix" />
-        <item index="1" class="java.lang.String" itemvalue="Python.main" />
-        <item index="2" class="java.lang.String" itemvalue="Python.VGG_beta3" />
-        <item index="3" class="java.lang.String" itemvalue="Python.VGG_pre" />
-        <item index="4" class="java.lang.String" itemvalue="Python.main (1)" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Nosetests for Func.test" />
+        <item index="1" class="java.lang.String" itemvalue="Python.GMSwithMatrix" />
+        <item index="2" class="java.lang.String" itemvalue="Python.main" />
+        <item index="3" class="java.lang.String" itemvalue="Python.VGG_beta3" />
+        <item index="4" class="java.lang.String" itemvalue="Python.VGG_pre" />
       </list>
     </recent_temporary>
   </component>
@@ -463,13 +448,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1510310557136</updated>
-    </task>
-    <task id="LOCAL-00015" summary="update VGG for network para">
-      <created>1514026308715</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1514026308715</updated>
     </task>
     <task id="LOCAL-00016" summary="update VGG for network para">
       <created>1514026593592</created>
@@ -807,8 +785,47 @@
       <option name="project" value="LOCAL" />
       <updated>1515415669515</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="GMSmatrix:&#10;添加寻找匹配网格特征点对">
+      <created>1515419488255</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1515419488255</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="Nosetests_for_Func_test - 2018.01.11 at 19h 16m 48s.xml">
+      <configuration name="Nosetests for Func.test" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_for_Func_test - 2018.01.11 at 19h 17m 20s.xml">
+      <configuration name="Nosetests for Func.test" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_for_Func_test - 2018.01.11 at 19h 20m 33s.xml">
+      <configuration name="Nosetests for Func.test" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_for_Func_test - 2018.01.11 at 19h 21m 38s.xml">
+      <configuration name="Nosetests for Func.test" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_for_Func_test - 2018.01.11 at 19h 27m 40s.xml">
+      <configuration name="Nosetests for Func.test" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_for_Func_test - 2018.01.11 at 19h 28m 30s.xml">
+      <configuration name="Nosetests for Func.test" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_for_Func_test - 2018.01.11 at 19h 45m 27s.xml">
+      <configuration name="Nosetests for Func.test" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_for_Func_test - 2018.01.11 at 20h 38m 59s.xml">
+      <configuration name="Nosetests for Func.test" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_for_Func_test - 2018.01.11 at 21h 25m 01s.xml">
+      <configuration name="Nosetests for Func.test" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_for_Func_test - 2018.01.11 at 21h 26m 33s.xml">
+      <configuration name="Nosetests for Func.test" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -825,15 +842,15 @@
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32923076" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12537764" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="0" y="0" width="295" height="584" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12537764" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="0" y="0" width="295" height="584" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29538462" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2846154" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41230768" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3276923" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21752267" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2205438" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1450151" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4252266" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39076924" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -904,7 +921,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update VGG data format" />
     <MESSAGE value="update CNN for dogbreed data format" />
     <MESSAGE value="update VGG for network para" />
     <MESSAGE value="update dogbreed and VGG for normlized data" />
@@ -929,7 +945,8 @@
     <MESSAGE value="update VGG:&#10;删除 随机翻转+随机90度旋转+随机循环移位&#10;增加 训练趟数为20" />
     <MESSAGE value="update VGG:&#10;提交作业最终版" />
     <MESSAGE value="GMSmatrix:&#10;修改一个bug，该bug导致在最后取最匹配点的时候，范围取错" />
-    <option name="LAST_COMMIT_MESSAGE" value="GMSmatrix:&#10;修改一个bug，该bug导致在最后取最匹配点的时候，范围取错" />
+    <MESSAGE value="GMSmatrix:&#10;添加寻找匹配网格特征点对" />
+    <option name="LAST_COMMIT_MESSAGE" value="GMSmatrix:&#10;添加寻找匹配网格特征点对" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -987,7 +1004,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="100" />
+      <option name="time" value="104" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1146,13 +1163,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GMS/Func.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tensorflow/testCNNfrommodel.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -1217,13 +1227,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
           <caret line="308" column="0" lean-forward="false" selection-start-line="308" selection-start-column="0" selection-end-line="308" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/general/webbigdata/pagerank/Graph.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="18" column="28" lean-forward="true" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -1303,7 +1306,7 @@
         <state relative-caret-position="798">
           <caret line="146" column="43" lean-forward="false" selection-start-line="146" selection-start-column="43" selection-end-line="146" selection-end-column="43" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#0#21#0" expanded="false" />
             <element signature="e#487#1542#0" expanded="false" />
             <element signature="e#1271#1542#1" expanded="false" />
             <element signature="e#1650#2740#0" expanded="false" />
@@ -1377,7 +1380,7 @@
     <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa0.871/nonparametricfunc.py" />
     <entry file="file://$PROJECT_DIR$/general/dogbreed/VGG_pre.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
+        <state relative-caret-position="0">
           <caret line="58" column="11" lean-forward="false" selection-start-line="58" selection-start-column="4" selection-end-line="58" selection-end-column="11" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
@@ -1399,7 +1402,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/general/webbigdata/pagerank/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
+        <state relative-caret-position="646">
           <caret line="35" column="21" lean-forward="false" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
           <folding />
         </state>
@@ -1407,9 +1410,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/GMS/GMSwithMatrix.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="95" column="87" lean-forward="true" selection-start-line="95" selection-start-column="87" selection-end-line="95" selection-end-column="87" />
+        <state relative-caret-position="186">
+          <caret line="147" column="0" lean-forward="true" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/general/webbigdata/pagerank/Graph.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="20" column="43" lean-forward="true" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GMS/Func.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="77" column="50" lean-forward="true" selection-start-line="77" selection-start-column="50" selection-end-line="77" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#2692#2955#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
