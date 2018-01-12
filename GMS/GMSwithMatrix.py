@@ -18,7 +18,7 @@ class GMSwithMatrix:
         self.init()
     
     def init(self):
-        self.TreshFactor=9
+        self.TreshFactor=6
         # 最大特征点数
         self.orb = cv2.ORB_create(self.kptnumber)
         self.orb.setFastThreshold(0)
@@ -83,10 +83,21 @@ class GMSwithMatrix:
         return start,end
     #获取位于（leftgridid,rightid）一对网格内的左右特征点对，并返回
     def kindexingridpair(self,leftgridid,rightid):
-        leftkpoints=[(0,0),(1,1)]
-        rightkpoints=[(5,5),(7,7)]
         #获取左图坐标对应块
-        return leftkpoints,rightkpoints
+        lstart,lend=self.getblock(leftgridid,self.leftgridsize)
+        rstart, rend = self.getblock(rightid, self.rightgridsize)
+        #获取左图的块
+        # leftblock=self.leftimg[lstart[0]:lend[0], lstart[1]:lend[1]]
+        leftblock=np.zeros(shape=self.leftgridsize)
+        # 行列号
+        tmpleftmatchrgrid = self.leftmatchr[lstart[0]:lend[0], lstart[1]:lend[1]]
+        tmpleftmatchcgrid = self.leftmatchc[lstart[0]:lend[0], lstart[1]:lend[1]]
+
+        index = (tmpleftmatchrgrid >= rstart[0]) & (tmpleftmatchcgrid >= rstart[1]) & (
+                tmpleftmatchrgrid <= rend[0]) & (tmpleftmatchcgrid <= rend[1])
+        leftblock[index]=1
+        rightkpoints=np.array(tmpleftmatchrgrid[index].reshape(-1),tmpleftmatchcgrid[index].reshape(-1))
+        return leftblock,rightkpoints
     #计算阈值和得分
     def computescoreandthre(self):
         #计算阈值
@@ -126,7 +137,9 @@ class GMSwithMatrix:
                 Func.imagesc(rightbestimg, 'rightbestimg',ShowDebug=showdebug)
                 #统计网格特征数
                 filter = np.ones(self.rightgridsize)
-                rightbestgrid=Func.conv2withstride(rightbestimg,filter,stride=self.rightgridsize,start=None,gridnum=self.rgn)
+                #测试不用卷积速度
+                # rightbestgrid=Func.conv2withstride(rightbestimg,filter,stride=self.rightgridsize,start=None,gridnum=self.rgn)
+                rightbestgrid=np.random.rand(shape=(self.rgn,self.rgn))
                 # 显示得分
                 Func.imagesc(rightbestgrid,'rightbestgrid',ShowDebug=showdebug)
                 #取得分最大的网格[m,n]作为[i,j]对应的最匹配网格,因为可能有多个最大值，所以只取第一个
@@ -134,6 +147,10 @@ class GMSwithMatrix:
                 rightbestgridindex=(rightbestgridindex[0][0],rightbestgridindex[1][0])
 
                 # 9邻域
+                #有一个想法：对所有网格编号，若想取某一区域内网格点数不被其余网格污染，则用当前网格编号M，减去匹配网格编号N，
+                # 如果网格内的值==|M-N|则对应的正好是匹配网格的点，否则是混乱网格匹配点，直接置0
+                # 比如：L:（3，4,64）match R:(9,10,190),则将R特征点撒到R网格上，设撒的值=R.grid-pointl.grid,只有值==|64-190|的才是对应网格匹配
+                # 乱点排序法
                 neiborareastart = [(i - 1) * self.leftgridsize[0], (j - 1) * self.leftgridsize[1]]
                 neiborareaend = [(i + 2) * self.leftgridsize[0], (j + 2) * self.leftgridsize[1]]
                 if neiborareastart[0]<0:
