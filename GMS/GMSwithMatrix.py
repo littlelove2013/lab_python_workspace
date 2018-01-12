@@ -138,8 +138,8 @@ class GMSwithMatrix:
                 #统计网格特征数
                 filter = np.ones(self.rightgridsize)
                 #测试不用卷积速度
-                # rightbestgrid=Func.conv2withstride(rightbestimg,filter,stride=self.rightgridsize,start=None,gridnum=self.rgn)
-                rightbestgrid=np.random.rand(shape=(self.rgn,self.rgn))
+                rightbestgrid=Func.conv2withstride(rightbestimg,filter,stride=self.rightgridsize,start=None,gridnum=self.rgn)
+                # rightbestgrid=np.random.rand(self.rgn,self.rgn)
                 # 显示得分
                 Func.imagesc(rightbestgrid,'rightbestgrid',ShowDebug=showdebug)
                 #取得分最大的网格[m,n]作为[i,j]对应的最匹配网格,因为可能有多个最大值，所以只取第一个
@@ -173,8 +173,8 @@ class GMSwithMatrix:
                 right9neiborimg[(tmpneibormatchr, tmpneibormatchc)] = 1
                 # 统计网格特征数
                 # filter = np.ones(self.rightgridsize)
-                right9neiborgrid = Func.conv2withstride(right9neiborimg, filter, stride=self.rightgridsize, start=None,
-                                                     gridnum=self.rgn)
+                right9neiborgrid = Func.conv2withstride(right9neiborimg, filter, stride=self.rightgridsize, start=None,gridnum=self.rgn)
+                # right9neiborgrid=np.random.rand(self.rgn,self.rgn)
                 # 显示计数
                 Func.imagesc(right9neiborgrid,'right9neiborgrid',ShowDebug=showdebug)
                 # 取得分最大的网格[m,n]作为[i,j]对应的最匹配网格
@@ -182,6 +182,7 @@ class GMSwithMatrix:
                 #对9邻域卷积打分
                 neiborfilter = np.ones((3, 3))
                 neiborgird = ss.convolve2d(right9neiborgrid, neiborfilter, 'same', boundary='wrap')
+                # neiborgird = np.random.rand(self.rgn,self.rgn)
                 Func.imagesc(neiborgird, 'neiborgird',ShowDebug=showdebug)
                 self.socre[i,j]=neiborgird[rightbestgridindex]
                 #计算得分是否超过阈值，超过则accept矩阵取1,该网格内所有点为匹配点为匹配点
@@ -231,6 +232,275 @@ class GMSwithMatrix:
             ssds=self.drawTrueMatch()
             cv2.imshow('ssds', ssds)
             cv2.waitKey()
+
+
+class GMSwithGridFilter:
+	def __init__(self, img1, img2, kptnumber=10000, resizeflag=False, width=640, height=480):
+		self.img1 = img1.copy()
+		self.img2 = img2.copy()
+		if resizeflag:
+			ddsize = (width, height)
+			self.img1 = cv2.resize(self.img1, ddsize)
+			self.img2 = cv2.resize(self.img2, ddsize)
+		self.kptnumber = kptnumber
+		self.initgrid()
+		self.init()
+	
+	def init(self):
+		self.TreshFactor = 6
+		# 最大特征点数
+		self.orb = cv2.ORB_create(self.kptnumber)
+		self.orb.setFastThreshold(0)
+		self.kp1, self.des1 = self.orb.detectAndCompute(self.img1, None)
+		self.kp2, self.des2 = self.orb.detectAndCompute(self.img2, None)
+		# 提取并计算特征点
+		self.bf = cv2.BFMatcher(cv2.NORM_HAMMING)
+		self.matches = self.bf.match(self.des1, trainDescriptors=self.des2)
+		# 显示
+		rawmatchimg = cv2.drawMatches(self.img1, self.kp1, self.img2, self.kp2, self.matches, None)
+		cv2.imshow('rawmatchimg', rawmatchimg)
+		# cv2.waitKey()
+		
+		self.gridmatchesindex = np.zeros([len(self.matches)])
+		
+		self.initgrid()  # 初始化网格
+		self.gridmatches = []
+		# 统计一下坐标
+		lens = len(self.matches)
+		kp1r = np.zeros([lens])
+		kp1c = np.zeros([lens])
+		kp2r = np.zeros([lens])
+		kp2c = np.zeros([lens])
+		for i in range(lens):
+			pt1 = np.array(self.kp1[self.matches[i].queryIdx].pt)
+			pt2 = np.array(self.kp2[self.matches[i].trainIdx].pt)
+			kp1r[i] = pt1[1]
+			kp1c[i] = pt1[0]
+			kp2r[i] = pt2[1]
+			kp2c[i] = pt2[0]
+		kp1list = (np.array(kp1r, np.int32), np.array(kp1c, np.int32))
+		kp2list = (np.array(kp2r, np.int32), np.array(kp2c, np.int32))
+		leftsize = self.img1.shape[:2]
+		rightsize = self.img2.shape[:2]
+		# 用于卷积计算阈值
+		self.leftimg = np.zeros(leftsize)
+		# 用于计算是否为正确匹配
+		# 假设初始时全部为假匹配
+		self.TrueMatches = np.zeros(leftsize)
+		
+		# 用于卷积计算打分,并获取匹配点
+		self.leftmatchr = np.zeros(leftsize)
+		self.leftmatchc = np.zeros(leftsize)
+		self.leftimglabel = np.zeros(leftsize)
+		self.leftmatch = np.zeros(leftsize)
+		self.leftmatchgrid = np.zeros(leftsize)
+		self.rightimglabel = np.zeros(rightsize)
+		
+		# 生成标签
+		self.leftlabel = (np.arange(1, self.lgn ** 2 + 1).reshape(self.lgn, self.lgn)).repeat(self.leftgridsize[0], 0).repeat(self.leftgridsize[1], 1)
+		self.rightlabel = (np.arange(1, self.rgn ** 2 + 1).reshape(self.rgn, self.rgn)).repeat(self.rightgridsize[0], 0).repeat(self.rightgridsize[1], 1)
+		
+		# rightimg=np.zeros(rightsize)
+		self.leftimg[kp1list]=1
+		self.leftimglabel[kp1list] = self.leftlabel[kp1list]
+		self.leftmatch[kp1list] = Func.index2value(kp2list, self.img2.shape[:2])
+		# 只保存匹配特征所在的网格，反正也不会计算其实际坐标
+		self.leftmatchgrid[kp1list] = self.rightlabel[kp2list]  # index2value(rightkpt, shape)
+		self.rightimglabel[kp2list] = self.rightlabel[kp2list]
+		Func.imagesc(self.leftmatchgrid,'leftmatchgrid')
+		Func.imagesc(self.rightimglabel,'rightimglabel')
+		# self.TrueMatches[kp1list]=1
+		# 只保存匹配图片的匹配点坐标[r,c]
+		self.leftmatchr[kp1list] = kp2r
+		self.leftmatchc[kp1list] = kp2c
+	
+	def initgrid(self, leftgridnum=20, rightgridnum=20):
+		self.lgn = leftgridnum
+		self.rgn = rightgridnum
+		# 计算划分后网格的高和宽
+		self.leftgridsize = (int(self.img1.shape[0] / self.lgn), int(self.img1.shape[1] / self.lgn))  # [r,c]
+		self.rightgridsize = (int(self.img2.shape[0] / self.rgn), int(self.img2.shape[1] / self.rgn))  # [r,c]
+	
+	# 根据给定gridid，返回在原图的上下限
+	def getblock(self, gridid, gridsize):
+		k, m = gridid
+		start = (k * gridsize[0], m * gridsize[1])
+		end = ((k + 1) * gridsize[0], (m + 1) * gridsize[1])
+		return start, end
+	
+	# 获取位于（leftgridid,rightid）一对网格内的左右特征点对，并返回
+	def kindexingridpair(self, leftgridid, rightid):
+		# 获取左图坐标对应块
+		lstart, lend = self.getblock(leftgridid, self.leftgridsize)
+		rstart, rend = self.getblock(rightid, self.rightgridsize)
+		# 获取左图的块
+		# leftblock=self.leftimg[lstart[0]:lend[0], lstart[1]:lend[1]]
+		leftblock = np.zeros(shape=self.leftgridsize)
+		# 行列号
+		tmpleftmatchrgrid = self.leftmatchr[lstart[0]:lend[0], lstart[1]:lend[1]]
+		tmpleftmatchcgrid = self.leftmatchc[lstart[0]:lend[0], lstart[1]:lend[1]]
+		
+		index = (tmpleftmatchrgrid >= rstart[0]) & (tmpleftmatchcgrid >= rstart[1]) & (
+				tmpleftmatchrgrid <= rend[0]) & (tmpleftmatchcgrid <= rend[1])
+		leftblock[index] = 1
+		rightkpoints = np.array(tmpleftmatchrgrid[index].reshape(-1), tmpleftmatchcgrid[index].reshape(-1))
+		return leftblock, rightkpoints
+	
+	# 计算阈值和得分
+	def computescoreandthre(self):
+		# 计算阈值
+		filter = np.ones(self.leftgridsize)
+		tmp = Func.conv2withstride(self.leftimg, filter, stride=self.leftgridsize, start=None, gridnum=self.lgn)
+		# 显示计数
+		Func.imagesc(tmp, '左图计数')
+		threfilter = np.ones((3, 3)) / 9  # 计算均值
+		self.thre = ss.convolve2d(tmp, threfilter, 'same', boundary='wrap')
+		self.thre = self.TreshFactor * np.sqrt(self.thre)  # 阈值计算公式
+		# 显示阈值
+		Func.imagesc(self.thre, '阈值图')
+		# 计算打分
+		self.socre = np.zeros((self.lgn, self.lgn))
+		
+		self.lgshape=(self.lgn,self.lgn)
+		for i in range(self.lgn):  # r
+			for j in range(self.lgn):  # c
+				# print("calc grid(%d,%d)" % (i, j))
+				leftvalue=Func.index2value((i,j),self.lgshape)+1
+				bestmatchgrid=self.leftmatchgrid[self.leftimglabel==leftvalue]
+				if bestmatchgrid.size < 10:
+					continue  # 点数小于阈值则不计算，默认为不匹配
+				number,n_counts=np.unique(bestmatchgrid,return_counts=True)
+				rbestindex=number[np.argsort(n_counts)[-1]]
+				index=(self.leftimglabel==leftvalue)&(self.rightimglabel==rbestindex)
+				if index.sum()<=0:
+					continue
+				print(rbestindex,index.sum())
+				self.TrueMatches+= index
+				'''
+				showdebug = False
+				# 对于img1中的每个网格区域和9邻域，计算其匹配的右img2的值
+				bestareastart = (i * self.leftgridsize[0], j * self.leftgridsize[1])
+				bestareaend = ((i + 1) * self.leftgridsize[0], (j + 1) * self.leftgridsize[1])
+				leftkpoints = self.leftimg[bestareastart[0]:bestareaend[0], bestareastart[1]:bestareaend[1]]
+				# 建一个rightbetgrid,用于统计最匹配网格
+				rightbestimg = np.zeros(self.img2.shape[:2])
+				# 行列号
+				tmpleftmatchrgrid = self.leftmatchr[bestareastart[0]:bestareaend[0], bestareastart[1]:bestareaend[1]]
+				tmpleftmatchcgrid = self.leftmatchc[bestareastart[0]:bestareaend[0], bestareastart[1]:bestareaend[1]]
+				# 取索引并展平
+				tmpleftmatchr = np.array(tmpleftmatchrgrid[tmpleftmatchrgrid != 0], np.int32)
+				tmpleftmatchc = np.array(tmpleftmatchcgrid[tmpleftmatchcgrid != 0], np.int32)
+				if tmpleftmatchr.size < 10:
+					continue  # 点数小于阈值则不计算，默认为不匹配
+					showdebug = True
+				# 将展平的横纵坐标撒在图像上
+				rightbestimg[(tmpleftmatchr, tmpleftmatchc)] = 1
+				Func.imagesc(rightbestimg, 'rightbestimg', ShowDebug=showdebug)
+				# 统计网格特征数
+				filter = np.ones(self.rightgridsize)
+				# 测试不用卷积速度
+				rightbestgrid = Func.conv2withstride(rightbestimg, filter, stride=self.rightgridsize, start=None,
+				                                     gridnum=self.rgn)
+				# rightbestgrid=np.random.rand(self.rgn,self.rgn)
+				# 显示得分
+				Func.imagesc(rightbestgrid, 'rightbestgrid', ShowDebug=showdebug)
+				# 取得分最大的网格[m,n]作为[i,j]对应的最匹配网格,因为可能有多个最大值，所以只取第一个
+				rightbestgridindex = np.where(rightbestgrid == rightbestgrid.max())
+				rightbestgridindex = (rightbestgridindex[0][0], rightbestgridindex[1][0])
+				
+				# 9邻域
+				# 有一个想法：对所有网格编号，若想取某一区域内网格点数不被其余网格污染，则用当前网格编号M，减去匹配网格编号N，
+				# 如果网格内的值==|M-N|则对应的正好是匹配网格的点，否则是混乱网格匹配点，直接置0
+				# 比如：L:（3，4,64）match R:(9,10,190),则将R特征点撒到R网格上，设撒的值=R.grid-pointl.grid,只有值==|64-190|的才是对应网格匹配
+				# 乱点排序法
+				neiborareastart = [(i - 1) * self.leftgridsize[0], (j - 1) * self.leftgridsize[1]]
+				neiborareaend = [(i + 2) * self.leftgridsize[0], (j + 2) * self.leftgridsize[1]]
+				if neiborareastart[0] < 0:
+					neiborareastart[0] = 0
+				if neiborareastart[1] < 0:
+					neiborareastart[1] = 0
+				if neiborareaend[0] > self.img1.shape[0]:
+					neiborareaend[0] = self.img1.shape[0]
+				if neiborareaend[1] > self.img1.shape[1]:
+					neiborareaend[1] = self.img1.shape[1]
+				# 建一个right9neiborgrid用于统计9邻域得分
+				right9neiborimg = np.zeros(self.img2.shape[:2])
+				# 行列号
+				tmpneibormatchr = self.leftmatchr[neiborareastart[0]:neiborareaend[0],
+				                  neiborareastart[1]:neiborareaend[1]]
+				tmpneibormatchc = self.leftmatchc[neiborareastart[0]:neiborareaend[0],
+				                  neiborareastart[1]:neiborareaend[1]]
+				# 取索引并展平
+				tmpneibormatchr = np.array(tmpneibormatchr[tmpneibormatchr != 0], np.int32)
+				tmpneibormatchc = np.array(tmpneibormatchc[tmpneibormatchc != 0], np.int32)
+				# 将展平的横纵坐标撒在图像上
+				right9neiborimg[(tmpneibormatchr, tmpneibormatchc)] = 1
+				# 统计网格特征数
+				# filter = np.ones(self.rightgridsize)
+				right9neiborgrid = Func.conv2withstride(right9neiborimg, filter, stride=self.rightgridsize, start=None,
+				                                        gridnum=self.rgn)
+				# right9neiborgrid=np.random.rand(self.rgn,self.rgn)
+				# 显示计数
+				Func.imagesc(right9neiborgrid, 'right9neiborgrid', ShowDebug=showdebug)
+				# 取得分最大的网格[m,n]作为[i,j]对应的最匹配网格
+				# rightbestgridindex = np.where(rightbestgrid == rightbestgrid.max())
+				# 对9邻域卷积打分
+				neiborfilter = np.ones((3, 3))
+				neiborgird = ss.convolve2d(right9neiborgrid, neiborfilter, 'same', boundary='wrap')
+				# neiborgird = np.random.rand(self.rgn,self.rgn)
+				Func.imagesc(neiborgird, 'neiborgird', ShowDebug=showdebug)
+				self.socre[i, j] = neiborgird[rightbestgridindex]
+				# 计算得分是否超过阈值，超过则accept矩阵取1,该网格内所有点为匹配点为匹配点
+				# 则可以用img保存所有的匹配点对，对所有特征点，若匹配则为1，然后去找对应的匹配坐标，若不匹配则为0
+				if self.socre[i, j] > self.thre[i, j]:  # 则匹配度量加上匹配值，最后最匹配的点，其匹配值应该最大，取出其对应匹配的r,c坐标即可
+					# 必须只保留匹配点位于最佳匹配格的的匹配点
+					k, m = rightbestgridindex
+					# m=rightbestgridindex[1]
+					bestrangestart = (k * self.rightgridsize[0], m * self.rightgridsize[1])
+					bestrangeend = ((k + 1) * self.rightgridsize[0], (m + 1) * self.rightgridsize[1])
+					# tmp=self.leftimg[bestareastart[0]:bestareaend[0], bestareastart[1]:bestareaend[1]].copy()
+					tmp = leftkpoints.copy()
+					index = (tmpleftmatchrgrid < bestrangestart[0]) | (tmpleftmatchcgrid < bestrangestart[1]) | (
+							tmpleftmatchrgrid > bestrangeend[0]) | (tmpleftmatchcgrid > bestrangeend[1])
+					tmp[index] = 0
+					self.TrueMatches[bestareastart[0]:bestareaend[0], bestareastart[1]:bestareaend[1]] += tmp
+				'''
+		self.accept = self.socre > self.thre
+		# 显示accept
+		Func.imagesc(self.thre, 'accept')
+		Func.imagesc(self.TrueMatches, 'TrueMatches')
+	
+	# 同样返回Match对象，用于其他用途
+	def getTrueMatch(self, thre=1):
+		Truelistindex = self.TrueMatches >= thre
+		# 获取img1的特征点列表
+		leftkeypointarr = np.where(self.TrueMatches >= thre)
+		# 因为x,y对应的是[c,r]，所以需要反过来
+		self.leftkeypoint = [cv2.KeyPoint(y, x, 1) for (x, y) in zip(leftkeypointarr[0], leftkeypointarr[1])]
+		# 获取对应的img2的坐标
+		rightkeypointarr = [self.leftmatchc[Truelistindex], self.leftmatchr[Truelistindex]]
+		self.rightkeypoint = [cv2.KeyPoint(x, y, 1) for (x, y) in zip(rightkeypointarr[0], rightkeypointarr[1])]
+		# 生成match
+		lens = len(self.leftkeypoint)
+		self.truematch = [cv2.DMatch(x, y, 1) for (x, y) in zip(np.arange(0, lens), np.arange(0, lens))]
+		# 获取
+		return self.leftkeypoint, self.rightkeypoint, self.truematch
+	
+	# 画出TrueMatch的点
+	def drawTrueMatch(self):
+		self.getTrueMatch()
+		gmsmatchimg = cv2.drawMatches(self.img1, self.leftkeypoint, self.img2, self.rightkeypoint, self.truematch, None)
+		return gmsmatchimg
+	
+	# 统计
+	def run(self, type=0):
+		if type == 0:
+			self.computescoreandthre()  # 计算出TrueMatcher
+			# self.TrueMatches[np.arange(1,100,2),np.arange(1,100,2)]=1
+			# return self.getTrueMatch()
+			ssds = self.drawTrueMatch()
+			cv2.imshow('ssds', ssds)
+			cv2.waitKey()
 
 
 class GMS:
@@ -401,8 +671,9 @@ def main():
     ddsize=(640,480)
     img1 = cv2.resize(img1, ddsize)
     img2 = cv2.resize(img2, ddsize)
+    
     time_start=time.time()
-    gms=GMSwithMatrix(img1,img2)
+    gms=GMSwithGridFilter(img1,img2)
     gms.run()
     # matches,kp1,kp2=gms.getGmsMatches()
     #gms.show()

@@ -8,12 +8,15 @@ def conv2withstride(m,filter,stride=(1,1),start=None,gridnum=20):
     tmp=ss.convolve2d(m,filter,'same',boundary='wrap')
     if start==None:
         start=(int(stride[0]/2),int(stride[1]/2))
-    r=np.arange(0,gridnum)*stride[0]+start[0]
-    c=np.arange(0,gridnum)*stride[0]+start[1]
-    grid=np.zeros([gridnum,gridnum])
-    for i in range(gridnum):
-        grid[i,:]=tmp[r[i],c]
-    return grid
+    r=list(range(start[0],(gridnum)*stride[0],stride[0]))*gridnum
+    c=np.arange(start[1],(gridnum)*stride[1],stride[1]).repeat(gridnum)
+    # r=np.arange(0,gridnum)*stride[0]+start[0]
+    # c=np.arange(0,gridnum)*stride[1]+start[1]
+    # grid=np.zeros([gridnum,gridnum])
+    # for i in range(gridnum):
+    #     grid[i,:]=tmp[r[i],c]
+    # print(r,c,tmp[(r,c)].shape)
+    return tmp[(r,c)].reshape(gridnum,gridnum)
 #值转换为二维索引,列优先,value应该是一个向量或矩阵，返回的应该是二维矩阵
 def value2index(value,shape):
     [h,w]=shape
@@ -82,7 +85,7 @@ def test():
 def main():
     a=np.ones([6,6])
     b=np.ones([2,2])
-    c=conv2withstride(a,b,gridnum=2)
+    c=conv2withstride(a,b,stride=(2,2),gridnum=2)
     print(a,b,c)
 
     c=np.array([[1,2,3],[4,5,6],[7,8,9]])
@@ -93,5 +96,5 @@ def main():
     print(c,value,c[index])
 
 if __name__ == '__main__':
-    # main()
-    test()
+    main()
+    # test()
