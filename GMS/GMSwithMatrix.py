@@ -556,33 +556,50 @@ class GMS:
     def test(self):
 	    self.setparam()
 	    lens = len(self.matches)
-	    kp1r = np.zeros([lens])
-	    kp1c = np.zeros([lens])
-	    kp2r = np.zeros([lens])
-	    kp2c = np.zeros([lens])
+	    kp1r = np.zeros([lens]).astype(np.int32)
+	    kp1c = np.zeros([lens]).astype(np.int32)
+	    kp2r = np.zeros([lens]).astype(np.int32)
+	    kp2c = np.zeros([lens]).astype(np.int32)
+	    self.leftgridsize = np.array([self.grid1h, self.grid1w])
+	    self.rightgridsize = np.array([self.grid2h, self.grid2w])
+	    self.leftlabel = (np.arange(1, self.rows1 ** 2 + 1).reshape(self.rows1, self.rows1))\
+		    .repeat(self.leftgridsize[0],0)\
+		    .repeat(self.leftgridsize[1], 1).astype(np.int32)
+	    self.rightlabel = (np.arange(1, self.rows2 ** 2 + 1).reshape(self.rows2, self.rows2))\
+		    .repeat(self.rightgridsize[0],0)\
+		    .repeat(self.rightgridsize[1], 1).astype(np.int32)
+	    grid1=np.zeros(self.rows1**2)
+	    # 用于卷积计算阈值
+	    leftsize = self.img1.shape[:2]
+	    rightsize = self.img2.shape[:2]
+	    self.leftimg = np.zeros(leftsize)
 	    for i in range(lens):
 		    pt1 = np.array(self.kp1[self.matches[i].queryIdx].pt)
 		    pt2 = np.array(self.kp2[self.matches[i].trainIdx].pt)
-		    kp1r[i] = pt1[1]
-		    kp1c[i] = pt1[0]
-		    kp2r[i] = pt2[1]
-		    kp2c[i] = pt2[0]
-	    kp1list = (np.array(kp1r, np.int32), np.array(kp1c, np.int32))
-	    kp2list = (np.array(kp2r, np.int32), np.array(kp2c, np.int32))
-	    leftsize = self.img1.shape[:2]
-	    rightsize = self.img2.shape[:2]
-	    # 用于卷积计算阈值
-	    self.leftimg = np.zeros(leftsize)
-	    self.leftimg[kp1list]=1
-	    leftgridsize=(self.grid1h,self.grid1w)
-	    filter=np.ones(shape=leftgridsize)
-	    self.leftgridkpoints= Func.conv2withstride(self.leftimg, filter, stride=leftgridsize, start=None, gridnum=self.rows1)
+		    kp1r[i] = int(pt1[1])
+		    kp1c[i] = int(pt1[0])
+		    kp2r[i] = int(pt2[1])
+		    kp2c[i] = int(pt2[0])
+		    id1, id2 = self.getRegion(self.matches[i], 1)
+		    id11=self.leftlabel[kp1r[i], kp1c[i]]-1
+		    id22=self.rightlabel[kp2r[i], kp2c[i]]-1
+		    if id1!=id11 or id2!=id22:
+			    print("error:\nid1=%d but id11=%d \nid2=%d but id22=%d"%(id1,id11,id2,id22))
+		    grid1[id1]+=1
+		    self.leftimg[(kp1r[i],kp1c[i])] =self.leftimg[(kp1r[i],kp1c[i])]+ 1
+	    kp1list = (kp1r,kp1c)
+	    kp2list = (kp2r,kp2c)
+	    
+	    filter=np.ones(shape=self.leftgridsize)
+	    self.leftgridkpoints= Func.conv2withstride(self.leftimg, filter, stride=self.leftgridsize, start=None, gridnum=self.rows1)
 	    self.testimg=np.zeros(shape=(self.img1h,self.img1w))
 	    for i in range(self.img1h):
 		    for j in range(self.img1w):
 			    id1 = (math.floor((j % self.img1w) / self.grid1w) + math.floor(
 				    (i % self.img1h) / self.grid1h) * self.rows1)
 			    self.testimg[i,j]=id1
+	    Func.imagesc(grid1.reshape(self.rows1, self.rows1) - self.leftgridkpoints, 'GMS score')
+	    Func.imagesc(self.testimg - self.leftlabel, 'GMS-GGF label testimg')
     #设置分成得网格得行宽
     def setparam(self,rows1=20,rows2=20):
         self.rows1=rows1
@@ -753,9 +770,8 @@ def main():
     print('leftimg var:',((ggf.leftimg - gms.leftimg) ** 2).sum())
     print('listgrid1 var:', ((ggf.leftgridkpoints.reshape(-1) - gms.listgrid1) ** 2).sum())
     
-    Func.imagesc(ggf.leftgridkpoints, 'GGF socre')
-    Func.imagesc(gms.listgrid1.reshape(gms.rows1,gms.rows1)-gms.leftgridkpoints,'GMS score')
-    Func.imagesc(gms.testimg-ggf.leftlabel, 'GMS-GGF label testimg')
+    # Func.imagesc(ggf.leftgridkpoints, 'GGF socre')
+    
     #gms.show()
     a=np.ones([4,4])
     b=np.ones([3,3])
