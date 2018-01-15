@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="26ac5d66-a343-4619-bd8d-f04266680f53" name="Default" comment="GMSmatrix:&#10;更新获取匹配网格对的特征点坐标">
+    <list default="true" id="26ac5d66-a343-4619-bd8d-f04266680f53" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/GMS/Func.py" afterPath="$PROJECT_DIR$/GMS/Func.py" />
       <change beforePath="$PROJECT_DIR$/GMS/GMSwithMatrix.py" afterPath="$PROJECT_DIR$/GMS/GMSwithMatrix.py" />
@@ -25,7 +25,7 @@
     <SUITE FILE_PATH="coverage/lab_python_workspace$graph.coverage" NAME="graph Coverage Results" MODIFIED="1515237446171" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/webbigdata/pagerank" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$GMS.coverage" NAME="GMS Coverage Results" MODIFIED="1514012737496" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$main.coverage" NAME="main Coverage Results" MODIFIED="1515315488539" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/dogbreed" />
-    <SUITE FILE_PATH="coverage/lab_python_workspace$GMSwithMatrix.coverage" NAME="GMSwithMatrix Coverage Results" MODIFIED="1515763964758" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
+    <SUITE FILE_PATH="coverage/lab_python_workspace$GMSwithMatrix.coverage" NAME="GMSwithMatrix Coverage Results" MODIFIED="1515846247958" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$testCNNfrommodel.coverage" NAME="testCNNfrommodel Coverage Results" MODIFIED="1514078724509" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tensorflow" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$VGG.coverage" NAME="VGG Coverage Results" MODIFIED="1513939759432" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/dogbreed" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$Func.coverage" NAME="Func Coverage Results" MODIFIED="1514012316775" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
@@ -37,7 +37,7 @@
     <SUITE FILE_PATH="coverage/lab_python_workspace$testsavetfmodel.coverage" NAME="testsavetfmodel Coverage Results" MODIFIED="1514076715713" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tensorflow" />
     <SUITE FILE_PATH="coverage/lab_workspace$GMSwithMatrix.coverage" NAME="GMSwithMatrix Coverage Results" MODIFIED="1514279599078" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
     <SUITE FILE_PATH="coverage/lab_workspace$FlappyBirdDQN.coverage" NAME="FlappyBirdDQN Coverage Results" MODIFIED="1510556665965" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DQN/DRL-FlappiBird" />
-    <SUITE FILE_PATH="coverage/lab_python_workspace$Nosetests_in_Func_py.coverage" NAME="Nosetests in Func.py Coverage Results" MODIFIED="1515758362957" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
+    <SUITE FILE_PATH="coverage/lab_python_workspace$Nosetests_in_Func_py.coverage" NAME="Nosetests in Func.py Coverage Results" MODIFIED="1515839638039" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$sparseautoencoder.coverage" NAME="sparseautoencoder Coverage Results" MODIFIED="1515304101278" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/Titanic" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$dogbreed.coverage" NAME="dogbreed Coverage Results" MODIFIED="1515200300751" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/dogbreed" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$maze.coverage" NAME="maze Coverage Results" MODIFIED="1510474876714" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DQN/Qlearning" />
@@ -48,6 +48,18 @@
     <SUITE FILE_PATH="coverage/lab_python_workspace$DataUtil.coverage" NAME="DataUtil Coverage Results" MODIFIED="1510482200802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/HSI" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$flappy_bird_utils.coverage" NAME="flappy_bird_utils Coverage Results" MODIFIED="1510311589521" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DQN/DRL-FlappiBird/game" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$VGG_pre.coverage" NAME="VGG_pre Coverage Results" MODIFIED="1515313170834" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/dogbreed" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <expand />
+    <select />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
@@ -122,20 +134,43 @@
       <file leaf-file-name="GMSwithMatrix.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GMS/GMSwithMatrix.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="657" column="0" lean-forward="true" selection-start-line="657" selection-start-column="0" selection-end-line="657" selection-end-column="0" />
+            <state relative-caret-position="190">
+              <caret line="392" column="30" lean-forward="true" selection-start-line="392" selection-start-column="30" selection-end-line="392" selection-end-column="30" />
               <folding>
-                <element signature="e#127#11263#0" expanded="false" />
+                <element signature="e#127#11316#0" expanded="false" />
+                <element signature="e#225#498#0" expanded="false" />
+                <element signature="e#532#2333#0" expanded="false" />
+                <element signature="e#1459#1688#0" expanded="false" />
+                <element signature="e#2397#2669#0" expanded="false" />
+                <element signature="e#2744#2890#0" expanded="false" />
+                <element signature="e#2996#3791#0" expanded="false" />
+                <element signature="e#3848#9948#0" expanded="false" />
                 <element signature="e#4388#9792#0" expanded="false" />
-                <element signature="e#12461#12651#0" expanded="false" />
-                <element signature="e#14191#14464#0" expanded="false" />
-                <element signature="e#14532#14665#0" expanded="false" />
-                <element signature="e#14764#15491#0" expanded="false" />
-                <element signature="e#16623#21213#1" expanded="false" />
-                <element signature="e#21409#22075#0" expanded="false" />
-                <element signature="e#22123#22278#0" expanded="false" />
-                <element signature="e#22313#22545#0" expanded="false" />
-                <element signature="e#22563#28736#0" expanded="false" />
+                <element signature="e#10017#10723#0" expanded="false" />
+                <element signature="e#11437#11682#0" expanded="false" />
+                <element signature="e#11704#14440#0" expanded="false" />
+                <element signature="e#14499#14796#0" expanded="false" />
+                <element signature="e#14864#14997#0" expanded="false" />
+                <element signature="e#15096#15823#0" expanded="false" />
+                <element signature="e#17992#22582#1" expanded="false" />
+                <element signature="e#22819#23485#0" expanded="false" />
+                <element signature="e#23533#23739#0" expanded="false" />
+                <element signature="e#23774#24012#0" expanded="false" />
+                <element signature="e#24128#24401#0" expanded="false" />
+                <element signature="e#24979#26158#0" expanded="false" />
+                <element signature="e#25174#25379#0" expanded="false" />
+                <element signature="e#26225#26683#0" expanded="false" />
+                <element signature="e#26688#26705#0" expanded="false" />
+                <element signature="e#26768#27581#0" expanded="false" />
+                <element signature="e#26894#26978#0" expanded="false" />
+                <element signature="e#27013#27096#0" expanded="false" />
+                <element signature="e#27131#27318#0" expanded="false" />
+                <element signature="e#27653#28054#0" expanded="false" />
+                <element signature="e#28100#28254#0" expanded="false" />
+                <element signature="e#28302#29123#0" expanded="false" />
+                <element signature="e#30423#30703#0" expanded="false" />
+                <element signature="e#30536#30653#0" expanded="false" />
+                <element signature="e#30897#31499#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -144,14 +179,15 @@
       <file leaf-file-name="Func.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GMS/Func.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="37" column="17" lean-forward="true" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
+            <state relative-caret-position="1387">
+              <caret line="108" column="61" lean-forward="false" selection-start-line="108" selection-start-column="61" selection-end-line="108" selection-end-column="61" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
-                <element signature="e#173#710#0" expanded="false" />
-                <element signature="e#436#479#0" expanded="false" />
-                <element signature="e#786#935#0" expanded="false" />
-                <element signature="e#983#1070#0" expanded="false" />
+                <element signature="e#440#483#0" expanded="false" />
+                <element signature="e#1207#1394#0" expanded="false" />
+                <element signature="e#1460#2060#0" expanded="false" />
+                <element signature="e#2158#2309#0" expanded="false" />
+                <element signature="e#4565#4893#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -203,6 +239,14 @@
       <find>sl</find>
       <find>tmpleftmatchrgrid</find>
       <find>shape=(self.rgn, self.rgn)</find>
+      <find>leftmatch</find>
+      <find>self.TreshFactor=6</find>
+      <find>self.orb.setFastThreshold(0)</find>
+      <find>self.</find>
+      <find>type</find>
+      <find>listgrid1</find>
+      <find>socre</find>
+      <find>leftgridsize</find>
     </findStrings>
     <replaceStrings>
       <replace>self.rgn,self.rgn</replace>
@@ -258,8 +302,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="15" />
-    <option name="y" value="-17" />
+    <option name="x" value="-12" />
+    <option name="y" value="-15" />
     <option name="width" value="1382" />
     <option name="height" value="784" />
   </component>
@@ -279,7 +323,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -296,6 +339,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -448,13 +492,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1510310557136</updated>
-    </task>
-    <task id="LOCAL-00017" summary="update dogbreed and VGG for normlized data">
-      <created>1514027633878</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1514027633878</updated>
     </task>
     <task id="LOCAL-00018" summary="update dogbreed and VGG for normlized data">
       <created>1514029139509</created>
@@ -792,16 +829,17 @@
       <option name="project" value="LOCAL" />
       <updated>1515677323192</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="GMSmatrix:&#10;实验快速获取块地址算法">
+      <created>1515764067163</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1515764067164</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Nosetests_in_Func_py - 2018.01.12 at 19h 49m 39s.xml">
-      <configuration name="Nosetests in Func.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Nosetests_in_Func_py - 2018.01.12 at 19h 49m 48s.xml">
-      <configuration name="Nosetests in Func.py" configurationId="tests" />
-    </history-entry>
     <history-entry file="Nosetests_in_Func_py - 2018.01.12 at 19h 49m 59s.xml">
       <configuration name="Nosetests in Func.py" configurationId="tests" />
     </history-entry>
@@ -826,6 +864,12 @@
     <history-entry file="Nosetests_in_Func_py - 2018.01.12 at 19h 59m 25s.xml">
       <configuration name="Nosetests in Func.py" configurationId="tests" />
     </history-entry>
+    <history-entry file="Nosetests_in_Func_py - 2018.01.13 at 16h 48m 55s.xml">
+      <configuration name="Nosetests in Func.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_Func_py - 2018.01.13 at 18h 34m 01s.xml">
+      <configuration name="Nosetests in Func.py" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -842,18 +886,18 @@
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32923076" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12537764" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="0" y="0" width="295" height="584" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23384616" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12537764" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="0" y="0" width="295" height="584" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29538462" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22923078" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22960725" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23230769" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26153848" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32923076" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24622357" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5619335" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46072507" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39076924" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39076924" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -872,15 +916,15 @@
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12537764" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="0" y="0" width="295" height="584" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29538462" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2846154" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3276923" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22923078" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23384616" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20845921" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2326284" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2560423" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22885196" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -921,7 +965,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update VGG for network para" />
     <MESSAGE value="update dogbreed and VGG for normlized data" />
     <MESSAGE value="update VGG_bate1" />
     <MESSAGE value="update VGG_bate2" />
@@ -946,7 +989,8 @@
     <MESSAGE value="GMSmatrix:&#10;修改一个bug，该bug导致在最后取最匹配点的时候，范围取错" />
     <MESSAGE value="GMSmatrix:&#10;添加寻找匹配网格特征点对" />
     <MESSAGE value="GMSmatrix:&#10;更新获取匹配网格对的特征点坐标" />
-    <option name="LAST_COMMIT_MESSAGE" value="GMSmatrix:&#10;更新获取匹配网格对的特征点坐标" />
+    <MESSAGE value="GMSmatrix:&#10;实验快速获取块地址算法" />
+    <option name="LAST_COMMIT_MESSAGE" value="GMSmatrix:&#10;实验快速获取块地址算法" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -998,8 +1042,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/GMS/GMSwithMatrix.py</url>
-          <line>371</line>
-          <option name="timeStamp" value="107" />
+          <line>577</line>
+          <option name="timeStamp" value="117" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -1009,18 +1053,11 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="108" />
+      <option name="time" value="118" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/DQN/DRL-FlappiBird/BrainDQN_Nature.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2071">
-          <caret line="138" column="52" lean-forward="false" selection-start-line="138" selection-start-column="52" selection-end-line="138" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../python-migong/python-migong/lb-maze-master/maze.py" />
     <entry file="file://$PROJECT_DIR$/DQN/Qlearning/maze.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -1086,13 +1123,6 @@
           <folding>
             <element signature="e#0#13#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GMS/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1407,36 +1437,74 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/GMS/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="20" column="46" lean-forward="true" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://H:/Vision/Anconda/Lib/site-packages/scipy/signal/signaltools.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="68" column="8" lean-forward="true" selection-start-line="68" selection-start-column="8" selection-end-line="68" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/GMS/Func.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="37" column="17" lean-forward="true" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
+        <state relative-caret-position="1387">
+          <caret line="108" column="61" lean-forward="false" selection-start-line="108" selection-start-column="61" selection-end-line="108" selection-end-column="61" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#173#710#0" expanded="false" />
-            <element signature="e#436#479#0" expanded="false" />
-            <element signature="e#786#935#0" expanded="false" />
-            <element signature="e#983#1070#0" expanded="false" />
+            <element signature="e#440#483#0" expanded="false" />
+            <element signature="e#1207#1394#0" expanded="false" />
+            <element signature="e#1460#2060#0" expanded="false" />
+            <element signature="e#2158#2309#0" expanded="false" />
+            <element signature="e#4565#4893#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GMS/GMSwithMatrix.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="657" column="0" lean-forward="true" selection-start-line="657" selection-start-column="0" selection-end-line="657" selection-end-column="0" />
+        <state relative-caret-position="190">
+          <caret line="392" column="30" lean-forward="true" selection-start-line="392" selection-start-column="30" selection-end-line="392" selection-end-column="30" />
           <folding>
-            <element signature="e#127#11263#0" expanded="false" />
+            <element signature="e#127#11316#0" expanded="false" />
+            <element signature="e#225#498#0" expanded="false" />
+            <element signature="e#532#2333#0" expanded="false" />
+            <element signature="e#1459#1688#0" expanded="false" />
+            <element signature="e#2397#2669#0" expanded="false" />
+            <element signature="e#2744#2890#0" expanded="false" />
+            <element signature="e#2996#3791#0" expanded="false" />
+            <element signature="e#3848#9948#0" expanded="false" />
             <element signature="e#4388#9792#0" expanded="false" />
-            <element signature="e#12461#12651#0" expanded="false" />
-            <element signature="e#14191#14464#0" expanded="false" />
-            <element signature="e#14532#14665#0" expanded="false" />
-            <element signature="e#14764#15491#0" expanded="false" />
-            <element signature="e#16623#21213#1" expanded="false" />
-            <element signature="e#21409#22075#0" expanded="false" />
-            <element signature="e#22123#22278#0" expanded="false" />
-            <element signature="e#22313#22545#0" expanded="false" />
-            <element signature="e#22563#28736#0" expanded="false" />
+            <element signature="e#10017#10723#0" expanded="false" />
+            <element signature="e#11437#11682#0" expanded="false" />
+            <element signature="e#11704#14440#0" expanded="false" />
+            <element signature="e#14499#14796#0" expanded="false" />
+            <element signature="e#14864#14997#0" expanded="false" />
+            <element signature="e#15096#15823#0" expanded="false" />
+            <element signature="e#17992#22582#1" expanded="false" />
+            <element signature="e#22819#23485#0" expanded="false" />
+            <element signature="e#23533#23739#0" expanded="false" />
+            <element signature="e#23774#24012#0" expanded="false" />
+            <element signature="e#24128#24401#0" expanded="false" />
+            <element signature="e#24979#26158#0" expanded="false" />
+            <element signature="e#25174#25379#0" expanded="false" />
+            <element signature="e#26225#26683#0" expanded="false" />
+            <element signature="e#26688#26705#0" expanded="false" />
+            <element signature="e#26768#27581#0" expanded="false" />
+            <element signature="e#26894#26978#0" expanded="false" />
+            <element signature="e#27013#27096#0" expanded="false" />
+            <element signature="e#27131#27318#0" expanded="false" />
+            <element signature="e#27653#28054#0" expanded="false" />
+            <element signature="e#28100#28254#0" expanded="false" />
+            <element signature="e#28302#29123#0" expanded="false" />
+            <element signature="e#30423#30703#0" expanded="false" />
+            <element signature="e#30536#30653#0" expanded="false" />
+            <element signature="e#30897#31499#0" expanded="false" />
           </folding>
         </state>
       </provider>
