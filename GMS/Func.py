@@ -6,11 +6,11 @@ import math
 import matplotlib.pyplot as py
 
 def conv2withstride(m,filter,stride=(1,1),start=None,gridnum=20):
-    # tmp=ss.convolve2d(m,filter,'same')
-    start=cv2.getTickCount()
+    # s=cv2.getTickCount()
     tmp=cv2.filter2D(m,-1,filter)
-    end=cv2.getTickCount()
-    print("conv cost time %f",(end-start)/cv2.getTickFrequency())
+    # tmp=ss.convolve2d(m,filter,'same')
+    # e=cv2.getTickCount()
+    # print("conv cost time %f",(e-s)/cv2.getTickFrequency())
     if start==None:
         start=(math.floor(stride[0]/2),math.floor(stride[1]/2))
     r = np.arange(start[0], (gridnum) * stride[0], stride[0]).repeat(gridnum)

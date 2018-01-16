@@ -247,6 +247,7 @@ class GMSwithGridFilter:
 		self.initgrid()
 		self.init()
 	
+	
 	def init(self):
 		self.TreshFactor = 6
 		# 最大特征点数
@@ -266,29 +267,65 @@ class GMSwithGridFilter:
 		
 		self.initgrid()  # 初始化网格
 		self.gridmatches = []
+		self.multiplemap()#将matches转化为矩阵
+	
+	def initgrid(self, leftgridnum=20, rightgridnum=20):
+		self.lgn = leftgridnum
+		self.rgn = rightgridnum
+		# 计算划分后网格的高和宽
+		self.leftgridsize = (math.ceil(self.img1.shape[0] / self.lgn), math.ceil(self.img1.shape[1] / self.lgn))  # [r,c]
+		self.rightgridsize = (math.ceil(self.img2.shape[0] / self.rgn), math.ceil(self.img2.shape[1] / self.rgn))  # [r,c]
+		# 生成标签矩阵
+		self.leftlabel = (np.arange(1, self.lgn ** 2 + 1).reshape(self.lgn, self.lgn))\
+			.repeat(self.leftgridsize[0],0).repeat(self.leftgridsize[1], 1).astype(np.int32)
+		self.rightlabel = (np.arange(1, self.rgn ** 2 + 1).reshape(self.rgn, self.rgn))\
+			.repeat(self.rightgridsize[0],0).repeat(self.rightgridsize[1], 1).astype(np.int32)
+	
+	#在
+	def multiplemap(self):
 		# 统计一下坐标
 		lens = len(self.matches)
-		kp1r = np.zeros([lens])
-		kp1c = np.zeros([lens])
-		kp2r = np.zeros([lens])
-		kp2c = np.zeros([lens])
-		for i in range(lens):
-			pt1 = np.array(self.kp1[self.matches[i].queryIdx].pt)
-			pt2 = np.array(self.kp2[self.matches[i].trainIdx].pt)
-			kp1r[i] = pt1[1]
-			kp1c[i] = pt1[0]
-			kp2r[i] = pt2[1]
-			kp2c[i] = pt2[0]
-		kp1list = (np.array(kp1r, np.int32), np.array(kp1c, np.int32))
-		kp2list = (np.array(kp2r, np.int32), np.array(kp2c, np.int32))
+		kp1r = np.zeros([lens]).astype(np.int32)
+		kp1c = np.zeros([lens]).astype(np.int32)
+		kp2r = np.zeros([lens]).astype(np.int32)
+		kp2c = np.zeros([lens]).astype(np.int32)
 		leftsize = self.img1.shape[:2]
 		rightsize = self.img2.shape[:2]
 		# 用于卷积计算阈值
 		self.leftimg = np.zeros(leftsize)
+		self.leftbiasr=np.zeros(leftsize)
+		self.leftbiasc = np.zeros(leftsize)
+		#设定最大可接受重复映射邻域宽度
+		max_neibor_width=1
+		for i in range(lens):
+			pt1 = np.array(self.kp1[self.matches[i].queryIdx].pt)
+			p1=np.array([pt1[1],pt1[0]],np.int32)
+			breakflag=False#跳出循环参数
+			if self.leftimg[p1[0],p1[1]]>0:#说明是重复的点
+				for j in range(p1[0]-max_neibor_width,p1[0]+max_neibor_width+1):#因为左右宽度，再加上1个中心点
+					for k in range(p1[1]-max_neibor_width,p1[1]+max_neibor_width+1):#上下宽度再加一个中心点
+						if self.leftimg[j,k]==0:#说明有空位
+							self.leftimg[j,k]+=1
+							self.leftbiasr[j,k]=p1[0]-j
+							self.leftbiasc[j,k]=p1[1]-k
+							kp1r[i] = j
+							kp1c[i] = k
+							breakflag=True
+							break
+					if breakflag:
+						break
+			else:
+				kp1r[i],kp1c[i] = p1
+				self.leftimg[p1[0], p1[1]]+=1
+			#对右图不做处理
+			pt2 = np.array(self.kp2[self.matches[i].trainIdx].pt)
+			kp2r[i] = int(pt2[1])
+			kp2c[i] = int(pt2[0])
+		kp1list = (np.array(kp1r, np.int32), np.array(kp1c, np.int32))
+		kp2list = (np.array(kp2r, np.int32), np.array(kp2c, np.int32))
 		# 用于计算是否为正确匹配
 		# 假设初始时全部为假匹配
 		self.TrueMatches = np.zeros(leftsize)
-		
 		# 用于卷积计算打分,并获取匹配点
 		self.leftmatchr = np.zeros(leftsize)
 		self.leftmatchc = np.zeros(leftsize)
@@ -296,15 +333,11 @@ class GMSwithGridFilter:
 		# self.leftmatch = np.zeros(leftsize)
 		self.leftmatchgrid = np.zeros(leftsize)
 		# self.rightimglabel = np.zeros(rightsize)
-		
-		# 生成标签
-		self.leftlabel = (np.arange(1, self.lgn ** 2 + 1).reshape(self.lgn, self.lgn)).repeat(self.leftgridsize[0], 0).repeat(self.leftgridsize[1], 1).astype(np.int32)
-		self.rightlabel = (np.arange(1, self.rgn ** 2 + 1).reshape(self.rgn, self.rgn)).repeat(self.rightgridsize[0], 0).repeat(self.rightgridsize[1], 1).astype(np.int32)
 		# Func.imagesc(self.leftlabel==20, 'leftlabel==20')
 		# Func.imagesc(self.leftlabel == 21, 'leftlabel==21')
 		# Func.imagesc(self.rightlabel, 'rightlabel')
 		# rightimg=np.zeros(rightsize)
-		self.leftimg[kp1list]=1
+		self.leftimg[kp1list] = 1
 		self.leftimglabel[kp1list] = self.leftlabel[kp1list]
 		# self.leftmatch[kp1list] = Func.index2value(kp2list, self.img2.shape[:2])
 		# 只保存匹配特征所在的网格，反正也不会计算其实际坐标
@@ -317,13 +350,6 @@ class GMSwithGridFilter:
 		# 只保存匹配图片的匹配点坐标[r,c]
 		self.leftmatchr[kp1list] = kp2r
 		self.leftmatchc[kp1list] = kp2c
-	
-	def initgrid(self, leftgridnum=20, rightgridnum=20):
-		self.lgn = leftgridnum
-		self.rgn = rightgridnum
-		# 计算划分后网格的高和宽
-		self.leftgridsize = (math.ceil(self.img1.shape[0] / self.lgn), math.ceil(self.img1.shape[1] / self.lgn))  # [r,c]
-		self.rightgridsize = (math.ceil(self.img2.shape[0] / self.rgn), math.ceil(self.img2.shape[1] / self.rgn))  # [r,c]
 	
 	# 根据给定gridid，返回在原图的上下限
 	def getblock(self, gridid, gridsize):
@@ -529,7 +555,6 @@ class GMSwithGridFilter:
 			# cv2.imshow('ssds', ssds)
 			# cv2.waitKey()
 
-cv2.filter
 class GMS:
     def __init__(self, img1, img2, kptnumber=10000, resizeflag=False, width=640, height=480):
         self.img1 = img1.copy()
@@ -762,22 +787,18 @@ def main():
     print('cost time is %fs' % (time_end - time_start))
     # #GMSwithMatrix
     # time_start=time.time()
-    # gms=GMSwithMatrix(img1,img2)
-    # gms.run()
+    # gmsm=GMSwithMatrix(img1,img2)
+    # gmsm.run()
     # time_end=time.time();#time.time()为1970.1.1到当前时间的毫秒数
     # print('cost time is %fs'%(time_end-time_start))
-    # #GMSwithGridFilter
-    # time_start = time.time()
+    #GMSwithGridFilter
+    time_start = time.time()
     ggf = GMSwithGridFilter(img1, img2)
     ggf.run()
     time_end = time.time();  # time.time()为1970.1.1到当前时间的毫秒数
     print('cost time is %fs' % (time_end - time_start))
-    # print(((ggf.leftgridkpoints.reshape(-1) - gms.listgrid1)**2).sum())
-    print('leftimg var:',((ggf.leftimg - gms.leftimg) ** 2).sum())
-    print('listgrid1 var:', ((ggf.leftgridkpoints.reshape(-1) - gms.listgrid1) ** 2).sum())
-    
-    # Func.imagesc(ggf.leftgridkpoints, 'GGF socre')
-    
+    print('var %f' % (gms.listgrid1.reshape(gms.rows1, gms.rows1) - ggf.leftgridkpoints).var())
+    Func.imagesc(gms.listgrid1.reshape(gms.rows1, gms.rows1) - ggf.leftgridkpoints, 'GMS score')
     #gms.show()
     a=np.ones([4,4])
     b=np.ones([3,3])
