@@ -529,7 +529,7 @@ class GMSwithGridFilter:
 			# cv2.imshow('ssds', ssds)
 			# cv2.waitKey()
 
-
+cv2.filter
 class GMS:
     def __init__(self, img1, img2, kptnumber=10000, resizeflag=False, width=640, height=480):
         self.img1 = img1.copy()
@@ -552,7 +552,7 @@ class GMS:
         self.matches = self.bf.match(self.des1, trainDescriptors=self.des2)
         self.gridmatchesindex=np.zeros([len(self.matches)])
         self.gridmatches=[]
-        self.test()
+        # self.test()
     def test(self):
 	    self.setparam()
 	    lens = len(self.matches)
@@ -573,6 +573,7 @@ class GMS:
 	    leftsize = self.img1.shape[:2]
 	    rightsize = self.img2.shape[:2]
 	    self.leftimg = np.zeros(leftsize)
+	    self.rightimg = np.zeros(rightsize)
 	    for i in range(lens):
 		    pt1 = np.array(self.kp1[self.matches[i].queryIdx].pt)
 		    pt2 = np.array(self.kp2[self.matches[i].trainIdx].pt)
@@ -587,8 +588,13 @@ class GMS:
 			    print("error:\nid1=%d but id11=%d \nid2=%d but id22=%d"%(id1,id11,id2,id22))
 		    grid1[id1]+=1
 		    self.leftimg[(kp1r[i],kp1c[i])] =self.leftimg[(kp1r[i],kp1c[i])]+ 1
+		    self.rightimg[(kp2r[i], kp2c[i])] = self.rightimg[(kp2r[i], kp2c[i])] + 1
 	    kp1list = (kp1r,kp1c)
 	    kp2list = (kp2r,kp2c)
+	    if (self.leftimg>1).sum()>0:
+		    print('it is one to more!')
+	    if(self.rightimg > 1).sum() > 0:
+	        print('it is more to one!')
 	    
 	    filter=np.ones(shape=self.leftgridsize)
 	    self.leftgridkpoints= Func.conv2withstride(self.leftimg, filter, stride=self.leftgridsize, start=None, gridnum=self.rows1)

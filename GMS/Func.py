@@ -1,15 +1,21 @@
 import numpy as np
 import random
 import scipy.signal as ss
+import cv2
 import math
 import matplotlib.pyplot as py
 
 def conv2withstride(m,filter,stride=(1,1),start=None,gridnum=20):
-    tmp=ss.convolve2d(m,filter,'same')
+    # tmp=ss.convolve2d(m,filter,'same')
+    start=cv2.getTickCount()
+    tmp=cv2.filter2D(m,-1,filter)
+    end=cv2.getTickCount()
+    print("conv cost time %f",(end-start)/cv2.getTickFrequency())
     if start==None:
         start=(math.floor(stride[0]/2),math.floor(stride[1]/2))
     r = np.arange(start[0], (gridnum) * stride[0], stride[0]).repeat(gridnum)
     c=list(range(start[1],(gridnum)*stride[1],stride[1]))*gridnum
+    
     # r=np.arange(0,gridnum)*stride[0]+start[0]
     # c=np.arange(0,gridnum)*stride[1]+start[1]
     # grid=np.zeros([gridnum,gridnum])
@@ -148,5 +154,5 @@ def main():
     print(c,value,c[index])
 
 if __name__ == '__main__':
-    # main()
-    test()
+    main()
+    # test()
