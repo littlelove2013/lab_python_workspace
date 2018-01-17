@@ -305,6 +305,7 @@ class GMSwithGridFilter:
 				for j in range(p1[0]-max_neibor_width,p1[0]+max_neibor_width+1):#因为左右宽度，再加上1个中心点
 					for k in range(p1[1]-max_neibor_width,p1[1]+max_neibor_width+1):#上下宽度再加一个中心点
 						if self.leftimg[j,k]==0:#说明有空位
+							# print("find space area!")
 							self.leftimg[j,k]+=1
 							self.leftbiasr[j,k]=p1[0]-j
 							self.leftbiasc[j,k]=p1[1]-k
@@ -314,6 +315,8 @@ class GMSwithGridFilter:
 							break
 					if breakflag:
 						break
+				if not breakflag:
+					print("neibor overflow!")
 			else:
 				kp1r[i],kp1c[i] = p1
 				self.leftimg[p1[0], p1[1]]+=1
@@ -323,6 +326,7 @@ class GMSwithGridFilter:
 			kp2c[i] = int(pt2[0])
 		kp1list = (np.array(kp1r, np.int32), np.array(kp1c, np.int32))
 		kp2list = (np.array(kp2r, np.int32), np.array(kp2c, np.int32))
+		print("img lens:%d == kplist lens:%d == match number:%d"%((self.leftimg>0).sum(),len(kp1r),lens))
 		# 用于计算是否为正确匹配
 		# 假设初始时全部为假匹配
 		self.TrueMatches = np.zeros(leftsize)
@@ -381,20 +385,23 @@ class GMSwithGridFilter:
 		# 计算阈值
 		filter = np.ones(self.leftgridsize)
 		self.leftgridkpoints = Func.conv2withstride(self.leftimg, filter, stride=self.leftgridsize, start=None, gridnum=self.lgn)
+		print("self.leftgridkpoints:max:%f,min:%f" % (self.leftgridkpoints.max(), self.leftgridkpoints.min()))
 		# 显示计数
 		# Func.imagesc(tmp, '左图计数')
 		# threfilter = np.ones((3, 3)) / 9  # 计算均值
 		threfilter = np.ones((3, 3))
-		Q=self.leftgridkpoints>0
-		Q=ss.convolve2d(Q, threfilter, 'same')
-		self.thre = ss.convolve2d(self.leftgridkpoints, threfilter, 'same')
-		self.thre = self.TreshFactor * np.sqrt(self.thre/(Q+eps))  # 阈值计算公式
+		Q=(self.leftgridkpoints>0).astype(np.float32)
+		Q=cv2.filter2D(Q,-1, threfilter)
+		print("self.Q:max:%f,min:%f"%(Q.max(),Q.min()))
+		self.thre = cv2.filter2D(self.leftgridkpoints,-1, threfilter)
+		print("self.thre:max:%f,min:%f" % (self.thre.max(), self.thre.min()))
+		self.thre = self.TreshFactor * np.sqrt(self.thre/(Q))  # 阈值计算公式
+		print("self.thre:max:%f,min:%f"%(self.thre.max(),self.thre.min()))
 		# 显示阈值
 		Func.imagesc(self.thre, 'thre')
 		# 计算打分
 		self.socre = np.zeros((self.lgn, self.lgn))
 		self.threnew = np.zeros((self.lgn, self.lgn))
-		
 		self.lgshape=(self.lgn,self.lgn)
 		for i in range(self.lgn):  # r
 			for j in range(self.lgn):  # c
@@ -451,7 +458,7 @@ class GMSwithGridFilter:
 				filter = np.ones(self.rightgridsize)
 				# 测试不用卷积速度
 				rightbestgrid = Func.conv2withstride(rightbestimg, filter, stride=self.rightgridsize, start=None,
-				                                     gridnum=self.rgn)
+													 gridnum=self.rgn)
 				# rightbestgrid=np.random.rand(self.rgn,self.rgn)
 				# 显示得分
 				Func.imagesc(rightbestgrid, 'rightbestgrid', ShowDebug=showdebug)
@@ -478,9 +485,9 @@ class GMSwithGridFilter:
 				right9neiborimg = np.zeros(self.img2.shape[:2])
 				# 行列号
 				tmpneibormatchr = self.leftmatchr[neiborareastart[0]:neiborareaend[0],
-				                  neiborareastart[1]:neiborareaend[1]]
+								  neiborareastart[1]:neiborareaend[1]]
 				tmpneibormatchc = self.leftmatchc[neiborareastart[0]:neiborareaend[0],
-				                  neiborareastart[1]:neiborareaend[1]]
+								  neiborareastart[1]:neiborareaend[1]]
 				# 取索引并展平
 				tmpneibormatchr = np.array(tmpneibormatchr[tmpneibormatchr != 0], np.int32)
 				tmpneibormatchc = np.array(tmpneibormatchc[tmpneibormatchc != 0], np.int32)
@@ -489,7 +496,7 @@ class GMSwithGridFilter:
 				# 统计网格特征数
 				# filter = np.ones(self.rightgridsize)
 				right9neiborgrid = Func.conv2withstride(right9neiborimg, filter, stride=self.rightgridsize, start=None,
-				                                        gridnum=self.rgn)
+														gridnum=self.rgn)
 				# right9neiborgrid=np.random.rand(self.rgn,self.rgn)
 				# 显示计数
 				Func.imagesc(right9neiborgrid, 'right9neiborgrid', ShowDebug=showdebug)
@@ -551,9 +558,9 @@ class GMSwithGridFilter:
 			self.computescoreandthre()  # 计算出TrueMatcher
 			# self.TrueMatches[np.arange(1,100,2),np.arange(1,100,2)]=1
 			# return self.getTrueMatch()
-			# ssds = self.drawTrueMatch()
-			# cv2.imshow('ssds', ssds)
-			# cv2.waitKey()
+			ssds = self.drawTrueMatch()
+			cv2.imshow('ssds', ssds)
+			cv2.waitKey()
 
 class GMS:
     def __init__(self, img1, img2, kptnumber=10000, resizeflag=False, width=640, height=480):
@@ -783,6 +790,7 @@ def main():
     time_start = time.time()
     gms = GMS(img1, img2)
     gms.run()
+    # gms.show()
     time_end = time.time();  # time.time()为1970.1.1到当前时间的毫秒数
     print('cost time is %fs' % (time_end - time_start))
     # #GMSwithMatrix
