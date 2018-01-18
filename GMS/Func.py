@@ -78,6 +78,36 @@ def imagesc(matrix,title=None,savefile=True,savepath='./dataset/',ShowDebug=True
         if title!=None:
             py.title(title)
         py.show()
+#matches应该包含两个数组，每个分别对应一个图像上的行列坐标值列表，
+#mathes:kep1list,kep2list:[rlist,clist]
+def matchesshow(img1,img2,matches,title=None):
+    r1,c1=img1.shape[:2]
+    r2,c2=img2.shape[:2]
+    r = max(r1, r2)
+    c = c1 + c2
+    if img1.ndim>2:
+	    d=img1.shape[2]
+	    showimg = np.zeros((r, c,d))
+	    showimg[0:r1, 0:c1,0:d] = img1
+	    showimg[0:r2, c1:c,0:d] = img2
+    else:
+        showimg=np.zeros((r,c))
+        showimg[0:r1,0:c1]=img1
+        showimg[0:r2,c1:c]=img2
+    #画出匹配线
+    kp1list=matches[0]
+    kp2list = matches[1]
+    kp2c=kp2list[1]+c1
+    py.imshow(showimg)
+    lens=len(kp1list[0])
+    for i in range(lens):
+        py.plot([kp1list[1][i],kp2c[i]],[kp1list[0][i],kp2list[0][i]],linewidth=0.5)
+    if title!=None:
+        py.title(title)
+    py.show()
+def imshow(img):
+	py.imshow(img)
+	py.show()
 #按匹配网格分匹配点
 def test():
     kpnum=10000

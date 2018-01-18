@@ -111,7 +111,7 @@ class GMSwithMatrix:
         # 显示阈值
         Func.imagesc(self.thre,'阈值图')
         #计算打分
-        self.socre=np.zeros((self.lgn,self.lgn))
+        self.score=np.zeros((self.lgn,self.lgn))
 
         for i in range(self.lgn):#r
             for j in range(self.lgn):#c
@@ -184,10 +184,10 @@ class GMSwithMatrix:
                 neiborgird = ss.convolve2d(right9neiborgrid, neiborfilter, 'same', boundary='wrap')
                 # neiborgird = np.random.rand(self.rgn,self.rgn)
                 Func.imagesc(neiborgird, 'neiborgird',ShowDebug=showdebug)
-                self.socre[i,j]=neiborgird[rightbestgridindex]
+                self.score[i,j]=neiborgird[rightbestgridindex]
                 #计算得分是否超过阈值，超过则accept矩阵取1,该网格内所有点为匹配点为匹配点
                 #则可以用img保存所有的匹配点对，对所有特征点，若匹配则为1，然后去找对应的匹配坐标，若不匹配则为0
-                if self.socre[i,j]>self.thre[i,j]:#则匹配度量加上匹配值，最后最匹配的点，其匹配值应该最大，取出其对应匹配的r,c坐标即可
+                if self.score[i,j]>self.thre[i,j]:#则匹配度量加上匹配值，最后最匹配的点，其匹配值应该最大，取出其对应匹配的r,c坐标即可
                     #必须只保留匹配点位于最佳匹配格的的匹配点
                     k,m=rightbestgridindex
                     # m=rightbestgridindex[1]
@@ -198,7 +198,7 @@ class GMSwithMatrix:
                     index=(tmpleftmatchrgrid<bestrangestart[0])|(tmpleftmatchcgrid<bestrangestart[1])|(tmpleftmatchrgrid>bestrangeend[0])|(tmpleftmatchcgrid>bestrangeend[1])
                     tmp[index]=0
                     self.TrueMatches[bestareastart[0]:bestareaend[0], bestareastart[1]:bestareaend[1]]+=tmp
-        self.accept=self.socre>self.thre
+        self.accept=self.score>self.thre
         # 显示accept
         Func.imagesc(self.thre, 'accept')
         Func.imagesc(self.TrueMatches, 'TrueMatches')
@@ -252,7 +252,7 @@ class GMSwithGridFilter:
 		self.TreshFactor = 6
 		# 最大特征点数
 		self.orb = cv2.ORB_create(self.kptnumber)
-		# self.orb.setFastThreshold(0)
+		self.orb.setFastThreshold(0)
 		self.kp1, self.des1 = self.orb.detectAndCompute(self.img1, None)
 		self.kp2, self.des2 = self.orb.detectAndCompute(self.img2, None)
 		# 提取并计算特征点
@@ -260,7 +260,7 @@ class GMSwithGridFilter:
 		self.matches = self.bf.match(self.des1, trainDescriptors=self.des2)
 		# 显示
 		rawmatchimg = cv2.drawMatches(self.img1, self.kp1, self.img2, self.kp2, self.matches, None)
-		cv2.imshow('rawmatchimg', rawmatchimg)
+		# cv2.imshow('rawmatchimg', rawmatchimg)
 		# cv2.waitKey()
 		
 		self.gridmatchesindex = np.zeros([len(self.matches)])
@@ -292,16 +292,17 @@ class GMSwithGridFilter:
 		leftsize = self.img1.shape[:2]
 		rightsize = self.img2.shape[:2]
 		# 用于卷积计算阈值
-		self.leftimg = np.zeros(leftsize)
-		self.leftbiasr=np.zeros(leftsize)
-		self.leftbiasc = np.zeros(leftsize)
+		self.leftimg = np.zeros(leftsize).astype(np.int32)
+		self.leftbiasr=np.zeros(leftsize).astype(np.int32)
+		self.leftbiasc = np.zeros(leftsize).astype(np.int32)
 		#设定最大可接受重复映射邻域宽度
 		max_neibor_width=1
+		MultipleMap=False#是否对重复映射做邻域替换映射，为False则不管重复映射，只取最后一个映射值
 		for i in range(lens):
 			pt1 = np.array(self.kp1[self.matches[i].queryIdx].pt)
 			p1=np.array([pt1[1],pt1[0]],np.int32)
 			breakflag=False#跳出循环参数
-			if self.leftimg[p1[0],p1[1]]>0:#说明是重复的点
+			if MultipleMap and self.leftimg[p1[0],p1[1]]>0:#说明是重复的点
 				for j in range(p1[0]-max_neibor_width,p1[0]+max_neibor_width+1):#因为左右宽度，再加上1个中心点
 					for k in range(p1[1]-max_neibor_width,p1[1]+max_neibor_width+1):#上下宽度再加一个中心点
 						if self.leftimg[j,k]==0:#说明有空位
@@ -326,6 +327,7 @@ class GMSwithGridFilter:
 			kp2c[i] = int(pt2[0])
 		kp1list = (np.array(kp1r, np.int32), np.array(kp1c, np.int32))
 		kp2list = (np.array(kp2r, np.int32), np.array(kp2c, np.int32))
+		# Func.matchesshow(self.img1,self.img2,[kp1list,kp2list],"B matches")
 		print("img lens:%d == kplist lens:%d == match number:%d"%((self.leftimg>0).sum(),len(kp1r),lens))
 		# 用于计算是否为正确匹配
 		# 假设初始时全部为假匹配
@@ -384,151 +386,47 @@ class GMSwithGridFilter:
 	def computescoreandthre(self):
 		# 计算阈值
 		filter = np.ones(self.leftgridsize)
+		print("self.leftimg:max:%f,min:%f" % (self.leftimg.max(), self.leftimg.min()))
 		self.leftgridkpoints = Func.conv2withstride(self.leftimg, filter, stride=self.leftgridsize, start=None, gridnum=self.lgn)
 		print("self.leftgridkpoints:max:%f,min:%f" % (self.leftgridkpoints.max(), self.leftgridkpoints.min()))
 		# 显示计数
 		# Func.imagesc(tmp, '左图计数')
-		# threfilter = np.ones((3, 3)) / 9  # 计算均值
-		threfilter = np.ones((3, 3))
-		Q=(self.leftgridkpoints>0).astype(np.float32)
-		Q=cv2.filter2D(Q,-1, threfilter)
-		print("self.Q:max:%f,min:%f"%(Q.max(),Q.min()))
-		self.thre = cv2.filter2D(self.leftgridkpoints,-1, threfilter)
+		threfilter = np.ones((3, 3)) / 9  # 计算均值
+		# threfilter = np.ones((3, 3))
+		self.thre = ss.convolve2d(self.leftgridkpoints, threfilter,'same')
 		print("self.thre:max:%f,min:%f" % (self.thre.max(), self.thre.min()))
-		self.thre = self.TreshFactor * np.sqrt(self.thre/(Q))  # 阈值计算公式
+		self.thre = self.TreshFactor * np.sqrt(self.thre*(self.leftgridkpoints>0))  # 阈值计算公式
 		print("self.thre:max:%f,min:%f"%(self.thre.max(),self.thre.min()))
 		# 显示阈值
-		Func.imagesc(self.thre, 'thre')
+		# Func.imagesc(self.thre, 'thre')
 		# 计算打分
-		self.socre = np.zeros((self.lgn, self.lgn))
-		self.threnew = np.zeros((self.lgn, self.lgn))
+		self.score = np.zeros((self.lgn, self.lgn))
 		self.lgshape=(self.lgn,self.lgn)
+		neiborwidth = 1  # 多远 的算邻居
+		filtershape=(self.leftgridsize[0]*(2*neiborwidth+1),self.leftgridsize[1]*(2*neiborwidth+1))
+		neiborfilter = np.ones(filtershape)
 		for i in range(self.lgn):  # r
 			for j in range(self.lgn):  # c
-				# print("calc grid(%d,%d)" % (i, j))
-				if self.thre[i,j]==0:
+				if self.leftgridkpoints[i,j]==0:
 					continue
 				leftvalue=Func.index2value((i,j),self.lgshape)+1
 				bestmatchgrid=self.leftmatchgrid[self.leftimglabel==leftvalue]
-				if bestmatchgrid.size <10:
+				if bestmatchgrid.size <1:
 					continue  # 点数小于阈值则不计算，默认为不匹配
-				# Func.imagesc(self.leftimglabel==leftvalue, 'leftimglabel')
-				# Func.imagesc(self.leftmatchgrid, 'leftmatchgrid')
 				number,n_counts=np.unique(bestmatchgrid,return_counts=True)
 				rbestindex=number[np.argsort(n_counts)[-1]]
 				index=(self.leftimglabel==leftvalue)&(self.leftmatchgrid==rbestindex)
-				# if index.sum()<self.thre[i,j]:
-				# 	continue
-				#对于匹配的i,j网格，求其邻域，只需要取一个patch：比如（3，3）
-				#则取以i为中心的label_patchi，取以j为中心的label_patch
-				#label_patchi-label_patchj,取==0的像素，即为正确匹配的网格
-				#而实际上，即为(self.leftimglabel-self.leftmatchgrid)==(leftvalue-rbestindex)
-				#所以我搞定了多维度的问题？
-				#如果最后再对其做一个高斯加权平均就更好了
-				neiborwidth=1#多远 的算邻居
-				neiborsindex=(self.leftimglabel-self.leftmatchgrid)==(leftvalue-rbestindex)
+
+				neiborsindex=(((self.leftimglabel-self.leftmatchgrid)==(leftvalue-rbestindex))&(self.leftimg>0)).astype(np.int32)
 				lsize=np.array(self.leftgridsize)
-				p=np.array([[i-neiborwidth,i+neiborwidth],[j-neiborwidth,j+neiborwidth]])*(lsize.reshape(-1,1))
-				if neiborsindex[p[0,0]:p[0,1],p[1,0]:p[1,1]].sum()<self.thre[i,j]:
+				neiborsindexconv = Func.conv2withstride(neiborsindex,neiborfilter,
+				                                        stride=self.leftgridsize,start=None,gridnum=self.lgn)
+				self.score[i, j]=neiborsindexconv[i,j]
+				# print("calc grid(%d,%d)\n thre=%.f,index.sum=%d,neiborsindex.sum=%d,score=%d"
+				#       % (i, j,self.thre[i,j],index.sum(),neiborsindex.sum(),self.score[i, j]))
+				if neiborsindexconv[i,j]<self.thre[i,j]:
 					continue
-				# print(rbestindex, index.sum(), self.thre[i, j],neiborsindex[p[0,0]:p[0,1],p[1,0]:p[1,1]].sum())
-				self.socre[i,j]=index.sum()
 				self.TrueMatches+= index
-				'''
-				showdebug = False
-				# 对于img1中的每个网格区域和9邻域，计算其匹配的右img2的值
-				bestareastart = (i * self.leftgridsize[0], j * self.leftgridsize[1])
-				bestareaend = ((i + 1) * self.leftgridsize[0], (j + 1) * self.leftgridsize[1])
-				leftkpoints = self.leftimg[bestareastart[0]:bestareaend[0], bestareastart[1]:bestareaend[1]]
-				# 建一个rightbetgrid,用于统计最匹配网格
-				rightbestimg = np.zeros(self.img2.shape[:2])
-				# 行列号
-				tmpleftmatchrgrid = self.leftmatchr[bestareastart[0]:bestareaend[0], bestareastart[1]:bestareaend[1]]
-				tmpleftmatchcgrid = self.leftmatchc[bestareastart[0]:bestareaend[0], bestareastart[1]:bestareaend[1]]
-				# 取索引并展平
-				tmpleftmatchr = np.array(tmpleftmatchrgrid[tmpleftmatchrgrid != 0], np.int32)
-				tmpleftmatchc = np.array(tmpleftmatchcgrid[tmpleftmatchcgrid != 0], np.int32)
-				if tmpleftmatchr.size < 10:
-					continue  # 点数小于阈值则不计算，默认为不匹配
-					showdebug = True
-				# 将展平的横纵坐标撒在图像上
-				rightbestimg[(tmpleftmatchr, tmpleftmatchc)] = 1
-				Func.imagesc(rightbestimg, 'rightbestimg', ShowDebug=showdebug)
-				# 统计网格特征数
-				filter = np.ones(self.rightgridsize)
-				# 测试不用卷积速度
-				rightbestgrid = Func.conv2withstride(rightbestimg, filter, stride=self.rightgridsize, start=None,
-													 gridnum=self.rgn)
-				# rightbestgrid=np.random.rand(self.rgn,self.rgn)
-				# 显示得分
-				Func.imagesc(rightbestgrid, 'rightbestgrid', ShowDebug=showdebug)
-				# 取得分最大的网格[m,n]作为[i,j]对应的最匹配网格,因为可能有多个最大值，所以只取第一个
-				rightbestgridindex = np.where(rightbestgrid == rightbestgrid.max())
-				rightbestgridindex = (rightbestgridindex[0][0], rightbestgridindex[1][0])
-				
-				# 9邻域
-				# 有一个想法：对所有网格编号，若想取某一区域内网格点数不被其余网格污染，则用当前网格编号M，减去匹配网格编号N，
-				# 如果网格内的值==|M-N|则对应的正好是匹配网格的点，否则是混乱网格匹配点，直接置0
-				# 比如：L:（3，4,64）match R:(9,10,190),则将R特征点撒到R网格上，设撒的值=R.grid-pointl.grid,只有值==|64-190|的才是对应网格匹配
-				# 乱点排序法
-				neiborareastart = [(i - 1) * self.leftgridsize[0], (j - 1) * self.leftgridsize[1]]
-				neiborareaend = [(i + 2) * self.leftgridsize[0], (j + 2) * self.leftgridsize[1]]
-				if neiborareastart[0] < 0:
-					neiborareastart[0] = 0
-				if neiborareastart[1] < 0:
-					neiborareastart[1] = 0
-				if neiborareaend[0] > self.img1.shape[0]:
-					neiborareaend[0] = self.img1.shape[0]
-				if neiborareaend[1] > self.img1.shape[1]:
-					neiborareaend[1] = self.img1.shape[1]
-				# 建一个right9neiborgrid用于统计9邻域得分
-				right9neiborimg = np.zeros(self.img2.shape[:2])
-				# 行列号
-				tmpneibormatchr = self.leftmatchr[neiborareastart[0]:neiborareaend[0],
-								  neiborareastart[1]:neiborareaend[1]]
-				tmpneibormatchc = self.leftmatchc[neiborareastart[0]:neiborareaend[0],
-								  neiborareastart[1]:neiborareaend[1]]
-				# 取索引并展平
-				tmpneibormatchr = np.array(tmpneibormatchr[tmpneibormatchr != 0], np.int32)
-				tmpneibormatchc = np.array(tmpneibormatchc[tmpneibormatchc != 0], np.int32)
-				# 将展平的横纵坐标撒在图像上
-				right9neiborimg[(tmpneibormatchr, tmpneibormatchc)] = 1
-				# 统计网格特征数
-				# filter = np.ones(self.rightgridsize)
-				right9neiborgrid = Func.conv2withstride(right9neiborimg, filter, stride=self.rightgridsize, start=None,
-														gridnum=self.rgn)
-				# right9neiborgrid=np.random.rand(self.rgn,self.rgn)
-				# 显示计数
-				Func.imagesc(right9neiborgrid, 'right9neiborgrid', ShowDebug=showdebug)
-				# 取得分最大的网格[m,n]作为[i,j]对应的最匹配网格
-				# rightbestgridindex = np.where(rightbestgrid == rightbestgrid.max())
-				# 对9邻域卷积打分
-				neiborfilter = np.ones((3, 3))
-				neiborgird = ss.convolve2d(right9neiborgrid, neiborfilter, 'same', boundary='wrap')
-				# neiborgird = np.random.rand(self.rgn,self.rgn)
-				Func.imagesc(neiborgird, 'neiborgird', ShowDebug=showdebug)
-				self.socre[i, j] = neiborgird[rightbestgridindex]
-				# 计算得分是否超过阈值，超过则accept矩阵取1,该网格内所有点为匹配点为匹配点
-				# 则可以用img保存所有的匹配点对，对所有特征点，若匹配则为1，然后去找对应的匹配坐标，若不匹配则为0
-				if self.socre[i, j] > self.thre[i, j]:  # 则匹配度量加上匹配值，最后最匹配的点，其匹配值应该最大，取出其对应匹配的r,c坐标即可
-					# 必须只保留匹配点位于最佳匹配格的的匹配点
-					k, m = rightbestgridindex
-					# m=rightbestgridindex[1]
-					bestrangestart = (k * self.rightgridsize[0], m * self.rightgridsize[1])
-					bestrangeend = ((k + 1) * self.rightgridsize[0], (m + 1) * self.rightgridsize[1])
-					# tmp=self.leftimg[bestareastart[0]:bestareaend[0], bestareastart[1]:bestareaend[1]].copy()
-					tmp = leftkpoints.copy()
-					index = (tmpleftmatchrgrid < bestrangestart[0]) | (tmpleftmatchcgrid < bestrangestart[1]) | (
-							tmpleftmatchrgrid > bestrangeend[0]) | (tmpleftmatchcgrid > bestrangeend[1])
-					tmp[index] = 0
-					self.TrueMatches[bestareastart[0]:bestareaend[0], bestareastart[1]:bestareaend[1]] += tmp
-				'''
-		self.accept = self.socre > self.thre
-		Func.imagesc(self.socre, 'socre')
-		# Func.imagesc(self.thre, 'oldthre')
-		# 显示accept
-		# Func.imagesc(self.TrueMatches, 'TrueMatches')
-	
 	# 同样返回Match对象，用于其他用途
 	def getTrueMatch(self, thre=1):
 		Truelistindex = self.TrueMatches >= thre
@@ -559,8 +457,8 @@ class GMSwithGridFilter:
 			# self.TrueMatches[np.arange(1,100,2),np.arange(1,100,2)]=1
 			# return self.getTrueMatch()
 			ssds = self.drawTrueMatch()
-			cv2.imshow('ssds', ssds)
-			cv2.waitKey()
+			Func.imshow(ssds)
+
 
 class GMS:
     def __init__(self, img1, img2, kptnumber=10000, resizeflag=False, width=640, height=480):
@@ -576,7 +474,7 @@ class GMS:
         self.TreshFactor=6
         # 最大特征点数
         self.orb = cv2.ORB_create(self.kptnumber)
-        # self.orb.setFastThreshold(0)
+        self.orb.setFastThreshold(0)
         self.kp1, self.des1 = self.orb.detectAndCompute(self.img1, None)
         self.kp2, self.des2 = self.orb.detectAndCompute(self.img2, None)
         # 提取并计算特征点
@@ -688,7 +586,9 @@ class GMS:
             for j in range(3):
                 neibor[j+3*i]=gridnum+(i-1)*num+(j-1)
         return neibor
-    def getsocreandthre(self,gridnum):
+    def getscoreandthre(self,gridnum):
+        if self.listgrid1[gridnum] <= 0:
+            return 0, 0
         score = 0.0
         thresh = 0.0
         leftneibor = self.getneibor(gridnum,self.rows1)
@@ -698,16 +598,16 @@ class GMS:
             pos_left = int(leftneibor[i])
             pos_right=int(rightneibor[i])
             #若果grid内点数==0则不算
-            if(pos_left<0 or pos_left>=self.rows1**2 or pos_right<0 or pos_right>=self.rows2**2 or self.listgrid1[gridnum]<=0):
+            if(pos_left<0 or pos_left>=self.rows1**2 or pos_right<0 or pos_right>=self.rows2**2):
                 continue
             # print(pos_left,int(rightneibor[i]))
             positive_points=self.listgrid2[pos_left][pos_right]
             score=score+positive_points
             thresh=thresh+self.listgrid1[pos_left]
             num=num+1
-        if num==0:
-            return 0,0
         thresh=math.sqrt(thresh/(num))*self.TreshFactor
+        self.thre[gridnum] =thresh
+        self.score[gridnum] =score
         return score,thresh
     def run(self,type=1):
         #设置参数
@@ -729,10 +629,12 @@ class GMS:
         globalthreshold = math.sqrt(len(self.matches) / self.validGrid) * self.TreshFactor
         if not localthreshold:
             ACCEPTSCORE=globalthreshold
+        self.thre = np.zeros(self.rows1 ** 2)
+        self.score = np.zeros(self.rows1 ** 2)
         for i in range(self.rows1 ** 2):
             if self.listgrid1[i]<=0:
-                continue;
-            score,localthreshold=self.getsocreandthre(i)
+                continue
+            score,localthreshold=self.getscoreandthre(i)
             if localthreshold>0:
                 ACCEPTSCORE=localthreshold
             if score<ACCEPTSCORE:
@@ -746,7 +648,7 @@ class GMS:
                 self.gridmatchesindex[i]=1
 
     def getGmsMatches(self):
-        for i in range(1):
+        for i in range(4):
             self.run(i+1)
         for i in range(len(self.matches)):
             
@@ -775,10 +677,10 @@ class GMS:
 def main():
     print(__name__)
     root='./images/'
-    img1path='./images/000.png'
-    img2path = './images/020.png'
-    # img1path=root+'img1.jpg'
-    # img2path = root+'img2.jpg'
+    # img1path='./images/000.png'
+    # img2path = './images/020.png'
+    img1path=root+'img1.jpg'
+    img2path = root+'img2.jpg'
     # img1path='./images/img.jpg'
     # img2path = './images/img2.jpg'
     img1=cv2.imread(img1path)
@@ -790,7 +692,7 @@ def main():
     time_start = time.time()
     gms = GMS(img1, img2)
     gms.run()
-    # gms.show()
+    gms.show()
     time_end = time.time();  # time.time()为1970.1.1到当前时间的毫秒数
     print('cost time is %fs' % (time_end - time_start))
     # #GMSwithMatrix
@@ -806,7 +708,27 @@ def main():
     time_end = time.time();  # time.time()为1970.1.1到当前时间的毫秒数
     print('cost time is %fs' % (time_end - time_start))
     print('var %f' % (gms.listgrid1.reshape(gms.rows1, gms.rows1) - ggf.leftgridkpoints).var())
-    Func.imagesc(gms.listgrid1.reshape(gms.rows1, gms.rows1) - ggf.leftgridkpoints, 'GMS score')
+    # Func.imagesc(ggf.leftgridkpoints, 'GGF point')
+	#测试
+    # TreshFactor=6
+    # leftgridkpoints=gms.listgrid1.reshape(gms.rows1, gms.rows1)
+    # threfilter = np.ones((3, 3))
+    # thre = cv2.filter2D(leftgridkpoints, -1, threfilter)
+    # delta=ggf.thre-gms.thre.reshape(gms.rows1,gms.rows1)
+    # print("gms.thre:max:%f,min:%f" % (gms.thre.max(), gms.thre.min()))
+    # print("thre sum=%f var=%f,mean=%f"%(delta.sum(),delta.var(),delta.mean()))
+    # Func.imagesc(gms.thre.reshape(gms.rows1, gms.rows1), 'GMS thre')
+    # Func.imagesc(ggf.thre, 'GGF thre')
+    # Func.imagesc(delta, 'GGF thre - GMS thre')
+    
+    delta=ggf.score-gms.score.reshape(gms.rows1,gms.rows1)
+    print("gms.score:max:%f,min:%f" % (gms.score.max(), gms.thre.min()))
+    print("ggf.score:max:%f,min:%f" % (ggf.score.max(), ggf.thre.min()))
+    print("score sum=%f var=%f,mean=%f" % (delta.sum(), delta.var(), delta.mean()))
+    Func.imagesc(gms.score.reshape(gms.rows1, gms.rows1), 'GMS score')
+    Func.imagesc(ggf.score, 'GGF score')
+    Func.imagesc(delta, 'GGF score - GMS score')
+
     #gms.show()
     a=np.ones([4,4])
     b=np.ones([3,3])
@@ -814,4 +736,4 @@ def main():
     
 
 if __name__=='__main__':
-    main();
+    main()

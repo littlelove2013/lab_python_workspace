@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26ac5d66-a343-4619-bd8d-f04266680f53" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GMS/GMSwithMatrix.py" afterPath="$PROJECT_DIR$/GMS/GMSwithMatrix.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Knn/knn.py" afterPath="$PROJECT_DIR$/Knn/knn.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/GMS/GridMatchFilter.py" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/python_workspace.iml" afterPath="$PROJECT_DIR$/.idea/python_workspace.iml" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/GMS/Func.py" afterPath="$PROJECT_DIR$/GMS/Func.py" />
+      <change beforePath="$PROJECT_DIR$/GMS/GMSwithMatrix.py" afterPath="$PROJECT_DIR$/GMS/GMSwithMatrix.py" />
+      <change beforePath="$PROJECT_DIR$/GMS/日志记录" afterPath="$PROJECT_DIR$/GMS/日志记录" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,41 +18,42 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/lab_workspace$GMS.coverage" NAME="GMS Coverage Results" MODIFIED="1510556863035" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
-    <SUITE FILE_PATH="coverage/lab_workspace$GMSwithMatrix.coverage" NAME="GMSwithMatrix Coverage Results" MODIFIED="1516155756880" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
-    <SUITE FILE_PATH="coverage/lab_python_workspace$test.coverage" NAME="test Coverage Results" MODIFIED="1515242867038" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/webbigdata/pagerank" />
-    <SUITE FILE_PATH="coverage/lab_python_workspace$main.coverage" NAME="main Coverage Results" MODIFIED="1515315488539" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/dogbreed" />
-    <SUITE FILE_PATH="coverage/lab_python_workspace$Nosetests_for_Func_test.coverage" NAME="Nosetests for Func.test Coverage Results" MODIFIED="1515982962744" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
-    <SUITE FILE_PATH="coverage/lab_python_workspace$FlappyBirdDQN.coverage" NAME="FlappyBirdDQN Coverage Results" MODIFIED="1510313233256" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DQN/DRL-FlappiBird" />
-    <SUITE FILE_PATH="coverage/lab_python_workspace$Qlearning.coverage" NAME="Qlearning Coverage Results" MODIFIED="1510462597687" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DQN/Qlearning" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$randmaze.coverage" NAME="randmaze Coverage Results" MODIFIED="1510475033271" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DQN/Qlearning" />
-    <SUITE FILE_PATH="coverage/lab_python_workspace$testsavetfmodel.coverage" NAME="testsavetfmodel Coverage Results" MODIFIED="1514076715713" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tensorflow" />
-    <SUITE FILE_PATH="coverage/lab_python_workspace$Qlearningtest2.coverage" NAME="Qlearningtest2 Coverage Results" MODIFIED="1510480326145" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DQN/Qlearning" />
-    <SUITE FILE_PATH="coverage/lab_python_workspace$Nosetests_in_Func_py.coverage" NAME="Nosetests in Func.py Coverage Results" MODIFIED="1516086812344" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
-    <SUITE FILE_PATH="coverage/lab_python_workspace$CNN.coverage" NAME="CNN Coverage Results" MODIFIED="1514021043418" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/dogbreed" />
-    <SUITE FILE_PATH="coverage/lab_python_workspace$Func.coverage" NAME="Func Coverage Results" MODIFIED="1514012316775" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
-    <SUITE FILE_PATH="coverage/lab_python_workspace$testCNNfrommodel.coverage" NAME="testCNNfrommodel Coverage Results" MODIFIED="1514078724509" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tensorflow" />
-    <SUITE FILE_PATH="coverage/lab_python_workspace$Stacking.coverage" NAME="Stacking Coverage Results" MODIFIED="1515306958934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/Titanic" />
-    <SUITE FILE_PATH="coverage/lab_python_workspace$predata.coverage" NAME="predata Coverage Results" MODIFIED="1515300778605" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/Titanic" />
-    <SUITE FILE_PATH="coverage/lab_python_workspace$VGG_beta3.coverage" NAME="VGG_beta3 Coverage Results" MODIFIED="1515313786943" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/dogbreed" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$minist_CNN2.coverage" NAME="minist_CNN2 Coverage Results" MODIFIED="1514075231439" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tensorflow" />
-    <SUITE FILE_PATH="coverage/lab_python_workspace$sparseautoencoder.coverage" NAME="sparseautoencoder Coverage Results" MODIFIED="1515304101278" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/Titanic" />
-    <SUITE FILE_PATH="coverage/lab_python_workspace$GMS.coverage" NAME="GMS Coverage Results" MODIFIED="1514012737496" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
-    <SUITE FILE_PATH="coverage/lab_python_workspace$GMSwithMatrix.coverage" NAME="GMSwithMatrix Coverage Results" MODIFIED="1516089667559" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
-    <SUITE FILE_PATH="coverage/lab_workspace$savelabeltocvs.coverage" NAME="savelabeltocvs Coverage Results" MODIFIED="1514103822939" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/dogbreed" />
-    <SUITE FILE_PATH="coverage/lab_python_workspace$flappy_bird_utils.coverage" NAME="flappy_bird_utils Coverage Results" MODIFIED="1510311589521" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DQN/DRL-FlappiBird/game" />
-    <SUITE FILE_PATH="coverage/lab_workspace$knn.coverage" NAME="knn Coverage Results" MODIFIED="1516152436021" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Knn" />
-    <SUITE FILE_PATH="coverage/lab_python_workspace$VGG_pre.coverage" NAME="VGG_pre Coverage Results" MODIFIED="1515313170834" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/dogbreed" />
     <SUITE FILE_PATH="coverage/lab_workspace$Qlearning.coverage" NAME="Qlearning Coverage Results" MODIFIED="1510556448943" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DQN/Qlearning" />
-    <SUITE FILE_PATH="coverage/lab_python_workspace$VGG.coverage" NAME="VGG Coverage Results" MODIFIED="1513939759432" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/dogbreed" />
-    <SUITE FILE_PATH="coverage/lab_python_workspace$CNN_test.coverage" NAME="CNN_test Coverage Results" MODIFIED="1514199246577" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tensorflow" />
-    <SUITE FILE_PATH="coverage/lab_workspace$FlappyBirdDQN.coverage" NAME="FlappyBirdDQN Coverage Results" MODIFIED="1510556665965" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DQN/DRL-FlappiBird" />
-    <SUITE FILE_PATH="coverage/lab_python_workspace$DataUtil.coverage" NAME="DataUtil Coverage Results" MODIFIED="1510482200802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/HSI" />
     <SUITE FILE_PATH="coverage/lab_workspace$main.coverage" NAME="main Coverage Results" MODIFIED="1510556945327" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
-    <SUITE FILE_PATH="coverage/lab_python_workspace$maze.coverage" NAME="maze Coverage Results" MODIFIED="1510474876714" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DQN/Qlearning" />
-    <SUITE FILE_PATH="coverage/lab_python_workspace$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1515309973005" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/Titanic" />
-    <SUITE FILE_PATH="coverage/lab_python_workspace$dogbreed.coverage" NAME="dogbreed Coverage Results" MODIFIED="1515200300751" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/dogbreed" />
+    <SUITE FILE_PATH="coverage/lab_python_workspace$CNN.coverage" NAME="CNN Coverage Results" MODIFIED="1514021043418" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/dogbreed" />
+    <SUITE FILE_PATH="coverage/lab_python_workspace$Qlearningtest2.coverage" NAME="Qlearningtest2 Coverage Results" MODIFIED="1510480326145" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DQN/Qlearning" />
+    <SUITE FILE_PATH="coverage/lab_python_workspace$Stacking.coverage" NAME="Stacking Coverage Results" MODIFIED="1515306958934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/Titanic" />
+    <SUITE FILE_PATH="coverage/lab_python_workspace$Qlearning.coverage" NAME="Qlearning Coverage Results" MODIFIED="1510462597687" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DQN/Qlearning" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$graph.coverage" NAME="graph Coverage Results" MODIFIED="1515237446171" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/webbigdata/pagerank" />
+    <SUITE FILE_PATH="coverage/lab_python_workspace$GMS.coverage" NAME="GMS Coverage Results" MODIFIED="1514012737496" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
+    <SUITE FILE_PATH="coverage/lab_python_workspace$main.coverage" NAME="main Coverage Results" MODIFIED="1515315488539" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/dogbreed" />
+    <SUITE FILE_PATH="coverage/lab_python_workspace$GMSwithMatrix.coverage" NAME="GMSwithMatrix Coverage Results" MODIFIED="1516271091439" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
+    <SUITE FILE_PATH="coverage/lab_python_workspace$testCNNfrommodel.coverage" NAME="testCNNfrommodel Coverage Results" MODIFIED="1514078724509" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tensorflow" />
+    <SUITE FILE_PATH="coverage/lab_python_workspace$VGG.coverage" NAME="VGG Coverage Results" MODIFIED="1513939759432" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/dogbreed" />
+    <SUITE FILE_PATH="coverage/lab_python_workspace$Func.coverage" NAME="Func Coverage Results" MODIFIED="1514012316775" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
+    <SUITE FILE_PATH="coverage/lab_python_workspace$VGG_beta3.coverage" NAME="VGG_beta3 Coverage Results" MODIFIED="1515313786943" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/dogbreed" />
+    <SUITE FILE_PATH="coverage/lab_python_workspace$predata.coverage" NAME="predata Coverage Results" MODIFIED="1515300778605" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/Titanic" />
+    <SUITE FILE_PATH="coverage/lab_workspace$GMS.coverage" NAME="GMS Coverage Results" MODIFIED="1510556863035" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
+    <SUITE FILE_PATH="coverage/lab_python_workspace$FlappyBirdDQN.coverage" NAME="FlappyBirdDQN Coverage Results" MODIFIED="1510313233256" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DQN/DRL-FlappiBird" />
+    <SUITE FILE_PATH="coverage/lab_workspace$savelabeltocvs.coverage" NAME="savelabeltocvs Coverage Results" MODIFIED="1514103822939" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/dogbreed" />
+    <SUITE FILE_PATH="coverage/lab_python_workspace$testsavetfmodel.coverage" NAME="testsavetfmodel Coverage Results" MODIFIED="1514076715713" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tensorflow" />
+    <SUITE FILE_PATH="coverage/lab_workspace$knn.coverage" NAME="knn Coverage Results" MODIFIED="1516152436021" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Knn" />
+    <SUITE FILE_PATH="coverage/lab_workspace$GMSwithMatrix.coverage" NAME="GMSwithMatrix Coverage Results" MODIFIED="1516155756880" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
+    <SUITE FILE_PATH="coverage/lab_workspace$FlappyBirdDQN.coverage" NAME="FlappyBirdDQN Coverage Results" MODIFIED="1510556665965" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DQN/DRL-FlappiBird" />
+    <SUITE FILE_PATH="coverage/lab_python_workspace$GridMatchFilter.coverage" NAME="GridMatchFilter Coverage Results" MODIFIED="1516271052074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
+    <SUITE FILE_PATH="coverage/lab_python_workspace$Nosetests_in_Func_py.coverage" NAME="Nosetests in Func.py Coverage Results" MODIFIED="1516086812344" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
+    <SUITE FILE_PATH="coverage/lab_python_workspace$sparseautoencoder.coverage" NAME="sparseautoencoder Coverage Results" MODIFIED="1515304101278" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/Titanic" />
+    <SUITE FILE_PATH="coverage/lab_python_workspace$dogbreed.coverage" NAME="dogbreed Coverage Results" MODIFIED="1515200300751" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/dogbreed" />
+    <SUITE FILE_PATH="coverage/lab_python_workspace$maze.coverage" NAME="maze Coverage Results" MODIFIED="1510474876714" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DQN/Qlearning" />
+    <SUITE FILE_PATH="coverage/lab_python_workspace$test.coverage" NAME="test Coverage Results" MODIFIED="1515242867038" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/webbigdata/pagerank" />
+    <SUITE FILE_PATH="coverage/lab_python_workspace$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1515309973005" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/Titanic" />
+    <SUITE FILE_PATH="coverage/lab_python_workspace$Nosetests_for_Func_test.coverage" NAME="Nosetests for Func.test Coverage Results" MODIFIED="1515982962744" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
+    <SUITE FILE_PATH="coverage/lab_python_workspace$CNN_test.coverage" NAME="CNN_test Coverage Results" MODIFIED="1514199246577" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tensorflow" />
+    <SUITE FILE_PATH="coverage/lab_python_workspace$DataUtil.coverage" NAME="DataUtil Coverage Results" MODIFIED="1510482200802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/HSI" />
+    <SUITE FILE_PATH="coverage/lab_python_workspace$flappy_bird_utils.coverage" NAME="flappy_bird_utils Coverage Results" MODIFIED="1510311589521" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DQN/DRL-FlappiBird/game" />
+    <SUITE FILE_PATH="coverage/lab_python_workspace$VGG_pre.coverage" NAME="VGG_pre Coverage Results" MODIFIED="1515313170834" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/dogbreed" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -65,50 +69,56 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GMSwithMatrix.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GMSwithMatrix.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GMS/GMSwithMatrix.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="395" column="69" lean-forward="true" selection-start-line="395" selection-start-column="69" selection-end-line="395" selection-end-column="69" />
+            <state relative-caret-position="89">
+              <caret line="685" column="29" lean-forward="true" selection-start-line="685" selection-start-column="29" selection-end-line="685" selection-end-column="29" />
               <folding>
+                <element signature="e#0#10#0" expanded="true" />
+                <element signature="e#127#11316#0" expanded="false" />
                 <element signature="e#225#498#0" expanded="false" />
                 <element signature="e#532#2333#0" expanded="false" />
                 <element signature="e#1459#1688#0" expanded="false" />
                 <element signature="e#2397#2669#0" expanded="false" />
                 <element signature="e#2744#2890#0" expanded="false" />
                 <element signature="e#2996#3791#0" expanded="false" />
-                <element signature="e#4388#9792#0" expanded="false" />
-                <element signature="e#10017#10723#0" expanded="false" />
                 <element signature="e#11437#11682#0" expanded="false" />
                 <element signature="e#11706#12383#0" expanded="false" />
                 <element signature="e#12442#13085#0" expanded="false" />
-                <element signature="e#13118#15805#0" expanded="false" />
-                <element signature="e#13583#14427#0" expanded="false" />
-                <element signature="e#15873#16006#0" expanded="false" />
-                <element signature="e#16105#16832#0" expanded="false" />
-                <element signature="e#17890#23808#0" expanded="false" />
-                <element signature="e#19299#23808#1" expanded="false" />
-                <element signature="e#24045#24711#0" expanded="false" />
-                <element signature="e#24759#24965#0" expanded="false" />
-                <element signature="e#25347#25620#0" expanded="false" />
-                <element signature="e#25649#26174#0" expanded="false" />
-                <element signature="e#26200#28650#0" expanded="false" />
-                <element signature="e#27167#27828#0" expanded="false" />
-                <element signature="e#28302#28483#0" expanded="false" />
-                <element signature="e#28717#29175#0" expanded="false" />
-                <element signature="e#29180#29197#0" expanded="false" />
-                <element signature="e#29260#30073#0" expanded="false" />
-                <element signature="e#29386#29470#0" expanded="false" />
-                <element signature="e#29505#29588#0" expanded="false" />
-                <element signature="e#29623#29810#0" expanded="false" />
-                <element signature="e#30145#30546#0" expanded="false" />
-                <element signature="e#30592#30746#0" expanded="false" />
-                <element signature="e#30794#31615#0" expanded="false" />
-                <element signature="e#31650#32876#0" expanded="false" />
-                <element signature="e#32915#33195#0" expanded="false" />
-                <element signature="e#33028#33145#0" expanded="false" />
-                <element signature="e#33237#33360#0" expanded="false" />
-                <element signature="e#33389#33991#0" expanded="false" />
+                <element signature="e#13118#16003#0" expanded="false" />
+                <element signature="e#13693#14553#0" expanded="false" />
+                <element signature="e#16071#16204#0" expanded="false" />
+                <element signature="e#16303#17030#0" expanded="false" />
+                <element signature="e#17078#19255#0" expanded="false" />
+                <element signature="e#19313#19979#0" expanded="false" />
+                <element signature="e#20027#20233#0" expanded="false" />
+                <element signature="e#20592#20865#0" expanded="false" />
+                <element signature="e#20683#20812#0" expanded="false" />
+                <element signature="e#21443#23893#0" expanded="false" />
+                <element signature="e#22410#23071#0" expanded="false" />
+                <element signature="e#23545#23726#0" expanded="false" />
+                <element signature="e#23580#23726#0" expanded="false" />
+                <element signature="e#23960#24418#0" expanded="false" />
+                <element signature="e#24423#24440#0" expanded="false" />
+                <element signature="e#24503#25316#0" expanded="false" />
+                <element signature="e#24629#24713#0" expanded="false" />
+                <element signature="e#24748#24831#0" expanded="false" />
+                <element signature="e#24866#25053#0" expanded="false" />
+                <element signature="e#25388#25789#0" expanded="false" />
+                <element signature="e#25507#25789#0" expanded="false" />
+                <element signature="e#25835#25989#0" expanded="false" />
+                <element signature="e#25895#25967#0" expanded="false" />
+                <element signature="e#26037#26921#0" expanded="false" />
+                <element signature="e#26317#26767#0" expanded="false" />
+                <element signature="e#26956#28274#0" expanded="false" />
+                <element signature="e#27151#27265#0" expanded="false" />
+                <element signature="e#28093#28274#0" expanded="false" />
+                <element signature="e#28313#28593#0" expanded="false" />
+                <element signature="e#28426#28543#0" expanded="false" />
+                <element signature="e#28475#28543#0" expanded="false" />
+                <element signature="e#28635#28758#0" expanded="false" />
+                <element signature="e#28787#29389#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -128,12 +138,42 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="日志记录" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GMS/日志记录">
+      <file leaf-file-name="GMSwithMatrix.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GMS/GMSwithMatrix.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GridMatchFilter.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/GMS/GridMatchFilter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="9" column="26" lean-forward="false" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-              <folding />
+            <state relative-caret-position="196">
+              <caret line="147" column="35" lean-forward="true" selection-start-line="147" selection-start-column="35" selection-end-line="147" selection-end-column="35" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+                <element signature="e#208#453#0" expanded="false" />
+                <element signature="e#278#392#0" expanded="false" />
+                <element signature="e#946#986#0" expanded="false" />
+                <element signature="e#2486#3406#0" expanded="false" />
+                <element signature="e#2685#3215#0" expanded="false" />
+                <element signature="e#2781#3162#0" expanded="false" />
+                <element signature="e#2874#3131#0" expanded="false" />
+                <element signature="e#2918#3131#0" expanded="false" />
+                <element signature="e#3229#3286#0" expanded="false" />
+                <element signature="e#4012#4054#0" expanded="false" />
+                <element signature="e#4331#4405#0" expanded="false" />
+                <element signature="e#4527#4583#0" expanded="false" />
+                <element signature="e#5020#5367#0" expanded="false" />
+                <element signature="e#6219#6225#0" expanded="false" />
+                <element signature="e#6639#6645#0" expanded="false" />
+                <element signature="e#6987#8129#0" expanded="false" />
+                <element signature="e#7022#8129#0" expanded="false" />
+                <element signature="e#7872#7951#0" expanded="false" />
+                <element signature="e#8189#8855#0" expanded="false" />
+                <element signature="e#8903#9110#0" expanded="false" />
+                <element signature="e#9210#9269#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -141,14 +181,16 @@
       <file leaf-file-name="Func.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GMS/Func.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="103">
-              <caret line="9" column="33" lean-forward="true" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+            <state relative-caret-position="135">
+              <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
                 <element signature="e#608#651#0" expanded="false" />
                 <element signature="e#1375#1562#0" expanded="false" />
                 <element signature="e#1628#2228#0" expanded="false" />
-                <element signature="e#4733#5061#0" expanded="false" />
+                <element signature="e#2326#2477#0" expanded="false" />
+                <element signature="e#3312#5522#0" expanded="false" />
+                <element signature="e#5540#5868#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -157,7 +199,7 @@
       <file leaf-file-name="dogbreed.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/general/dogbreed/dogbreed.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
+            <state relative-caret-position="95">
               <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
               <folding>
                 <element signature="e#485#2658#0" expanded="false" />
@@ -181,9 +223,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>R</find>
-      <find>savemat</find>
-      <find>show</find>
       <find>np.ones</find>
       <find>np.zeros</find>
       <find>trainable=False,,</find>
@@ -207,9 +246,13 @@
       <find>type</find>
       <find>listgrid1</find>
       <find>socre</find>
-      <find>leftgridsize</find>
       <find>leftgridkpoints</find>
       <find>eps</find>
+      <find>self.thre</find>
+      <find>cv2.imshow</find>
+      <find>cv2.waitKey</find>
+      <find>leftgridsize</find>
+      <find>self.score</find>
     </findStrings>
     <replaceStrings>
       <replace>self.rgn,self.rgn</replace>
@@ -253,10 +296,11 @@
         <option value="$PROJECT_DIR$/general/dogbreed/VGG_beta3.py" />
         <option value="$PROJECT_DIR$/general/dogbreed/readme.txt" />
         <option value="$PROJECT_DIR$/general/dogbreed/main.py" />
-        <option value="$PROJECT_DIR$/GMS/日志记录" />
-        <option value="$PROJECT_DIR$/GMS/Func.py" />
         <option value="$PROJECT_DIR$/Knn/knn.py" />
+        <option value="$PROJECT_DIR$/GMS/Func.py" />
+        <option value="$PROJECT_DIR$/GMS/日志记录" />
         <option value="$PROJECT_DIR$/GMS/GMSwithMatrix.py" />
+        <option value="$PROJECT_DIR$/GMS/GridMatchFilter.py" />
       </list>
     </option>
   </component>
@@ -287,35 +331,30 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="lab_workspace" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lab_workspace" type="462c0819:PsiDirectoryNode" />
+              <item name="lab_python_workspace" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lab_python_workspace" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="lab_workspace" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lab_workspace" type="462c0819:PsiDirectoryNode" />
+              <item name="lab_python_workspace" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lab_python_workspace" type="462c0819:PsiDirectoryNode" />
               <item name="GMS" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lab_workspace" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lab_workspace" type="462c0819:PsiDirectoryNode" />
-              <item name="Knn" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Python" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../pangrank" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://E:/python_workspace/git/lab_python_workspace/GMS/Func.py" />
   </component>
   <component name="RecentsManager">
@@ -360,6 +399,45 @@
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="GridMatchFilter" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/GMS" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="python_workspace" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GMS/GridMatchFilter.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="knn" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Knn" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="python_workspace" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Knn/knn.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
     </configuration>
     <configuration name="Nosetests for Func.test" type="tests" factoryName="Nosetests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -393,56 +471,20 @@
       <option name="_new_target" value="&quot;$PROJECT_DIR$/GMS/Func.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
     </configuration>
-    <configuration name="knn" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Knn" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="python_workspace" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Knn/knn.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/general/dogbreed" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="python_workspace" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/general/dogbreed/main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.main" />
-      <item index="1" class="java.lang.String" itemvalue="Python.GMSwithMatrix" />
-      <item index="2" class="java.lang.String" itemvalue="Python tests.Nosetests for Func.test" />
-      <item index="3" class="java.lang.String" itemvalue="Python tests.Nosetests in Func.py" />
-      <item index="4" class="java.lang.String" itemvalue="Python.knn" />
+      <item index="0" class="java.lang.String" itemvalue="Python.GMSwithMatrix" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.Nosetests for Func.test" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Nosetests in Func.py" />
+      <item index="3" class="java.lang.String" itemvalue="Python.knn" />
+      <item index="4" class="java.lang.String" itemvalue="Python.GridMatchFilter" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python.GMSwithMatrix" />
-        <item index="1" class="java.lang.String" itemvalue="Python.knn" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Nosetests in Func.py" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Nosetests for Func.test" />
-        <item index="4" class="java.lang.String" itemvalue="Python.main" />
+        <item index="1" class="java.lang.String" itemvalue="Python.GridMatchFilter" />
+        <item index="2" class="java.lang.String" itemvalue="Python.knn" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Nosetests in Func.py" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Nosetests for Func.test" />
       </list>
     </recent_temporary>
   </component>
@@ -848,30 +890,31 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15724947" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32923076" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3981289" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12537764" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="0" y="0" width="295" height="584" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19076923" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29538462" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32744282" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32615384" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32923076" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37629938" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16163142" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.51586103" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37538463" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Data View" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.76492536" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12537764" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="0" y="0" width="295" height="584" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="SciView" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3783988" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.76492536" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -982,16 +1025,6 @@
           <line>82</line>
           <option name="timeStamp" value="98" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/GMS/GMSwithMatrix.py</url>
-          <line>397</line>
-          <option name="timeStamp" value="127" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/GMS/GMSwithMatrix.py</url>
-          <line>393</line>
-          <option name="timeStamp" value="128" />
-        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -1000,18 +1033,11 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="129" />
+      <option name="time" value="150" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/DQN/Qlearning/randmaze.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HSI/DataUtil.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6954">
@@ -1261,20 +1287,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/general/dogbreed/dogbreed.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-          <folding>
-            <element signature="e#485#2658#0" expanded="false" />
-            <element signature="e#2744#3306#0" expanded="false" />
-            <element signature="e#3415#4567#0" expanded="false" />
-            <element signature="e#4657#5235#0" expanded="false" />
-            <element signature="e#5313#6310#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/general/dogbreed/readme.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
@@ -1290,7 +1302,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/general/webbigdata/pagerank/graph.py">
+    <entry file="file://$PROJECT_DIR$/general/webbigdata/pagerank/Graph.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="20" column="43" lean-forward="true" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
@@ -1304,7 +1316,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://H:/Vision/Anconda/Lib/site-packages/scipy/signal/signaltools.py" />
     <entry file="file://$PROJECT_DIR$/general/dogbreed/VGG_beta3.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="393">
@@ -1333,28 +1344,115 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GMS/日志记录">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="9" column="26" lean-forward="false" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GMS/GMSwithMatrix.png" />
-    <entry file="file://$PROJECT_DIR$/GMS/gms.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Knn/knn.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="309">
           <caret line="21" column="29" lean-forward="true" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/general/dogbreed/dogbreed.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#485#2658#0" expanded="false" />
+            <element signature="e#2744#3306#0" expanded="false" />
+            <element signature="e#3415#4567#0" expanded="false" />
+            <element signature="e#4657#5235#0" expanded="false" />
+            <element signature="e#5313#6310#0" expanded="false" />
           </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://H:/Vision/Anconda/Lib/site-packages/scipy/signal/signaltools.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="1032" column="0" lean-forward="false" selection-start-line="1032" selection-start-column="0" selection-end-line="1032" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GMS/日志记录">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="15" column="2" lean-forward="true" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GMS/Func.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#608#651#0" expanded="false" />
+            <element signature="e#1375#1562#0" expanded="false" />
+            <element signature="e#1628#2228#0" expanded="false" />
+            <element signature="e#2326#2477#0" expanded="false" />
+            <element signature="e#3312#5522#0" expanded="false" />
+            <element signature="e#5540#5868#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GMS/GMSwithMatrix.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="89">
+          <caret line="685" column="29" lean-forward="true" selection-start-line="685" selection-start-column="29" selection-end-line="685" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#127#11316#0" expanded="false" />
+            <element signature="e#225#498#0" expanded="false" />
+            <element signature="e#532#2333#0" expanded="false" />
+            <element signature="e#1459#1688#0" expanded="false" />
+            <element signature="e#2397#2669#0" expanded="false" />
+            <element signature="e#2744#2890#0" expanded="false" />
+            <element signature="e#2996#3791#0" expanded="false" />
+            <element signature="e#11437#11682#0" expanded="false" />
+            <element signature="e#11706#12383#0" expanded="false" />
+            <element signature="e#12442#13085#0" expanded="false" />
+            <element signature="e#13118#16003#0" expanded="false" />
+            <element signature="e#13693#14553#0" expanded="false" />
+            <element signature="e#16071#16204#0" expanded="false" />
+            <element signature="e#16303#17030#0" expanded="false" />
+            <element signature="e#17078#19255#0" expanded="false" />
+            <element signature="e#19313#19979#0" expanded="false" />
+            <element signature="e#20027#20233#0" expanded="false" />
+            <element signature="e#20592#20865#0" expanded="false" />
+            <element signature="e#20683#20812#0" expanded="false" />
+            <element signature="e#21443#23893#0" expanded="false" />
+            <element signature="e#22410#23071#0" expanded="false" />
+            <element signature="e#23545#23726#0" expanded="false" />
+            <element signature="e#23580#23726#0" expanded="false" />
+            <element signature="e#23960#24418#0" expanded="false" />
+            <element signature="e#24423#24440#0" expanded="false" />
+            <element signature="e#24503#25316#0" expanded="false" />
+            <element signature="e#24629#24713#0" expanded="false" />
+            <element signature="e#24748#24831#0" expanded="false" />
+            <element signature="e#24866#25053#0" expanded="false" />
+            <element signature="e#25388#25789#0" expanded="false" />
+            <element signature="e#25507#25789#0" expanded="false" />
+            <element signature="e#25835#25989#0" expanded="false" />
+            <element signature="e#25895#25967#0" expanded="false" />
+            <element signature="e#26037#26921#0" expanded="false" />
+            <element signature="e#26317#26767#0" expanded="false" />
+            <element signature="e#26956#28274#0" expanded="false" />
+            <element signature="e#27151#27265#0" expanded="false" />
+            <element signature="e#28093#28274#0" expanded="false" />
+            <element signature="e#28313#28593#0" expanded="false" />
+            <element signature="e#28426#28543#0" expanded="false" />
+            <element signature="e#28475#28543#0" expanded="false" />
+            <element signature="e#28635#28758#0" expanded="false" />
+            <element signature="e#28787#29389#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GMS/GMSwithMatrix.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GMS/GMSwithGridFilter.png">
@@ -1362,63 +1460,38 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GMS/Func.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="9" column="33" lean-forward="true" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#608#651#0" expanded="false" />
-            <element signature="e#1375#1562#0" expanded="false" />
-            <element signature="e#1628#2228#0" expanded="false" />
-            <element signature="e#4733#5061#0" expanded="false" />
-          </folding>
-        </state>
+    <entry file="file://$PROJECT_DIR$/GMS/gms.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GMS/GMSwithMatrix.py">
+    <entry file="file://$PROJECT_DIR$/GMS/GridMatchFilter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="395" column="69" lean-forward="true" selection-start-line="395" selection-start-column="69" selection-end-line="395" selection-end-column="69" />
+        <state relative-caret-position="196">
+          <caret line="147" column="35" lean-forward="true" selection-start-line="147" selection-start-column="35" selection-end-line="147" selection-end-column="35" />
           <folding>
-            <element signature="e#225#498#0" expanded="false" />
-            <element signature="e#532#2333#0" expanded="false" />
-            <element signature="e#1459#1688#0" expanded="false" />
-            <element signature="e#2397#2669#0" expanded="false" />
-            <element signature="e#2744#2890#0" expanded="false" />
-            <element signature="e#2996#3791#0" expanded="false" />
-            <element signature="e#4388#9792#0" expanded="false" />
-            <element signature="e#10017#10723#0" expanded="false" />
-            <element signature="e#11437#11682#0" expanded="false" />
-            <element signature="e#11706#12383#0" expanded="false" />
-            <element signature="e#12442#13085#0" expanded="false" />
-            <element signature="e#13118#15805#0" expanded="false" />
-            <element signature="e#13583#14427#0" expanded="false" />
-            <element signature="e#15873#16006#0" expanded="false" />
-            <element signature="e#16105#16832#0" expanded="false" />
-            <element signature="e#17890#23808#0" expanded="false" />
-            <element signature="e#19299#23808#1" expanded="false" />
-            <element signature="e#24045#24711#0" expanded="false" />
-            <element signature="e#24759#24965#0" expanded="false" />
-            <element signature="e#25347#25620#0" expanded="false" />
-            <element signature="e#25649#26174#0" expanded="false" />
-            <element signature="e#26200#28650#0" expanded="false" />
-            <element signature="e#27167#27828#0" expanded="false" />
-            <element signature="e#28302#28483#0" expanded="false" />
-            <element signature="e#28717#29175#0" expanded="false" />
-            <element signature="e#29180#29197#0" expanded="false" />
-            <element signature="e#29260#30073#0" expanded="false" />
-            <element signature="e#29386#29470#0" expanded="false" />
-            <element signature="e#29505#29588#0" expanded="false" />
-            <element signature="e#29623#29810#0" expanded="false" />
-            <element signature="e#30145#30546#0" expanded="false" />
-            <element signature="e#30592#30746#0" expanded="false" />
-            <element signature="e#30794#31615#0" expanded="false" />
-            <element signature="e#31650#32876#0" expanded="false" />
-            <element signature="e#32915#33195#0" expanded="false" />
-            <element signature="e#33028#33145#0" expanded="false" />
-            <element signature="e#33237#33360#0" expanded="false" />
-            <element signature="e#33389#33991#0" expanded="false" />
+            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#208#453#0" expanded="false" />
+            <element signature="e#278#392#0" expanded="false" />
+            <element signature="e#946#986#0" expanded="false" />
+            <element signature="e#2486#3406#0" expanded="false" />
+            <element signature="e#2685#3215#0" expanded="false" />
+            <element signature="e#2781#3162#0" expanded="false" />
+            <element signature="e#2874#3131#0" expanded="false" />
+            <element signature="e#2918#3131#0" expanded="false" />
+            <element signature="e#3229#3286#0" expanded="false" />
+            <element signature="e#4012#4054#0" expanded="false" />
+            <element signature="e#4331#4405#0" expanded="false" />
+            <element signature="e#4527#4583#0" expanded="false" />
+            <element signature="e#5020#5367#0" expanded="false" />
+            <element signature="e#6219#6225#0" expanded="false" />
+            <element signature="e#6639#6645#0" expanded="false" />
+            <element signature="e#6987#8129#0" expanded="false" />
+            <element signature="e#7022#8129#0" expanded="false" />
+            <element signature="e#7872#7951#0" expanded="false" />
+            <element signature="e#8189#8855#0" expanded="false" />
+            <element signature="e#8903#9110#0" expanded="false" />
+            <element signature="e#9210#9269#0" expanded="false" />
           </folding>
         </state>
       </provider>
