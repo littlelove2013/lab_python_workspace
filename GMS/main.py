@@ -1,8 +1,9 @@
 import cv2
 import GMS
+import GridMatchFilter as GF
 import time
 
-def main():
+def video():
     # 获得视频的格式
     videoCapture = cv2.VideoCapture(0)
     videoCapture2 = cv2.VideoCapture(1)
@@ -35,6 +36,32 @@ def main():
         if cv2.waitKey(100) & 0xFF == ord('q'):
             break
 
+def main():
+    root = './images/'
+    img1path = './images/000.png'
+    img2path = './images/020.png'
+    # img1path = root + 'img1.jpg'
+    # img2path = root + 'img2.jpg'
+    # img1path='./images/img.jpg'
+    # img2path = './images/img2.jpg'
+    img1 = cv2.imread(img1path)
+    img2 = cv2.imread(img2path)
+    ddsize = (640, 480)
+    img1 = cv2.resize(img1, ddsize)
+    img2 = cv2.resize(img2, ddsize)
+
+    time_start = time.time()
+    gms = GMS.GMS(img1, img2)
+    gms.run()
+    gms.show(True)
+    time_end = time.time();  # time.time()为1970.1.1到当前时间的毫秒数
+    print('gms cost time is %fs' % (time_end - time_start))
+
+    time_start = time.time()
+    gmf = GF.GridMatchFilter(img1, img2)
+    gmf.run()
+    time_end = time.time();  # time.time()为1970.1.1到当前时间的毫秒数
+    print('gmf cost time is %fs' % (time_end - time_start))
 
 if __name__ == '__main__':
     main()

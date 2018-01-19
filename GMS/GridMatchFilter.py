@@ -41,10 +41,10 @@ class GridMatchFilter:
 		self.lgn = leftgridnum
 		self.rgn = rightgridnum
 		# 计算划分后网格的高和宽
-		self.leftgridsize = (
-		math.ceil(self.img1.shape[0] / self.lgn), math.ceil(self.img1.shape[1] / self.lgn))  # [r,c]
-		self.rightgridsize = (
-		math.ceil(self.img2.shape[0] / self.rgn), math.ceil(self.img2.shape[1] / self.rgn))  # [r,c]
+		self.leftgridsize = np.array([
+		math.ceil(self.img1.shape[0] / self.lgn), math.ceil(self.img1.shape[1] / self.lgn)])  # [r,c]
+		self.rightgridsize = np.array([
+		math.ceil(self.img2.shape[0] / self.rgn), math.ceil(self.img2.shape[1] / self.rgn)])  # [r,c]
 		# 生成标签矩阵
 		self.leftlabel = (np.arange(1, self.lgn ** 2 + 1).reshape(self.lgn, self.lgn)) \
 			.repeat(self.leftgridsize[0], 0).repeat(self.leftgridsize[1], 1).astype(np.int32)
@@ -67,7 +67,7 @@ class GridMatchFilter:
 		self.leftbiasc = np.zeros(leftsize).astype(np.int32)
 		# 设定最大可接受重复映射邻域宽度
 		max_neibor_width = 1
-		MultipleMap = False  # 是否对重复映射做邻域替换映射，为False则不管重复映射，只取最后一个映射值
+		MultipleMap = True  # 是否对重复映射做邻域替换映射，为False则不管重复映射，只取最后一个映射值
 		for i in range(lens):
 			pt1 = np.array(self.kp1[self.matches[i].queryIdx].pt)
 			p1 = np.array([pt1[1], pt1[0]], np.int32)
@@ -95,8 +95,8 @@ class GridMatchFilter:
 			pt2 = np.array(self.kp2[self.matches[i].trainIdx].pt)
 			kp2r[i] = int(pt2[1])
 			kp2c[i] = int(pt2[0])
-		kp1list = (np.array(kp1r, np.int32), np.array(kp1c, np.int32))
-		kp2list = (np.array(kp2r, np.int32), np.array(kp2c, np.int32))
+		self.kp1list = (np.array(kp1r, np.int32), np.array(kp1c, np.int32))
+		self.kp2list = (np.array(kp2r, np.int32), np.array(kp2c, np.int32))
 		# Func.matchesshow(self.img1,self.img2,[kp1list,kp2list],"B matches")
 		# print("img lens:%d == kplist lens:%d == match number:%d" % ((self.leftimg > 0).sum(), len(kp1r), lens))
 		# 用于计算是否为正确匹配
@@ -108,32 +108,19 @@ class GridMatchFilter:
 		self.leftimglabel = np.zeros(leftsize)
 		# self.leftmatch = np.zeros(leftsize)
 		self.leftmatchgrid = np.zeros(leftsize)
-		# self.rightimglabel = np.zeros(rightsize)
-		# Func.imagesc(self.leftlabel==20, 'leftlabel==20')
-		# Func.imagesc(self.leftlabel == 21, 'leftlabel==21')
-		# Func.imagesc(self.rightlabel, 'rightlabel')
-		# rightimg=np.zeros(rightsize)
-		self.leftimg[kp1list] = 1
-		self.leftimglabel[kp1list] = self.leftlabel[kp1list]
-		# self.leftmatch[kp1list] = Func.index2value(kp2list, self.img2.shape[:2])
-		# 只保存匹配特征所在的网格，反正也不会计算其实际坐标
-		self.leftmatchgrid[kp1list] = self.rightlabel[kp2list]  # index2value(rightkpt, shape)
 		# self.rightimglabel[kp2list] = self.rightlabel[kp2list]
 		# Func.imagesc(self.leftimglabel, 'leftimglabel')
 		# Func.imagesc(self.leftmatchgrid,'leftmatchgrid')
 		# Func.imagesc(self.rightimglabel,'rightimglabel')
 		# self.TrueMatches[kp1list]=1
 		# 只保存匹配图片的匹配点坐标[r,c]
-		self.leftmatchr[kp1list] = kp2r
-		self.leftmatchc[kp1list] = kp2c
+		self.leftmatchr[self.kp1list] = kp2r
+		self.leftmatchc[self.kp1list] = kp2c
 	#获取卷积核和步长，
 	# type='g' 输出的高斯核是和为1的
 	# type='m' 输出的均值核是和为1的
 	# type='s' 输出的求和核
-	def getKernelAndStride(self,type='g',sigma=1,ksize=(24,32),stride=None):
-		if stride==None:
-			stride=ksize
-		start=[stride[0]/2,stride[1]/2]
+	def getKernel(self,type='g',sigma=1,ksize=(24,32)):
 		r,c=ksize
 		if type=='g':#高斯核
 			rr=cv2.getGaussianKernel(r, sigma)
@@ -143,42 +130,65 @@ class GridMatchFilter:
 			kernel=np.ones(ksize)/(r*c)
 		elif type=='s':#求和核
 			kernel = np.ones(ksize)
-		return kernel,start
-	#获取左右图标签矩阵，是否平移
-	def getlabel(self,shift=(0,0)):
+		return kernel
+	#获取左右图标签矩阵，是否平移,shift=1表示移动半个网格
+	def createlabel(self,shift=(0,0),show=False):
 		# 生成标签矩阵
 		self.leftlabel = (np.arange(1, self.lgn ** 2 + 1).reshape(self.lgn, self.lgn)) \
 			.repeat(self.leftgridsize[0], 0).repeat(self.leftgridsize[1], 1).astype(np.int32)
 		self.rightlabel = (np.arange(1, self.rgn ** 2 + 1).reshape(self.rgn, self.rgn)) \
 			.repeat(self.rightgridsize[0], 0).repeat(self.rightgridsize[1], 1).astype(np.int32)
+		if shift[0]==1:
+			self.leftlabel=np.roll(self.leftlabel,-int(self.leftgridsize[0]/2),axis=0)
+			self.rightlabel=np.roll(self.rightlabel, -int(self.rightgridsize[0] / 2), axis=0)
+		if shift[1]==1:
+			self.leftlabel=np.roll(self.leftlabel, -int(self.leftgridsize[1] / 2), axis=1)
+			self.rightlabel=np.roll(self.rightlabel, -int(self.rightgridsize[1] / 2), axis=1)
+		# 标签
+		self.leftimglabel[self.kp1list] = self.leftlabel[self.kp1list]
+		# 只保存匹配特征所在的网格，反正也不会计算其实际坐标
+		self.leftmatchgrid[self.kp1list] = self.rightlabel[self.kp2list]  # index2value(rightkpt, shape)
+		if show:
+			Func.imagesc(self.leftlabel,"leftLabel")
+	#返回三个核
+	def createKernel(self,shift=(0,0)):
+		self.neiborwidth = 1  # 多远 的算邻居
+		self.kernel=self.getKernel(type='s',ksize=self.leftgridsize*(2*self.neiborwidth+1))
+		self.stride=self.leftgridsize
+		self.start = (self.leftgridsize / 2).astype(np.int32)
+		if shift[0]==1:
+			self.start[0]=0
+		if shift[1]==1:
+			self.start[1]=0
 	# 计算阈值和得分
 	def computescoreandthre(self):
 		# 计算阈值
-		filter = np.ones(self.leftgridsize)
+		# filter = np.ones(self.leftgridsize)
 		
 		print("self.leftimg:max:%f,min:%f" % (self.leftimg.max(), self.leftimg.min()))
-		self.leftgridkpoints = Func.conv2withstride(self.leftimg, filter, stride=self.leftgridsize, start=None,
-		                                            gridnum=self.lgn)
-		print("self.leftgridkpoints:max:%f,min:%f" % (self.leftgridkpoints.max(), self.leftgridkpoints.min()))
+		# self.leftgridkpoints = Func.conv2withstride(self.leftimg, filter, stride=self.leftgridsize, start=None,
+		#                                             gridnum=self.lgn)
+		# print("self.leftgridkpoints:max:%f,min:%f" % (self.leftgridkpoints.max(), self.leftgridkpoints.min()))
 		# 显示计数
 		# Func.imagesc(tmp, '左图计数')
-		threfilter = np.ones((3, 3)) / 9  # 计算均值
+		# threfilter = np.ones((3, 3)) / 9  # 计算均值
 		# threfilter = np.ones((3, 3))
-		self.thre = ss.convolve2d(self.leftgridkpoints, threfilter, 'same')
+		self.thre = Func.conv2withstride(self.leftimg, self.kernel, stride=self.stride, start=self.start,
+		                                            gridnum=self.lgn)
 		print("self.thre:max:%f,min:%f" % (self.thre.max(), self.thre.min()))
-		self.thre = self.TreshFactor * np.sqrt(self.thre * (self.leftgridkpoints > 0))  # 阈值计算公式
+		self.thre = self.TreshFactor * np.sqrt(self.thre/9)  # 阈值计算公式
 		print("self.thre:max:%f,min:%f" % (self.thre.max(), self.thre.min()))
 		# 显示阈值
 		# Func.imagesc(self.thre, 'thre')
 		# 计算打分
 		self.score = np.zeros((self.lgn, self.lgn))
 		self.lgshape = (self.lgn, self.lgn)
-		neiborwidth = 1  # 多远 的算邻居
-		filtershape = (self.leftgridsize[0] * (2 * neiborwidth + 1), self.leftgridsize[1] * (2 * neiborwidth + 1))
-		neiborfilter = np.ones(filtershape)
+
+		# filtershape = (self.leftgridsize[0] * (2 * neiborwidth + 1), self.leftgridsize[1] * (2 * neiborwidth + 1))
+		# neiborfilter = np.ones(filtershape)
 		for i in range(self.lgn):  # r
 			for j in range(self.lgn):  # c
-				if self.leftgridkpoints[i, j] == 0:
+				if self.thre[i, j] == 0:
 					continue
 				leftvalue = Func.index2value((i, j), self.lgshape) + 1
 				bestmatchgrid = self.leftmatchgrid[self.leftimglabel == leftvalue]
@@ -187,12 +197,10 @@ class GridMatchFilter:
 				number, n_counts = np.unique(bestmatchgrid, return_counts=True)
 				rbestindex = number[np.argsort(n_counts)[-1]]
 				index = (self.leftimglabel == leftvalue) & (self.leftmatchgrid == rbestindex)
-				
-				neiborsindex = (((self.leftimglabel - self.leftmatchgrid) == (leftvalue - rbestindex)) & (
-						self.leftimg > 0)).astype(np.int32)
-				lsize = np.array(self.leftgridsize)
-				neiborsindexconv = Func.conv2withstride(neiborsindex, neiborfilter,
-				                                        stride=self.leftgridsize, start=None, gridnum=self.lgn)
+				neiborsindex = (((self.leftimglabel - self.leftmatchgrid) == (leftvalue - rbestindex)) &
+						self.leftimg).astype(np.int32)
+				neiborsindexconv = Func.conv2withstride(neiborsindex, self.kernel,
+				                                        stride=self.stride, start=self.start, gridnum=self.lgn)
 				self.score[i, j] = neiborsindexconv[i, j]
 				# print("calc grid(%d,%d)\n thre=%.f,index.sum=%d,neiborsindex.sum=%d,score=%d"
 				#       % (i, j,self.thre[i,j],index.sum(),neiborsindex.sum(),self.score[i, j]))
@@ -225,20 +233,23 @@ class GridMatchFilter:
 	
 	# 统计
 	def run(self, type=0):
-		if type == 0:
+		for i in range(2):
+			shift=(i,i)
+			self.createlabel(shift=shift,show=False)
+			self.createKernel(shift=shift)
 			self.computescoreandthre()  # 计算出TrueMatcher
 			# self.TrueMatches[np.arange(1,100,2),np.arange(1,100,2)]=1
 			# return self.getTrueMatch()
-			ssds = self.drawTrueMatch()
-			Func.imshow(ssds)
+		ssds = self.drawTrueMatch()
+		# Func.imshow(ssds)
 
 
 if __name__ == '__main__':
 	root = './images/'
-	# img1path='./images/000.png'
-	# img2path = './images/020.png'
-	img1path = root + 'img1.jpg'
-	img2path = root + 'img2.jpg'
+	img1path='./images/000.png'
+	img2path = './images/020.png'
+	# img1path = root + 'img1.jpg'
+	# img2path = root + 'img2.jpg'
 	# img1path='./images/img.jpg'
 	# img2path = './images/img2.jpg'
 	img1 = cv2.imread(img1path)

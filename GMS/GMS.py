@@ -19,7 +19,7 @@ class GMS:
         self.TreshFactor=6
         # 最大特征点数
         self.orb = cv2.ORB_create(self.kptnumber)
-        # self.orb.setFastThreshold(0)
+        self.orb.setFastThreshold(0)
         self.kp1, self.des1 = self.orb.detectAndCompute(self.img1, None)
         self.kp2, self.des2 = self.orb.detectAndCompute(self.img2, None)
         # 提取并计算特征点
@@ -144,17 +144,19 @@ class GMS:
     def getGmsMatchesImg(self):
         gmsmatches = self.getGmsMatches()
         return cv2.drawMatches(self.img1, self.kp1, self.img2, self.kp2, gmsmatches,None)
-    def show(self):
+    def show(self,justwirtetofile=False):
         cv2.drawKeypoints(image=self.img1,keypoints=self.kp1,outImage=self.img1)
         cv2.drawKeypoints(image=self.img2, keypoints=self.kp2,outImage=self.img2)
         matchimg=cv2.drawMatches(self.img1,self.kp1,self.img2,self.kp2,self.matches,None)
         gmsmatches,kp1,kp2=self.getGmsMatches()
         gmsmatchimg=cv2.drawMatches(self.img1,kp1,self.img2,kp2,gmsmatches,None)
-        cv2.imshow('img1', self.img1)
-        cv2.imshow('img2', self.img2)
-        cv2.imshow('matchimg', matchimg)
-        cv2.imshow('gmsmatchimg', gmsmatchimg)
-        cv2.waitKey()
+        cv2.imwrite('gmsmatchimg.png', gmsmatchimg)
+        if not justwirtetofile:
+            cv2.imshow('img1', self.img1)
+            cv2.imshow('img2', self.img2)
+            cv2.imshow('matchimg', matchimg)
+            cv2.imshow('gmsmatchimg', gmsmatchimg)
+            cv2.waitKey()
 
 def getTransformPoint(oripoint,tran):
     oriP=np.array([[oripoint[0]],[oripoint[1]],[1]])
