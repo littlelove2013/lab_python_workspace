@@ -135,23 +135,28 @@ class GMS:
     def getGmsMatches(self):
         for i in range(4):
             self.run(i+1)
+        # self.gridmatches=[self.matches[i] for i in range(len(self.matches)) if self.gridmatchesindex[i]==1]
+        self.gridmatches=[]
+        self.leftkeypoint=[]
+        self.rightkeypoint=[]
+        number=0
         for i in range(len(self.matches)):
-            if(self.gridmatchesindex[i]==1):
-                self.gridmatches.append(self.matches[i])
-                #记录新的kpt并返回
-        return self.gridmatches,self.kp1,self.kp2
-
+	        if self.gridmatchesindex[i] == 1:
+		        self.gridmatches.append(cv2.DMatch(number,number,1))
+		        self.leftkeypoint.append(self.kp1[self.matches[i].queryIdx])
+		        self.rightkeypoint.append(self.kp2[self.matches[i].trainIdx])
+		        number+=1
+        return self.gridmatches,self.leftkeypoint, self.rightkeypoint
     def getGmsMatchesImg(self):
-        gmsmatches = self.getGmsMatches()
-        return cv2.drawMatches(self.img1, self.kp1, self.img2, self.kp2, gmsmatches,None)
-    def show(self,justwirtetofile=False):
-        cv2.drawKeypoints(image=self.img1,keypoints=self.kp1,outImage=self.img1)
-        cv2.drawKeypoints(image=self.img2, keypoints=self.kp2,outImage=self.img2)
+        return cv2.drawMatches(self.img1, self.leftkeypoint, self.img2, self.rightkeypoint, self.gridmatches,None)
+    def show(self,justwritetofile=False):
+        # cv2.drawKeypoints(image=self.img1,keypoints=self.kp1[:100],outImage=self.img1)
+        # cv2.drawKeypoints(image=self.img2, keypoints=self.kp2[:200],outImage=self.img2)
         matchimg=cv2.drawMatches(self.img1,self.kp1,self.img2,self.kp2,self.matches,None)
         gmsmatches,kp1,kp2=self.getGmsMatches()
-        gmsmatchimg=cv2.drawMatches(self.img1,kp1,self.img2,kp2,gmsmatches,None)
+        gmsmatchimg=cv2.drawMatches(self.img1, kp1, self.img2, kp2, gmsmatches,None)
         cv2.imwrite('gmsmatchimg.png', gmsmatchimg)
-        if not justwirtetofile:
+        if not justwritetofile:
             cv2.imshow('img1', self.img1)
             cv2.imshow('img2', self.img2)
             cv2.imshow('matchimg', matchimg)

@@ -38,10 +38,10 @@ def video():
 
 def main():
     root = './images/'
-    img1path = './images/000.png'
-    img2path = './images/020.png'
-    # img1path = root + 'img1.jpg'
-    # img2path = root + 'img2.jpg'
+    # img1path = './images/000.png'
+    # img2path = './images/020.png'
+    img1path = root + 'img1.jpg'
+    img2path = root + 'img2.jpg'
     # img1path='./images/img.jpg'
     # img2path = './images/img2.jpg'
     img1 = cv2.imread(img1path)

@@ -648,14 +648,20 @@ class GMS:
                 self.gridmatchesindex[i]=1
 
     def getGmsMatches(self):
-        for i in range(4):
-            self.run(i+1)
-        for i in range(len(self.matches)):
-            
-            if(self.gridmatchesindex[i]==1):
-                self.gridmatches.append(self.matches[i])
-                #记录新的kpt并返回
-        return self.gridmatches,self.kp1,self.kp2
+	    for i in range(4):
+		    self.run(i + 1)
+	    # self.gridmatches=[self.matches[i] for i in range(len(self.matches)) if self.gridmatchesindex[i]==1]
+	    self.gridmatches = []
+	    self.leftkeypoint = []
+	    self.rightkeypoint = []
+	    number = 0
+	    for i in range(len(self.matches)):
+		    if self.gridmatchesindex[i] == 1:
+			    self.gridmatches.append(cv2.DMatch(number, number, 1))
+			    self.leftkeypoint.append(self.kp1[self.matches[i].queryIdx])
+			    self.rightkeypoint.append(self.kp2[self.matches[i].trainIdx])
+			    number += 1
+	    return self.gridmatches, self.leftkeypoint, self.rightkeypoint
 
     def getGmsMatchesImg(self):
         gmsmatches = self.getGmsMatches()
