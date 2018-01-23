@@ -2,6 +2,7 @@ import cv2
 import GMS
 import GridMatchFilter as GF
 import time
+import sys
 
 def video():
     # 获得视频的格式
@@ -36,7 +37,12 @@ def video():
         if cv2.waitKey(100) & 0xFF == ord('q'):
             break
 
-def main():
+def main(argv):
+    if len(argv)<2:
+        print("argv == None")
+        return 0
+    else:
+        print(argv)
     root = './images/'
     # img1path = './images/000.png'
     # img2path = './images/020.png'
@@ -64,4 +70,4 @@ def main():
     print('gmf cost time is %fs' % (time_end - time_start))
 
 if __name__ == '__main__':
-    main()
+    main(sys.argv)

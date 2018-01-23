@@ -4,6 +4,7 @@ import numpy as np
 # import scipy.signal as ss
 import Func
 import math
+import sys
 
 src_folder="./images/"
 res_folder="./matches/"
@@ -26,22 +27,16 @@ class GridMatchFilter:
 		self.TreshFactor = 6
 		# 最大特征点数
 		self.orb = cv2.ORB_create(self.kptnumber)
-		self.orb.setFastThreshold(0)
+		# self.orb.setFastThreshold(0)
 		self.kp1, self.des1 = self.orb.detectAndCompute(self.img1, None)
 		self.kp2, self.des2 = self.orb.detectAndCompute(self.img2, None)
 		# 提取并计算特征点
 		self.bf = cv2.BFMatcher(cv2.NORM_HAMMING)
 		self.matches = self.bf.match(self.des1, trainDescriptors=self.des2)
 		# 显示
-		rawmatchimg = cv2.drawMatches(self.img1, self.kp1, self.img2, self.kp2, self.matches, None)
+		# rawmatchimg = cv2.drawMatches(self.img1, self.kp1, self.img2, self.kp2, self.matches, None)
 		# cv2.imshow('rawmatchimg', rawmatchimg)
 		# cv2.waitKey()
-		
-		self.gridmatchesindex = np.zeros([len(self.matches)])
-		
-		self.initgrid()  # 初始化网格
-		self.gridmatches = []
-		self.multiplemap()  # 将matches转化为矩阵
 	
 	def initgrid(self, leftgridnum=20, rightgridnum=20):
 		self.lgn = leftgridnum
@@ -52,11 +47,11 @@ class GridMatchFilter:
 		self.rightgridsize = np.array([
 		math.ceil(self.img2.shape[0] / self.rgn), math.ceil(self.img2.shape[1] / self.rgn)])  # [r,c]
 		# 生成标签矩阵
-		self.leftlabel = (np.arange(1, self.lgn ** 2 + 1).reshape(self.lgn, self.lgn)) \
-			.repeat(self.leftgridsize[0], 0).repeat(self.leftgridsize[1], 1).astype(np.int32)
-		self.rightlabel = (np.arange(1, self.rgn ** 2 + 1).reshape(self.rgn, self.rgn)) \
-			.repeat(self.rightgridsize[0], 0).repeat(self.rightgridsize[1], 1).astype(np.int32)
-	
+		# self.leftlabel = (np.arange(1, self.lgn ** 2 + 1).reshape(self.lgn, self.lgn)) \
+		# 	.repeat(self.leftgridsize[0], 0).repeat(self.leftgridsize[1], 1).astype(np.int32)
+		# self.rightlabel = (np.arange(1, self.rgn ** 2 + 1).reshape(self.rgn, self.rgn)) \
+		# 	.repeat(self.rightgridsize[0], 0).repeat(self.rightgridsize[1], 1).astype(np.int32)
+
 	# 在
 	def multiplemap(self):
 		# 统计一下坐标
@@ -154,8 +149,10 @@ class GridMatchFilter:
 		self.leftimglabel[self.kp1list] = self.leftlabel[self.kp1list]
 		# 只保存匹配特征所在的网格，反正也不会计算其实际坐标
 		self.leftmatchgrid[self.kp1list] = self.rightlabel[self.kp2list]  # index2value(rightkpt, shape)
-		if show:
-			Func.imagesc(self.leftlabel,"leftLabel")
+		if self.DEBUG or show:
+			Func.imagesc(self.leftlabel,"leftlabel shift=(%d,%d)"%(shift[0],shift[1]))
+			Func.imagesc(self.leftimglabel, "leftimglabel shift=(%d,%d)" % (shift[0], shift[1]))
+			Func.imagesc(self.leftmatchgrid, "leftmatchgrid shift=(%d,%d)" % (shift[0], shift[1]))
 	#返回三个核
 	def createKernel(self,shift=(0,0),ktype='s',sigma=1,neiborwidth=1):
 		self.neiborwidth = neiborwidth  # 多远 的算邻居
@@ -239,8 +236,10 @@ class GridMatchFilter:
 		return gmsmatchimg
 	
 	# 统计
-	def run(self, ktype='s',sigma=1,neiborwidth=1):
-		for i in range(2):
+	def run(self,gridnum=20,ktype='s',sigma=1,neiborwidth=1):
+		self.initgrid(gridnum,gridnum)  # 初始化网格
+		self.multiplemap()  # 将matches转化为矩阵
+		for i in range(1):
 			shift=(i,i)
 			self.createlabel(shift=shift,show=False)
 			self.createKernel(shift=shift,ktype=ktype,sigma=sigma,neiborwidth=neiborwidth)
@@ -250,12 +249,20 @@ class GridMatchFilter:
 		ssds = self.drawTrueMatch()
 		# Func.imshow(ssds)
 
-
-if __name__ == '__main__':
+def main(argv):
+	if len(argv)<2:
+		print("input arguments like this:\n\timg1 img2 gridnum(optional) ktype(optional) sigma(optional) neiborwidth(optional) savename(optional)")
+	img1path=argv[1]
+	img2path=argv[2]
+	args=[20,'s',1,1,"GMF"]
+	for i in range(5):
+		if len(argv)>i+3:
+			args[i]=argv[i+3]
+	gridnum,ktype,sigma,neiborwidth,savename=args
 	# img1path=src_folder + '000.png'
 	# img2path = src_folder + '020.png'
-	img1path = src_folder + 'img1.jpg'
-	img2path = src_folder + 'img2.jpg'
+	# img1path = src_folder + 'img1.jpg'
+	# img2path = src_folder + 'img2.jpg'
 	# img1path='./images/img.jpg'
 	# img2path = './images/img2.jpg'
 	img1 = cv2.imread(img1path)
@@ -264,8 +271,13 @@ if __name__ == '__main__':
 	img1 = cv2.resize(img1, ddsize)
 	img2 = cv2.resize(img2, ddsize)
 	time_start = time.time()
-	gmf = GridMatchFilter(img1, img2,savename="Beer_GMF")
-	gmf.run(ktype='s',sigma=1,neiborwidth=1)
-	gmf.run(ktype='g', sigma=1, neiborwidth=4)
+	gmf = GridMatchFilter(img1, img2, savename=savename)
+	gmf.run(gridnum=gridnum, ktype=ktype, sigma=sigma, neiborwidth=neiborwidth)
+	# gmf.run(gridnum=20, ktype='s', sigma=1, neiborwidth=1)
+	# gmf.run(gridnum=40,ktype='g', sigma=1.2, neiborwidth=5)
 	time_end = time.time();  # time.time()为1970.1.1到当前时间的毫秒数
 	print('cost time is %fs' % (time_end - time_start))
+
+if __name__ == '__main__':
+	main(sys.argv)
+
