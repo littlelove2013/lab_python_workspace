@@ -4,6 +4,8 @@ import scipy.signal as ss
 import cv2
 import math
 import matplotlib.pyplot as py
+import tensorflow as tf
+
 eps=1e-8
 def conv2withstride(m,filter,stride=(1,1),start=None,gridnum=20):
     # s=cv2.getTickCount()
@@ -167,7 +169,22 @@ def test():
     rightmatchimg[rightkpt] = rightlabel[rightkpt]
     rightmatchimg=rightmatchimg-leftimg
     # imagesc(rightmatchimg,'rightmatchimg')
-
+#按批次计算卷积
+#x:n,c,h,w的四维输入
+#W:h,w,c,o的四维卷积核
+def batchconv4d(input,kernel,stride=[1,1,1,1],start=None,gridnum=20):
+    x=tf.Variable(input)
+    W=tf.Variable(kernel)
+    res = tf.nn.conv2d(x, W, strides=stride, padding='SAME')  # strides第0位和第3为一定为1，剩下的是卷积的横向和纵向步长
+    with tf.Session() as sess:
+        sess.run(tf.global_variables_initializer())
+        result=sess.run(res)
+    return result
+def testbatchconv4d():
+    input=np.random.randint(0,10,size=54).reshape(1,1,9,6)
+    kernel=np.ones((3,2,1,1))
+    res=batchconv4d(input,kernel)
+    print(res[0,0])
 def main():
     a=np.random.randint(0,10,size=54).reshape(9,6)
     b=np.ones([3,2])
@@ -184,5 +201,6 @@ def main():
     print(c,value,c[index])
 
 if __name__ == '__main__':
-    main()
+    # main()
     # test()
+    testbatchconv4d()
