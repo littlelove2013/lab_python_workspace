@@ -405,6 +405,7 @@ class GMSwithGridFilter:
 		neiborwidth = 1  # 多远 的算邻居
 		filtershape=(self.leftgridsize[0]*(2*neiborwidth+1),self.leftgridsize[1]*(2*neiborwidth+1))
 		neiborfilter = np.ones(filtershape)
+		nnd=1
 		for i in range(self.lgn):  # r
 			for j in range(self.lgn):  # c
 				if self.leftgridkpoints[i,j]==0:
@@ -424,9 +425,11 @@ class GMSwithGridFilter:
 				self.score[i, j]=neiborsindexconv[i,j]
 				# print("calc grid(%d,%d)\n thre=%.f,index.sum=%d,neiborsindex.sum=%d,score=%d"
 				#       % (i, j,self.thre[i,j],index.sum(),neiborsindex.sum(),self.score[i, j]))
+				nnd+=1
 				if neiborsindexconv[i,j]<self.thre[i,j]:
 					continue
 				self.TrueMatches+= index
+		print("batchsize %d"%(nnd))
 	# 同样返回Match对象，用于其他用途
 	def getTrueMatch(self, thre=1):
 		Truelistindex = self.TrueMatches >= thre

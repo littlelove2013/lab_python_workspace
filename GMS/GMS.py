@@ -78,6 +78,8 @@ class GMS:
                 neibor[j+3*i]=gridnum+(i-1)*num+(j-1)
         return neibor
     def getsocreandthre(self,gridnum):
+        if self.listgrid1[gridnum]<=0:
+            return 0,0
         score = 0.0
         thresh = 0.0
         leftneibor = self.getneibor(gridnum,self.rows1)
@@ -86,15 +88,13 @@ class GMS:
         for i in range(9):
             pos_left = int(leftneibor[i])
             pos_right=int(rightneibor[i])
-            if(pos_left<0 or pos_left>=self.rows1**2 or pos_right<0 or pos_right>=self.rows2**2 or self.listgrid1[gridnum]<=0):
+            if(pos_left<0 or pos_left>=self.rows1**2 or pos_right<0 or pos_right>=self.rows2**2):
                 continue;
             # print(pos_left,int(rightneibor[i]))
             positive_points=self.listgrid2[pos_left][pos_right]
             score=score+positive_points
             thresh=thresh+self.listgrid1[pos_left]
             num=num+1
-        if num==0:
-            return 0,0
         thresh=math.sqrt(thresh/(num))*self.TreshFactor
         return score,thresh
     def run(self,type=1):
@@ -117,14 +117,17 @@ class GMS:
         globalthreshold = math.sqrt(len(self.matches) / self.validGrid) * self.TreshFactor
         if not localthreshold:
             ACCEPTSCORE=globalthreshold
+        # nnd=1
         for i in range(self.rows1 ** 2):
             if self.listgrid1[i]<=0:
                 continue;
+            # nnd+=1
             score,localthreshold=self.getsocreandthre(i)
             if localthreshold>0:
                 ACCEPTSCORE=localthreshold
             if score<ACCEPTSCORE:
                 self.bestmatch[i]=-2
+        # print("batchsize %d"%(nnd))
         #计算出网格里的match点数
         for i in range(len(self.matches)):
             match=self.matches[i]

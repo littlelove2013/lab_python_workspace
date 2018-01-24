@@ -9,7 +9,7 @@ import sys
 src_folder="./images/"
 res_folder="./matches/"
 
-class GridMatchFilter:
+class GridMatchBatchFilter:
 	def __init__(self, img1, img2, kptnumber=10000, resizeflag=False, width=640, height=480,savename='GMF'):
 		self.savename=savename
 		self.DEBUG=False
@@ -68,7 +68,7 @@ class GridMatchFilter:
 		self.leftbiasc = np.zeros(leftsize).astype(np.int32)
 		# 设定最大可接受重复映射邻域宽度
 		max_neibor_width = 1
-		MultipleMap = True  # 是否对重复映射做邻域替换映射，为False则不管重复映射，只取最后一个映射值
+		MultipleMap = False  # 是否对重复映射做邻域替换映射，为False则不管重复映射，只取最后一个映射值
 		for i in range(lens):
 			pt1 = np.array(self.kp1[self.matches[i].queryIdx].pt)
 			p1 = np.array([pt1[1], pt1[0]], np.int32)
@@ -131,7 +131,7 @@ class GridMatchFilter:
 			kernel=np.ones(ksize)/(r*c)
 		elif type=='s':#求和核
 			kernel = np.ones(ksize)
-		return kernel
+		return kernel.reshape(r,c,1,1)
 	#获取左右图标签矩阵，是否平移,shift=1表示移动半个网格
 	def createlabel(self,shift=(0,0),show=False):
 		# 生成标签矩阵
@@ -168,7 +168,7 @@ class GridMatchFilter:
 			.repeat(self.leftgridsize[1], 1)
 		if self.DEBUG:
 			print("kernel sum=%f"%(self.kernel.sum()))
-		self.stride=self.leftgridsize
+		self.stride=[1,self.leftgridsize[0],self.leftgridsize[1],1]
 		self.start = (self.leftgridsize / 2).astype(np.int32)
 		if shift[0]==1:
 			self.start[0]=0
@@ -176,42 +176,77 @@ class GridMatchFilter:
 			self.start[1]=0
 	# 计算阈值和得分
 	def computescoreandthre(self):
+		# filter = np.ones(self.leftgridsize)
+		# self.leftgridkpoints = Func.conv2withstride(self.leftimg, filter, stride=self.leftgridsize, start=None,
+		#                                             gridnum=self.lgn)
+		# Func.imagesc(self.leftgridkpoints)
+		# print((self.leftgridkpoints>1).sum())
+		#*************测试卷积是否正确*********************
+		self.check=[]
 		# 计算阈值
-		self.thre = Func.conv2withstride(self.leftimg, self.kernel, stride=self.stride, start=self.start,
-		                                            gridnum=self.lgn)
-		De=self.neibor**2
-		self.thre = self.TreshFactor * np.sqrt(self.thre/De)  # 阈值计算公式
-		if self.DEBUG:
-			print("self.leftimg:max:%f,min:%f" % (self.leftimg.max(), self.leftimg.min()))
-			print("self.thre:max:%f,min:%f" % (self.thre.max(), self.thre.min()))
-			print("self.thre:max:%f,min:%f" % (self.thre.max(), self.thre.min()))
+		self.thre1 = Func.conv2withstride(self.leftimg, self.kernel[:,:,0,0], stride=self.stride[1:3],
+ 		                                  start=self.start, gridnum=self.lgn)
+		# De = self.neibor ** 2
+		# self.thre1 = self.TreshFactor * np.sqrt(self.thre1 / De)  # 阈值计算公式
+		self.check.append(self.thre1.reshape(self.lgn,self.lgn,1))
+		
+		self.convset=[]
+		self.cposition=np.asarray([[],[],[],[]],np.int32)
+		self.leftmap=[]
+		# 计算阈值
+		h,w,c=self.img1.shape
+		self.convset.append(self.leftimg.reshape(h,w,1))
 		# 计算打分
 		self.score = np.zeros((self.lgn, self.lgn))
 		self.lgshape = (self.lgn, self.lgn)
-		# nnb=1
+		nnd=1
 		for i in range(self.lgn):  # r
 			for j in range(self.lgn):  # c
-				if self.thre[i, j] == 0:
-					continue
 				leftvalue = Func.index2value((i, j), self.lgshape) + 1
 				bestmatchgrid = self.leftmatchgrid[self.leftimglabel == leftvalue]
-				if bestmatchgrid.size < 1:
+				if bestmatchgrid.size < 100:
 					continue  # 点数小于阈值则不计算，默认为不匹配
 				number, n_counts = np.unique(bestmatchgrid, return_counts=True)
 				rbestindex = number[np.argsort(n_counts)[-1]]
 				index = (self.leftimglabel == leftvalue) & (self.leftmatchgrid == rbestindex)
 				neiborsindex = (((self.leftimglabel - self.leftmatchgrid) == (leftvalue - rbestindex)) & self.leftimg.astype(np.bool)).astype(np.float32)
-				neiborsindexconv = Func.conv2withstride(neiborsindex, self.kernel,
-				                                        stride=self.stride, start=self.start, gridnum=self.lgn)
-				self.score[i, j] = neiborsindexconv[i, j]
-				if self.DEBUG:
-					print("calc grid(%d,%d)\n thre=%f,index.sum=%d,neiborsindex.sum=%d,score=%f"
-				      % (i, j,self.thre[i,j],index.sum(),neiborsindex.sum(),self.score[i, j]))
-				if neiborsindexconv[i, j] < self.thre[i, j]:
-					continue
-				# nnb += 1
-				self.TrueMatches += index
-		# print("batchsize %d"%(nnb))
+				self.convset.append(neiborsindex.reshape(h,w,1))
+				self.leftmap.append(index)
+				self.cposition=np.concatenate((self.cposition,[[nnd],[i],[j],[0]]),1)
+				nnd+=1
+				neiborsindexconv = Func.conv2withstride(neiborsindex, self.kernel[:,:,0,0],
+				                                        stride=self.stride[1:3], start=self.start, gridnum=self.lgn)
+				self.check.append(neiborsindexconv.reshape(self.lgn,self.lgn,1))
+				# self.score[i, j] = neiborsindexconv[i, j]
+				# if self.DEBUG:
+				# 	print("calc grid(%d,%d)\n thre=%f,index.sum=%d,neiborsindex.sum=%d,score=%f"
+				#       % (i, j,self.thre[i,j],index.sum(),neiborsindex.sum(),self.score[i, j]))
+				# if neiborsindexconv[i, j] < self.thre[i, j]:
+				# 	continue
+				# self.TrueMatches += index
+		#卷积计算
+		self.convset=np.asarray(self.convset,np.float32)
+		if self.shift[0]==1:
+			self.convset = np.roll(self.convset, int(self.leftgridsize[0] / 2), axis=1)
+		if self.shift[1]==1:
+			self.convset = np.roll(self.convset, int(self.leftgridsize[1] / 2), axis=2)
+		t=time.time()
+		res = Func.batchconv4d(self.convset, np.asarray(self.kernel,np.float32), stride=self.stride)
+		print("batchsize is %d,batch conv cost %fs"%(nnd,time.time()-t))
+		tmp=np.asarray(self.check,np.float32)-res
+		# Func.imagesc(tmp.reshape(self.lgn,self.lgn),'conv sta whin 4D conv and 2Dconv')
+		print("conv sta whin 4D conv and 2Dconv is:sum %f,mean %f,std %f" % (tmp.sum(), tmp.mean(),tmp.std()))
+		self.thre=res[0,:,:,0]
+		De = self.neibor ** 2
+		self.thre = self.TreshFactor * np.sqrt(self.thre / De)  # 阈值计算公式
+		self.cposition=list(self.cposition)
+		tmp=res[self.cposition]
+		sindex=self.cposition[1:3]
+		for i in range(len(tmp)):
+			if self.thre[sindex[0][i],sindex[1][i]]>tmp[i]:
+				continue
+			self.TrueMatches+=self.leftmap[i]
+		# self.score[self.cposition[1:3]]=tmp
 	# 同样返回Match对象，用于其他用途
 	def getTrueMatch(self, thre=1):
 		Truelistindex = self.TrueMatches >= thre
@@ -241,11 +276,11 @@ class GridMatchFilter:
 		self.TrueMatches = np.zeros(self.img1.shape[:2])
 		self.initgrid(gridnum,gridnum)  # 初始化网格
 		self.multiplemap()  # 将matches转化为矩阵
-		for i in range(1):
-			# shift=(i%2,int(i/2))
-			shift=(1,1)
-			self.createlabel(shift=shift,show=False)
-			self.createKernel(shift=shift,ktype=ktype,sigma=sigma,neiborwidth=neiborwidth)
+		for i in range(4):
+			self.shift=(i%2,int(i/2))
+			# self.shift = (1, 1)
+			self.createlabel(shift=self.shift,show=False)
+			self.createKernel(shift=self.shift,ktype=ktype,sigma=sigma,neiborwidth=neiborwidth)
 			self.computescoreandthre()  # 计算出TrueMatcher
 			# self.TrueMatches[np.arange(1,100,2),np.arange(1,100,2)]=1
 			# return self.getTrueMatch()
@@ -257,7 +292,7 @@ def main(argv):
 		print("input arguments like this:\n\timg1 img2 gridnum(optional) ktype(optional) sigma(optional) neiborwidth(optional) savename(optional)")
 	img1path=argv[1]
 	img2path=argv[2]
-	args=[20,'s',1,1,"GMF"]
+	args=[20,'s',1,1,"GMBF"]
 	for i in range(5):
 		if len(argv)>i+3:
 			args[i]=argv[i+3]
@@ -274,7 +309,7 @@ def main(argv):
 	img1 = cv2.resize(img1, ddsize)
 	img2 = cv2.resize(img2, ddsize)
 	time_start = time.time()
-	gmf = GridMatchFilter(img1, img2, savename=savename)
+	gmf = GridMatchBatchFilter(img1, img2, savename=savename)
 	gmf.run(gridnum=gridnum, ktype=ktype, sigma=sigma, neiborwidth=neiborwidth)
 	# gmf.run(gridnum=20, ktype='s', sigma=1, neiborwidth=1)
 	# gmf.run(gridnum=40,ktype='g', sigma=1.2, neiborwidth=5)

@@ -10,8 +10,8 @@ import time
 eps=1e-8
 def conv2withstride(m,filter,stride=(1,1),start=None,gridnum=20):
     # s=cv2.getTickCount()
-    tmp=cv2.filter2D(m,-1,filter)+eps
-    # tmp=ss.convolve2d(m,filter,'same')
+    # tmp=cv2.filter2D(m,-1,filter)+eps
+    tmp=ss.convolve2d(m,filter,'same')
     # e=cv2.getTickCount()
     # print("conv cost time %f",(e-s)/cv2.getTickFrequency())
     if start==None:
@@ -174,18 +174,28 @@ def test():
 #x:n,h,w,c的四维输入
 #W:h,w,c,o的四维卷积核
 def batchconv4d(input,kernel,stride=[1,1,1,1]):
-    x=tf.Variable(input,tf.float32)
-    W=tf.Variable(kernel,tf.float32)
-    res = tf.nn.conv2d(x, W, strides=stride, padding='VALID')  # strides第0位和第3为一定为1，剩下的是卷积的横向和纵向步长
-    with tf.Session() as sess:
-        sess.run(tf.global_variables_initializer())
-        result=sess.run(res)
-    return result
+	x=tf.placeholder(dtype=tf.float32,shape=input.shape,name="input")
+	W=tf.placeholder(dtype=tf.float32,shape=kernel.shape,name="kernel")
+	# x=tf.Variable(input,tf.float32)
+	# W=tf.Variable(kernel,tf.float32)
+	res = tf.nn.conv2d(x, W, strides=stride, padding='SAME')  # strides第0位和第3为一定为1，剩下的是卷积的横向和纵向步长
+	with tf.Session() as sess:
+		# sess.run(tf.global_variables_initializer())
+		result=sess.run(res,feed_dict={x:input,W:kernel})
+	return result
 def testbatchconv4d():
     s=time.time()
-    input=np.random.randint(0,10,size=10*640*480).reshape(10,480,640,1).astype(np.float32)
-    kernel=np.ones((24,32,1,1)).astype(np.float32)
-    res=batchconv4d(input,kernel,stride=[1,24,32,1])
+    input=np.random.randint(0,10,size=12*6).reshape(1,12,6,1).astype(np.float32)
+    # input = np.ones((1, 12, 6, 1)).astype(np.float32)
+    kernel=np.ones((4,2,1,1)).astype(np.float32)
+    stride=[1,4,2,1]
+    res=batchconv4d(np.roll(input,1,2),kernel,stride=stride)
+    print(input.reshape(12, 6))
+    print(np.roll(input,1,2).reshape(12, 6))
+    print(stride)
+    print(res.reshape(3, 3))
+    c = conv2withstride(input.reshape(12,6), kernel.reshape(4,2), stride=(4, 2),start=[2,0],gridnum=3)
+    print(c)
     print("cost tim is %fs"%(time.time()-s),res.shape)
 def main():
     a=np.random.randint(0,10,size=54).reshape(9,6)

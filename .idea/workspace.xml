@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26ac5d66-a343-4619-bd8d-f04266680f53" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/python_workspace.iml" afterPath="$PROJECT_DIR$/.idea/python_workspace.iml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/GMS/GridMatchBatchFilter.py" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/GMS/Func.py" afterPath="$PROJECT_DIR$/GMS/Func.py" />
+      <change beforePath="$PROJECT_DIR$/GMS/GMS.py" afterPath="$PROJECT_DIR$/GMS/GMS.py" />
+      <change beforePath="$PROJECT_DIR$/GMS/GMSwithMatrix.py" afterPath="$PROJECT_DIR$/GMS/GMSwithMatrix.py" />
+      <change beforePath="$PROJECT_DIR$/GMS/GridMatchFilter.py" afterPath="$PROJECT_DIR$/GMS/GridMatchFilter.py" />
+      <change beforePath="$PROJECT_DIR$/hello world.py" afterPath="$PROJECT_DIR$/hello world.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,6 +19,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/lab_python_workspace$randmaze.coverage" NAME="randmaze Coverage Results" MODIFIED="1510475033271" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DQN/Qlearning" />
+    <SUITE FILE_PATH="coverage/lab_python_workspace$hello_world.coverage" NAME="hello world Coverage Results" MODIFIED="1516706968369" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$minist_CNN2.coverage" NAME="minist_CNN2 Coverage Results" MODIFIED="1514075231439" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tensorflow" />
     <SUITE FILE_PATH="coverage/lab_workspace$Qlearning.coverage" NAME="Qlearning Coverage Results" MODIFIED="1510556448943" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DQN/Qlearning" />
     <SUITE FILE_PATH="coverage/lab_workspace$main.coverage" NAME="main Coverage Results" MODIFIED="1516333259066" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
@@ -25,12 +29,12 @@
     <SUITE FILE_PATH="coverage/lab_workspace$Nosetests_for_Func_testbatchconv4d.coverage" NAME="Nosetests for Func.testbatchconv4d Coverage Results" MODIFIED="1516679341982" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$Qlearning.coverage" NAME="Qlearning Coverage Results" MODIFIED="1510462597687" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DQN/Qlearning" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$graph.coverage" NAME="graph Coverage Results" MODIFIED="1515237446171" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/webbigdata/pagerank" />
-    <SUITE FILE_PATH="coverage/lab_python_workspace$GMS.coverage" NAME="GMS Coverage Results" MODIFIED="1516347123350" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
+    <SUITE FILE_PATH="coverage/lab_python_workspace$GMS.coverage" NAME="GMS Coverage Results" MODIFIED="1516712198723" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$main.coverage" NAME="main Coverage Results" MODIFIED="1516419007454" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
     <SUITE FILE_PATH="coverage/lab_workspace$Nosetests_in_Func_py.coverage" NAME="Nosetests in Func.py Coverage Results" MODIFIED="1516679272536" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
-    <SUITE FILE_PATH="coverage/lab_python_workspace$GMSwithMatrix.coverage" NAME="GMSwithMatrix Coverage Results" MODIFIED="1516271091439" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
-    <SUITE FILE_PATH="coverage/lab_python_workspace$GridMatchFilter__1_.coverage" NAME="GridMatchFilter (1) Coverage Results" MODIFIED="1516439278737" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS/GMF" />
+    <SUITE FILE_PATH="coverage/lab_python_workspace$GMSwithMatrix.coverage" NAME="GMSwithMatrix Coverage Results" MODIFIED="1516712677300" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$testCNNfrommodel.coverage" NAME="testCNNfrommodel Coverage Results" MODIFIED="1514078724509" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tensorflow" />
+    <SUITE FILE_PATH="coverage/lab_python_workspace$GridMatchFilter__1_.coverage" NAME="GridMatchFilter (1) Coverage Results" MODIFIED="1516701300689" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS/GMF" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$VGG.coverage" NAME="VGG Coverage Results" MODIFIED="1513939759432" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/dogbreed" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$Func.coverage" NAME="Func Coverage Results" MODIFIED="1514012316775" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$VGG_beta3.coverage" NAME="VGG_beta3 Coverage Results" MODIFIED="1515313786943" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/dogbreed" />
@@ -44,7 +48,7 @@
     <SUITE FILE_PATH="coverage/lab_workspace$knn.coverage" NAME="knn Coverage Results" MODIFIED="1516152436021" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Knn" />
     <SUITE FILE_PATH="coverage/lab_workspace$GMSwithMatrix.coverage" NAME="GMSwithMatrix Coverage Results" MODIFIED="1516155756880" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
     <SUITE FILE_PATH="coverage/lab_workspace$FlappyBirdDQN.coverage" NAME="FlappyBirdDQN Coverage Results" MODIFIED="1510556665965" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DQN/DRL-FlappiBird" />
-    <SUITE FILE_PATH="coverage/lab_python_workspace$GridMatchFilter.coverage" NAME="GridMatchFilter Coverage Results" MODIFIED="1516594977750" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
+    <SUITE FILE_PATH="coverage/lab_python_workspace$GridMatchFilter.coverage" NAME="GridMatchFilter Coverage Results" MODIFIED="1516783694506" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$Nosetests_in_Func_py.coverage" NAME="Nosetests in Func.py Coverage Results" MODIFIED="1516693476712" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$sparseautoencoder.coverage" NAME="sparseautoencoder Coverage Results" MODIFIED="1515304101278" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/Titanic" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$dogbreed.coverage" NAME="dogbreed Coverage Results" MODIFIED="1515200300751" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/dogbreed" />
@@ -52,6 +56,7 @@
     <SUITE FILE_PATH="coverage/lab_python_workspace$maze.coverage" NAME="maze Coverage Results" MODIFIED="1510474876714" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DQN/Qlearning" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$test.coverage" NAME="test Coverage Results" MODIFIED="1515242867038" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/webbigdata/pagerank" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1515309973005" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/general/Titanic" />
+    <SUITE FILE_PATH="coverage/lab_python_workspace$GridMatchBatchFilter.coverage" NAME="GridMatchBatchFilter Coverage Results" MODIFIED="1516796653481" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$Nosetests_for_Func_test.coverage" NAME="Nosetests for Func.test Coverage Results" MODIFIED="1515982962744" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GMS" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$CNN_test.coverage" NAME="CNN_test Coverage Results" MODIFIED="1514199246577" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tensorflow" />
     <SUITE FILE_PATH="coverage/lab_python_workspace$DataUtil.coverage" NAME="DataUtil Coverage Results" MODIFIED="1510482200802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/HSI" />
@@ -72,111 +77,80 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GridMatchFilter.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GridMatchFilter.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GMS/GridMatchFilter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="180" column="51" lean-forward="true" selection-start-line="180" selection-start-column="51" selection-end-line="180" selection-end-column="51" />
+            <state relative-caret-position="278">
+              <caret line="245" column="22" lean-forward="false" selection-start-line="245" selection-start-column="22" selection-end-line="245" selection-end-column="22" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
-                <element signature="e#285#573#0" expanded="false" />
-                <element signature="e#398#512#0" expanded="false" />
-                <element signature="e#595#964#0" expanded="false" />
-                <element signature="e#967#971#0" expanded="false" />
-                <element signature="e#1187#1510#0" expanded="false" />
-                <element signature="e#1901#4372#0" expanded="false" />
-                <element signature="e#2487#3407#0" expanded="false" />
-                <element signature="e#2686#3216#0" expanded="false" />
-                <element signature="e#2782#3163#0" expanded="false" />
-                <element signature="e#2875#3132#0" expanded="false" />
-                <element signature="e#2919#3132#0" expanded="false" />
-                <element signature="e#3230#3287#0" expanded="false" />
-                <element signature="e#4025#4081#0" expanded="false" />
-                <element signature="e#4374#4384#0" expanded="false" />
-                <element signature="e#4507#4779#0" expanded="false" />
-                <element signature="e#4862#6057#0" expanded="false" />
-                <element signature="e#5231#5390#0" expanded="false" />
-                <element signature="e#5412#5575#0" expanded="false" />
-                <element signature="e#5805#6057#0" expanded="false" />
-                <element signature="e#6137#7032#0" expanded="false" />
-                <element signature="e#8612#8771#0" expanded="false" />
-                <element signature="e#8924#9590#0" expanded="false" />
-                <element signature="e#9638#9956#0" expanded="false" />
-                <element signature="e#10026#10438#0" expanded="false" />
-                <element signature="e#10317#10376#0" expanded="false" />
-                <element signature="e#10479#11548#0" expanded="false" />
+                <element signature="e#285#574#0" expanded="false" />
+                <element signature="e#399#513#0" expanded="false" />
+                <element signature="e#596#963#0" expanded="false" />
+                <element signature="e#966#970#0" expanded="false" />
+                <element signature="e#1186#1509#0" expanded="false" />
+                <element signature="e#1512#1520#0" expanded="false" />
+                <element signature="e#1900#4371#0" expanded="false" />
+                <element signature="e#2486#3406#0" expanded="false" />
+                <element signature="e#2685#3215#0" expanded="false" />
+                <element signature="e#2781#3162#0" expanded="false" />
+                <element signature="e#2874#3131#0" expanded="false" />
+                <element signature="e#2918#3131#0" expanded="false" />
+                <element signature="e#3229#3286#0" expanded="false" />
+                <element signature="e#4024#4080#0" expanded="false" />
+                <element signature="e#4373#4383#0" expanded="false" />
+                <element signature="e#4506#4778#0" expanded="false" />
+                <element signature="e#4861#6056#0" expanded="false" />
+                <element signature="e#5230#5389#0" expanded="false" />
+                <element signature="e#5411#5574#0" expanded="false" />
+                <element signature="e#5804#6056#0" expanded="false" />
+                <element signature="e#6136#7031#0" expanded="false" />
+                <element signature="e#8927#9593#0" expanded="false" />
+                <element signature="e#9641#9959#0" expanded="false" />
+                <element signature="e#10397#10456#0" expanded="false" />
+                <element signature="e#10559#11628#0" expanded="false" />
+                <element signature="e#10800#10838#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="kmeans.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Kmeans/kmeans.py">
+      <file leaf-file-name="GridMatchBatchFilter.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/GMS/GridMatchBatchFilter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+            <state relative-caret-position="105">
+              <caret line="277" column="43" lean-forward="true" selection-start-line="277" selection-start-column="43" selection-end-line="277" selection-end-column="43" />
               <folding>
-                <element signature="e#0#18#0" expanded="true" />
+                <element signature="e#601#968#0" expanded="false" />
+                <element signature="e#1191#1514#0" expanded="false" />
+                <element signature="e#1905#4377#0" expanded="false" />
+                <element signature="e#2492#3412#0" expanded="false" />
+                <element signature="e#4512#4801#0" expanded="false" />
+                <element signature="e#4884#6079#0" expanded="false" />
+                <element signature="e#6159#7084#0" expanded="false" />
+                <element signature="e#8134#9464#0" expanded="false" />
+                <element signature="e#9132#9175#0" expanded="false" />
+                <element signature="e#10379#10476#0" expanded="false" />
+                <element signature="e#10574#11240#0" expanded="false" />
+                <element signature="e#11288#11606#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RmatchWithKmeans.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GMS/RmatchWithKmeans.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="61" column="23" lean-forward="false" selection-start-line="61" selection-start-column="23" selection-end-line="61" selection-end-column="23" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-                <element signature="e#321#611#0" expanded="false" />
-                <element signature="e#633#1022#0" expanded="false" />
-                <element signature="e#1058#1104#0" expanded="false" />
-                <element signature="e#1130#1593#0" expanded="false" />
-                <element signature="e#1618#1855#0" expanded="false" />
-                <element signature="e#1907#2154#0" expanded="false" />
-                <element signature="e#2215#2633#0" expanded="false" />
-                <element signature="e#2341#2568#0" expanded="false" />
-                <element signature="e#2681#2964#0" expanded="false" />
-                <element signature="e#3005#3048#0" expanded="false" />
-                <element signature="e#3262#3300#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GMS.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GMS/GMS.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="148" column="69" lean-forward="false" selection-start-line="138" selection-start-column="8" selection-end-line="148" selection-end-column="69" />
-              <folding>
-                <element signature="e#6040#6723#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CNN_test.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tensorflow/CNN_test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="25" column="65" lean-forward="true" selection-start-line="25" selection-start-column="65" selection-end-line="25" selection-end-column="65" />
-              <folding>
-                <element signature="e#994#1477#0" expanded="false" />
-              </folding>
-            </state>
+      <file leaf-file-name="gmsmatchimg.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GMS/matches/gmsmatchimg.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Func.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GMS/Func.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="186" column="50" lean-forward="true" selection-start-line="186" selection-start-column="50" selection-end-line="186" selection-end-column="50" />
+            <state relative-caret-position="152">
+              <caret line="181" column="30" lean-forward="true" selection-start-line="181" selection-start-column="30" selection-end-line="181" selection-end-column="30" />
               <folding>
-                <element signature="e#0#18#0" expanded="true" />
-                <element signature="e#294#330#0" expanded="false" />
                 <element signature="e#657#700#0" expanded="false" />
                 <element signature="e#932#972#0" expanded="false" />
                 <element signature="e#1028#1355#0" expanded="false" />
@@ -186,7 +160,6 @@
                 <element signature="e#1677#2277#0" expanded="false" />
                 <element signature="e#1979#2103#0" expanded="false" />
                 <element signature="e#2123#2248#0" expanded="false" />
-                <element signature="e#2397#2526#0" expanded="false" />
                 <element signature="e#2527#2564#0" expanded="false" />
                 <element signature="e#2656#3289#0" expanded="false" />
                 <element signature="e#2763#2884#0" expanded="false" />
@@ -196,19 +169,6 @@
                 <element signature="e#3896#3928#0" expanded="false" />
                 <element signature="e#4301#4453#0" expanded="false" />
                 <element signature="e#5043#5083#0" expanded="false" />
-                <element signature="e#6271#6599#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GMS/main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="722">
-              <caret line="72" column="18" lean-forward="false" selection-start-line="72" selection-start-column="18" selection-end-line="72" selection-end-column="18" />
-              <folding>
-                <element signature="e#1377#2281#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -225,8 +185,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>csvpath</find>
-      <find>imgpath</find>
       <find>summary</find>
       <find>merged_summary_op</find>
       <find>filesavename</find>
@@ -251,10 +209,12 @@
       <find>cv2.waitKey</find>
       <find>self.score</find>
       <find>leftgridsize</find>
-      <find>leftgridkpoints</find>
       <find>gridmatches</find>
       <find>gridmatchesindex</find>
       <find>leftimglabel</find>
+      <find>leftgridkpoints</find>
+      <find>leftmap</find>
+      <find>leftimg</find>
     </findStrings>
     <replaceStrings>
       <replace>self.rgn,self.rgn</replace>
@@ -297,15 +257,17 @@
         <option value="$PROJECT_DIR$/general/dogbreed/readme.txt" />
         <option value="$PROJECT_DIR$/general/dogbreed/main.py" />
         <option value="$PROJECT_DIR$/Knn/knn.py" />
-        <option value="$PROJECT_DIR$/GMS/GMS.py" />
         <option value="$PROJECT_DIR$/GMS/main.py" />
-        <option value="$PROJECT_DIR$/GMS/GMSwithMatrix.py" />
         <option value="$PROJECT_DIR$/GMS/日志记录" />
         <option value="$PROJECT_DIR$/GMS/GMF/GridMatchFilter.py" />
-        <option value="$PROJECT_DIR$/GMS/GridMatchFilter.py" />
         <option value="$PROJECT_DIR$/Kmeans/kmeans.py" />
         <option value="$PROJECT_DIR$/GMS/RmatchWithKmeans.py" />
+        <option value="$PROJECT_DIR$/hello world.py" />
+        <option value="$PROJECT_DIR$/GMS/GMS.py" />
+        <option value="$PROJECT_DIR$/GMS/GMSwithMatrix.py" />
+        <option value="$PROJECT_DIR$/GMS/GridMatchFilter.py" />
         <option value="$PROJECT_DIR$/GMS/Func.py" />
+        <option value="$PROJECT_DIR$/GMS/GridMatchBatchFilter.py" />
       </list>
     </option>
   </component>
@@ -315,7 +277,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="x" value="-24" />
     <option name="y" value="-13" />
     <option name="width" value="1382" />
@@ -350,6 +312,18 @@
               <item name="lab_python_workspace" type="462c0819:PsiDirectoryNode" />
               <item name="GMS" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="lab_python_workspace" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lab_python_workspace" type="462c0819:PsiDirectoryNode" />
+              <item name="GMS" type="462c0819:PsiDirectoryNode" />
+              <item name="GMF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lab_python_workspace" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lab_python_workspace" type="462c0819:PsiDirectoryNode" />
+              <item name="GMS" type="462c0819:PsiDirectoryNode" />
+              <item name="matches" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -363,16 +337,16 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://E:/python_workspace/git/lab_python_workspace/GMS/Func.py" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\python_workspace\git\lab_python_workspace\GMS\matches" />
+      <recent name="D:\python_workspace\lab_python_workspace\GMS" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\python_workspace\git\lab_python_workspace\GMS" />
       <recent name="E:\python_workspace\git\lab_python_workspace\GMS\GMF\Func" />
       <recent name="E:\python_workspace\git\lab_python_workspace\general\webbigdata" />
       <recent name="E:\python_workspace\git\lab_python_workspace\general\webbigdata\pagerank\data" />
       <recent name="E:\python_workspace\git\lab_python_workspace\tensorflow" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\python_workspace\git\lab_python_workspace\GMS\matches" />
-      <recent name="D:\python_workspace\lab_python_workspace\GMS" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -387,7 +361,64 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Nosetests in Func.py">
+  <component name="RunManager" selected="Python.GridMatchBatchFilter">
+    <configuration name="GMS" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/GMS" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="python_workspace" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GMS/GMS.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="GMSwithMatrix" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/GMS" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="python_workspace" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GMS/GMSwithMatrix.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="GridMatchBatchFilter" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/GMS" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="python_workspace" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GMS/GridMatchBatchFilter.py" />
+      <option name="PARAMETERS" value="images/img1.jpg images/img2.jpg" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="GridMatchFilter" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -407,90 +438,39 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="RmatchWithKmeans" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="hello world" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/GMS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="python_workspace" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GMS/RmatchWithKmeans.py" />
-      <option name="PARAMETERS" value="images/img1.jpg images/img2.jpg" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="kmeans" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Kmeans" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="python_workspace" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Kmeans/kmeans.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hello world.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="Nosetests for Func.testbatchconv4d" type="tests" factoryName="Nosetests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/GMS" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="python_workspace" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="_new_regexPattern" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;Func.testbatchconv4d&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-    </configuration>
-    <configuration name="Nosetests in Func.py" type="tests" factoryName="Nosetests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/GMS" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="python_workspace" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="_new_regexPattern" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/GMS/Func.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-    </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.GridMatchFilter" />
-      <item index="1" class="java.lang.String" itemvalue="Python.kmeans" />
-      <item index="2" class="java.lang.String" itemvalue="Python.RmatchWithKmeans" />
-      <item index="3" class="java.lang.String" itemvalue="Python tests.Nosetests in Func.py" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.Nosetests for Func.testbatchconv4d" />
+      <item index="1" class="java.lang.String" itemvalue="Python.GridMatchBatchFilter" />
+      <item index="2" class="java.lang.String" itemvalue="Python.hello world" />
+      <item index="3" class="java.lang.String" itemvalue="Python.GMS" />
+      <item index="4" class="java.lang.String" itemvalue="Python.GMSwithMatrix" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Nosetests in Func.py" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Nosetests for Func.testbatchconv4d" />
-        <item index="2" class="java.lang.String" itemvalue="Python.RmatchWithKmeans" />
-        <item index="3" class="java.lang.String" itemvalue="Python.kmeans" />
-        <item index="4" class="java.lang.String" itemvalue="Python.GridMatchFilter" />
+        <item index="0" class="java.lang.String" itemvalue="Python.GridMatchBatchFilter" />
+        <item index="1" class="java.lang.String" itemvalue="Python.GridMatchFilter" />
+        <item index="2" class="java.lang.String" itemvalue="Python.GMSwithMatrix" />
+        <item index="3" class="java.lang.String" itemvalue="Python.GMS" />
+        <item index="4" class="java.lang.String" itemvalue="Python.hello world" />
       </list>
     </recent_temporary>
   </component>
@@ -507,13 +487,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1510310557136</updated>
-    </task>
-    <task id="LOCAL-00023" summary="update VGG_bate2">
-      <created>1514033343233</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1514033343233</updated>
     </task>
     <task id="LOCAL-00024" summary="update VGG_bate3">
       <created>1514034089718</created>
@@ -851,7 +824,14 @@
       <option name="project" value="LOCAL" />
       <updated>1516439348805</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="GMSmatrix:&#10;实验快速获取块地址算法&#10;bug1:为啥迭代和卷积统计出来的网格和不一样？&#10;bug1答案：因为匹配点可能有多个，也就是说，可以一对多，也可以多对1，所以才会出现bug&#10;解决方案：&#10;近似解决：不管重复映射&#10;精确解决：用邻域替换映射和偏置矩阵记录&#10;将GMF单独提取出来&#10;实现批次卷积">
+      <created>1516697070951</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1516697070951</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -896,22 +876,22 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <frame x="-24" y="-13" width="1382" height="784" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32923076" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18307692" sideWeight="0.36555892" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21692307" sideWeight="0.5030211" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12537764" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="0" y="0" width="295" height="584" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21829522" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36307693" sideWeight="0.49697885" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29538462" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18307692" sideWeight="0.6344411" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37846154" sideWeight="0.6344411" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32923076" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.326284" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23338369" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1925982" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49471298" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37384614" sideWeight="0.49697885" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42923078" sideWeight="0.49697885" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -956,7 +936,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update VGG_bate3 with trainnum" />
     <MESSAGE value="update VGG_bate3 with saver model and weights" />
     <MESSAGE value="update gettestdata as mat" />
     <MESSAGE value="update VGG_pre" />
@@ -981,7 +960,8 @@
     <MESSAGE value="GMSmatrix:&#10;实验快速获取块地址算法&#10;bug1:为啥迭代和卷积统计出来的网格和不一样？&#10;bug1答案：因为匹配点可能有多个，也就是说，可以一对多，也可以多对1，所以才会出现bug" />
     <MESSAGE value="GMSmatrix:&#10;实验快速获取块地址算法&#10;bug1:为啥迭代和卷积统计出来的网格和不一样？&#10;bug1答案：因为匹配点可能有多个，也就是说，可以一对多，也可以多对1，所以才会出现bug&#10;解决方案：&#10;近似解决：不管重复映射&#10;精确解决：用邻域替换映射和偏置矩阵记录" />
     <MESSAGE value="GMSmatrix:&#10;实验快速获取块地址算法&#10;bug1:为啥迭代和卷积统计出来的网格和不一样？&#10;bug1答案：因为匹配点可能有多个，也就是说，可以一对多，也可以多对1，所以才会出现bug&#10;解决方案：&#10;近似解决：不管重复映射&#10;精确解决：用邻域替换映射和偏置矩阵记录&#10;将GMF单独提取出来" />
-    <option name="LAST_COMMIT_MESSAGE" value="GMSmatrix:&#10;实验快速获取块地址算法&#10;bug1:为啥迭代和卷积统计出来的网格和不一样？&#10;bug1答案：因为匹配点可能有多个，也就是说，可以一对多，也可以多对1，所以才会出现bug&#10;解决方案：&#10;近似解决：不管重复映射&#10;精确解决：用邻域替换映射和偏置矩阵记录&#10;将GMF单独提取出来" />
+    <MESSAGE value="GMSmatrix:&#10;实验快速获取块地址算法&#10;bug1:为啥迭代和卷积统计出来的网格和不一样？&#10;bug1答案：因为匹配点可能有多个，也就是说，可以一对多，也可以多对1，所以才会出现bug&#10;解决方案：&#10;近似解决：不管重复映射&#10;精确解决：用邻域替换映射和偏置矩阵记录&#10;将GMF单独提取出来&#10;实现批次卷积" />
+    <option name="LAST_COMMIT_MESSAGE" value="GMSmatrix:&#10;实验快速获取块地址算法&#10;bug1:为啥迭代和卷积统计出来的网格和不一样？&#10;bug1答案：因为匹配点可能有多个，也就是说，可以一对多，也可以多对1，所以才会出现bug&#10;解决方案：&#10;近似解决：不管重复映射&#10;精确解决：用邻域替换映射和偏置矩阵记录&#10;将GMF单独提取出来&#10;实现批次卷积" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1039,72 +1019,11 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="171" />
+      <option name="time" value="181" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/general/Titanic/Stacking.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="741">
-          <caret line="124" column="36" lean-forward="false" selection-start-line="124" selection-start-column="36" selection-end-line="124" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#11#0" expanded="false" />
-            <element signature="e#613#4150#0" expanded="false" />
-            <element signature="e#664#748#0" expanded="false" />
-            <element signature="e#1117#1681#0" expanded="false" />
-            <element signature="e#1767#1972#0" expanded="false" />
-            <element signature="e#1984#2022#0" expanded="false" />
-            <element signature="e#2169#2559#0" expanded="false" />
-            <element signature="e#2618#3586#0" expanded="false" />
-            <element signature="e#3619#4025#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/general/Titanic/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="798">
-          <caret line="146" column="43" lean-forward="false" selection-start-line="146" selection-start-column="43" selection-end-line="146" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/general/dogbreed/delete_weightes.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/general/dogbreed/readme.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="14" lean-forward="false" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa0.871/nonparametricfunc.py" />
-    <entry file="file://$PROJECT_DIR$/general/dogbreed/VGG_pre.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="58" column="11" lean-forward="false" selection-start-line="58" selection-start-column="4" selection-end-line="58" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/general/webbigdata/pagerank/Graph.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="20" column="43" lean-forward="true" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/general/dogbreed/VGG_beta3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="330" column="73" lean-forward="false" selection-start-line="330" selection-start-column="26" selection-end-line="330" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/general/dogbreed/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
@@ -1146,13 +1065,6 @@
     <entry file="file://$PROJECT_DIR$/GMS/GMSwithMatrix_beer.png" />
     <entry file="file://$PROJECT_DIR$/GMS/GMSwithGridFilter_beer.png" />
     <entry file="file://$PROJECT_DIR$/GMS/GMSwithGridFilter.png" />
-    <entry file="file://$PROJECT_DIR$/GMS/GMSwithMatrix.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="384" column="13" lean-forward="false" selection-start-line="384" selection-start-column="13" selection-end-line="384" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GMS/drawMatches.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1175,7 +1087,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GMS/matches/GMF_ktype(s)_sigma(1)_neibor(1).png" />
     <entry file="file://$PROJECT_DIR$/GMS/tools.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
@@ -1190,9 +1101,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GMS/matches/Beer_GMF_ktype(s)_sigma(1)_neibor(4).png" />
-    <entry file="file://$PROJECT_DIR$/GMS/matches/Beer_GMF_ktype(g)_sigma(1)_neibor(4).png" />
-    <entry file="file://$PROJECT_DIR$/GMS/matches/Beer_GMF_ktype(s)_sigma(1)_neibor(1).png" />
     <entry file="file://$PROJECT_DIR$/GMS/GMF/Func/Func.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
@@ -1200,14 +1108,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GMS/matches/Xinkai_GMF_ktype(s)_sigma(1)_neibor(4).png" />
-    <entry file="file://$PROJECT_DIR$/GMS/matches/Xinkai_GMF_ktype(s)_sigma(1)_neibor(1).png" />
     <entry file="file://$PROJECT_DIR$/GMS/matches/Xinkai_GMF_ktype(g)_sigma(1)_neibor(4).png" />
-    <entry file="file://$PROJECT_DIR$/GMS/matches/Xinkai_GMF_ktype(g)_sigma(1)_neibor(3).png" />
     <entry file="file://$PROJECT_DIR$/GMS/matches/Xinkai_GMF_ktype(g)_sigma(1.2)_neibor(6).png" />
-    <entry file="file://$PROJECT_DIR$/GMS/matches/Xinkai_GMF_ktype(g)_sigma(1.2)_neibor(8).png" />
     <entry file="file://$PROJECT_DIR$/GMS/matches/Xinkai_GMF_ktype(g)_sigma(1)_neibor(5).png" />
-    <entry file="file://$PROJECT_DIR$/GMS/GMF/GridMatchFilter.py" />
     <entry file="file://$PROJECT_DIR$/GMS/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="722">
@@ -1223,21 +1126,19 @@
         <state relative-caret-position="437">
           <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GMS/matches/MCluser_k(10)_max_k(50).png" />
     <entry file="file://$PROJECT_DIR$/GMS/matches/MCluser_k(1)_max_k(200).png" />
-    <entry file="file://$PROJECT_DIR$/GMS/matches/MCluser_k(2)_max_k(150).png" />
-    <entry file="file://$PROJECT_DIR$/GMS/matches/MCluser_k(2)_max_k(50).png" />
     <entry file="file://$PROJECT_DIR$/GMS/RmatchWithKmeans.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="61" column="23" lean-forward="false" selection-start-line="61" selection-start-column="23" selection-end-line="61" selection-end-column="23" />
           <folding>
-            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="false" />
             <element signature="e#321#611#0" expanded="false" />
             <element signature="e#633#1022#0" expanded="false" />
             <element signature="e#1058#1104#0" expanded="false" />
@@ -1254,33 +1155,279 @@
       </provider>
     </entry>
     <entry file="file://F:/software/Anaconda3/Lib/site-packages/nose/case.py" />
-    <entry file="file://$PROJECT_DIR$/GMS/GMS.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="148" column="69" lean-forward="false" selection-start-line="138" selection-start-column="8" selection-end-line="148" selection-end-column="69" />
-          <folding>
-            <element signature="e#6040#6723#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tensorflow/CNN_test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
-          <caret line="25" column="65" lean-forward="true" selection-start-line="25" selection-start-column="65" selection-end-line="25" selection-end-column="65" />
+          <caret line="25" column="65" lean-forward="false" selection-start-line="25" selection-start-column="65" selection-end-line="25" selection-end-column="65" />
           <folding>
             <element signature="e#994#1477#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/GMS/matches/Beer_GMF_ktype(s)_sigma(1)_neibor(4).png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GMS/GMF/GridMatchFilter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="25" column="28" lean-forward="true" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
+          <folding>
+            <element signature="e#289#577#0" expanded="false" />
+            <element signature="e#1338#2011#0" expanded="false" />
+            <element signature="e#2045#4516#0" expanded="false" />
+            <element signature="e#4651#4923#0" expanded="false" />
+            <element signature="e#5006#5975#0" expanded="false" />
+            <element signature="e#6055#6950#0" expanded="false" />
+            <element signature="e#6996#8782#0" expanded="false" />
+            <element signature="e#8842#9508#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GMS/matches/GMSwithGridFilter_beer.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GMS/matches/GMSwithGridFilter.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GMS/matches/MCluser_k(2)_max_k(150).png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GMS/matches/MCluser_k(2)_max_k(50).png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GMS/matches/Xinkai_GMF_ktype(g)_sigma(1)_neibor(3).png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GMS/matches/Xinkai_GMF_ktype(g)_sigma(1.2)_neibor(8).png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GMS/matches/Xinkai_GMF_ktype(s)_sigma(1)_neibor(4).png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GMS/matches/Xinkai_GMF_ktype(s)_sigma(1)_neibor(1).png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hello world.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="22" lean-forward="false" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#11#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GMS/GMS.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="179" column="30" lean-forward="false" selection-start-line="179" selection-start-column="30" selection-end-line="179" selection-end-column="30" />
+          <folding>
+            <element signature="e#190#463#0" expanded="false" />
+            <element signature="e#492#993#0" expanded="false" />
+            <element signature="e#1060#1518#0" expanded="false" />
+            <element signature="e#1603#2416#0" expanded="false" />
+            <element signature="e#2488#2890#0" expanded="false" />
+            <element signature="e#3415#3837#0" expanded="false" />
+            <element signature="e#4151#4265#0" expanded="false" />
+            <element signature="e#5267#5907#0" expanded="false" />
+            <element signature="e#6105#6788#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GMS/GMSwithMatrix.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="411" column="28" lean-forward="true" selection-start-line="410" selection-start-column="16" selection-end-line="411" selection-end-column="28" />
+          <folding>
+            <element signature="e#127#11316#0" expanded="false" />
+            <element signature="e#225#498#0" expanded="false" />
+            <element signature="e#316#445#0" expanded="false" />
+            <element signature="e#532#2333#0" expanded="false" />
+            <element signature="e#1459#1688#0" expanded="false" />
+            <element signature="e#1924#1936#0" expanded="false" />
+            <element signature="e#2200#2229#0" expanded="false" />
+            <element signature="e#2397#2669#0" expanded="false" />
+            <element signature="e#2744#2890#0" expanded="false" />
+            <element signature="e#2996#3791#0" expanded="false" />
+            <element signature="e#3145#3152#0" expanded="false" />
+            <element signature="e#3848#9948#0" expanded="false" />
+            <element signature="e#4388#9792#0" expanded="false" />
+            <element signature="e#4432#9792#0" expanded="false" />
+            <element signature="e#5445#5506#0" expanded="false" />
+            <element signature="e#5925#5974#0" expanded="false" />
+            <element signature="e#6327#6332#0" expanded="false" />
+            <element signature="e#7899#7908#0" expanded="false" />
+            <element signature="e#8117#8169#0" expanded="false" />
+            <element signature="e#8295#8325#0" expanded="false" />
+            <element signature="e#8804#8845#0" expanded="false" />
+            <element signature="e#9029#9792#0" expanded="false" />
+            <element signature="e#10017#10723#0" expanded="false" />
+            <element signature="e#10780#10993#0" expanded="false" />
+            <element signature="e#11037#11316#0" expanded="false" />
+            <element signature="e#11061#11316#0" expanded="false" />
+            <element signature="e#11115#11174#0" expanded="false" />
+            <element signature="e#11437#11682#0" expanded="false" />
+            <element signature="e#11507#11621#0" expanded="false" />
+            <element signature="e#11706#12383#0" expanded="false" />
+            <element signature="e#12177#12217#0" expanded="false" />
+            <element signature="e#12442#13085#0" expanded="false" />
+            <element signature="e#13118#16003#0" expanded="false" />
+            <element signature="e#13693#14553#0" expanded="false" />
+            <element signature="e#13877#14366#0" expanded="false" />
+            <element signature="e#13963#14313#0" expanded="false" />
+            <element signature="e#14046#14282#0" expanded="false" />
+            <element signature="e#14084#14282#0" expanded="false" />
+            <element signature="e#14380#14434#0" expanded="false" />
+            <element signature="e#14858#14871#0" expanded="false" />
+            <element signature="e#15151#15193#0" expanded="false" />
+            <element signature="e#15470#15544#0" expanded="false" />
+            <element signature="e#15666#15722#0" expanded="false" />
+            <element signature="e#16071#16204#0" expanded="false" />
+            <element signature="e#16303#17030#0" expanded="false" />
+            <element signature="e#16439#16447#0" expanded="false" />
+            <element signature="e#17435#17441#0" expanded="false" />
+            <element signature="e#17847#17853#0" expanded="false" />
+            <element signature="e#19011#19090#0" expanded="false" />
+            <element signature="e#19362#20028#0" expanded="false" />
+            <element signature="e#20076#20282#0" expanded="false" />
+            <element signature="e#20317#20525#0" expanded="false" />
+            <element signature="e#20334#20525#0" expanded="false" />
+            <element signature="e#20382#20441#0" expanded="false" />
+            <element signature="e#20543#29768#0" expanded="false" />
+            <element signature="e#20641#20914#0" expanded="false" />
+            <element signature="e#20732#20861#0" expanded="false" />
+            <element signature="e#20943#21466#0" expanded="false" />
+            <element signature="e#21492#23942#0" expanded="false" />
+            <element signature="e#22459#23120#0" expanded="false" />
+            <element signature="e#23594#23775#0" expanded="false" />
+            <element signature="e#23629#23775#0" expanded="false" />
+            <element signature="e#24009#24467#0" expanded="false" />
+            <element signature="e#24472#24489#0" expanded="false" />
+            <element signature="e#24552#25365#0" expanded="false" />
+            <element signature="e#24678#24762#0" expanded="false" />
+            <element signature="e#24797#24880#0" expanded="false" />
+            <element signature="e#24915#25102#0" expanded="false" />
+            <element signature="e#25437#25838#0" expanded="false" />
+            <element signature="e#25556#25838#0" expanded="false" />
+            <element signature="e#25884#26038#0" expanded="false" />
+            <element signature="e#25944#26016#0" expanded="false" />
+            <element signature="e#26086#26970#0" expanded="false" />
+            <element signature="e#26366#26816#0" expanded="false" />
+            <element signature="e#27005#28323#0" expanded="false" />
+            <element signature="e#27200#27314#0" expanded="false" />
+            <element signature="e#27809#28062#0" expanded="false" />
+            <element signature="e#28142#28323#0" expanded="false" />
+            <element signature="e#28359#28972#0" expanded="false" />
+            <element signature="e#28653#28904#0" expanded="false" />
+            <element signature="e#28694#28904#0" expanded="false" />
+            <element signature="e#29014#29137#0" expanded="false" />
+            <element signature="e#29166#29768#0" expanded="false" />
+            <element signature="e#29787#32047#0" expanded="false" />
+            <element signature="e#29828#29857#0" expanded="false" />
+            <element signature="e#29958#29987#0" expanded="false" />
+            <element signature="e#30392#30408#0" expanded="false" />
+            <element signature="e#30926#30974#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GMS/matches/gms.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GMS/matches/Beer_GMF_ktype(g)_sigma(1)_neibor(4).png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GMS/matches/Beer_GMF_ktype(s)_sigma(1)_neibor(1).png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GMS/matches/GMF_ktype(s)_sigma(1)_neibor(1).png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GMS/matches/gmsmatchimg_beer.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GMS/matches/gmsmatchimg.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GMS/matches/GMBF_ktype(s)_sigma(1)_neibor(1).png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GMS/GridMatchFilter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="245" column="22" lean-forward="false" selection-start-line="245" selection-start-column="22" selection-end-line="245" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#285#574#0" expanded="false" />
+            <element signature="e#399#513#0" expanded="false" />
+            <element signature="e#596#963#0" expanded="false" />
+            <element signature="e#966#970#0" expanded="false" />
+            <element signature="e#1186#1509#0" expanded="false" />
+            <element signature="e#1512#1520#0" expanded="false" />
+            <element signature="e#1900#4371#0" expanded="false" />
+            <element signature="e#2486#3406#0" expanded="false" />
+            <element signature="e#2685#3215#0" expanded="false" />
+            <element signature="e#2781#3162#0" expanded="false" />
+            <element signature="e#2874#3131#0" expanded="false" />
+            <element signature="e#2918#3131#0" expanded="false" />
+            <element signature="e#3229#3286#0" expanded="false" />
+            <element signature="e#4024#4080#0" expanded="false" />
+            <element signature="e#4373#4383#0" expanded="false" />
+            <element signature="e#4506#4778#0" expanded="false" />
+            <element signature="e#4861#6056#0" expanded="false" />
+            <element signature="e#5230#5389#0" expanded="false" />
+            <element signature="e#5411#5574#0" expanded="false" />
+            <element signature="e#5804#6056#0" expanded="false" />
+            <element signature="e#6136#7031#0" expanded="false" />
+            <element signature="e#8927#9593#0" expanded="false" />
+            <element signature="e#9641#9959#0" expanded="false" />
+            <element signature="e#10397#10456#0" expanded="false" />
+            <element signature="e#10559#11628#0" expanded="false" />
+            <element signature="e#10800#10838#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/GMS/Func.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="186" column="50" lean-forward="true" selection-start-line="186" selection-start-column="50" selection-end-line="186" selection-end-column="50" />
+        <state relative-caret-position="152">
+          <caret line="181" column="30" lean-forward="true" selection-start-line="181" selection-start-column="30" selection-end-line="181" selection-end-column="30" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#294#330#0" expanded="false" />
             <element signature="e#657#700#0" expanded="false" />
             <element signature="e#932#972#0" expanded="false" />
             <element signature="e#1028#1355#0" expanded="false" />
@@ -1290,7 +1437,6 @@
             <element signature="e#1677#2277#0" expanded="false" />
             <element signature="e#1979#2103#0" expanded="false" />
             <element signature="e#2123#2248#0" expanded="false" />
-            <element signature="e#2397#2526#0" expanded="false" />
             <element signature="e#2527#2564#0" expanded="false" />
             <element signature="e#2656#3289#0" expanded="false" />
             <element signature="e#2763#2884#0" expanded="false" />
@@ -1300,43 +1446,27 @@
             <element signature="e#3896#3928#0" expanded="false" />
             <element signature="e#4301#4453#0" expanded="false" />
             <element signature="e#5043#5083#0" expanded="false" />
-            <element signature="e#6271#6599#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GMS/GridMatchFilter.py">
+    <entry file="file://$PROJECT_DIR$/GMS/GridMatchBatchFilter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="180" column="51" lean-forward="true" selection-start-line="180" selection-start-column="51" selection-end-line="180" selection-end-column="51" />
+        <state relative-caret-position="105">
+          <caret line="277" column="43" lean-forward="true" selection-start-line="277" selection-start-column="43" selection-end-line="277" selection-end-column="43" />
           <folding>
-            <element signature="e#0#10#0" expanded="true" />
-            <element signature="e#285#573#0" expanded="false" />
-            <element signature="e#398#512#0" expanded="false" />
-            <element signature="e#595#964#0" expanded="false" />
-            <element signature="e#967#971#0" expanded="false" />
-            <element signature="e#1187#1510#0" expanded="false" />
-            <element signature="e#1901#4372#0" expanded="false" />
-            <element signature="e#2487#3407#0" expanded="false" />
-            <element signature="e#2686#3216#0" expanded="false" />
-            <element signature="e#2782#3163#0" expanded="false" />
-            <element signature="e#2875#3132#0" expanded="false" />
-            <element signature="e#2919#3132#0" expanded="false" />
-            <element signature="e#3230#3287#0" expanded="false" />
-            <element signature="e#4025#4081#0" expanded="false" />
-            <element signature="e#4374#4384#0" expanded="false" />
-            <element signature="e#4507#4779#0" expanded="false" />
-            <element signature="e#4862#6057#0" expanded="false" />
-            <element signature="e#5231#5390#0" expanded="false" />
-            <element signature="e#5412#5575#0" expanded="false" />
-            <element signature="e#5805#6057#0" expanded="false" />
-            <element signature="e#6137#7032#0" expanded="false" />
-            <element signature="e#8612#8771#0" expanded="false" />
-            <element signature="e#8924#9590#0" expanded="false" />
-            <element signature="e#9638#9956#0" expanded="false" />
-            <element signature="e#10026#10438#0" expanded="false" />
-            <element signature="e#10317#10376#0" expanded="false" />
-            <element signature="e#10479#11548#0" expanded="false" />
+            <element signature="e#601#968#0" expanded="false" />
+            <element signature="e#1191#1514#0" expanded="false" />
+            <element signature="e#1905#4377#0" expanded="false" />
+            <element signature="e#2492#3412#0" expanded="false" />
+            <element signature="e#4512#4801#0" expanded="false" />
+            <element signature="e#4884#6079#0" expanded="false" />
+            <element signature="e#6159#7084#0" expanded="false" />
+            <element signature="e#8134#9464#0" expanded="false" />
+            <element signature="e#9132#9175#0" expanded="false" />
+            <element signature="e#10379#10476#0" expanded="false" />
+            <element signature="e#10574#11240#0" expanded="false" />
+            <element signature="e#11288#11606#0" expanded="false" />
           </folding>
         </state>
       </provider>
