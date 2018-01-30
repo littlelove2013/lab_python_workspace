@@ -4,6 +4,9 @@ import scipy.signal as ss
 import cv2
 import math
 import matplotlib.pyplot as py
+import tensorflow as tf
+import time
+
 eps=1e-8
 def conv2withstride(m,filter,stride=(1,1),start=None,gridnum=20):
     # s=cv2.getTickCount()
@@ -167,7 +170,33 @@ def test():
     rightmatchimg[rightkpt] = rightlabel[rightkpt]
     rightmatchimg=rightmatchimg-leftimg
     # imagesc(rightmatchimg,'rightmatchimg')
-
+#按批次计算卷积
+#x:n,h,w,c的四维输入
+#W:h,w,c,o的四维卷积核
+def batchconv4d(input,kernel,stride=[1,1,1,1]):
+	x=tf.placeholder(dtype=tf.float32,shape=input.shape,name="input")
+	W=tf.placeholder(dtype=tf.float32,shape=kernel.shape,name="kernel")
+	# x=tf.Variable(input,tf.float32)
+	# W=tf.Variable(kernel,tf.float32)
+	res = tf.nn.conv2d(x, W, strides=stride, padding='SAME')  # strides第0位和第3为一定为1，剩下的是卷积的横向和纵向步长
+	with tf.Session() as sess:
+		# sess.run(tf.global_variables_initializer())
+		result=sess.run(res,feed_dict={x:input,W:kernel})
+	return result
+def testbatchconv4d():
+    s=time.time()
+    input=np.random.randint(0,10,size=12*6).reshape(1,12,6,1).astype(np.float32)
+    # input = np.ones((1, 12, 6, 1)).astype(np.float32)
+    kernel=np.ones((4,2,1,1)).astype(np.float32)
+    stride=[1,4,2,1]
+    res=batchconv4d(np.roll(input,1,2),kernel,stride=stride)
+    print(input.reshape(12, 6))
+    print(np.roll(input,1,2).reshape(12, 6))
+    print(stride)
+    print(res.reshape(3, 3))
+    c = conv2withstride(input.reshape(12,6), kernel.reshape(4,2), stride=(4, 2),start=[2,0],gridnum=3)
+    print(c)
+    print("cost tim is %fs"%(time.time()-s),res.shape)
 def main():
     a=np.random.randint(0,10,size=54).reshape(9,6)
     b=np.ones([3,2])
@@ -184,5 +213,6 @@ def main():
     print(c,value,c[index])
 
 if __name__ == '__main__':
-    main()
+    # main()
     # test()
+    testbatchconv4d()

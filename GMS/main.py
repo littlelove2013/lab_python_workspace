@@ -1,6 +1,7 @@
 import cv2
 import GMS
-import GridMatchFilter as GF
+import GuassMatchFilter as GMF
+import numpy as np
 import time
 import sys
 
@@ -69,5 +70,43 @@ def main(argv):
     time_end = time.time();  # time.time()为1970.1.1到当前时间的毫秒数
     print('gmf cost time is %fs' % (time_end - time_start))
 
+def wirte2video(argv):
+    if len(argv)<3:
+        print("please input arg:img1 img2 anglestep(optionl=10) savename(optional=rotate_cmp)")
+        return 0
+    else:
+        print(argv)
+    img1path=argv[1]
+    img2path=argv[2]
+    anglestep=10
+    savename="rotate_cmp"
+    if len(argv)>4:
+        anglestep=argv[3]
+        savename=argv[4]
+    img1 = cv2.imread(img1path)
+    img2 = cv2.imread(img2path)
+    ddsize = (640, 480)
+    img1 = cv2.resize(img1, ddsize)
+    img2 = cv2.resize(img2, ddsize)
+    # vwgms=cv2.VideoWriter("gms_rotate.avi",cv2.VideoWriter_fourcc('M', 'J', 'P', 'G'),1,(2*ddsize[0],ddsize[1]))
+    vwgmf=cv2.VideoWriter(savename+".avi",cv2.VideoWriter_fourcc('M', 'J', 'P', 'G'),1,(2*ddsize[0],2*ddsize[1]))
+    
+    for i in range(0,360,anglestep):
+	    print("process %.4f(%d/360)"%(i/360,i))
+	    M = cv2.getRotationMatrix2D((ddsize[0] / 2, ddsize[1] / 2), i, 1)
+	    dst = cv2.warpAffine(img2, M, ddsize)
+	    gms = GMS.GMS(img1, dst)
+	    gmsm=gms.getGmsMatchesImg()
+	    # cv2.imshow("gmsm",gmsm)
+	    # cv2.waitKey(33)
+        # vwgms.write(gmsm)
+	    gmf = GMF.GuassMatchFilter(img1, dst, savename='')
+	    gmfm=gmf.run()
+	    cmp=np.concatenate((gmsm,gmfm))
+	    vwgmf.write(cmp)
+	    cv2.imshow("cmp", cmp)
+	    cv2.waitKey(33)
+	    
 if __name__ == '__main__':
-    main(sys.argv)
+    # main(sys.argv)
+    wirte2video(sys.argv)

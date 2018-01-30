@@ -10,8 +10,8 @@ import time
 eps=1e-8
 def conv2withstride(m,filter,stride=(1,1),start=None,gridnum=20):
     # s=cv2.getTickCount()
-    # tmp=cv2.filter2D(m,-1,filter)+eps
-    tmp=ss.convolve2d(m,filter,'same')
+    tmp=cv2.filter2D(m,-1,filter)+eps
+    # tmp=ss.convolve2d(m,filter,'same')
     # e=cv2.getTickCount()
     # print("conv cost time %f",(e-s)/cv2.getTickFrequency())
     if start==None:
@@ -185,22 +185,22 @@ def batchconv4d(input,kernel,stride=[1,1,1,1]):
 	return result
 def testbatchconv4d():
     s=time.time()
-    input=np.random.randint(0,10,size=12*6).reshape(1,12,6,1).astype(np.float32)
+    input=np.random.randint(0,10,size=1000*12*6).reshape(1000,12,6,1).astype(np.float32)
     # input = np.ones((1, 12, 6, 1)).astype(np.float32)
-    kernel=np.ones((4,2,1,1)).astype(np.float32)
-    stride=[1,4,2,1]
-    res=batchconv4d(np.roll(input,1,2),kernel,stride=stride)
-    print(input.reshape(12, 6))
-    print(np.roll(input,1,2).reshape(12, 6))
+    kernel=np.ones((12,6,1,1)).astype(np.float32)
+    stride=[1,12,6,1]
+    res=batchconv4d(input,kernel,stride=stride)
+    print(input[0].reshape(12, 6))
+    # print(np.roll(input,1,2).reshape(12, 6))
     print(stride)
-    print(res.reshape(3, 3))
-    c = conv2withstride(input.reshape(12,6), kernel.reshape(4,2), stride=(4, 2),start=[2,0],gridnum=3)
+    print(res.reshape(1, -1))
+    c = conv2withstride(input[0].reshape(12,6), kernel.reshape(12,6), stride=(12, 6),gridnum=1)
     print(c)
     print("cost tim is %fs"%(time.time()-s),res.shape)
 def main():
     a=np.random.randint(0,10,size=54).reshape(9,6)
-    b=np.ones([3,2])
-    c=conv2withstride(a,b,stride=(3,2),gridnum=3)
+    b=np.ones([9,6])
+    c=conv2withstride(a,b,stride=(9,6),gridnum=1)
     print(a)
     print(b)
     print(c)

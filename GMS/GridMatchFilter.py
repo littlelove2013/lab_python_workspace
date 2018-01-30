@@ -232,7 +232,7 @@ class GridMatchFilter:
 	def drawTrueMatch(self):
 		self.getTrueMatch()
 		gmsmatchimg = cv2.drawMatches(self.img1, self.leftkeypoint, self.img2, self.rightkeypoint, self.truematch, None)
-		filename=res_folder+self.savename+"_ktype("+self.ktype+")_sigma("+str(self.sigma)+")_neibor("+str(self.neiborwidth)+").png"
+		filename=res_folder+self.savename+"_ktype("+str(self.lgn)+")_ktype("+self.ktype+")_sigma("+str(self.sigma)+")_neibor("+str(self.neiborwidth)+").png"
 		cv2.imwrite(filename, gmsmatchimg)
 		return gmsmatchimg
 	
@@ -241,9 +241,9 @@ class GridMatchFilter:
 		self.TrueMatches = np.zeros(self.img1.shape[:2])
 		self.initgrid(gridnum,gridnum)  # 初始化网格
 		self.multiplemap()  # 将matches转化为矩阵
-		for i in range(1):
-			# shift=(i%2,int(i/2))
-			shift=(1,1)
+		for i in range(4):
+			shift=(i%2,int(i/2))
+			# shift=(1,1)
 			self.createlabel(shift=shift,show=False)
 			self.createKernel(shift=shift,ktype=ktype,sigma=sigma,neiborwidth=neiborwidth)
 			self.computescoreandthre()  # 计算出TrueMatcher
@@ -257,10 +257,15 @@ def main(argv):
 		print("input arguments like this:\n\timg1 img2 gridnum(optional) ktype(optional) sigma(optional) neiborwidth(optional) savename(optional)")
 	img1path=argv[1]
 	img2path=argv[2]
-	args=[20,'s',1,1,"GMF"]
+	args=[20,'g',1,4,"GMF_beer_k4"]
 	for i in range(5):
 		if len(argv)>i+3:
 			args[i]=argv[i+3]
+	args[0]=int(args[0])
+	args[2] = float(args[2])
+	args[3] = int(args[3])
+	# print(args)
+	print("arglist:gridnum:%d,ktype:%s,sigma:%f,neiborwidth:%d,savename:%s_"%(args[0],args[1],args[2],args[3],args[4]))
 	gridnum,ktype,sigma,neiborwidth,savename=args
 	# img1path=src_folder + '000.png'
 	# img2path = src_folder + '020.png'

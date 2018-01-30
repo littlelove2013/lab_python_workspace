@@ -151,6 +151,7 @@ class GMS:
 		        number+=1
         return self.gridmatches,self.leftkeypoint, self.rightkeypoint
     def getGmsMatchesImg(self):
+        self.getGmsMatches()
         return cv2.drawMatches(self.img1, self.leftkeypoint, self.img2, self.rightkeypoint, self.gridmatches,None)
     def show(self,justwritetofile=False):
         # cv2.drawKeypoints(image=self.img1,keypoints=self.kp1[:100],outImage=self.img1)
@@ -176,10 +177,10 @@ def main():
     root='./images/'
     # img1path='./images/000.png'
     # img2path = './images/020.png'
-    img1path=root+'img1.jpg'
-    img2path = root+'img2.jpg'
-    # img1path='./images/img.jpg'
-    # img2path = './images/img2.jpg'
+    # img1path=root+'img1.jpg'
+    # img2path = root+'img2.jpg'
+    img1path='./images/dog1.jpg'
+    img2path = './images/dog2.jpg'
     img1=cv2.imread(img1path)
     img2=cv2.imread(img2path)
     ddsize=(640,480)
@@ -187,47 +188,47 @@ def main():
     img2 = cv2.resize(img2, ddsize)
     gms=GMS(img1,img2)
     gms.show()
-    gridmatch,kp1,kp2=gms.getGmsMatches()
+    # gridmatch,kp1,kp2=gms.getGmsMatches()
     #做变换矩阵
     #1、把match点保存到两个字符矩阵
-    point1=[]
-    point2=[]
-    for match in gridmatch:
-        point1.append(kp1[match.queryIdx].pt)
-        point2.append(kp2[match.trainIdx].pt)
-    #2、求得变换矩阵
-    homo=cv2.findHomography(np.float32(point2),np.float32(point1),cv2.RANSAC)
-    # pts1=np.float32(point1)
-    # pts2=np.float32(point2)
-    # tran = cv2.getPerspectiveTransform(pts1[0:4], pts2[0:4])
-    tran=np.array(homo[0])
-    adjustMat=np.array([[1,0,img1.shape[1]],[0,1,0],[0,0,1]])
-    adjustHomo = adjustMat.dot(tran)
-    oripoint=point1[0]
-    targetpoint=getTransformPoint(oripoint,adjustHomo)
-    basepoint = point2[0]
-    print('homo:\n',tran)
-    #图像配准
-    img2transfom=cv2.warpPerspective(img2,tran,(2*img1.shape[1],img1.shape[0]))
-    #cv2.imshow('转换后图像',img2transfom)
-    tmpimg = img2transfom[:,0:img1.shape[1]]
-    index=np.where(tmpimg>0)
-    #将img1拷贝到img2transfom上去：
-    catimg=img2transfom.copy()
-    catimg[:,0:img1.shape[1],:]=img1.copy()
-    cv2.imshow('catimage',catimg)
-    cv2.imwrite('catimg.jpg',catimg)
-    #优化拼接地方的亮度不平衡
-    left = np.min(index[1])#取得最左边界
-    for i in range(len(index[1])):
-        alpha=(img1.shape[1]-index[1][i])/(img1.shape[1]-left)
-        r=index[0][i]
-        c=index[1][i]
-        chanel=index[2][i]
-        catimg[r,c,chanel]=img1[r,c,chanel]*alpha+img2transfom[r,c,chanel]*(1-alpha)
-    cv2.imshow('catimage',catimg)
-    cv2.imwrite('smoothborder.jpg',catimg)
-    cv2.waitKey(0)
+    # point1=[]
+    # point2=[]
+    # for match in gridmatch:
+    #     point1.append(kp1[match.queryIdx].pt)
+    #     point2.append(kp2[match.trainIdx].pt)
+    # #2、求得变换矩阵
+    # homo=cv2.findHomography(np.float32(point2),np.float32(point1),cv2.RANSAC)
+    # # pts1=np.float32(point1)
+    # # pts2=np.float32(point2)
+    # # tran = cv2.getPerspectiveTransform(pts1[0:4], pts2[0:4])
+    # tran=np.array(homo[0])
+    # adjustMat=np.array([[1,0,img1.shape[1]],[0,1,0],[0,0,1]])
+    # adjustHomo = adjustMat.dot(tran)
+    # oripoint=point1[0]
+    # targetpoint=getTransformPoint(oripoint,adjustHomo)
+    # basepoint = point2[0]
+    # print('homo:\n',tran)
+    # #图像配准
+    # img2transfom=cv2.warpPerspective(img2,tran,(2*img1.shape[1],img1.shape[0]))
+    # #cv2.imshow('转换后图像',img2transfom)
+    # tmpimg = img2transfom[:,0:img1.shape[1]]
+    # index=np.where(tmpimg>0)
+    # #将img1拷贝到img2transfom上去：
+    # catimg=img2transfom.copy()
+    # catimg[:,0:img1.shape[1],:]=img1.copy()
+    # cv2.imshow('catimage',catimg)
+    # cv2.imwrite('catimg.jpg',catimg)
+    # #优化拼接地方的亮度不平衡
+    # left = np.min(index[1])#取得最左边界
+    # for i in range(len(index[1])):
+    #     alpha=(img1.shape[1]-index[1][i])/(img1.shape[1]-left)
+    #     r=index[0][i]
+    #     c=index[1][i]
+    #     chanel=index[2][i]
+    #     catimg[r,c,chanel]=img1[r,c,chanel]*alpha+img2transfom[r,c,chanel]*(1-alpha)
+    # cv2.imshow('catimage',catimg)
+    # cv2.imwrite('smoothborder.jpg',catimg)
+    # cv2.waitKey(0)
 
 
 

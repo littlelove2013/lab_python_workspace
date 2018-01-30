@@ -50,6 +50,7 @@ class MatchKmeans:
 			pt1 = self.kp1[self.matches[i].queryIdx].pt
 			pt2 = self.kp2[self.matches[i].trainIdx].pt
 			self.llabel[i]=[pt1[1],pt1[0],self.getlabel(pt1[::-1],lshape)-self.getlabel(pt2[::-1], rshape)]
+			# self.llabel[i]=[(pt1[1]**2+pt1[0]**2),((pt1[1]-pt2[1])**2+(pt1[0]-pt2[0])**2)]
 		#个个维度做0均值单位方差
 		self.llabel=(self.llabel-self.llabel.mean(0))/self.llabel.std(0)
 	def getkindex(self):
