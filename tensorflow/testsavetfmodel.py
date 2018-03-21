@@ -76,9 +76,10 @@ y_ = tf.placeholder(tf.float32, [None, 10])
 # 在池化阶段，ksize=[1,2,2,1] 那么卷积结果经过池化以后的结果，其尺寸应该是？*14*14*32
 """
 with tf.name_scope('conv1') as scope:
-    W_conv1 = weight_variable([5, 5, 1, 32],name='w')  # 卷积是在每个5*5的patch中算出32个特征，分别是patch大小，输入通道数目，输出通道数目
+    W_conv1 = weight_variable([5, 1, 1, 32],name='w')  # 卷积是在每个5*5的patch中算出32个特征，分别是patch大小，输入通道数目，输出通道数目
+    # W_conv2 = weight_variable([1, 5, 32, 32], name='w')  # 卷积是在每个5*5的patch中算出32个特征，分别是patch大小，输入通道数目，输出通道数目
     b_conv1 = bias_variable([32],name='b')
-    h_conv1 = tf.nn.elu(conv2d(x_image, W_conv1) + b_conv1)
+    h_conv1 = tf.nn.relu(conv2d(x_image, W_conv1) + b_conv1)
     h_pool1 = max_pool_2x2(h_conv1)
 
 """

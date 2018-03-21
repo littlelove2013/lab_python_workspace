@@ -42,18 +42,20 @@ def variable_summaries(var, name):
 
 with tf.name_scope('conv1') as scope:
     # 第一层卷积加池化
-    w_conv1 = weight_variable([5, 5, 1, 32])  # 第一二参数值得卷积核尺寸大小，即patch，第三个参数是图像通道数，第四个参数是卷积核的数目，代表会出现多少个卷积特征
+    w_conv1 = weight_variable([5, 1, 1, 32])  # 第一二参数值得卷积核尺寸大小，即patch，第三个参数是图像通道数，第四个参数是卷积核的数目，代表会出现多少个卷积特征
+    w_conv2 = weight_variable([1, 5, 32, 32])
     b_conv1 = bias_variable([32])
-
-    h_conv1 = tf.nn.relu(conv2d(x_image, w_conv1) + b_conv1)
+    h_conv1 = tf.nn.relu(conv2d(x_image, w_conv1))
+    h_conv1 = tf.nn.relu(conv2d(h_conv1, w_conv2) + b_conv1)
     # tf.summary.image('conv1', h_conv1, 1)#查看卷积后的图像
     h_pool1 = max_pool_2x2(h_conv1)
 with tf.name_scope('conv2') as scope:
     # 第二层卷积加池化
-    w_conv2 = weight_variable([5, 5, 32, 64])  # 多通道卷积，卷积出64个特征
+    w_conv3 = weight_variable([5, 1, 32, 64])  # 多通道卷积，卷积出64个特征
+    w_conv4 = weight_variable([1, 5, 64, 64])
     b_conv2 = bias_variable([64])
-
-    h_conv2 = tf.nn.relu(conv2d(h_pool1, w_conv2) + b_conv2)
+    h_conv2 = tf.nn.relu(conv2d(h_pool1, w_conv3))
+    h_conv2 = tf.nn.relu(conv2d(h_conv2, w_conv4) + b_conv2)
     # tf.summary.image('conv2', h_conv2, 1)  # 查看卷积后的图像
     h_pool2 = max_pool_2x2(h_conv2)
 
@@ -99,8 +101,8 @@ with tf.name_scope('log') as scope:
     # 再session中定义保存路径：
     summary_writer = tf.summary.FileWriter('log', sess.graph)
 # 然后再session执行的时候，保存：
-if os.path.exists('save/model.model.meta'):  # 判断模型是否存在
-    print('restore weightes form model!')
+if os.path.exists('save/model.model1.meta'):  # 判断模型是否存在
+    print('restore weightes from model!')
     saver.restore(sess, tf.train.latest_checkpoint('save'))  # 存在就从模型中恢复变量
 else:
     #sess.run(tf.initialize_all_variables())
@@ -108,7 +110,7 @@ else:
     sess.run(tf.global_variables_initializer())
 for i in range(1000):
     batch = mnist.train.next_batch(50)
-    if (i+1) % 100 == 0:
+    if (i+1) % 10 == 0:
         #keep_prob表示神经元按概率失活，=1则表示跳过该步骤
         train_accuracy = accuracy.eval(feed_dict={x: batch[0], y_: batch[1], keep_prob: 1.0})
         print("step %d, training accuracy %g" % (i, train_accuracy))

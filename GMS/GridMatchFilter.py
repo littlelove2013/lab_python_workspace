@@ -24,7 +24,7 @@ class GridMatchFilter:
 		self.init()
 	
 	def init(self):
-		self.TreshFactor = 6
+		self.TreshFactor = 2
 		# 最大特征点数
 		self.orb = cv2.ORB_create(self.kptnumber)
 		self.orb.setFastThreshold(0)
@@ -68,7 +68,7 @@ class GridMatchFilter:
 		self.leftbiasc = np.zeros(leftsize).astype(np.int32)
 		# 设定最大可接受重复映射邻域宽度
 		max_neibor_width = 1
-		MultipleMap = True  # 是否对重复映射做邻域替换映射，为False则不管重复映射，只取最后一个映射值
+		MultipleMap = False  # 是否对重复映射做邻域替换映射，为False则不管重复映射，只取最后一个映射值
 		for i in range(lens):
 			pt1 = np.array(self.kp1[self.matches[i].queryIdx].pt)
 			p1 = np.array([pt1[1], pt1[0]], np.int32)
@@ -174,13 +174,29 @@ class GridMatchFilter:
 			self.start[0]=0
 		if shift[1]==1:
 			self.start[1]=0
+	#返回i,j所在的邻域
+	def getNeighborValue(self,lgrid,mat):
+		start = self.leftgridsize * (lgrid - self.neiborwidth)
+		start[start <= 0] = 0
+		end = start + self.leftgridsize * self.neibor
+		if end[0] > self.img1.shape[0]:
+			end[0] = self.img1.shape[0]
+		if end[1] > self.img1.shape[1]:
+			end[1] = self.img1.shape[1]
+		thre=self.TreshFactor*math.sqrt((self.leftimg[start[0]:end[0],start[1]:end[1]]).sum())
+		score=(mat[start[0]:end[0],start[1]:end[1]]).sum()
+		selfthre=self.thre[lgrid[0],lgrid[1]]
+		if math.fabs(thre-selfthre)>1e-3:
+			print("err:thre(%f) not eq selfthre(%f) in grid(%d,%d)"%(thre,selfthre,lgrid[0],lgrid[1]))
+		return score>thre
 	# 计算阈值和得分
 	def computescoreandthre(self):
 		# 计算阈值
 		self.thre = Func.conv2withstride(self.leftimg, self.kernel, stride=self.stride, start=self.start,
 		                                            gridnum=self.lgn)
-		De=self.neibor**2
-		self.thre = self.TreshFactor * np.sqrt(self.thre/De)  # 阈值计算公式
+		# De=self.neibor**2
+		# self.thre = self.TreshFactor * np.sqrt(self.thre/De)  # 阈值计算公式
+		self.thre = self.TreshFactor * np.sqrt(self.thre)  # 阈值计算公式
 		if self.DEBUG:
 			print("self.leftimg:max:%f,min:%f" % (self.leftimg.max(), self.leftimg.min()))
 			print("self.thre:max:%f,min:%f" % (self.thre.max(), self.thre.min()))
@@ -201,15 +217,19 @@ class GridMatchFilter:
 				rbestindex = number[np.argsort(n_counts)[-1]]
 				index = (self.leftimglabel == leftvalue) & (self.leftmatchgrid == rbestindex)
 				neiborsindex = (((self.leftimglabel - self.leftmatchgrid) == (leftvalue - rbestindex)) & self.leftimg.astype(np.bool)).astype(np.float32)
-				neiborsindexconv = Func.conv2withstride(neiborsindex, self.kernel,
-				                                        stride=self.stride, start=self.start, gridnum=self.lgn)
-				self.score[i, j] = neiborsindexconv[i, j]
-				if self.DEBUG:
-					print("calc grid(%d,%d)\n thre=%f,index.sum=%d,neiborsindex.sum=%d,score=%f"
-				      % (i, j,self.thre[i,j],index.sum(),neiborsindex.sum(),self.score[i, j]))
-				if neiborsindexconv[i, j] < self.thre[i, j]:
-					continue
+				#
+				# neiborsindexconv = Func.conv2withstride(neiborsindex, self.kernel,
+				#                                         stride=self.stride, start=self.start, gridnum=self.lgn)
+				# self.score[i, j] = neiborsindexconv[i, j]
+				# #self.score[i, j]=self.getNeighborValue(np.array([i,j]),neiborsindex)
+				# if self.DEBUG:
+				# 	print("calc grid(%d,%d)\n thre=%f,index.sum=%d,neiborsindex.sum=%d,score=%f"
+				#       % (i, j,self.thre[i,j],index.sum(),neiborsindex.sum(),self.score[i, j]))
+				# if self.score[i, j]< self.thre[i, j]:
+				# 	continue
 				# nnb += 1
+				if not self.getNeighborValue(np.array([i,j]),neiborsindex):
+					continue
 				self.TrueMatches += index
 		# print("batchsize %d"%(nnb))
 	# 同样返回Match对象，用于其他用途
@@ -250,6 +270,7 @@ class GridMatchFilter:
 			# self.TrueMatches[np.arange(1,100,2),np.arange(1,100,2)]=1
 			# return self.getTrueMatch()
 		ssds = self.drawTrueMatch()
+		return ssds
 		# Func.imshow(ssds)
 
 def main(argv):
@@ -257,7 +278,7 @@ def main(argv):
 		print("input arguments like this:\n\timg1 img2 gridnum(optional) ktype(optional) sigma(optional) neiborwidth(optional) savename(optional)")
 	img1path=argv[1]
 	img2path=argv[2]
-	args=[20,'g',1,4,"GMF_beer_k4"]
+	args=[20,'s',1,4,"GMF_beer_k4"]
 	for i in range(5):
 		if len(argv)>i+3:
 			args[i]=argv[i+3]
@@ -275,17 +296,18 @@ def main(argv):
 	# img2path = './images/img2.jpg'
 	img1 = cv2.imread(img1path)
 	img2 = cv2.imread(img2path)
-	ddsize = (640, 480)
-	img1 = cv2.resize(img1, ddsize)
-	img2 = cv2.resize(img2, ddsize)
+	# ddsize = (640, 480)
+	# img1 = cv2.resize(img1, ddsize)
+	# img2 = cv2.resize(img2, ddsize)
 	time_start = time.time()
 	gmf = GridMatchFilter(img1, img2, savename=savename)
-	gmf.run(gridnum=gridnum, ktype=ktype, sigma=sigma, neiborwidth=neiborwidth)
+	gmfshow=gmf.run(gridnum=gridnum, ktype=ktype, sigma=sigma, neiborwidth=neiborwidth)
 	# gmf.run(gridnum=20, ktype='s', sigma=1, neiborwidth=1)
 	# gmf.run(gridnum=40,ktype='g', sigma=1.2, neiborwidth=5)
 	time_end = time.time();  # time.time()为1970.1.1到当前时间的毫秒数
 	print('cost time is %fs' % (time_end - time_start))
-
+	cv2.imshow("gmf",gmfshow)
+	cv2.waitKey()
 if __name__ == '__main__':
 	main(sys.argv)
 

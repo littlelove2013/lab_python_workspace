@@ -34,6 +34,7 @@ class MatchKmeans:
 		# 提取并计算特征点
 		self.bf = cv2.BFMatcher(cv2.NORM_HAMMING)
 		self.matches = self.bf.match(self.des1, trainDescriptors=self.des2)
+		#显示原始匹配
 		self.createlist()
 	def getlabel(self,index,shape):
 		# 生成标签矩阵
@@ -43,22 +44,26 @@ class MatchKmeans:
 		lens = len(self.matches)
 		lshape=self.img1.shape[:2]
 		rshape=self.img2.shape[:2]
-		featurenum=3
+		featurenum=4
 		# 用于卷积计算阈值
 		self.llabel=np.zeros((lens,featurenum))
 		for i in range(lens):
 			pt1 = self.kp1[self.matches[i].queryIdx].pt
 			pt2 = self.kp2[self.matches[i].trainIdx].pt
-			self.llabel[i]=[pt1[1],pt1[0],self.getlabel(pt1[::-1],lshape)-self.getlabel(pt2[::-1], rshape)]
+			# self.llabel[i]=[pt1[1],pt1[0],self.getlabel(pt1[::-1],lshape)-self.getlabel(pt2[::-1], rshape)]
 			# self.llabel[i]=[(pt1[1]**2+pt1[0]**2),((pt1[1]-pt2[1])**2+(pt1[0]-pt2[0])**2)]
+			# self.llabel[i] = [pt1[1], pt1[0], math.sqrt((pt1[1]-pt2[1])**2+(pt1[0]-pt2[0])**2)]
+			self.llabel[i] = [pt1[1], pt1[0], pt2[1], pt2[0]]
+			# self.llabel[i] = [math.sqrt(pt1[1] ** 2 + pt1[0]** 2), math.sqrt(pt2[1] ** 2 + pt2[0]** 2)]
 		#个个维度做0均值单位方差
-		self.llabel=(self.llabel-self.llabel.mean(0))/self.llabel.std(0)
+		# self.llabel=(self.llabel-self.llabel.mean(0))/self.llabel.std(0)
 	def getkindex(self):
 		number, n_counts = np.unique(self.label_pred, return_counts=True)
 		index = np.argsort(-n_counts)
 		rbestindex = number[index[:self.k]]
 		resindex = False
 		for i in rbestindex:
+			tmp=self.llabel[self.label_pred==i]
 			resindex=resindex|(self.label_pred==i)
 		return resindex
 	# 聚类，取数量最多的前k个
@@ -93,6 +98,11 @@ class MatchKmeans:
 		gmsmatchimg = cv2.drawMatches(self.img1, self.leftkeypoint, self.img2, self.rightkeypoint, self.gridmatches, None)
 		filename=res_folder+self.savename+"_k("+str(self.k)+")_max_k("+str(self.max_k)+").png"
 		cv2.imwrite(filename, gmsmatchimg)
+		save_src=True
+		if save_src:
+			srcimg=cv2.drawMatches(self.img1, self.kp1, self.img2, self.kp2, self.matches, None)
+			srcname=res_folder+self.savename+"_src_match.png"
+			cv2.imwrite(srcname, srcimg)
 		return gmsmatchimg
 	
 	# 统计
@@ -105,7 +115,7 @@ def main(argv):
 		print("input arguments like this:\n\timg1 img2 k(optional) max_k(optional) savename(optional)")
 	img1path=argv[1]
 	img2path=argv[2]
-	args=[2,50,"MCluser"]
+	args=[5,150,"MCluser"]
 	for i in range(3):
 		if len(argv)>i+3:
 			args[i]=argv[i+3]

@@ -177,15 +177,15 @@ def main():
     root='./images/'
     # img1path='./images/000.png'
     # img2path = './images/020.png'
-    # img1path=root+'img1.jpg'
-    # img2path = root+'img2.jpg'
-    img1path='./images/dog1.jpg'
-    img2path = './images/dog2.jpg'
+    img1path=root+'img1.jpg'
+    img2path = root+'img2.jpg'
+    # img1path='./images/dog1.jpg'
+    # img2path = './images/dog2.jpg'
     img1=cv2.imread(img1path)
     img2=cv2.imread(img2path)
-    ddsize=(640,480)
-    img1 = cv2.resize(img1, ddsize)
-    img2 = cv2.resize(img2, ddsize)
+    # ddsize=(640,480)
+    # img1 = cv2.resize(img1, ddsize)
+    # img2 = cv2.resize(img2, ddsize)
     gms=GMS(img1,img2)
     gms.show()
     # gridmatch,kp1,kp2=gms.getGmsMatches()

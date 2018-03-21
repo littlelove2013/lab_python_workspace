@@ -24,7 +24,7 @@ class GuassMatchFilter:
 		self.init()
 	
 	def init(self):
-		self.TreshFactor = 16
+		self.TreshFactor = 6.0
 		# 最大特征点数
 		self.orb = cv2.ORB_create(self.kptnumber)
 		self.orb.setFastThreshold(0)
@@ -211,8 +211,8 @@ class GuassMatchFilter:
 		# 计算阈值
 		self.thre = Func.conv2withstride(self.leftimg, self.kernel, stride=self.stride, start=self.start,
 		                                            gridnum=self.lgn)
-		De=self.neibor**2
-		self.thre = self.TreshFactor * np.sqrt(self.thre/De)  # 阈值计算公式
+		# De=self.neibor**2
+		self.thre = self.TreshFactor * np.sqrt(self.thre)  # 阈值计算公式
 		if self.DEBUG:
 			print("self.leftimg:max:%f,min:%f" % (self.leftimg.max(), self.leftimg.min()))
 			print("self.thre:max:%f,min:%f" % (self.thre.max(), self.thre.min()))
@@ -316,12 +316,12 @@ def main(argv):
 	img1 = cv2.resize(img1, ddsize)
 	img2 = cv2.resize(img2, ddsize)
 	#对img2做旋转
-	M=cv2.getRotationMatrix2D((ddsize[0]/2,ddsize[1]/2),90,1)
-	dst=cv2.warpAffine(img2,M,ddsize)
-	cv2.imshow("rot 90",dst)
-	cv2.waitKey()
+	# M=cv2.getRotationMatrix2D((ddsize[0]/2,ddsize[1]/2),90,1)
+	# dst=cv2.warpAffine(img2,M,ddsize)
+	# cv2.imshow("rot 90",dst)
+	# cv2.waitKey()
 	time_start = time.time()
-	gmf = GuassMatchFilter(img1, dst, savename=savename)
+	gmf = GuassMatchFilter(img1, img2, savename=savename)
 	gmf.run(gridnum=gridnum, ktype=ktype, sigma=sigma, neiborwidth=neiborwidth)
 	# gmf.run(gridnum=20, ktype='s', sigma=1, neiborwidth=1)
 	# gmf.run(gridnum=40,ktype='g', sigma=1.2, neiborwidth=5)
