@@ -2,29 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26ac5d66-a343-4619-bd8d-f04266680f53" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/GMS/GridMatchFilterOnePass.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Knn/iris.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Knn/readiris.py" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/GMS/GMS.py" afterPath="$PROJECT_DIR$/GMS/GMS.py" />
-      <change beforePath="$PROJECT_DIR$/GMS/GridMatchFilter.py" afterPath="$PROJECT_DIR$/GMS/GridMatchFilter.py" />
-      <change beforePath="$PROJECT_DIR$/GMS/GuassMatchFilter.py" afterPath="$PROJECT_DIR$/GMS/GuassMatchFilter.py" />
-      <change beforePath="$PROJECT_DIR$/GMS/RmatchWithKmeans.py" afterPath="$PROJECT_DIR$/GMS/RmatchWithKmeans.py" />
-      <change beforePath="$PROJECT_DIR$/GMS/gmsmatchimg.png" afterPath="$PROJECT_DIR$/GMS/gmsmatchimg.png" />
-      <change beforePath="$PROJECT_DIR$/GMS/images/img1.jpg" afterPath="$PROJECT_DIR$/GMS/images/img1.jpg" />
-      <change beforePath="$PROJECT_DIR$/GMS/images/img2.jpg" afterPath="$PROJECT_DIR$/GMS/images/img2.jpg" />
-      <change beforePath="$PROJECT_DIR$/GMS/matches/GAF_beer_k4_gridnum(20)_ktype(s)_sigma(1.0)_neibor(1).png" afterPath="$PROJECT_DIR$/GMS/matches/GAF_beer_k4_gridnum(20)_ktype(s)_sigma(1.0)_neibor(1).png" />
-      <change beforePath="$PROJECT_DIR$/GMS/matches/GMF_beer_k4_ktype(20)_ktype(g)_sigma(1.0)_neibor(4).png" afterPath="$PROJECT_DIR$/GMS/matches/GMF_beer_k4_ktype(20)_ktype(g)_sigma(1.0)_neibor(4).png" />
-      <change beforePath="$PROJECT_DIR$/GMS/matches/MCluser_k(2)_max_k(50).png" afterPath="$PROJECT_DIR$/GMS/matches/MCluser_k(2)_max_k(50).png" />
-      <change beforePath="$PROJECT_DIR$/Knn/knn.py" afterPath="$PROJECT_DIR$/Knn/knn.py" />
-      <change beforePath="$PROJECT_DIR$/tensorflow/CNN_test.py" afterPath="$PROJECT_DIR$/tensorflow/CNN_test.py" />
-      <change beforePath="$PROJECT_DIR$/tensorflow/log/events.out.tfevents.1514249039.GONGCHENG-PC" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/tensorflow/save/model.model.data-00000-of-00001" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/tensorflow/save/model.model.index" afterPath="$PROJECT_DIR$/tensorflow/save/model.model.index" />
-      <change beforePath="$PROJECT_DIR$/tensorflow/save/model.model.meta" afterPath="$PROJECT_DIR$/tensorflow/save/model.model.meta" />
-      <change beforePath="$PROJECT_DIR$/tensorflow/testsavetfmodel.py" afterPath="$PROJECT_DIR$/tensorflow/testsavetfmodel.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -193,7 +171,7 @@
         <entry file="file://$PROJECT_DIR$/general/prclass4/nonparametricfunc.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="131">
-              <caret line="216" column="39" lean-forward="true" selection-start-line="216" selection-start-column="39" selection-end-line="216" selection-end-column="39" />
+              <caret line="232" column="7" lean-forward="true" selection-start-line="232" selection-start-column="7" selection-end-line="232" selection-end-column="7" />
               <folding>
                 <element signature="e#188#243#0" expanded="false" />
                 <element signature="e#703#715#0" expanded="false" />
@@ -631,13 +609,6 @@
       <option name="presentableId" value="Default" />
       <updated>1510310557136</updated>
     </task>
-    <task id="LOCAL-00025" summary="update VGG_bate3 with trainnum">
-      <created>1514036514540</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1514036514540</updated>
-    </task>
     <task id="LOCAL-00026" summary="update VGG_bate3 with saver model and weights">
       <created>1514080924454</created>
       <option name="number" value="00026" />
@@ -974,7 +945,14 @@
       <option name="project" value="LOCAL" />
       <updated>1516797756620</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="GMSmatrix:&#10;实验快速获取块地址算法&#10;bug1:为啥迭代和卷积统计出来的网格和不一样？&#10;bug1答案：因为匹配点可能有多个，也就是说，可以一对多，也可以多对1，所以才会出现bug&#10;解决方案：&#10;近似解决：不管重复映射&#10;精确解决：用邻域替换映射和偏置矩阵记录&#10;将GMF单独提取出来&#10;实现批次卷积&#10; 11、更新label为行列，即解决抗旋转问题，但是，发现错误的匹配点较多，不规则，不知道哪一步有问题，再找">
+      <created>1521612689479</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1521612689480</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1025,10 +1003,10 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21692307" sideWeight="0.5030211" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0989426" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="0" y="0" width="295" height="584" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29538462" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5147541" sideWeight="0.6344411" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5147541" sideWeight="0.6344411" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4295082" sideWeight="0.49697885" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3276923" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18957704" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18957704" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1389728" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1561,7 +1539,7 @@
     <entry file="file://$PROJECT_DIR$/general/prclass4/nonparametricfunc.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="131">
-          <caret line="216" column="39" lean-forward="true" selection-start-line="216" selection-start-column="39" selection-end-line="216" selection-end-column="39" />
+          <caret line="232" column="7" lean-forward="true" selection-start-line="232" selection-start-column="7" selection-end-line="232" selection-end-column="7" />
           <folding>
             <element signature="e#188#243#0" expanded="false" />
             <element signature="e#703#715#0" expanded="false" />
