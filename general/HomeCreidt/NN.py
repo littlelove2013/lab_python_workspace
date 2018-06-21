@@ -3,6 +3,7 @@ import numpy as np
 #import matplotlib.pyplot as plt
 from funcs import *
 import os
+import NN_inference as infe
 
 filemat=getMat(filename='application', prefix='../input/')
 #测试与训练集
@@ -11,6 +12,7 @@ Train_labels=filemat['Tr_l']
 Train_labels=Train_labels.reshape(-1)
 Test=filemat['Te']
 Test_id=filemat['Te_id']
+Test_id=Test_id.reshape(-1)
 #将测试集划分为验证和测试集
 Tr_len=len(Train)
 Te_len=len(Test)
@@ -225,3 +227,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+    infe.inference(Test,Test_id,'NN_inference')

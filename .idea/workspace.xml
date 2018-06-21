@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26ac5d66-a343-4619-bd8d-f04266680f53" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/general/HomeCreidt/NN.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/general/HomeCreidt/NN_inference.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/general/HomeCreidt/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/general/HomeCreidt/funcs.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/general/LogicalRegression/func.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/general/LogicalRegression/main.py" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/general/LogicalRegression/LR.py" afterPath="$PROJECT_DIR$/general/LogicalRegression/LR.py" />
+      <change beforePath="$PROJECT_DIR$/general/HomeCreidt/NN.py" afterPath="$PROJECT_DIR$/general/HomeCreidt/NN.py" />
+      <change beforePath="$PROJECT_DIR$/general/HomeCreidt/NN_inference.py" afterPath="$PROJECT_DIR$/general/HomeCreidt/NN_inference.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -126,40 +121,42 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NN.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="NN.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/general/HomeCreidt/NN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-191">
-              <caret line="151" column="71" lean-forward="false" selection-start-line="151" selection-start-column="71" selection-end-line="151" selection-end-column="71" />
+            <state relative-caret-position="167">
+              <caret line="176" column="18" lean-forward="true" selection-start-line="176" selection-start-column="18" selection-end-line="176" selection-end-column="18" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
-                <element signature="e#1322#1694#0" expanded="false" />
-                <element signature="e#1723#1911#0" expanded="false" />
-                <element signature="e#2063#2214#0" expanded="false" />
-                <element signature="e#2240#2374#0" expanded="false" />
-                <element signature="e#3052#3504#0" expanded="false" />
-                <element signature="e#3556#3957#0" expanded="false" />
-                <element signature="e#4009#4323#0" expanded="false" />
-                <element signature="e#4382#4711#0" expanded="false" />
-                <element signature="e#4767#5835#0" expanded="false" />
-                <element signature="e#5895#6100#0" expanded="false" />
-                <element signature="e#6238#6793#0" expanded="false" />
-                <element signature="e#7583#8881#0" expanded="false" />
-                <element signature="e#7682#8627#0" expanded="false" />
-                <element signature="e#8665#8881#0" expanded="false" />
+                <element signature="e#1378#1750#0" expanded="false" />
+                <element signature="e#1779#1967#0" expanded="false" />
+                <element signature="e#2119#2270#0" expanded="false" />
+                <element signature="e#2296#2430#0" expanded="false" />
+                <element signature="e#2493#6264#0" expanded="false" />
+                <element signature="e#3108#3560#0" expanded="false" />
+                <element signature="e#3612#4013#0" expanded="false" />
+                <element signature="e#4065#4379#0" expanded="false" />
+                <element signature="e#4438#4767#0" expanded="false" />
+                <element signature="e#4823#5891#0" expanded="false" />
+                <element signature="e#5951#6156#0" expanded="false" />
+                <element signature="e#6294#6849#0" expanded="false" />
+                <element signature="e#6866#8937#0" expanded="false" />
+                <element signature="e#7639#8937#0" expanded="false" />
+                <element signature="e#7738#8683#0" expanded="false" />
+                <element signature="e#8721#8937#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NN_inference.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="NN_inference.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/general/HomeCreidt/NN_inference.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" column="19" lean-forward="true" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+            <state relative-caret-position="171">
+              <caret line="28" column="4" lean-forward="true" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
-                <element signature="e#215#1024#0" expanded="false" />
+                <element signature="e#205#1014#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -320,8 +317,8 @@
         <option value="$PROJECT_DIR$/general/LogicalRegression/LR.py" />
         <option value="$PROJECT_DIR$/general/LogicalRegression/func.py" />
         <option value="$PROJECT_DIR$/general/LogicalRegression/main.py" />
-        <option value="$PROJECT_DIR$/general/HomeCreidt/NN.py" />
         <option value="$PROJECT_DIR$/general/HomeCreidt/NN_inference.py" />
+        <option value="$PROJECT_DIR$/general/HomeCreidt/NN.py" />
       </list>
     </option>
   </component>
@@ -399,8 +396,8 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-    <property name="last_opened_file_path" value="I:/学习/研一/机器学习/第四次作业" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="last_opened_file_path" value="F:/Git2.7/bin/git.exe" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://H:/Vision/Anconda/Lib/codecs.py" />
   </component>
   <component name="RecentsManager">
@@ -574,13 +571,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1510310557136</updated>
-    </task>
-    <task id="LOCAL-00026" summary="update VGG_bate3 with saver model and weights">
-      <created>1514080924454</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1514080924454</updated>
     </task>
     <task id="LOCAL-00027" summary="update VGG_bate3 with saver model and weights">
       <created>1514081013417</created>
@@ -918,7 +908,14 @@
       <option name="project" value="LOCAL" />
       <updated>1521612689480</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="GMSmatrix:&#10;实验快速获取块地址算法&#10;bug1:为啥迭代和卷积统计出来的网格和不一样？&#10;bug1答案：因为匹配点可能有多个，也就是说，可以一对多，也可以多对1，所以才会出现bug&#10;解决方案：&#10;近似解决：不管重复映射&#10;精确解决：用邻域替换映射和偏置矩阵记录&#10;将GMF单独提取出来&#10;实现批次卷积&#10; 11、更新label为行列，即解决抗旋转问题，但是，发现错误的匹配点较多，不规则，不知道哪一步有问题，再找">
+      <created>1529562715374</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1529562715374</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1542,30 +1539,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/general/HomeCreidt/NN.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-191">
-          <caret line="151" column="71" lean-forward="false" selection-start-line="151" selection-start-column="71" selection-end-line="151" selection-end-column="71" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-            <element signature="e#1322#1694#0" expanded="false" />
-            <element signature="e#1723#1911#0" expanded="false" />
-            <element signature="e#2063#2214#0" expanded="false" />
-            <element signature="e#2240#2374#0" expanded="false" />
-            <element signature="e#3052#3504#0" expanded="false" />
-            <element signature="e#3556#3957#0" expanded="false" />
-            <element signature="e#4009#4323#0" expanded="false" />
-            <element signature="e#4382#4711#0" expanded="false" />
-            <element signature="e#4767#5835#0" expanded="false" />
-            <element signature="e#5895#6100#0" expanded="false" />
-            <element signature="e#6238#6793#0" expanded="false" />
-            <element signature="e#7583#8881#0" expanded="false" />
-            <element signature="e#7682#8627#0" expanded="false" />
-            <element signature="e#8665#8881#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/general/HomeCreidt/funcs.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="265">
@@ -1588,11 +1561,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/general/HomeCreidt/NN_inference.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="19" lean-forward="true" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+        <state relative-caret-position="171">
+          <caret line="28" column="4" lean-forward="true" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
-            <element signature="e#215#1024#0" expanded="false" />
+            <element signature="e#205#1014#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/general/HomeCreidt/NN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="176" column="18" lean-forward="true" selection-start-line="176" selection-start-column="18" selection-end-line="176" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+            <element signature="e#1378#1750#0" expanded="false" />
+            <element signature="e#1779#1967#0" expanded="false" />
+            <element signature="e#2119#2270#0" expanded="false" />
+            <element signature="e#2296#2430#0" expanded="false" />
+            <element signature="e#2493#6264#0" expanded="false" />
+            <element signature="e#3108#3560#0" expanded="false" />
+            <element signature="e#3612#4013#0" expanded="false" />
+            <element signature="e#4065#4379#0" expanded="false" />
+            <element signature="e#4438#4767#0" expanded="false" />
+            <element signature="e#4823#5891#0" expanded="false" />
+            <element signature="e#5951#6156#0" expanded="false" />
+            <element signature="e#6294#6849#0" expanded="false" />
+            <element signature="e#6866#8937#0" expanded="false" />
+            <element signature="e#7639#8937#0" expanded="false" />
+            <element signature="e#7738#8683#0" expanded="false" />
+            <element signature="e#8721#8937#0" expanded="false" />
           </folding>
         </state>
       </provider>

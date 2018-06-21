@@ -1,7 +1,6 @@
 import tensorflow as tf
 import numpy as np
 from funcs import *
-import NN
 import os
 import pandas as pd
 
