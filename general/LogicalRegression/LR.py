@@ -1,5 +1,5 @@
 from numpy import *
-filename='./text' #文件目录
+filename='text' #文件目录
 def loadDataSet():   #读取数据（这里只有两个特征）
     dataMat = []
     labelMat = []
@@ -85,6 +85,12 @@ def plotBestFit(weights):  #画出最终分类的图
 def main():
     dataMat, labelMat = loadDataSet()
     weights=gradAscent(dataMat, labelMat).getA()
+    dataMatrix = mat(dataMat)  # 将读取的数据转换为矩阵
+    classLabels = mat(labelMat).transpose()  # 将读取的数据转换为矩阵
+    h = sigmoid(dataMatrix * weights)
+    h1=array(h>0.5,uint8).reshape(-1)
+    res=(h1)!=array(labelMat)
+    print("error:%.4f"%(res.sum()/res.size))
     plotBestFit(weights)
 
 if __name__=='__main__':
